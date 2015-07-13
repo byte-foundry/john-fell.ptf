@@ -1,4 +1,4 @@
-genese.ptf
-===========
+john-fell.ptf
+=============
 
-Genese is the default parametric typeface built in Prototypo
+John Fell is the elzevir parametric typeface built in Prototypo
