@@ -1,5 +1,5 @@
 {
-  "name": "genese.ptf",
+  "name": "john-fell.ptf",
   "version": "0.1.0",
   "description": "Genese Parametric Typeface",
   "main": "dist/typeface.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/byte-foundry/genese.ptf.git"
+    "url": "git://github.com/byte-foundry/john-fell.ptf.git"
   },
   "keywords": [
     "parametric-typeface"
@@ -16,9 +16,9 @@
   "author": "Prototypo",
   "license": "Affero GPL",
   "bugs": {
-    "url": "https://github.com/byte-foundry/genese.ptf/issues"
+    "url": "https://github.com/byte-foundry/john-fell.ptf/issues"
   },
-  "homepage": "https://github.com/byte-foundry/genese.ptf",
+  "homepage": "https://github.com/byte-foundry/john-fell.ptf",
   "devDependencies": {
     "gulp": "~3.8.7",
     "gulp-load-plugins": "~0.6.0",
