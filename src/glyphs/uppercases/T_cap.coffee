@@ -4,8 +4,8 @@ exports.glyphs['T_cap'] =
 		advanceWidth: contours[1].nodes[0].x - 45 * spacing
 	anchors:
 		0:
-			x: 580
-			y: capHeight * ( 383 / 750 )
+			x: 680 * width
+			y: capHeight
 	tags: [
 		'all',
 		'latin',
@@ -17,7 +17,7 @@ exports.glyphs['T_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[1].x + ( contours[1].nodes[0].x - contours[1].nodes[1].x ) / 2
+					x: contours[1].nodes[1].x + ( anchors[0].x - contours[1].nodes[1].x ) / 2
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -37,7 +37,7 @@ exports.glyphs['T_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 680 * width
+					x: 680 * width - serifHeight - serifCurve * ( 100 /15 )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -74,13 +74,13 @@ exports.glyphs['T_cap'] =
 			base: 'serif-v'
 			parentAnchors:
 				1:
-					x: contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 100 /15 )
-					y: contours[1].nodes[0].expandedTo[0].y
+					x: anchors[0].x - serifHeight - serifCurve * ( 100 /15 )
+					y: anchors[0].y - thickness * opticThickness * ( 25 / 85 )
 				0:
-					x: contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 100 /15 )
-					y: contours[1].nodes[0].expandedTo[1].y
+					x: anchors[0].x - serifHeight - serifCurve * ( 100 /15 )
+					y: anchors[0].y
 				2:
-					anchorLine: contours[1].nodes[0].expandedTo[0].x
+					anchorLine: anchors[0].x
 					leftWidth: 40
 					leftCurve: 1.2
 					# rightWidth: 20
