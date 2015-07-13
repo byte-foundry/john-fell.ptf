@@ -71,7 +71,7 @@ exports.glyphs['T_cap'] =
 					leftWidth: 40
 					rightWidth: 40
 		1:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				1:
 					x: contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 100 /15 )
@@ -92,7 +92,7 @@ exports.glyphs['T_cap'] =
 			transformOrigin: Array( contours[1].nodes[0].expandedTo[1].x, contours[1].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (-10) + 'deg' ] )
 		2:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				1:
 					x: contours[1].nodes[1].expandedTo[0].x + serifHeight + serifCurve * ( 100 /15 )
@@ -104,10 +104,10 @@ exports.glyphs['T_cap'] =
 					anchorLine: contours[1].nodes[1].expandedTo[0].x
 					leftWidth: 40
 					# leftCurve: 1.2
-					directionY: 1
-					corrWidth: 0.7
-			parentParameters:
-				serifMedian: serifMedian * 0.75
-				midWidth: midWidth * 0.98
+					directionX: -1
+					# corrWidth: 0.7
+			# parentParameters:
+			# 	serifMedian: serifMedian * 0.75
+			# 	midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[1].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (10) + 'deg' ] )

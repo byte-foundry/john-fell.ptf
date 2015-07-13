@@ -121,7 +121,7 @@ exports.glyphs['Z_cap'] =
 		# 			y: contours[1].nodes[1].expandedTo[1].y
 	components:
 		0:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				0:
 					x: Math.max(contours[1].nodes[0].expandedTo[1].x, contours[1].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 200 / 15 ) )
@@ -136,6 +136,7 @@ exports.glyphs['Z_cap'] =
 					anchorLine: contours[1].nodes[1].expandedTo[0].x
 					rightWidth: 90
 					left: false
+					baseLeft: contours[1].nodes[1].expandedTo[0].point
 			parentParameters:
 				serifMedian: serifMedian * 0.84
 				serifHeight: serifHeight * ( 22 / 20 )
@@ -143,7 +144,7 @@ exports.glyphs['Z_cap'] =
 			transformOrigin: Array( contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[1].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (14) + 'deg' ] )
 		1:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				0:
 					x: Math.min(contours[0].nodes[0].expandedTo[1].x, contours[0].nodes[1].expandedTo[1].x + serifHeight + serifCurve * ( 120 / 15 ) )
@@ -158,7 +159,8 @@ exports.glyphs['Z_cap'] =
 					anchorLine: contours[0].nodes[1].expandedTo[0].x
 					leftWidth: 118
 					right: false
-					directionY: 1
+					baseRight: contours[0].nodes[1].expandedTo[0].point
+					directionX: -1
 			parentParameters:
 				serifMedian: serifMedian * 0.92
 				serifHeight: serifHeight * ( 16 / 20 )

@@ -103,7 +103,7 @@ exports.glyphs['serif-v'] =
 						if anchors[2].right == false
 						then anchors[2].baseRight.y
 						else
-							if anchors[2].maxWidth != true
+							if anchors[2].maxWidth == true
 							then Math.min( capHeight + overshoot * 2 + serifTerminal * serifWidth, contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth )
 							else contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth
 					x:
@@ -121,7 +121,7 @@ exports.glyphs['serif-v'] =
 						else
 							if parentAnchors[2].baseRight
 								if anchors[2].baseRight.y < contours[0].nodes[0].y
-									if anchors[2].maxWidth != true
+									if anchors[2].maxWidth == true
 									then Math.min( capHeight + overshoot * 2, anchors[2].baseRight.y + serifWidth * midWidth + anchors[2].rightWidth * Math.min( 1, serifWidth ) )
 									else anchors[2].baseRight.y + serifWidth * midWidth + anchors[2].rightWidth * Math.min( 1, serifWidth )
 								else
@@ -136,10 +136,11 @@ exports.glyphs['serif-v'] =
 											on: [ anchors[2].baseRight, contours[0].nodes[0].point ]
 										}) - anchors[2].baseRight.y ) )
 							else contours[0].nodes[0].y - ( contours[0].nodes[0].y - contours[0].nodes[2].y ) * midWidth
-					x:
-						if anchors[2].right == false
-						then anchors[2].baseRight.x
-						else anchors[2].anchorLine
+					# x:
+					# 	if anchors[2].right == false
+					# 	then anchors[2].baseRight.x
+					# 	else anchors[2].anchorLine
+					x: anchors[2].anchorLine
 					tensionIn: serifTerminalCurve
 					type: 'smooth'
 					dirIn: 90 + 'deg'
@@ -175,10 +176,11 @@ exports.glyphs['serif-v'] =
 											on: [ anchors[2].baseLeft, contours[0].nodes[10].point ]
 										}) - anchors[2].baseLeft.y ) )
 							else contours[0].nodes[10].y - ( contours[0].nodes[10].y - contours[0].nodes[8].y ) * midWidth
-					x:
-						if anchors[2].left == false
-						then anchors[2].baseLeft.x
-						else anchors[2].anchorLine
+					# x:
+					# 	if anchors[2].left == false
+					# 	then anchors[2].baseLeft.x
+					# 	else anchors[2].anchorLine
+					x: anchors[2].anchorLine
 					tensionOut: serifTerminalCurve
 					dirIn: 90 + 'deg'
 					dirOut: - 90 + 'deg'

@@ -107,7 +107,7 @@ exports.glyphs['F_cap'] =
 					directionY: -1
 					right: false
 		2:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				0:
 					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
@@ -123,7 +123,7 @@ exports.glyphs['F_cap'] =
 				serifMedian: serifMedian * 75/100
 				serifHeight: serifHeight * 16/20
 		3:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				0:
 					x: Math.max(contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 100 /15 ) )
@@ -135,6 +135,7 @@ exports.glyphs['F_cap'] =
 					anchorLine: contours[1].nodes[0].expandedTo[0].x
 					right: false
 					leftWidth: 60
+					baseRight: contours[1].nodes[0].expandedTo[0].point
 			parentParameters:
 				serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98

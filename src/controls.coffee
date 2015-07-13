@@ -241,7 +241,7 @@ exports.controls = [
 		init: 0
 		minAdvised: -0.2
 		maxAdvised: 0.5
-		disabled: false
+		disabled: true
 	,
 		name: 'serifTerminal'
 		label: 'Serif Terminal'
