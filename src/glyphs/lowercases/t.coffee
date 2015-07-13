@@ -7,11 +7,6 @@ exports.glyphs['t'] =
 		'latin',
 		'lowercase'
 	]
-	tags: [
-		'all',
-		'latin',
-		'lowercase'
-	]
 	contours:
 		0:
 			skeleton: true

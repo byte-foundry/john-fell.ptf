@@ -13,7 +13,7 @@ exports.glyphs['five'] =
 			closed: false
 			nodes:
 				0:
-					x: 180 + (0)
+					x: 1800 + (0)
 					y: descender * ( 200 / 250 )
 					dirOut: 22 + 'deg'
 					expand: Object({
