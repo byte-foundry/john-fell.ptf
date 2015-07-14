@@ -4,7 +4,10 @@ exports.glyphs['T_cap'] =
 		advanceWidth: contours[1].nodes[0].x - 45 * spacing
 	anchors:
 		0:
-			x: 680 * width
+			x: 710 * width
+			y: capHeight
+		1:
+			x: 45
 			y: capHeight
 	tags: [
 		'all',
@@ -17,7 +20,7 @@ exports.glyphs['T_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[1].x + ( anchors[0].x - contours[1].nodes[1].x ) / 2
+					x: anchors[1].x + ( anchors[0].x - anchors[1].x ) / 2
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -37,7 +40,7 @@ exports.glyphs['T_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 680 * width - serifHeight - serifCurve * ( 100 /15 )
+					x: anchors[0].x - serifHeight - serifCurve * ( 100 / 15 )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -47,7 +50,7 @@ exports.glyphs['T_cap'] =
 						distr: 1
 					})
 				1:
-					x: 20
+					x: anchors[1].x + serifHeight + serifCurve * ( 100 / 15 )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -73,41 +76,36 @@ exports.glyphs['T_cap'] =
 		1:
 			base: 'serif-v'
 			parentAnchors:
-				1:
-					x: anchors[0].x - serifHeight - serifCurve * ( 100 /15 )
-					y: anchors[0].y - thickness * opticThickness * ( 25 / 85 )
 				0:
 					x: anchors[0].x - serifHeight - serifCurve * ( 100 /15 )
 					y: anchors[0].y
+				1:
+					x: anchors[0].x - serifHeight - serifCurve * ( 100 /15 )
+					y: anchors[0].y - thickness * opticThickness * ( 25 / 85 )
 				2:
 					anchorLine: anchors[0].x
 					leftWidth: 40
-					leftCurve: 1.2
-					# rightWidth: 20
-					corrWidth: 0.7
-					# rightCurve: 1.2
+					# maxWidth: capHeight + 40  #TODO: implement maxwidth with value on serif-v
 			parentParameters:
 				serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[0].expandedTo[1].x, contours[1].nodes[0].expandedTo[0].y )
-			transforms: Array( [ 'skewX', serifRotate * (-10) + 'deg' ] )
+			transforms: Array( [ 'skewX', serifRotate * (-20) + 'deg' ] )
 		2:
 			base: 'serif-v'
 			parentAnchors:
-				1:
-					x: contours[1].nodes[1].expandedTo[0].x + serifHeight + serifCurve * ( 100 /15 )
-					y: contours[1].nodes[1].expandedTo[0].y
 				0:
-					x: contours[1].nodes[1].expandedTo[1].x + serifHeight + serifCurve * ( 100 /15 )
-					y: contours[1].nodes[1].expandedTo[1].y
+					x: anchors[1].x + serifHeight + serifCurve * ( 100 /15 )
+					y: anchors[1].y
+				1:
+					x: anchors[1].x + serifHeight + serifCurve * ( 100 /15 )
+					y: anchors[1].y - thickness * opticThickness * ( 25 / 85 )
 				2:
-					anchorLine: contours[1].nodes[1].expandedTo[0].x
+					anchorLine: anchors[1].x
 					leftWidth: 40
-					# leftCurve: 1.2
 					directionX: -1
-					# corrWidth: 0.7
-			# parentParameters:
-			# 	serifMedian: serifMedian * 0.75
-			# 	midWidth: midWidth * 0.98
+			parentParameters:
+				serifMedian: serifMedian * 0.75
+				midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[1].expandedTo[0].y )
-			transforms: Array( [ 'skewX', serifRotate * (10) + 'deg' ] )
+			transforms: Array( [ 'skewX', serifRotate * (20) + 'deg' ] )
