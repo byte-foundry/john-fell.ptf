@@ -1,7 +1,7 @@
 exports.glyphs['five'] =
 	unicode: '5'
 	ot:
-		advanceWidth: 0
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 30 * spacing
 	tags: [
 		'all',
 		'latin',

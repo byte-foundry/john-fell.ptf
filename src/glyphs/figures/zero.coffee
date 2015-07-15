@@ -4,7 +4,7 @@ exports.glyphs['zero'] =
 		advanceWidth: width * 545 + thickness * 2 - ( 85 * 2 )
 	anchors:
 		0:
-			x: ( 495 + (37) ) * width
+			x: ( 525 + (37) ) * width
 			y: xHeight * ( 250 / 500 )
 	tags: [
 		'all',
@@ -17,12 +17,12 @@ exports.glyphs['zero'] =
 			closed: true
 			nodes:
 				0:
-					x: 25 + (12)
+					x: 45 + (12)
 					y: anchors[0].y
 					dirOut: 90 + 'deg'
 					tensionOut: 0.9
 					expand: Object({
-						width: thickness * ( 50 / 85 )
+						width: thickness * ( 40 / 85 )
 						distr: 0.25
 					})
 				1:
@@ -31,7 +31,7 @@ exports.glyphs['zero'] =
 					dirOut: 0 + 'deg'
 					tensionOut: 0.9
 					expand: Object({
-						width: thickness * ( 45 / 85 )
+						width: thickness * ( 35 / 85 )
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -41,7 +41,7 @@ exports.glyphs['zero'] =
 					dirOut: - 90 + 'deg'
 					tensionOut: 0.9
 					expand: Object({
-						width: thickness * ( 50 / 85 )
+						width: thickness * ( 40 / 85 )
 						distr: 0.25
 					})
 				3:
@@ -50,7 +50,7 @@ exports.glyphs['zero'] =
 					dirOut: 180 + 'deg'
 					tensionOut: 0.9
 					expand: Object({
-						width: thickness * ( 45 / 85 )
+						width: thickness * ( 35 / 85 )
 						angle: 90 + 'deg'
 						distr: 0
 					})
