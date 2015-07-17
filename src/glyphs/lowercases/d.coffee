@@ -144,7 +144,7 @@ exports.glyphs['d'] =
 					left: false
 					# serifRotate: 14
 			parentParameters:
-				serifMedian: serifMedian
+				# serifMedian: serifMedian
 				midWidth: midWidth
 			transformOrigin: Array( contours[0].nodes[0].expandedTo[0].x, contours[0].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewY', 14 * serifRotate + 'deg' ] )

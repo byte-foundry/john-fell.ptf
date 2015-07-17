@@ -136,7 +136,7 @@ exports.glyphs['L_cap'] =
 					left: false
 					baseLeft: contours[1].nodes[0].expandedTo[1].point
 			parentParameters:
-				serifMedian: serifMedian * 0.75
+				# serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (15) + 'deg' ] )

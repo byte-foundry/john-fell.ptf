@@ -87,7 +87,7 @@ exports.glyphs['T_cap'] =
 					leftWidth: 40
 					# maxWidth: capHeight + 40  #TODO: implement maxwidth with value on serif-v
 			parentParameters:
-				serifMedian: serifMedian * 0.75
+				# serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[0].expandedTo[1].x, contours[1].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (-20) + 'deg' ] )
@@ -105,7 +105,7 @@ exports.glyphs['T_cap'] =
 					leftWidth: 40
 					directionX: -1
 			parentParameters:
-				serifMedian: serifMedian * 0.75
+				# serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[1].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (20) + 'deg' ] )

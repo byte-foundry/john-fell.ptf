@@ -57,3 +57,24 @@ exports.glyphs['seven'] =
 						angle: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point )
 						distr: 1
 					})
+	components:
+		0:
+			base: 'serif-v'
+			parentAnchors:
+				0:
+					x: contours[0].nodes[4].expandedTo[1].x + serifHeight + serifCurve * ( 45 / 15 )
+					y: contours[0].nodes[4].expandedTo[1].y
+				1:
+					x: contours[0].nodes[4].expandedTo[0].x + serifHeight + serifCurve * ( 60 / 15 )
+					y: contours[0].nodes[4].expandedTo[0].y
+				2:
+					anchorLine: contours[0].nodes[4].expandedTo[0].x + 10
+					directionX: -1
+					rightWidth: - 20
+					midWidthRight: 1.06
+					midWidthLeft: 0.9
+			parentParameters:
+				serifCurve: serifCurve * ( 25 / 15 )
+				# serifMedian: serifMedian * 0.7
+			transformOrigin: Array( contours[0].nodes[4].expandedTo[1].x, contours[0].nodes[4].expandedTo[1].y )
+			transforms: Array( [ 'skewX', serifRotate * (24) + 'deg' ] )

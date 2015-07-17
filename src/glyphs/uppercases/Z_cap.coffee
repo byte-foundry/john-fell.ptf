@@ -138,7 +138,7 @@ exports.glyphs['Z_cap'] =
 					left: false
 					baseLeft: contours[1].nodes[1].expandedTo[0].point
 			parentParameters:
-				serifMedian: serifMedian * 0.84
+				# serifMedian: serifMedian * 0.84
 				serifHeight: serifHeight * ( 22 / 20 )
 				serifCurve: serifCurve * ( 25 / 15 )
 			transformOrigin: Array( contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[1].expandedTo[0].y )
@@ -162,7 +162,7 @@ exports.glyphs['Z_cap'] =
 					baseRight: contours[0].nodes[1].expandedTo[0].point
 					directionX: -1
 			parentParameters:
-				serifMedian: serifMedian * 0.92
+				# serifMedian: serifMedian * 0.92
 				serifHeight: serifHeight * ( 16 / 20 )
 				serifCurve: serifCurve * ( 7 / 15 )
 			transformOrigin: Array( contours[0].nodes[1].expandedTo[0].x, contours[0].nodes[1].expandedTo[0].y )
