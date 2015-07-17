@@ -4,7 +4,7 @@ exports.glyphs['three'] =
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + 40 * spacing
 	anchors:
 		0:
-			junction: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[1], contours[0].nodes[2].expandedTo[1], thickness )
+			junction: Utils.pointOnCurve( contours[0].nodes[2].expandedTo[0], contours[0].nodes[3].expandedTo[0], thickness, true, 10 )
 	tags: [
 		'all',
 		'latin',
@@ -71,8 +71,8 @@ exports.glyphs['three'] =
 				1:
 					x: 305 + (22)
 					y: - 20 + (6)
-					dirIn: - 90 + 'deg'
 					type: 'smooth'
+					dirOut: 90 + 'deg'
 					expand: Object({
 						width: thickness * ( 93 / 85 )
 						angle: 15 + 'deg'
@@ -84,11 +84,11 @@ exports.glyphs['three'] =
 							{
 								x: contours[0].nodes[3].expandedTo[1].x
 								y: contours[0].nodes[3].expandedTo[0].y
-								dirIn: - 2 + 'deg'
+								dirIn: - 8 + 'deg'
 							}
 							{
 								x: anchors[0].junction.x
 								y: anchors[0].junction.y
-								dirOut: - 10 + 'deg'
+								dirOut: - 8 + 'deg'
 							}
 						]

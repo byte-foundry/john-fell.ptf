@@ -25,7 +25,7 @@ exports.glyphs['v'] =
 				1:
 					x: 214 + 6
 					# x: 214 * width + 6
-					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.5 - thickness * ( (25 + 12) / 85 )
+					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.45
 					y: - overshoot
 					typeOut: 'line'
 					expand: Object({

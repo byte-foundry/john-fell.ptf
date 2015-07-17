@@ -1,7 +1,7 @@
 exports.glyphs['six'] =
 	unicode: '6'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + (50)
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + 15 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -13,12 +13,12 @@ exports.glyphs['six'] =
 			closed: false
 			nodes:
 				0:
-					x: 545 + (0)
+					x: 545 + (5)
 					y: capHeight
-					dirOut: - 165 + 'deg'
+					dirOut: - 168 + 'deg'
 					expand: Object({
-						width: thickness * ( 18 / 85 )
-						angle: - 63 + 'deg'
+						width: thickness * ( 13 / 85 )
+						angle: - 76 + 'deg'
 						distr: 0
 					})
 				1:
@@ -37,19 +37,19 @@ exports.glyphs['six'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 25 / 85 )
+						width: thickness * ( 25 / 85 ) * contrast
 						angle: 101 + 'deg'
 						distr: 0
 					})
 				3:
-					x: 435 + (21)
+					x: 425 + (75)
 					y: capHeight * ( 240 / 750 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: thickness
-						angle: 180 - 7 + 'deg'
-						distr: 0.75
+						angle: 180 - 3 + 'deg'
+						distr: 0.25
 					})
 				4:
 					x: 300 + (0)
@@ -57,7 +57,7 @@ exports.glyphs['six'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 27 / 85 )
+						width: thickness * ( 27 / 85 ) * contrast
 						angle: - 111 + 'deg'
 						distr: 0.25
 					})

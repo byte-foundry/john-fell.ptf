@@ -17,7 +17,10 @@ exports.glyphs['w'] =
 			closed: false
 			nodes:
 				0:
-					x: 387 + (12)
+					x: Utils.onLine({
+						y: xHeight * ( 350 / 500 )
+						on: [ contours[3].nodes[0].expandedTo[0].point, contours[3].nodes[1].expandedTo[0].point ]
+					}) + thickness * ( 33 / 85 ) * 0.25
 					y: xHeight * ( 350 / 500 )
 					typeOut: 'line'
 					expand: Object({
@@ -26,7 +29,8 @@ exports.glyphs['w'] =
 						distr: 0.25
 					})
 				1:
-					x: 230 + (6)
+					x: 249 + (3)
+					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.45
 					y: - overshoot
 					typeOut: 'line'
 					expand: Object({
@@ -39,57 +43,32 @@ exports.glyphs['w'] =
 			closed: false
 			nodes:
 				0:
-					x: 10 + (93)
+					x: 70 + (50)
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 95 / 85 )
 						angle: 0 + 'deg'
-						distr: 1
+						distr: 0.75
 					})
 				1:
-					x: 0
-					y: 0
-					# typeOut: 'line'
-					expand: Object({
-						width: thickness * ( 95 / 85 )
-						angle: 0 + 'deg'
-						distr: 1
-					})
-					expandedTo:
-						[
-							{
-								x: Utils.onLine({
-									y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-									on: [ contours[1].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
-								})
-								y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-								typeOut: 'line'
-							}
-							{
-								x: Utils.onLine({
-									y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-									on: [ contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point ]
-								})
-								y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-								typeIn: 'line'
-							}
-						]
-				2:
-					x: contours[0].nodes[1].expandedTo[0].x + contours[0].nodes[1].expand.width
+					x: contours[0].nodes[1].expandedTo[0].x
 					y: - overshoot
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 25 / 85 )
-						angle: 0 + 'deg'
-						distr: 1
+						width:
+							if width < 1
+							then ( thickness * ( 120 / 85 ) / 500 ) * xHeight
+							else ( thickness * ( ( 120 - 35 * width + 35 ) / 85 ) / 500 ) * xHeight
+						angle: Utils.lineAngle( contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ) + Math.PI
+						distr: 0
 					})
 		2:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: 685 + (10)
+					x: 685 * width + (10)
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
@@ -98,7 +77,8 @@ exports.glyphs['w'] =
 						distr: 0.25
 					})
 				1:
-					x: 480 + (6)
+					x: 509 + (3)
+					x: contours[3].nodes[0].expandedTo[1].x + ( contours[2].nodes[0].expandedTo[0].x - contours[3].nodes[0].expandedTo[1].x ) * 0.35
 					y: - overshoot
 					typeOut: 'line'
 					expand: Object({
@@ -111,50 +91,25 @@ exports.glyphs['w'] =
 			closed: false
 			nodes:
 				0:
-					x: 275 + (93)
+					x: 330 * width + (38)
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 95 / 85 )
 						angle: 0 + 'deg'
-						distr: 1
+						distr: 0.5
 					})
 				1:
-					x: 0
-					y: 0
-					# typeOut: 'line'
-					expand: Object({
-						width: thickness * ( 95 / 85 )
-						angle: 0 + 'deg'
-						distr: 1
-					})
-					expandedTo:
-						[
-							{
-								x: Utils.onLine({
-									y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-									on: [ contours[3].nodes[0].expandedTo[0].point, contours[2].nodes[1].expandedTo[0].point ]
-								})
-								y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-								typeOut: 'line'
-							}
-							{
-								x: Utils.onLine({
-									y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-									on: [ contours[2].nodes[1].expandedTo[0].point, contours[2].nodes[0].expandedTo[0].point ]
-								})
-								y: ( thickness * ( 75 / 85 ) / 500 ) * xHeight
-								typeIn: 'line'
-							}
-						]
-				2:
-					x: contours[2].nodes[1].expandedTo[0].x + contours[2].nodes[1].expand.width
+					x: contours[2].nodes[1].expandedTo[0].x
 					y: - overshoot
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 25 / 85 )
-						angle: 0 + 'deg'
-						distr: 1
+						width:
+							if width < 1
+							then ( thickness * ( 120 / 85 ) / 500 ) * xHeight
+							else ( thickness * ( ( 120 - 35 * width + 35 ) / 85 ) / 500 ) * xHeight
+						angle: Utils.lineAngle( contours[2].nodes[0].expandedTo[0].point, contours[2].nodes[1].expandedTo[0].point ) + Math.PI
+						distr: 0
 					})
 	components:
 		0:
@@ -176,7 +131,7 @@ exports.glyphs['w'] =
 					anchorLine: xHeight
 					leftWidth: 0.9
 					rightWidth: 0.9
-					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[2].expandedTo[0].point )
+					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
 					directionY: -1
 		1:
 			base: 'serif'
