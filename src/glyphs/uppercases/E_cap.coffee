@@ -192,7 +192,7 @@ exports.glyphs['E_cap'] =
 			transformOrigin: Array( contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (-4) + 'deg' ] )
 		4:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				1:
 					x: Math.max(contours[3].nodes[0].expandedTo[1].x, contours[3].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
@@ -201,8 +201,9 @@ exports.glyphs['E_cap'] =
 					x: Math.max(contours[3].nodes[0].expandedTo[0].x, contours[3].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 100 / 15 ) )
 					y: contours[3].nodes[0].expandedTo[0].y
 				2:
-					anchorLine: contours[3].nodes[1].expandedTo[0].x
+					anchorLine: contours[3].nodes[1].expandedTo[1].x
 					rightWidth: 60
 					left: false
+					baseLeft: contours[3].nodes[1].expandedTo[1].point
 			transformOrigin: Array( contours[3].nodes[0].expandedTo[0].x, contours[3].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (8) + 'deg' ] )

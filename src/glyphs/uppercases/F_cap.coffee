@@ -39,7 +39,7 @@ exports.glyphs['F_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 535 * width + ( thickness / 2 - 43 )
+					x: 555 * width + ( thickness / 2 - 43 )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -71,7 +71,7 @@ exports.glyphs['F_cap'] =
 					})
 				1:
 					x: 485 * width
-					y: capHeight * ( 400 / 750 ) * crossbar
+					y: capHeight * ( 385 / 750 ) * crossbar
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -97,17 +97,17 @@ exports.glyphs['F_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].expandedTo[1].y - serifHeight - serifCurve * ( 65 /15 )
+					y: contours[0].nodes[1].expandedTo[1].y - serifHeight - serifCurve * ( 65 / 15 )
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve * ( 65 /15 )
+					y: contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve * ( 65 / 15 )
 				2:
 					anchorLine: capHeight
 					leftWidth: 40
 					directionY: -1
 					right: false
 		2:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				0:
 					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
@@ -119,24 +119,27 @@ exports.glyphs['F_cap'] =
 					anchorLine: contours[2].nodes[1].expandedTo[0].x
 					leftWidth: 80
 					rightWidth: 80
+					# serifMedianRight: - 10 * serifMedian
+					# serifMedianLeft: - 10 * serifMedian
 			parentParameters:
-				serifMedian: serifMedian * 75/100
+				# serifMedian: serifMedian * 0.75
 				serifHeight: serifHeight * 16/20
 		3:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: Math.max(contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 100 /15 ) )
+					x: Math.max(contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 100 / 15 ) )
 					y: contours[1].nodes[0].expandedTo[0].y
 				1:
-					x: Math.max(contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 180 /15 ) )
+					x: Math.max(contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 180 / 15 ) )
 					y: contours[1].nodes[0].expandedTo[1].y
 				2:
 					anchorLine: contours[1].nodes[0].expandedTo[0].x
 					right: false
 					leftWidth: 60
+					baseRight: contours[1].nodes[0].expandedTo[0].point
 			parentParameters:
-				serifMedian: serifMedian * 0.75
+				# serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[1].expandedTo[0].y )
-			transforms: Array( [ 'skewX', serifRotate * (-8) + 'deg' ] )
+			transforms: Array( [ 'skewX', serifRotate * (-5) + 'deg' ] )

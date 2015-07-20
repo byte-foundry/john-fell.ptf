@@ -1,7 +1,7 @@
 exports.glyphs['five'] =
 	unicode: '5'
 	ot:
-		advanceWidth: 0
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 30 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -65,7 +65,7 @@ exports.glyphs['five'] =
 			skeleton: true
 			closed: false
 			nodes:
-				0:
+				2:
 					x: contours[0].nodes[4].expandedTo[1].x
 					y: contours[0].nodes[4].expandedTo[1].y
 					dirIn: 0 + 'deg'
@@ -85,7 +85,7 @@ exports.glyphs['five'] =
 						angle: - 78 + 'deg'
 						distr: 0
 					})
-				2:
+				0:
 					x: contours[0].nodes[1].expandedTo[1].x + ( contours[0].nodes[1].expandedTo[0].x - contours[0].nodes[1].expandedTo[1].x ) * 0.4
 					y: xHeight
 					dirIn: 0 + 'deg'
@@ -95,3 +95,25 @@ exports.glyphs['five'] =
 						angle: - 100 + 'deg'
 						distr: 0
 					})
+	components:
+		0:
+			base: 'serif-v'
+			parentAnchors:
+				1:
+					x: contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 100 /15 )
+					y: contours[1].nodes[0].expandedTo[1].y
+				0:
+					x: contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 100 /15 )
+					y: contours[1].nodes[0].expandedTo[0].y
+				2:
+					anchorLine: contours[1].nodes[0].expandedTo[0].x
+					left: false
+					# baseLeft: { x: contours[1].nodes[0].expandedTo[1].x, y: contours[1].nodes[0].expandedTo[1].y }
+					baseLeft: contours[1].nodes[0].expandedTo[1].point
+					max0: contours[1].nodes[1].expandedTo[1].point
+					max1: contours[1].nodes[1].expandedTo[1].point
+			# parentParameters:
+			# 	serifMedian: serifMedian * 0.75
+			# 	midWidth: midWidth * 0.98
+			transformOrigin: Array( contours[1].nodes[0].expandedTo[1].x, contours[1].nodes[0].expandedTo[0].y )
+			transforms: Array( [ 'skewX', serifRotate * (10) + 'deg' ] )

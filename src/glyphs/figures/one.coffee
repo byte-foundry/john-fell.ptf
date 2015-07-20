@@ -41,7 +41,8 @@ exports.glyphs['one'] =
 					x: contours[0].nodes[0].expandedTo[0].x
 					y: contours[0].nodes[0].y
 				2:
-					leftWidth: 0
+					leftWidth: 35
+					rightWidth: 35
 		1:
 			base: 'serif'
 			parentAnchors:
@@ -54,3 +55,5 @@ exports.glyphs['one'] =
 				2:
 					anchorLine: xHeight
 					directionY: -1
+					leftWidth: 35
+					rightWidth: 35

@@ -92,7 +92,7 @@ exports.glyphs['C_cap'] =
 					baseRight: contours[0].nodes[0].expandedTo[0].point
 					baseLeft: contours[0].nodes[0].expandedTo[1].point
 			parentParameters:
-				serifMedian: serifMedian * 0.9
+				# serifMedian: serifMedian * 0.9
 				serifCurve: serifCurve * 1.2
 			# transformOrigin: Array( contours[0].nodes[0].expandedTo[0].x, contours[0].nodes[0].expandedTo[0].y )
 			# transforms: Array( [ 'skewX', serifRotate * (-4) + 'deg' ] )

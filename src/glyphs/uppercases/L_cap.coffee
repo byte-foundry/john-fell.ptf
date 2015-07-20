@@ -92,7 +92,7 @@ exports.glyphs['L_cap'] =
 					rightWidth: 40
 					directionY: -1
 		1:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
@@ -102,8 +102,9 @@ exports.glyphs['L_cap'] =
 					y: contours[0].nodes[1].expandedTo[0].y + serifHeight + serifCurve * ( 65 /15 )
 				2:
 					leftWidth: 40
+					right: false
 		2:
-			base: 'serif_bottom'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: Math.max(contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 100 /15 ) )
@@ -121,7 +122,7 @@ exports.glyphs['L_cap'] =
 					directionY: -1
 					# shift: 10
 		2:
-			base: 'serif_v'
+			base: 'serif-v'
 			parentAnchors:
 				0:
 					x: Math.max(contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 165 / 15 ) )
@@ -130,11 +131,12 @@ exports.glyphs['L_cap'] =
 					x: Math.max(contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 165 / 15 ) )
 					y: contours[1].nodes[0].expandedTo[1].y
 				2:
-					anchorLine: contours[1].nodes[0].expandedTo[0].x
+					anchorLine: contours[1].nodes[0].expandedTo[1].x
 					rightWidth: 100
 					left: false
+					baseLeft: contours[1].nodes[0].expandedTo[1].point
 			parentParameters:
-				serifMedian: serifMedian * 0.75
+				# serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
 			transformOrigin: Array( contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (15) + 'deg' ] )

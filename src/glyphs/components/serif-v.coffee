@@ -11,6 +11,10 @@ exports.glyphs['serif-v'] =
 			maxWidth: if typeof parentAnchors[2].maxWidth != 'undefined' then parentAnchors[2].maxWidth else false
 			leftWidth: parentAnchors[2].leftWidth * Math.min( serifWidth / 65, 1 ) || 0
 			rightCurve: parentAnchors[2].rightCurve || 1
+			midWidthRight: parentAnchors[2].midWidthRight || 1
+			midWidthLeft: parentAnchors[2].midWidthLeft || 1
+			serifMedianRight: parentAnchors[2].serifMedianRight || 0
+			serifMedianLeft: parentAnchors[2].serifMedianLeft || 0
 			leftCurve: parentAnchors[2].leftCurve || 1
 			rightWidth: parentAnchors[2].rightWidth * Math.min( serifWidth / 65, 1 ) || 0
 			# angle: parentAnchors[2].angle || 0 + 'deg'
@@ -93,8 +97,8 @@ exports.glyphs['serif-v'] =
 						then anchors[2].baseRight.x
 						else
 							if anchors[2].attaque == true
-							then contours[0].nodes[4].x - ( serifHeight * serifMedian ) + ( (serifWidth + anchors[2].rightWidth) * (anchors[2].anchorLine + ( spurHeight * 50 - 50 ) * anchors[2].directionX) / (anchors[2].baseRight.y + serifWidth * midWidth + anchors[2].rightWidth) )
-							else contours[0].nodes[4].x - ( serifHeight * serifMedian ) * anchors[2].directionX
+							then contours[0].nodes[4].x - ( serifHeight * serifMedian + anchors[2].serifMedianRight ) + ( (serifWidth + anchors[2].rightWidth) * (anchors[2].anchorLine + ( spurHeight * 50 - 50 ) * anchors[2].directionX) / (anchors[2].baseRight.y + serifWidth * midWidth * anchors[2].midWidthRight + anchors[2].rightWidth) )
+							else contours[0].nodes[4].x - ( serifHeight * serifMedian + anchors[2].serifMedianRight ) * anchors[2].directionX
 					tensionOut: serifTerminalCurve
 					type: 'smooth'
 					typeIn: 'line'
@@ -103,13 +107,13 @@ exports.glyphs['serif-v'] =
 						if anchors[2].right == false
 						then anchors[2].baseRight.y
 						else
-							if anchors[2].maxWidth != true
+							if anchors[2].maxWidth == true
 							then Math.min( capHeight + overshoot * 2 + serifTerminal * serifWidth, contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth )
 							else contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth
 					x:
 						if anchors[2].right == false
 						then anchors[2].baseRight.x
-						else contours[0].nodes[4].x - (( serifHeight * serifMedian ) / 2 ) * anchors[2].directionX
+						else contours[0].nodes[4].x - (( serifHeight * serifMedian + anchors[2].serifMedianRight ) / 2 ) * anchors[2].directionX
 					dirOut: Utils.lineAngle( contours[0].nodes[2].point ,contours[0].nodes[4].point )
 					type: 'smooth'
 					tensionOut: serifTerminalCurve
@@ -121,25 +125,26 @@ exports.glyphs['serif-v'] =
 						else
 							if parentAnchors[2].baseRight
 								if anchors[2].baseRight.y < contours[0].nodes[0].y
-									if anchors[2].maxWidth != true
-									then Math.min( capHeight + overshoot * 2, anchors[2].baseRight.y + serifWidth * midWidth + anchors[2].rightWidth * Math.min( 1, serifWidth ) )
-									else anchors[2].baseRight.y + serifWidth * midWidth + anchors[2].rightWidth * Math.min( 1, serifWidth )
+									if anchors[2].maxWidth == true
+									then Math.min( capHeight + overshoot * 2, anchors[2].baseRight.y + serifWidth * midWidth * anchors[2].midWidthRight + anchors[2].rightWidth * Math.min( 1, serifWidth ) )
+									else anchors[2].baseRight.y + serifWidth * midWidth * anchors[2].midWidthRight + anchors[2].rightWidth * Math.min( 1, serifWidth )
 								else
-									if anchors[2].baseRight.y > anchors[2].baseRight.y + serifWidth * midWidth + anchors[2].rightWidth * Math.min( 1, serifWidth ) - ( Math.abs( Utils.onLine({
+									if anchors[2].baseRight.y > anchors[2].baseRight.y + serifWidth * midWidth * anchors[2].midWidthRight + anchors[2].rightWidth * Math.min( 1, serifWidth ) - ( Math.abs( Utils.onLine({
 										x: contours[0].nodes[2].x
 										on: [ anchors[2].baseRight, contours[0].nodes[0].point ]
 									}) - anchors[2].baseRight.y ) )
 										anchors[2].baseRight.y
 									else
-										anchors[2].baseRight.y + serifWidth * midWidth + anchors[2].rightWidth * Math.min( 1, serifWidth ) - ( Math.abs( Utils.onLine({
+										anchors[2].baseRight.y + serifWidth * midWidth * anchors[2].midWidthRight + anchors[2].rightWidth * Math.min( 1, serifWidth ) - ( Math.abs( Utils.onLine({
 											x: contours[0].nodes[2].x
 											on: [ anchors[2].baseRight, contours[0].nodes[0].point ]
 										}) - anchors[2].baseRight.y ) )
-							else contours[0].nodes[0].y - ( contours[0].nodes[0].y - contours[0].nodes[2].y ) * midWidth
-					x:
-						if anchors[2].right == false
-						then anchors[2].baseRight.x
-						else anchors[2].anchorLine
+							else contours[0].nodes[0].y - ( contours[0].nodes[0].y - contours[0].nodes[2].y ) * midWidth * anchors[2].midWidthRight
+					# x:
+					# 	if anchors[2].right == false
+					# 	then anchors[2].baseRight.x
+					# 	else anchors[2].anchorLine
+					x: anchors[2].anchorLine
 					tensionIn: serifTerminalCurve
 					type: 'smooth'
 					dirIn: 90 + 'deg'
@@ -162,23 +167,24 @@ exports.glyphs['serif-v'] =
 						else
 							if parentAnchors[2].baseLeft
 								if anchors[2].baseLeft.y < contours[0].nodes[10].y
-									anchors[2].baseLeft.y - serifWidth * midWidth - anchors[2].leftWidth * Math.min( 1, serifWidth )
+									anchors[2].baseLeft.y - serifWidth * midWidth * anchors[2].midWidthLeft - anchors[2].leftWidth * Math.min( 1, serifWidth )
 								else
-									if anchors[2].baseLeft.y < anchors[2].baseLeft.y - serifWidth * midWidth - anchors[2].leftWidth * Math.min( 1, serifWidth ) + ( Math.abs( Utils.onLine({
+									if anchors[2].baseLeft.y < anchors[2].baseLeft.y - serifWidth * midWidth * anchors[2].midWidthLeft - anchors[2].leftWidth * Math.min( 1, serifWidth ) + ( Math.abs( Utils.onLine({
 										x: contours[0].nodes[8].x
 										on: [ anchors[2].baseLeft, contours[0].nodes[10].point ]
 									}) - anchors[2].baseLeft.y ) )
 										anchors[2].baseLeft.y
 									else
-										anchors[2].baseLeft.y - serifWidth * midWidth - anchors[2].leftWidth * Math.min( 1, serifWidth ) + ( Math.abs( Utils.onLine({
+										anchors[2].baseLeft.y - serifWidth * midWidth * anchors[2].midWidthLeft - anchors[2].leftWidth * Math.min( 1, serifWidth ) + ( Math.abs( Utils.onLine({
 											x: contours[0].nodes[8].x
 											on: [ anchors[2].baseLeft, contours[0].nodes[10].point ]
 										}) - anchors[2].baseLeft.y ) )
-							else contours[0].nodes[10].y - ( contours[0].nodes[10].y - contours[0].nodes[8].y ) * midWidth
-					x:
-						if anchors[2].left == false
-						then anchors[2].baseLeft.x
-						else anchors[2].anchorLine
+							else contours[0].nodes[10].y - ( contours[0].nodes[10].y - contours[0].nodes[8].y ) * midWidth * anchors[2].midWidthLeft
+					# x:
+					# 	if anchors[2].left == false
+					# 	then anchors[2].baseLeft.x
+					# 	else anchors[2].anchorLine
+					x: anchors[2].anchorLine
 					tensionOut: serifTerminalCurve
 					dirIn: 90 + 'deg'
 					dirOut: - 90 + 'deg'
@@ -190,7 +196,7 @@ exports.glyphs['serif-v'] =
 					x:
 						if anchors[2].left == false
 						then anchors[2].baseLeft.x
-						else anchors[2].anchorLine - (( serifHeight * serifMedian ) / 2 ) * anchors[2].directionX
+						else anchors[2].anchorLine - (( serifHeight * serifMedian + anchors[2].serifMedianLeft ) / 2 ) * anchors[2].directionX
 					type: 'smooth'
 					dirOut: Utils.lineAngle( contours[0].nodes[6].point ,contours[0].nodes[8].point )
 					tensionOut: serifTerminalCurve
@@ -218,7 +224,7 @@ exports.glyphs['serif-v'] =
 					x:
 						if anchors[2].left == false
 						then anchors[2].baseLeft.x
-						else anchors[2].anchorLine - ( serifHeight * serifMedian ) * anchors[2].directionX
+						else anchors[2].anchorLine - ( serifHeight * serifMedian + anchors[2].serifMedianLeft ) * anchors[2].directionX
 					tensionIn: serifTerminalCurve
 					typeOut: 'line'
 					dirIn: - 90 + 'deg'
