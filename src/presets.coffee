@@ -28,6 +28,7 @@ exports.presets =
 		curviness: 0.6
 		opticThickness: 1
 		serifBall: 1
+		spacing: 1
 
 	'Modern':
 		xHeight: 500
@@ -58,6 +59,7 @@ exports.presets =
 		curviness: 0.6
 		opticThickness: 1
 		serifBall: 1
+		spacing: 1
 
 	'Slab':
 		xHeight: 500
@@ -88,6 +90,7 @@ exports.presets =
 		curviness: 0.6
 		opticThickness: 1
 		serifBall: 1
+		spacing: 1
 
 	'Sans-serif':
 		xHeight: 500
@@ -118,6 +121,7 @@ exports.presets =
 		curviness: 0.6
 		opticThickness: 1
 		serifBall: 1
+		spacing: 1
 
 	'Blackletter':
 		xHeight: 500
@@ -148,3 +152,4 @@ exports.presets =
 		curviness: 0.6
 		opticThickness: 1
 		serifBall: 1
+		spacing: 1
