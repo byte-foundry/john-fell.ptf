@@ -44,7 +44,7 @@ exports.glyphs['B_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[1].nodes[0].expandedTo[0].x + 85
+					x: contours[1].nodes[0].expandedTo[0].x + 85 * width
 					y: contours[1].nodes[0].y
 					dirOut: 0 + 'deg'
 					tensionOut: 1.35
@@ -54,7 +54,7 @@ exports.glyphs['B_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[1].nodes[1].expandedTo[0].x + 200 + (62)
+					x: contours[1].nodes[1].expandedTo[0].x + 200 * width + (62)
 					# x: ( 515 + (75) ) * width
 					y: contours[1].nodes[3].y + ( contours[1].nodes[1].y - contours[1].nodes[3].y ) / 2
 					dirIn: 90 + 'deg'
@@ -85,10 +85,10 @@ exports.glyphs['B_cap'] =
 				4:
 					expandedTo: [
 						x: contours[0].nodes[0].expandedTo[1].x
-						y: contours[1].nodes[3].expandedTo[1].y
+						y: contours[1].nodes[3].expandedTo[0].y
 					,
 						x: contours[0].nodes[0].expandedTo[1].x
-						y: contours[1].nodes[3].expandedTo[0].y
+						y: contours[1].nodes[3].expandedTo[1].y
 					]
 		2:
 			skeleton: true
