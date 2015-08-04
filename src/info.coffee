@@ -1,5 +1,5 @@
 exports.fontinfo =
-	familyName: 'genese'
+	familyName: 'Prototypo John Fell'
 	version: '0.1.0'
 	description: 'The first parametric typeface'
 	tags: [
