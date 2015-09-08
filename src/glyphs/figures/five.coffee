@@ -87,6 +87,7 @@ exports.glyphs['five'] =
 					})
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x + ( contours[0].nodes[1].expandedTo[0].x - contours[0].nodes[1].expandedTo[1].x ) * 0.4
+					x: contours[0].nodes[1].expandedTo[0].x - 50
 					y: xHeight
 					dirIn: 0 + 'deg'
 					typeOut: 'line'

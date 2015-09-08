@@ -106,22 +106,39 @@ exports.glyphs['z'] =
 					y: contours[0].nodes[1].expandedTo[1].y
 					dirIn: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[1].point )
 					tensionIn: 1.8
-		4:
-			skeleton: false
-			closed: false
-			nodes:
-				0:
-					x: contours[1].nodes[1].expandedTo[0].x
-					y: contours[1].nodes[1].expandedTo[0].y
-					typeOut: 'line'
-				1:
-					x: contours[4].nodes[0].x + 15
-					y: contours[4].nodes[0].y + 130
-					typeOut: 'line'
-				2:
-					x: contours[4].nodes[1].x - 10
-					y: contours[4].nodes[1].y
-					dirOut: - 114 + 'deg'
-				3:
-					x: contours[1].nodes[1].expandedTo[1].x
-					y: contours[1].nodes[1].expandedTo[1].y
+		# 4:
+		# 	skeleton: false
+		# 	closed: false
+		# 	nodes:
+		# 		0:
+		# 			x: contours[1].nodes[1].expandedTo[0].x
+		# 			y: contours[1].nodes[1].expandedTo[0].y
+		# 			typeOut: 'line'
+		# 		1:
+		# 			x: contours[4].nodes[0].x + 15
+		# 			y: contours[4].nodes[0].y + 130
+		# 			typeOut: 'line'
+		# 		2:
+		# 			x: contours[4].nodes[1].x - 10
+		# 			y: contours[4].nodes[1].y
+		# 			dirOut: - 114 + 'deg'
+		# 		3:
+		# 			x: contours[1].nodes[1].expandedTo[1].x
+		# 			y: contours[1].nodes[1].expandedTo[1].y
+		components:
+			0:
+				base: 'serif-v'
+				parentAnchors:
+					1:
+						x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
+						y: contours[2].nodes[0].expandedTo[1].y
+					0:
+						x: Math.max(contours[2].nodes[0].expandedTo[0].x, contours[2].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 100 / 15 ) )
+						y: contours[2].nodes[0].expandedTo[0].y
+					2:
+						anchorLine: contours[2].nodes[1].expandedTo[1].x
+						rightWidth: 60
+						left: false
+						baseLeft: contours[2].nodes[1].expandedTo[1].point
+				transformOrigin: Array( contours[2].nodes[0].expandedTo[0].x, contours[2].nodes[0].expandedTo[0].y )
+				transforms: Array( [ 'skewX', serifRotate * (8) + 'deg' ] )

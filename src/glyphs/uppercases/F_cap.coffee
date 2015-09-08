@@ -122,8 +122,8 @@ exports.glyphs['F_cap'] =
 					# serifMedianRight: - 10 * serifMedian
 					# serifMedianLeft: - 10 * serifMedian
 			parentParameters:
-				# serifMedian: serifMedian * 0.75
-				serifHeight: serifHeight * 16/20
+				serifMedian: serifMedian - 0.25 * ( ( 100 - serifHeight ) / 80 )
+				serifHeight: serifHeight * (16/20)
 		3:
 			base: 'serif-v'
 			parentAnchors:
