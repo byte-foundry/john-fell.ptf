@@ -1,7 +1,10 @@
 exports.glyphs['n'] =
 	unicode: 'n'
 	ot:
-		advanceWidth: width * 550 + thickness * 2 - ( 85 * 2 ) + serifWidth
+		advanceWidth: contours[1].nodes[3].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 50 * spacing + (0) + serifWidth + 15
+		spacingRight: 30 * spacing + serifWidth + 15
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['n'] =
 			closed: false
 			nodes:
 				0:
-					x: 120 + (21)
+					x: spacingLeft
 					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -38,7 +41,7 @@ exports.glyphs['n'] =
 					x: contours[0].nodes[0].expandedTo[1].x
 					# y: xHeight * ( 370 / 500 )
 					y: xHeight - 140 + ( thickness - 85 ) / 4 + (25) + 30 / width - 30
-					dirOut: if width <= 1.2 then 60 - 60 * width + 60 + 'deg' else 65 - 15 * width + 'deg'
+					dirOut: if width <= 1.2 then 60 - 60 * width + 60 + 'deg' else 60 - 5 * width + 'deg'
 					# angle: - 90 + axis + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -47,7 +50,7 @@ exports.glyphs['n'] =
 						distr: 0
 					})
 				1:
-					x: contours[1].nodes[2].x * ( ( 390 - 200 ) / ( 445 - 200 ) )
+					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[3].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * 0.55
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					# angle: Math.max( - thickness - 77 * contrast, Math.max( - 129 * width, - 129 ) ) + 'deg'
@@ -62,6 +65,7 @@ exports.glyphs['n'] =
 					})
 				2:
 					x: ( 445 + (64) ) * width
+					x: contours[0].nodes[1].expandedTo[1].x + 220 * width + (64)
 					y: xHeight - 170 - thickness + 85 + 60 / width - 60
 					dirOut: - 90 + 'deg'
 					typeOut: 'line'

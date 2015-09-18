@@ -1,7 +1,10 @@
 exports.glyphs['g'] =
 	unicode: 'g'
 	ot:
-		advanceWidth: contours[2].nodes[0].expandedTo[0].x - thickness * ( 50 / 85 ) * spacing
+		advanceWidth: contours[1].nodes[4].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 45 * spacing - (5)
+		spacingRight: 35 * spacing
 	anchors:
 		0:
 			junctionBottom: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[1], contours[0].nodes[0].expandedTo[1], 50 )
@@ -26,7 +29,7 @@ exports.glyphs['g'] =
 						distr: 0
 					})
 				1:
-					x: 340 * width + 65
+					x: 100 + 240 * width + 65
 					y: contours[0].nodes[3].y
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
@@ -45,7 +48,7 @@ exports.glyphs['g'] =
 						distr: 0
 					})
 				3:
-					x: 65 + 21
+					x: spacingLeft + 30 + (21)
 					y: ( 350 / 500 ) * xHeight
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -72,7 +75,7 @@ exports.glyphs['g'] =
 						distr: 0
 					})
 				1:
-					x: 45
+					x: spacingLeft + 10
 					y: ( 100 / 500 ) * xHeight
 					# dirOut: contours[1].nodes[2].dirOut + Math.PI / 2
 					dirOut: 90 + 'deg'
@@ -99,7 +102,6 @@ exports.glyphs['g'] =
 						distr: 0.5
 					})
 				3:
-					x: 285
 					x: contours[1].nodes[4].x - 120
 					y:
 						if xHeight > 42
@@ -114,7 +116,7 @@ exports.glyphs['g'] =
 						distr: 0.5
 					})
 				4:
-					x: 405 * width + (21)
+					x: 200 + 205 * width + (21)
 					y: ( 85 / 250 ) * descender
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -135,7 +137,7 @@ exports.glyphs['g'] =
 							distr: 1
 						})
 				6:
-						x: 30
+						x: spacingLeft
 						y: ( 95 / 250 ) * descender
 						dirOut: 90 + 'deg'
 						type: 'smooth'

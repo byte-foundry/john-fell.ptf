@@ -1,7 +1,10 @@
 exports.glyphs['j'] =
 	unicode: 'j'
 	ot:
-		advanceWidth: width * 250 + thickness * 2 - ( 86 * 2 ) + serifWidth
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 50 * spacing + (6) + serifWidth + 15
+		spacingRight: 90 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['j'] =
 			closed: false
 			nodes:
 				0:
-					x: 115 + ( 21 )
+					x: spacingLeft
 					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -73,16 +76,23 @@ exports.glyphs['j'] =
 				# 5:
 				# 4:
 				2:
-					x: 85
+					x: contours[0].nodes[1].expandedTo[0].x - 35
 					y: - 130
 					# type: 'smooth'
-					dirIn: 33 + 'deg'
+					dirIn: Math.PI / 6 # 33 + 'deg'
 					# tensionIn: 1.4
 					expand: Object({
 						width: thickness * ( 20 / 85 )
 						distr: 1
 						angle: - 34 + 'deg'
 					})
+		#######################################################
+		#######################################################
+		#######################################################
+		# TODO: make it skeleton only with serifBall param
+		#######################################################
+		#######################################################
+		#######################################################
 		1:
 			skeleton: false
 			closed: false
@@ -91,6 +101,7 @@ exports.glyphs['j'] =
 					x: contours[0].nodes[2].expandedTo[1].x
 					y: contours[0].nodes[2].expandedTo[1].y
 					dirOut: contours[0].nodes[2].dirIn
+					# dirOut: 90 + 'deg'
 				1:
 					x: contours[1].nodes[0].x - 75 - 30
 					y: contours[1].nodes[0].y - 25 - 30
@@ -143,8 +154,8 @@ exports.glyphs['j'] =
 					y: contours[0].nodes[2].expandedTo[0].y
 					dirIn: contours[1].nodes[0].dirOut
 					# dirIn: contours[0].nodes[2].dirIn + Math.Pi
-					# dirOut: 0 + 'deg'
-					dirIn: 180 + 'deg'
+					dirIn: 0 + 'deg'
+					# dirIn: - 123 + 'deg'
 					# type: 'smooth'
 	components:
 		0:
@@ -158,7 +169,7 @@ exports.glyphs['j'] =
 					y: contours[0].nodes[0].y
 				2:
 					anchorLine: xHeight
-					leftWidth: 1.25
+					leftWidth: 1.2
 		1:
 			base: 'title'
 			parentAnchors:

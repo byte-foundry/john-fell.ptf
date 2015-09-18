@@ -1,11 +1,10 @@
 exports.glyphs['l'] =
 	unicode: 'l'
 	ot:
-		advanceWidth: width * 250 + thickness * 2 - ( 86 * 2 ) + serifWidth
-	anchors:
-		0:
-			x: 115 + ( 21 )
-			y: ascenderHeight - ( 160 / 500 ) * ascenderHeight
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (16) + serifWidth + 15
+		spacingRight: 30 * spacing + serifWidth + 15
 	tags: [
 		'all',
 		'latin',
@@ -17,7 +16,7 @@ exports.glyphs['l'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[0].x
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -26,7 +25,7 @@ exports.glyphs['l'] =
 						distr: 0.25
 					})
 				1:
-					x: anchors[0].x
+					x: contours[0].nodes[0].x
 					y: ascenderHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'

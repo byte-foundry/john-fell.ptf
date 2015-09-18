@@ -1,11 +1,10 @@
 exports.glyphs['c'] =
 	unicode: 'c'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[0].x + 35 * spacing
-	anchors:
-		0:
-			x: 0
-			y: 0
+		advanceWidth: contours[0].nodes[0].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 45 * spacing + (24)
+		spacingRight: 30 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -17,7 +16,7 @@ exports.glyphs['c'] =
 			closed: false
 			nodes:
 				0:
-					x: 470 * width + ( 10 / 85 ) * thickness * aperture - 10
+					x: 200 + 270 * width + ( 10 / 85 ) * thickness * aperture - 10
 					# y: ( 135 / 500 ) * xHeight
 					y: Math.max( contours[0].nodes[1].expandedTo[1].y + thickness / 10, 40 + xHeight * ( 88 / 500 ) * aperture )
 					dirOut: - 109 + 'deg'
@@ -40,7 +39,7 @@ exports.glyphs['c'] =
 						distr: 0
 					})
 				2:
-					x: 45 + 24
+					x: spacingLeft
 					y: xHeight * ( 235 / 500 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'

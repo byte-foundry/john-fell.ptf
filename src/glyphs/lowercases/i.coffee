@@ -1,11 +1,10 @@
 exports.glyphs['i'] =
 	unicode: 'i'
 	ot:
-		advanceWidth: width * 250 + thickness * 2 - ( 86 * 2 ) + serifWidth
-	anchors:
-		0:
-			x: 115 + ( 21 )
-			y: xHeight - ( 160 / 500 ) * xHeight
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 50 * spacing + (16) + serifWidth + 15
+		spacingRight: 30 * spacing + serifWidth + 15
 	tags: [
 		'all',
 		'latin',
@@ -17,7 +16,7 @@ exports.glyphs['i'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[0].x
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve
 					typeOut: 'line'
 					expand: Object({
@@ -26,7 +25,7 @@ exports.glyphs['i'] =
 						angle: 0
 					})
 				1:
-					x: anchors[0].x
+					x: contours[0].nodes[0].x
 					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					expand: Object({
 						width: thickness
@@ -45,8 +44,8 @@ exports.glyphs['i'] =
 					y: contours[0].nodes[0].y
 				2:
 					anchorLine: 0
-					leftWidth: 15
-					rightWidth: 18
+					leftWidth: 10
+					rightWidth: 10
 		1:
 			base: 'attaque'
 			parentAnchors:
@@ -58,7 +57,7 @@ exports.glyphs['i'] =
 					y: contours[0].nodes[1].y
 				2:
 					anchorLine: xHeight
-					leftWidth: 1.25
+					leftWidth: 1.2
 		2:
 			base: 'title'
 			parentAnchors:
