@@ -1,7 +1,10 @@
 exports.glyphs['u'] =
 	unicode: 'u'
 	ot:
-		advanceWidth: contours[0].nodes[3].expandedTo[1].x + serifWidth + 20 * spacing + (50)
+		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 13 * spacing + serifWidth + 15
+		spacingRight: 15 * spacing + serifWidth + 25
 	anchors:
 		0:
 			x: 0
@@ -17,7 +20,7 @@ exports.glyphs['u'] =
 			closed: false
 			nodes:
 				0:
-					x: 90
+					x: spacingLeft
 					y: xHeight - serifHeight - serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -36,7 +39,6 @@ exports.glyphs['u'] =
 						distr: 0
 					})
 				2:
-					x: 231
 					x: contours[0].nodes[1].x + ( contours[0].nodes[3].x - contours[0].nodes[1].x ) * 0.4
 					y: - overshoot
 					dirOut: 0 + 'deg'
@@ -47,7 +49,7 @@ exports.glyphs['u'] =
 						distr: 0
 					})
 				3:
-					x: 411 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 220 * width + (6)
 					y: xHeight * ( ( 130 + 10 ) / 500 )
 					y: xHeight * ( 30 / 500 ) + 110
 					dirIn: Math.max( - 110 , Math.min( - 95 , - ( 120 / 500 ) * xHeight ) ) + 'deg'
