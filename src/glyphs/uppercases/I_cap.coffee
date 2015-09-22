@@ -1,11 +1,10 @@
 exports.glyphs['I_cap'] =
 	unicode: 'I'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + (50)
-	anchors:
-		0:
-			x: 580
-			y: capHeight * ( 383 / 750 )
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (45) + serifWidth + 40
+		spacingRight: 40 * spacing + serifWidth + 40
 	tags: [
 		'all',
 		'latin',
@@ -17,13 +16,13 @@ exports.glyphs['I_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.5
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -32,7 +31,7 @@ exports.glyphs['I_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.5
 					})
 	components:
 		0:

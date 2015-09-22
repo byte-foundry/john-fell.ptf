@@ -1,7 +1,10 @@
 exports.glyphs['J_cap'] =
 	unicode: 'J'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth + 40 * spacing + (120)
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (45) + serifWidth + 40
+		spacingRight: 40 * spacing + serifWidth + 40
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['J_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 155 + (25)
+					x: spacingLeft
 					y: capHeight - serifHeight - serifCurve * ( 60 / 15 )
 					typeOut: 'line'
 					dirOut: 90 + 'deg'
@@ -33,7 +36,7 @@ exports.glyphs['J_cap'] =
 						distr: 0.25
 					})
 				2:
-					x: 60
+					x: contours[0].nodes[0].expandedTo[0].x - 40 - 45 * width
 					y: - 185
 					dirIn: 0 + 'deg'
 					# dirOut: 0 + 'deg'

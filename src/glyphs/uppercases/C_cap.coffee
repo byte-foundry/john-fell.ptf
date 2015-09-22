@@ -1,8 +1,10 @@
 exports.glyphs['C_cap'] =
 	unicode: 'C'
 	ot:
-		# advanceWidth: contours[2].nodes[3].x + 40 * spacing
-		advanceWidth: contours[0].nodes[0].x + 40 * spacing
+		advanceWidth: contours[0].nodes[0].x + spacingRight
+	parameters:
+		spacingLeft: 55 * spacing + (22)
+		spacingRight: 50 * spacing
 	anchors:
 		0:
 			baseSerifTop: Utils.pointOnCurve( contours[0].nodes[1].expandedTo[1], contours[0].nodes[0].expandedTo[1], serifHeight + serifCurve * ( 125 / 15 ), true )
@@ -43,7 +45,7 @@ exports.glyphs['C_cap'] =
 						distr: 0
 					})
 				2:
-					x: 35 + (27)
+					x: spacingLeft
 					y: capHeight * ( 375 / 750 )
 					type: 'smooth'
 					expand: Object({

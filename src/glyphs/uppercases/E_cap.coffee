@@ -1,7 +1,10 @@
 exports.glyphs['E_cap'] =
 	unicode: 'E'
 	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+		advanceWidth: contours[3].nodes[1].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (25) + serifWidth + 40
+		spacingRight: 40 * spacing + serifWidth / 2
 	anchors:
 		0:
 			x: contours[0].nodes[0].x
@@ -23,13 +26,13 @@ exports.glyphs['E_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve * ( 65 /15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.25
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -38,7 +41,7 @@ exports.glyphs['E_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.25
 					})
 		1:
 			skeleton: true
@@ -54,7 +57,7 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: 545 * width + ( thickness / 2 - 43 )
+					x: contours[0].nodes[0].expandedTo[1].x + 60 + 250 * width
 					y: contours[1].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -76,7 +79,7 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: 480 * width + ( thickness / 2 - 43 )
+					x: contours[0].nodes[0].expandedTo[1].x + 250 * width
 					y: capHeight * ( 385 / 750 ) * crossbar
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -99,11 +102,11 @@ exports.glyphs['E_cap'] =
 						distr: 1
 					})
 				1:
-					x: 575 * width + ( thickness / 2 - 43 )
+					x: contours[1].nodes[0].x + 85 + 250 * width
 					y: contours[3].nodes[0].y
 					dirOut: 0 + 'deg'
 					expand: Object({
-						width: contours[3].nodes[0].expand.width
+						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 1
 					})
 		4:

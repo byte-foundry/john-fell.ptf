@@ -6,12 +6,8 @@ exports.lib =
 		spacing: 1.1 * ( width / width ) # dirty workaround
 		serifHeight:
 			if serifWidth > 1
-			then Math.max(4, serifHeight)
+			then Math.max(1, serifHeight)
 			else serifHeight
-		serifWidth:
-			if serifHeight > 1
-			then Math.max(4, serifWidth)
-			else serifWidth
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
