@@ -1,7 +1,10 @@
 exports.glyphs['P_cap'] =
 	unicode: 'P'
 	ot:
-		advanceWidth: contours[1].nodes[2].expandedTo[0].x + 10 * spacing
+		advanceWidth: contours[1].nodes[2].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (25) + serifWidth + 40
+		spacingRight: 20 * spacing
 	anchors:
 		0:
 			x: 0
@@ -17,7 +20,7 @@ exports.glyphs['P_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve * ( 65 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
