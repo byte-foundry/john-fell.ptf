@@ -2,6 +2,9 @@ exports.glyphs['parenright'] =
 	unicode: ')'
 	ot:
 		advanceWidth: width * 470 + thickness - 85
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',

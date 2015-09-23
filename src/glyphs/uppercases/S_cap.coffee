@@ -2,6 +2,9 @@ exports.glyphs['S_cap'] =
 	unicode: 'S'
 	ot:
 		advanceWidth: contours[0].nodes[4].expandedTo[1].x + serifWidth + 9 * spacing
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',

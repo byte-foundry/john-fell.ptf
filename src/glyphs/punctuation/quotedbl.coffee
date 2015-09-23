@@ -2,6 +2,9 @@ exports.glyphs['quotedbl'] =
 	unicode: '"'
 	ot:
 		advanceWidth: width * 212 + 112 * spacing
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',

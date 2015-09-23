@@ -2,6 +2,9 @@ exports.glyphs['four'] =
 	unicode: '4'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + (50) + 170 * width - 170
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',

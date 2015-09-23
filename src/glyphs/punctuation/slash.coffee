@@ -2,6 +2,9 @@ exports.glyphs['slash'] =
 	unicode: '/'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + 30 * spacing
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',

@@ -1,7 +1,10 @@
 exports.glyphs['U_cap'] =
 	unicode: 'U'
 	ot:
-		advanceWidth: contours[1].nodes[0].expandedTo[0].x + serifWidth + 30 * spacing + (50)
+		advanceWidth: contours[1].nodes[0].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 5 * spacing + (25) + serifWidth + 40
+		spacingRight: 40 * spacing + serifWidth + 40
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['U_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 140 + (25)
+					x: spacingLeft
 					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
 					typeOut: 'line'
 					expand: Object({

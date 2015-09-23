@@ -2,6 +2,9 @@ exports.glyphs['three'] =
 	unicode: '3'
 	ot:
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + 40 * spacing
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	anchors:
 		0:
 			junction: Utils.pointOnCurve( contours[0].nodes[2].expandedTo[0], contours[0].nodes[3].expandedTo[0], thickness, true, 10 )

@@ -2,6 +2,9 @@ exports.glyphs['T_cap'] =
 	unicode: 'T'
 	ot:
 		advanceWidth: contours[1].nodes[0].x - 45 * spacing
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	anchors:
 		0:
 			x: 710 * width

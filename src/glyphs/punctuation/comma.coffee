@@ -1,8 +1,10 @@
 exports.glyphs['comma'] =
-	unicode: 44
-	# unicode: ','
+	unicode: ','
 	ot:
 		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	anchors:
 		0:
 			x: 550 - 86 + thickness

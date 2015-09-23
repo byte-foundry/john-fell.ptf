@@ -2,6 +2,9 @@ exports.glyphs['Y_cap'] =
 	unicode: 'Y'
 	ot:
 		advanceWidth: contours[2].nodes[1].expandedTo[1].x + serifWidth - 50 * spacing
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',
