@@ -1,10 +1,10 @@
 exports.glyphs['U_cap'] =
 	unicode: 'U'
 	ot:
-		advanceWidth: contours[1].nodes[0].expandedTo[0].x + spacingRight
+		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
 	parameters:
 		spacingLeft: 5 * spacing + (25) + serifWidth + 40
-		spacingRight: 40 * spacing + serifWidth + 40
+		spacingRight: 5 * spacing + serifWidth + 45
 	tags: [
 		'all',
 		'latin',
@@ -58,7 +58,7 @@ exports.glyphs['U_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 550 + (25)
+					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width + (25)
 					y: 90 + serifHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'

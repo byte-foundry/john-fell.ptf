@@ -1,13 +1,13 @@
 exports.glyphs['T_cap'] =
 	unicode: 'T'
 	ot:
-		advanceWidth: contours[1].nodes[0].x - 45 * spacing
+		advanceWidth: anchors[0].x + spacingRight
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 10 * spacing + (10) + serifWidth / 2
+		spacingRight: 10 * spacing + serifWidth / 2
 	anchors:
 		0:
-			x: 710 * width
+			x: 460 + 210 * width
 			y: capHeight
 		1:
 			x: 45
