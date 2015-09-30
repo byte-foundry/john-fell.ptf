@@ -26,6 +26,8 @@ exports.glyphs['serif'] =
 			# baseLeft: parentAnchors[2].baseLeft
 			max0: parentAnchors[2].max0 || anchors[0].point
 			max1: parentAnchors[2].max1 || anchors[1].point
+			min0: parentAnchors[2].min0 || anchors[0].point
+			min1: parentAnchors[2].min1 || anchors[1].point
 			left: if typeof parentAnchors[2].left != 'undefined' then parentAnchors[2].left else true
 			right: if typeof parentAnchors[2].right != 'undefined' then parentAnchors[2].right else true
 			attaque: if typeof parentAnchors[2].attaque != 'undefined' then parentAnchors[2].attaque else false
@@ -40,8 +42,8 @@ exports.glyphs['serif'] =
 			closed: true
 			nodes:
 				0:
-					x: Math.max( anchors[0].x, anchors[2].max0.x )
-					y: Math.max( anchors[0].y, anchors[2].max0.y )
+					x: Math.max( Math.min(anchors[0].x, anchors[2].min0.x), anchors[2].max0.x )
+					y: Math.max( Math.min(anchors[0].y, anchors[2].min1.y), anchors[2].max0.y )
 					# dirOut:
 						# if anchors[2].vertical == true
 						# then 10 + 'deg'
