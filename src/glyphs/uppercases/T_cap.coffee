@@ -88,7 +88,7 @@ exports.glyphs['T_cap'] =
 				2:
 					anchorLine: anchors[0].x
 					leftWidth: 40
-					# maxWidth: capHeight + 40  #TODO: implement maxwidth with value on serif-v
+					# maxWidthTop: capHeight + 40  #TODO: implement maxwidthTop with value on serif-v
 			parentParameters:
 				# serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
