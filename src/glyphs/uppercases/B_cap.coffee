@@ -1,7 +1,10 @@
 exports.glyphs['B_cap'] =
 	unicode: 'B'
 	ot:
-		advanceWidth: contours[2].nodes[2].expandedTo[0].x + 45 * spacing
+		advanceWidth: contours[2].nodes[2].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (25) + serifWidth + 40
+		spacingRight: 40 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['B_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145 + (25)
+					x: spacingLeft
 					y: capHeight - serifHeight - serifCurve * ( 65 /15 )
 					typeOut: 'line'
 					expand: Object({

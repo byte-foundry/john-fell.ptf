@@ -2,6 +2,9 @@ exports.glyphs['bracketleft'] =
 	unicode: 91
 	ot:
 		advanceWidth: contours[1].nodes[1].x - 50 * spacing
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',

@@ -2,6 +2,9 @@ exports.glyphs['zero'] =
 	unicode: '0'
 	ot:
 		advanceWidth: width * 545 + thickness * 2 - ( 85 * 2 )
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	anchors:
 		0:
 			x: ( 525 + (37) ) * width

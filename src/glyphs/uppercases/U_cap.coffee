@@ -1,7 +1,10 @@
 exports.glyphs['U_cap'] =
 	unicode: 'U'
 	ot:
-		advanceWidth: contours[1].nodes[0].expandedTo[0].x + serifWidth + 30 * spacing + (50)
+		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 5 * spacing + (25) + serifWidth + 40
+		spacingRight: 5 * spacing + serifWidth + 45
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['U_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 140 + (25)
+					x: spacingLeft
 					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
 					typeOut: 'line'
 					expand: Object({
@@ -24,27 +27,27 @@ exports.glyphs['U_cap'] =
 				1:
 					x: contours[0].nodes[0].x
 					y: Math.min( 170, ( 220 / 750 ) * capHeight )
-					y: 180 + ( 40 / 750 ) * capHeight
+					y: 180 + ( 40 / 750 ) * capHeight * width
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * ( 80 / 310 )
+					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * Math.min( 0.4, 0.25 * width )
 					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 83 / 85 ) * opticThickness
-						angle: 57 + 'deg'
+						width: thickness * ( 76 / 85 ) * opticThickness
+						angle: 58 + 'deg'
 						distr: 0
 					})
 				3:
 					x: contours[1].nodes[0].expandedTo[0].x
-					y: 150 - (4) + ( 40 / 750 ) * capHeight
+					y: 120 - (4) + ( 40 / 750 ) * capHeight * width
 					type: 'smooth'
-					dirIn: - 108 + 'deg'
+					dirIn: - 115 + 'deg'
 					expand: Object({
 						width: thickness * ( 45 / 85 ) * opticThickness
 						angle: 90 + 'deg'
@@ -55,7 +58,7 @@ exports.glyphs['U_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 550 + (25)
+					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width + (25)
 					y: 90 + serifHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'

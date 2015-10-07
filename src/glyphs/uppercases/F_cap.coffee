@@ -1,7 +1,10 @@
 exports.glyphs['F_cap'] =
 	unicode: 'F'
 	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (25) + serifWidth + 40
+		spacingRight: 40 * spacing + serifWidth / 2
 	anchors:
 		0:
 			x: 0
@@ -17,7 +20,7 @@ exports.glyphs['F_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145 + (25)
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -39,7 +42,8 @@ exports.glyphs['F_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 555 * width + ( thickness / 2 - 43 )
+					# x: 305 + 250 * width + ( thickness / 2 - 43 )
+					x: contours[0].nodes[0].expandedTo[1].x + 60 + 250 * width
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -70,7 +74,8 @@ exports.glyphs['F_cap'] =
 						distr: 0
 					})
 				1:
-					x: 485 * width
+					# x: 235 + 250 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 240 * width
 					y: capHeight * ( 385 / 750 ) * crossbar
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -119,6 +124,7 @@ exports.glyphs['F_cap'] =
 					anchorLine: contours[2].nodes[1].expandedTo[0].x
 					leftWidth: 80
 					rightWidth: 80
+					max0: contours[2].nodes[0].expandedTo[0].point
 					# serifMedianRight: - 10 * serifMedian
 					# serifMedianLeft: - 10 * serifMedian
 			parentParameters:

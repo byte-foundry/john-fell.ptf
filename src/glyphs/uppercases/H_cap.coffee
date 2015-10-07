@@ -1,7 +1,10 @@
 exports.glyphs['H_cap'] =
 	unicode: 'H'
 	ot:
-		advanceWidth: contours[2].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + 40
+		advanceWidth: contours[2].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (10) + 40
+		spacingRight: 40 * spacing + serifWidth + 40
 	anchors:
 		0:
 			x: 580
@@ -17,13 +20,13 @@ exports.glyphs['H_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145
+					x: spacingLeft + serifWidth + 40 + (11)
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.25
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -32,14 +35,14 @@ exports.glyphs['H_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.25
 					})
 		1:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].x + thickness * opticThickness - thickness * ( 15 / 86 )
+					x: contours[0].nodes[0].x
 					y: anchors[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -47,7 +50,7 @@ exports.glyphs['H_cap'] =
 						width: thickness * ( 26 / 86 ) * contrast
 					})
 				1:
-					x: anchors[0].x + thickness * ( 15 / 86 )
+					x: contours[2].nodes[0].x
 					y: anchors[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -59,13 +62,13 @@ exports.glyphs['H_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 580
+					x: contours[0].nodes[0].expandedTo[1].x + 200 + 235 * width - (25)
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.75
 					})
 				1:
 					x: contours[2].nodes[0].x
@@ -74,7 +77,7 @@ exports.glyphs['H_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
-						distr: 0
+						distr: 0.75
 					})
 	components:
 		0:

@@ -1,11 +1,10 @@
 exports.glyphs['O_cap'] =
 	unicode: 'O'
 	ot:
-		advanceWidth: width * 800 + thickness * 2 - ( 86 * 2 )
-	anchors:
-		0:
-			x: ( 665 + (100) ) * width
-			y: capHeight * ( 375 / 750 )
+		advanceWidth: contours[0].nodes[2].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 55 * spacing + (22)
+		spacingRight: 55 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -17,8 +16,8 @@ exports.glyphs['O_cap'] =
 			closed: true
 			nodes:
 				0:
-					x: 35 + 32
-					y: anchors[0].y
+					x: spacingLeft
+					y: capHeight * ( 375 / 750 )
 					dirOut: 90 + 'deg'
 					expand: Object({
 						width: thickness * ( 110 / 86 )
@@ -35,8 +34,8 @@ exports.glyphs['O_cap'] =
 						distr: 0
 					})
 				2:
-					x: anchors[0].x
-					y: anchors[0].y
+					x: contours[0].nodes[0].expandedTo[1].x + 360 + 250 * width # ( 665 + (100) ) * width
+					y: contours[0].nodes[0].y
 					dirOut: - 90 + 'deg'
 					expand: Object({
 						width: thickness * ( 110 / 86 )

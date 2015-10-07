@@ -1,7 +1,10 @@
 exports.glyphs['D_cap'] =
 	unicode: 'D'
 	ot:
-		advanceWidth: contours[1].nodes[2].expandedTo[0].x + 45 * spacing
+		advanceWidth: contours[1].nodes[2].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (25) + serifWidth + 40
+		spacingRight: 55 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['D_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145 + 25
+					x: spacingLeft
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
@@ -44,7 +47,7 @@ exports.glyphs['D_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[1].nodes[0].x + 120
+					x: contours[1].nodes[0].x + 120 * width
 					y: contours[0].nodes[0].expandedTo[1].y
 					dirOut: 0 + 'deg'
 					tensionOut: 1.1
@@ -54,7 +57,7 @@ exports.glyphs['D_cap'] =
 						distr: 0
 					})
 				2:
-					x: 740
+					x: contours[0].nodes[0].expandedTo[1].x + 275 + 250 * width
 					y: ( 375 / 750 ) * capHeight
 					# dirIn: 90 + 'deg'
 					type: 'smooth'
@@ -65,7 +68,7 @@ exports.glyphs['D_cap'] =
 						distr: 0.25
 					})
 				3:
-					x: contours[0].nodes[0].expandedTo[1].x + 80
+					x: contours[0].nodes[0].expandedTo[1].x + 80 * width
 					y: 0
 					dirIn: 0 + 'deg'
 					expand: Object({

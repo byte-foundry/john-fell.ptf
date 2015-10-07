@@ -1,7 +1,10 @@
 exports.glyphs['b'] =
 	unicode: 'b'
 	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+		advanceWidth: contours[1].nodes[3].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 10 * spacing + (11) + serifWidth + 90
+		spacingRight: 45 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -13,16 +16,16 @@ exports.glyphs['b'] =
 			closed: false
 			nodes:
 				0:
-					x: 95
+					x: contours[0].nodes[3].expandedTo[0].x
 					y: 0
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * .116
+						width: thickness * ( 5 / 85 )
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].x
+					x: contours[0].nodes[3].expandedTo[0].x
 					# y: xHeight * ( 195 / 500 )
 					y: 195
 					dirOut: 90 + 'deg'
@@ -33,23 +36,23 @@ exports.glyphs['b'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[0].x
+					x: contours[0].nodes[3].x
 					# y: xHeight * ( 195 / 500 )
 					y: contours[0].nodes[1].y
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.25
 					})
 				3:
-					x: contours[0].nodes[0].x
+					x: spacingLeft
 					y: ascenderHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.25
 					})
 		1:
 			skeleton: true
@@ -97,7 +100,7 @@ exports.glyphs['b'] =
 						distr: 1
 					})
 				3:
-					x: ( 550 - (21) ) * width
+					x: contours[0].nodes[3].expandedTo[1].x + 100 + 265 * width - (21)
 					y: xHeight * ( 250 / 500 )
 					dirIn: 90 + 'deg'
 					type: 'smooth'
@@ -121,7 +124,7 @@ exports.glyphs['b'] =
 					# y: xHeight * ( 350 / 500 )
 					y: xHeight - 100
 					# dirOut: 55 + 'deg'
-					dirIn: if width <= 1.2 then 55 - 55 * width + 55 + 'deg' else 60 - 15 * width + 'deg'
+					dirIn: if width <= 1.2 then 55 - 55 * width + 55 + 'deg' else 55 - 5 * width + 'deg'
 					expand: Object({
 						width: ( 10 / 85 ) * thickness + ( 15 / 85 ) * thickness * contrast
 						angle: 90 + 'deg'

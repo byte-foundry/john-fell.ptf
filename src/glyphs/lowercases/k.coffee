@@ -1,7 +1,10 @@
 exports.glyphs['k'] =
 	unicode: 'k'
 	ot:
-		advanceWidth: contours[2].nodes[0].expandedTo[1].x + serifWidth + 50 * spacing
+		advanceWidth: contours[2].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 50 * spacing + (16) + serifWidth + 15
+		spacingRight: 1 * spacing + serifWidth
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['k'] =
 			closed: false
 			nodes:
 				0:
-					x: 115 + (21)
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -34,17 +37,9 @@ exports.glyphs['k'] =
 			skeleton: true
 			closed: false
 			nodes:
-				1:
-					x: contours[0].nodes[0].expandedTo[1].x
-					y: xHeight * ( 290 / 500 )
-					dirOut: 90 + 'deg'
-					typeOut: 'line'
-					expand: Object({
-						width: thickness * ( 36 / 85 ) * width
-						distr: 0
-					})
 				0:
 					x: 150 + 315 * width + (53) + thickness - 85
+					x: contours[2].nodes[0].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[1].x - contours[2].nodes[0].expandedTo[0].x ) * 0.6
 					y: xHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -52,12 +47,21 @@ exports.glyphs['k'] =
 						width: thickness * ( 36 / 85 ) * width
 						distr: 0.5
 					})
+				1:
+					x: contours[0].nodes[0].expandedTo[1].x
+					y: xHeight * ( 280 / 500 )
+					dirOut: 90 + 'deg'
+					typeOut: 'line'
+					expand: Object({
+						width: thickness * ( 36 / 85 ) * width
+						distr: 0
+					})
 		2:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: 100 + 335 * width + (55) + thickness - 85
+					x: contours[0].nodes[0].expandedTo[1].x + 235 * width + (55) + thickness - 85
 					y: 0
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -68,7 +72,7 @@ exports.glyphs['k'] =
 					})
 				1:
 					x: contours[1].nodes[1].expandedTo[0].x
-					y: xHeight * ( 290 / 500 )
+					y: contours[1].nodes[1].y
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -76,6 +80,71 @@ exports.glyphs['k'] =
 						angle: Utils.lineAngle( contours[1].nodes[1].point, contours[1].nodes[0].point )
 						distr: 0
 					})
+	# components:
+	# 	0:
+	# 		base: 'serif'
+	# 		parentAnchors:
+	# 			0:
+	# 				x: contours[0].nodes[0].expandedTo[1].x
+	# 				y: contours[0].nodes[0].y
+	# 			1:
+	# 				x: contours[0].nodes[0].expandedTo[0].x
+	# 				y: contours[0].nodes[0].y
+	# 			2:
+	# 				leftWidth: 1
+	# 				rightWidth: 1
+	# 	1:
+	# 		base: 'attaque'
+	# 		parentAnchors:
+	# 			0:
+	# 				x: contours[0].nodes[1].expandedTo[0].x
+	# 				y: contours[0].nodes[1].y
+	# 			1:
+	# 				x: contours[0].nodes[1].expandedTo[1].x
+	# 				y: contours[0].nodes[1].y
+	# 			2:
+	# 				anchorLine: ascenderHeight
+	# 				leftWidth: 1.25
+	# 	2:
+	# 		base: 'serif'
+	# 		parentAnchors:
+	# 			0:
+	# 				x: Utils.onLine({
+	# 					y: 0 + serifHeight + serifCurve
+	# 					on: [ contours[2].nodes[1].expandedTo[1].point, contours[2].nodes[0].expandedTo[1].point ]
+	# 				})
+	# 				y: 0 + serifHeight + serifCurve
+	# 			1:
+	# 				x: Utils.onLine({
+	# 					y: 0 + serifHeight + serifCurve
+	# 					on: [ contours[2].nodes[1].expandedTo[0].point, contours[2].nodes[0].expandedTo[0].point ]
+	# 				})
+	# 				y: 0 + serifHeight + serifCurve
+	# 			2:
+	# 				leftWidth: 1
+	# 				rightWidth: 1
+	# 				angle: Utils.lineAngle( contours[2].nodes[1].expandedTo[0].point, contours[2].nodes[0].expandedTo[0].point )
+	# 	3:
+	# 		base: 'serif'
+	# 		parentAnchors:
+	# 			0:
+	# 				x: Utils.onLine({
+	# 					y: xHeight - serifHeight - serifCurve
+	# 					on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
+	# 				})
+	# 				y: xHeight - serifHeight - serifCurve
+	# 			1:
+	# 				x: Utils.onLine({
+	# 					y: xHeight - serifHeight - serifCurve
+	# 					on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
+	# 				})
+	# 				y: xHeight - serifHeight - serifCurve
+	# 			2:
+	# 				anchorLine: xHeight
+	# 				leftWidth: 1.2
+	# 				rightWidth: 1.1
+	# 				angle: Utils.lineAngle( contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point )
+	# 				directionY: -1
 	components:
 		0:
 			base: 'serif'
@@ -87,8 +156,9 @@ exports.glyphs['k'] =
 					x: contours[0].nodes[0].expandedTo[0].x
 					y: contours[0].nodes[0].y
 				2:
-					leftWidth: 1
-					rightWidth: 1
+					anchorLine: 0
+					leftWidth: 10
+					rightWidth: 10
 		1:
 			base: 'attaque'
 			parentAnchors:
@@ -104,40 +174,52 @@ exports.glyphs['k'] =
 		2:
 			base: 'serif'
 			parentAnchors:
-				0:
-					x: Utils.onLine({
-						y: 0 + serifHeight + serifCurve
-						on: [ contours[2].nodes[1].expandedTo[1].point, contours[2].nodes[0].expandedTo[1].point ]
-					})
-					y: 0 + serifHeight + serifCurve
 				1:
 					x: Utils.onLine({
-						y: 0 + serifHeight + serifCurve
-						on: [ contours[2].nodes[1].expandedTo[0].point, contours[2].nodes[0].expandedTo[0].point ]
+						y: serifHeight + serifCurve
+						on: [ contours[2].nodes[0].expandedTo[0].point, contours[2].nodes[1].expandedTo[0].point ]
 					})
-					y: 0 + serifHeight + serifCurve
+					y: serifHeight + serifCurve
+				0:
+					x: Utils.onLine({
+						y: serifHeight + serifCurve
+						on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+					})
+					y: serifHeight + serifCurve
 				2:
-					leftWidth: 1
-					rightWidth: 1
-					angle: Utils.lineAngle( contours[2].nodes[1].expandedTo[0].point, contours[2].nodes[0].expandedTo[0].point )
+					anchorLine: 0
+					leftWidth: 20
+					rightWidth: - 10
+					# rightCurve: 0.0
+					# leftCurve: 0.5
+					baseRight: contours[2].nodes[0].expandedTo[1].point
+					baseLeft: contours[2].nodes[0].expandedTo[0].point
+					anchor_0: contours[2].nodes[0].expandedTo[1].x
+					anchor_1: contours[2].nodes[0].expandedTo[0].x
+					angle: Utils.lineAngle( contours[2].nodes[0].expandedTo[1].point ,contours[2].nodes[1].expandedTo[1].point )
+					# left: false
 		3:
 			base: 'serif'
 			parentAnchors:
 				0:
 					x: Utils.onLine({
 						y: xHeight - serifHeight - serifCurve
-						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
+						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
 					})
 					y: xHeight - serifHeight - serifCurve
 				1:
 					x: Utils.onLine({
-						y: xHeight - serifHeight - serifCurve
-						on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
+						y: xHeight - serifHeight - serifCurve * ( 150 / 15 )
+						on: [ contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ]
 					})
-					y: xHeight - serifHeight - serifCurve
+					y: xHeight - serifHeight - serifCurve * ( 150 / 15 )
 				2:
 					anchorLine: xHeight
-					leftWidth: 1.2
-					rightWidth: 1.1
-					angle: Utils.lineAngle( contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point )
+					leftWidth: 120
+					max1: contours[1].nodes[1].expandedTo[0].point
+					# leftCurve: - 50
+					# rightWidth: 0.9
+					baseLeft: contours[1].nodes[0].expandedTo[0].point
+					baseRight: contours[1].nodes[0].expandedTo[1].point
+					angle: Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point )
 					directionY: -1

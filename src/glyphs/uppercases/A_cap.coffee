@@ -1,14 +1,10 @@
 exports.glyphs['A_cap'] =
 	unicode: 'A'
 	ot:
-		advanceWidth: contours[0].nodes[1].expandedTo[1].x + ( serifWidth + 50 ) + 25 * spacing + (150)
-	anchors:
-		0:
-			x: ( 495 + 20 ) * width
-			y: 0
-		1:
-			x: 50 + (9)
-			y: 0
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 10 * spacing + (20) + serifWidth * 1.8
+		spacingRight: 15 * spacing + serifWidth + 15
 	tags: [
 		'all',
 		'latin',
@@ -20,12 +16,7 @@ exports.glyphs['A_cap'] =
 			closed: false
 			nodes:
 				0:
-					# x: Utils.onLine({
-					# 	y: 0
-					# 	on: [ contours[0].nodes[1].point, anchors[0].point ]
-					# })
-					x: ( 490 + 20 ) * width
-					# y: 0 + serifHeight + serifCurve
+					x: contours[1].nodes[0].expandedTo[1].x + 200 + 232 * width + (20)
 					y: 0
 					typeOut: 'line'
 					expand: Object({
@@ -34,7 +25,8 @@ exports.glyphs['A_cap'] =
 						distr: 0.25
 					})
 				1:
-					x: ( 495 + 20 ) * width * ( ( 295 + 10 ) / 495 )
+					x: ( 245 + 250 * width + (20) ) * ( ( 295 + 10 ) / 495 )
+					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.53
 					# A like avant-garde:
 					# x: ( 495 + 20 ) * width
 					y: capHeight - capHeight * ( 30 / 750 ) * thickness / 85
@@ -49,11 +41,11 @@ exports.glyphs['A_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: Utils.onLine({
-						y: 0
-						on: [ contours[0].nodes[1].point, anchors[1].point ]
-					})
-					# y: 0 + serifHeight + serifCurve
+					# x: Utils.onLine({
+					# 	y: 0
+					# 	on: [ contours[0].nodes[1].point, anchors[1].point ]
+					# })
+					x: spacingLeft
 					y: 0
 					typeOut: 'line'
 					expand: Object({
@@ -120,8 +112,11 @@ exports.glyphs['A_cap'] =
 					x: contours[3].nodes[1].x - Math.min( 15, thickness * ( 10 / 85 ) )
 					y: contours[3].nodes[1].y
 					dirOut: Math.min(
-						- 116,
-						- 100 - serifCurve ) + 'deg'
+						- 80,
+						Math.max(
+							- 140,
+							- 140 + serifCurve )
+						) + 'deg'
 					tensionOut: serifRoundness
 				3:
 					x: contours[0].nodes[1].expandedTo[0].x
@@ -134,16 +129,16 @@ exports.glyphs['A_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: serifHeight + serifCurve * ( 150 / 15 )
+						y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
 					})
-					y: serifHeight + serifCurve * ( 150 / 15 )
+					y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: serifHeight + serifCurve * ( 150 / 15 )
+						y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
 					})
-					y: serifHeight + serifCurve * ( 150 / 15 )
+					y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 				2:
 					anchorLine: 0
 					leftWidth: 70
@@ -162,16 +157,18 @@ exports.glyphs['A_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: serifHeight + serifCurve * ( 120 / 15 )
+						y: Math.min( contours[0].nodes[1].expandedTo[1].y, serifHeight + serifCurve * ( 120 / 15 ) )
 						on: [ contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point ]
 					})
-					y: serifHeight + serifCurve * ( 120 / 15 )
+					y: Math.min( contours[0].nodes[1].expandedTo[1].y, serifHeight + serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: serifHeight + serifCurve * ( 120 / 15 )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
+
 						on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
 					})
-					y: serifHeight + serifCurve * ( 120 / 15 )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
+
 				2:
 					anchorLine: 0
 					leftWidth: 70

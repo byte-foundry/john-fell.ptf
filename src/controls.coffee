@@ -12,16 +12,18 @@ exports.controls = [
 		minAdvised: 300
 		maxAdvised: 800
 		disabled: false
+		demo: true
 	,
 		name: 'capDelta'
 		label: 'Capital Height'
 		min: 0
-		max: 400
+		max: 500
 		step: 1
 		init: 250
 		minAdvised: 0
 		maxAdvised: 350
 		disabled: false
+		demo: false
 	,
 		name: 'ascender'
 		label: 'Ascender'
@@ -32,6 +34,7 @@ exports.controls = [
 		minAdvised: 50
 		maxAdvised: 500
 		disabled: false
+		demo: false
 	,
 		name: 'descender'
 		label: 'Descender'
@@ -42,6 +45,7 @@ exports.controls = [
 		minAdvised: -350
 		maxAdvised: -100
 		disabled: false
+		demo: false
 	,
 		name: 'crossbar'
 		label: 'Crossbar'
@@ -52,16 +56,18 @@ exports.controls = [
 		minAdvised: 0.88
 		maxAdvised: 1.05
 		disabled: false
+		demo: false
 	,
 		name: 'width'
 		label: 'Width'
-		min: 0.75
-		max: 1.6
+		min: 0.65
+		max: 3
 		step: 0.01
 		init: 1
 		minAdvised: 0.85
 		maxAdvised: 1.3
 		disabled: false
+		demo: false
 	,
 		name: 'slant'
 		label: 'Slant'
@@ -72,6 +78,7 @@ exports.controls = [
 		minAdvised: -5
 		maxAdvised: 8
 		disabled: false
+		demo: true
 	,
 		name: 'overshoot'
 		label: 'Overshoot'
@@ -82,6 +89,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 20
 		disabled: false
+		demo: false
 	]
 ,
 	tab: true
@@ -97,6 +105,7 @@ exports.controls = [
 		minAdvised: 60
 		maxAdvised: 130
 		disabled: false
+		demo: true
 	,
 		name: '_contrast'
 		label: 'Contrast'
@@ -107,6 +116,7 @@ exports.controls = [
 		minAdvised: -1
 		maxAdvised: -0.3
 		disabled: false
+		demo: false
 	,
 		name: 'aperture'
 		label: 'Aperture'
@@ -117,6 +127,7 @@ exports.controls = [
 		minAdvised: 0.9
 		maxAdvised: 1.2
 		disabled: false
+		demo: false
 	,
 		name: 'curviness'
 		label: 'Curviness'
@@ -127,16 +138,18 @@ exports.controls = [
 		minAdvised: 0.4
 		maxAdvised: 0.8
 		disabled: false
+		demo: true
 	,
 		name: 'opticThickness'
 		label: 'Optic thickness'
 		min: 0.8
 		max: 1.5
 		step: 0.01
-		init: 1
+		init: 0.95
 		minAdvised: 1
 		maxAdvised: 1.2
 		disabled: true
+		demo: false
 	,
 		name: 'breakPath'
 		label: 'Break Path'
@@ -147,16 +160,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 0.5
 		disabled: true
-	# ,
-	# 	name: 'term'
-	# 	label: 'Term'
-	# 	min: 0.5
-	# 	max: 1.4
-	# 	step: 0.1
-	# 	init: 1
-	# 	minAdvised: 0.8
-	# 	maxAdvised: 1.1
-	#	disabled: false
+		demo: false
 	,
 		name: 'axis'
 		label: 'axis'
@@ -167,6 +171,7 @@ exports.controls = [
 		minAdvised: -15
 		maxAdvised: 15
 		disabled: true
+		demo: false
 	]
 ,
 	tab: true
@@ -182,6 +187,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 80
 		disabled: false
+		demo: true
 	,
 		name: 'midWidth'
 		label: 'Middle Width'
@@ -192,6 +198,7 @@ exports.controls = [
 		minAdvised: -0.8
 		maxAdvised: 1.2
 		disabled: false
+		demo: false
 	,
 		name: 'serifHeight'
 		label: 'Serif Height'
@@ -202,6 +209,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 80
 		disabled: false
+		demo: true
 	,
 		name: 'serifMedian'
 		label: 'Serif Median'
@@ -212,6 +220,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 1.3
 		disabled: false
+		demo: false
 	,
 		name: 'serifCurve'
 		label: 'Bracket Curve'
@@ -222,6 +231,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 80
 		disabled: false
+		demo: false
 	,
 		name: 'serifRoundness'
 		label: 'Serif Roundness'
@@ -232,6 +242,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 1.5
 		disabled: false
+		demo: false
 	,
 		name: 'serifArc'
 		label: 'Serif Arc'
@@ -242,6 +253,7 @@ exports.controls = [
 		minAdvised: -0.2
 		maxAdvised: 0.5
 		disabled: true
+		demo: false
 	,
 		name: 'serifTerminal'
 		label: 'Serif Terminal'
@@ -252,6 +264,7 @@ exports.controls = [
 		minAdvised: -0.2
 		maxAdvised: 0.8
 		disabled: false
+		demo: false
 	,
 		name: 'serifTerminalCurve'
 		label: 'Serif Terminal Curve'
@@ -262,6 +275,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 1.5
 		disabled: false
+		demo: false
 	,
 		name: 'spurHeight'
 		label: 'Spur Height'
@@ -272,6 +286,7 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 1.5
 		disabled: false
+		demo: false
 	,
 		name: 'serifRotate'
 		label: 'Serif Rotation'
@@ -282,6 +297,7 @@ exports.controls = [
 		minAdvised: 0.4
 		maxAdvised: 1.2
 		disabled: false
+		demo: false
 	,
 		name: 'serifBall'
 		label: 'Terminal Ball'
@@ -292,5 +308,6 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 1.1
 		disabled: false
+		demo: false
 	]
 ]

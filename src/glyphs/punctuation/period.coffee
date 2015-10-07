@@ -1,8 +1,10 @@
 exports.glyphs['period'] =
-	unicode: 46
-	# unicode: 95 #######
+	unicode: '.'
 	ot:
 		advanceWidth: width * 280 + thickness * 2 - ( 86 * 2 )
+	parameters:
+		spacingLeft: 10 * spacing + (10)
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',

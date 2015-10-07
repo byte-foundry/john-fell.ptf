@@ -1,11 +1,10 @@
 exports.glyphs['e'] =
 	unicode: 'e'
 	ot:
-		advanceWidth: contours[0].nodes[2].expandedTo[1].x + 30 * spacing
-	anchors:
-		0:
-			x: 0
-			y: 0
+		advanceWidth: contours[0].nodes[2].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 45 * spacing + (18)
+		spacingRight: 30 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -35,7 +34,7 @@ exports.glyphs['e'] =
 						distr: 1
 					})
 				2:
-					x: ( 404 + (42) ) * width
+					x: contours[0].nodes[4].expandedTo[1].x + 100 + 274 * width + (67)
 					y: xHeight * ( 340 / 500 ) * crossbar
 					dirOut: Math.max( 90, 150 - ( 50 / 500 ) * xHeight ) + 'deg'
 					tensionOut: 1.2
@@ -55,7 +54,7 @@ exports.glyphs['e'] =
 						distr: 1
 					})
 				4:
-					x: 45
+					x: spacingLeft
 					y: xHeight * ( 240 / 500 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -65,7 +64,6 @@ exports.glyphs['e'] =
 						distr: 0.75
 					})
 				5:
-					x: 270
 					x: contours[0].nodes[4].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[4].expandedTo[1].x ) * 0.5
 					y: - overshoot
 					dirOut: 0 + 'deg'

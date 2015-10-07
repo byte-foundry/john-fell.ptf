@@ -1,7 +1,10 @@
 exports.glyphs['d'] =
 	unicode: 'd'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[1].x + serifWidth + 25 * spacing
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 45 * spacing + (18)
+		spacingRight: 15 * spacing + serifWidth
 	tags: [
 		'all',
 		'latin',
@@ -13,7 +16,7 @@ exports.glyphs['d'] =
 			closed: false
 			nodes:
 				0:
-					x: 415 * width + (21)
+					x: 200 + 215 * width + (21)
 					y: 90 + serifHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -56,7 +59,7 @@ exports.glyphs['d'] =
 						distr: 0
 					})
 				2:
-					x: 45 + 18
+					x: spacingLeft
 					y: xHeight * ( 257 / 500 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'

@@ -1,7 +1,10 @@
 exports.glyphs['S_cap'] =
 	unicode: 'S'
 	ot:
-		advanceWidth: contours[0].nodes[4].expandedTo[1].x + serifWidth + 9 * spacing
+		advanceWidth: contours[0].nodes[4].expandedTo[1].x + spacingRight
+	parameters:
+		spacingLeft: 65 * spacing + (20)
+		spacingRight: 40 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -23,7 +26,7 @@ exports.glyphs['S_cap'] =
 						distr: 0
 					})
 				1:
-					x: 65 + (20)
+					x: spacingLeft
 					y: ( ( 565 - (32) ) / 700 ) * capHeight
 					dirOut: 90 + 'deg'
 					type: 'smooth'

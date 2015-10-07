@@ -1,7 +1,10 @@
 exports.glyphs['a'] =
 	unicode: 'a'
 	ot:
-		advanceWidth: width * 470 + thickness - 85
+		advanceWidth: contours[0].nodes[0].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 45 * spacing + (16)
+		spacingRight: - 10 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -15,7 +18,7 @@ exports.glyphs['a'] =
 				0:
 					x: contours[0].nodes[2].x + ( 195 - 11 )
 					y: Math.min( 115, ( 115 / 500 ) * xHeight )
-					dirOut: -100 + 'deg'
+					dirOut: - 100 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: 6 + thickness * ( 10 / 85 )
@@ -33,7 +36,7 @@ exports.glyphs['a'] =
 						distr: 0
 					})
 				2:
-					x: ( 295 + 21 ) * width
+					x: 295 * width + (42)
 					y: Math.min( 102, ( 102 / 500 ) * xHeight )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -63,7 +66,7 @@ exports.glyphs['a'] =
 						distr: 1
 					})
 				5:
-					x: 40
+					x: contours[1].nodes[2].expandedTo[0].x + 20
 					y: Math.max( xHeight - 100 - 40 * aperture, contours[1].nodes[3].y )
 					dirIn: 70 + 20 * aperture + 'deg'
 					type: 'smooth'
@@ -103,7 +106,7 @@ exports.glyphs['a'] =
 						distr: 0
 					})
 				2:
-					x: ( 35 + 21 )
+					x: spacingLeft
 					y: ( 90 / 500 ) * xHeight + ( thickness * ( 20 / 85 ) - 20 )
 					y: contours[1].nodes[1].expandedTo[1].y + ( contours[1].nodes[3].expandedTo[0].y - contours[1].nodes[1].expandedTo[1].y ) * (90-35)/(260-35) * (xHeight/500)
 					dirIn: - 90 + 'deg'

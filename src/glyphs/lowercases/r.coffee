@@ -1,11 +1,10 @@
 exports.glyphs['r'] =
 	unicode: 'r'
 	ot:
-		advanceWidth: contours[1].nodes[2].expandedTo[0].x + serifWidth + 10 * spacing
-	anchors:
-		0:
-			x: 115 + ( 21 )
-			y: xHeight - ( 160 / 500 ) * xHeight
+		advanceWidth: contours[1].nodes[2].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (16) + serifWidth + 15
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -17,7 +16,7 @@ exports.glyphs['r'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[0].x
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -26,7 +25,7 @@ exports.glyphs['r'] =
 						distr: 0.25
 					})
 				1:
-					x: anchors[0].x
+					x: contours[0].nodes[0].x
 					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -59,7 +58,7 @@ exports.glyphs['r'] =
 						distr: 0
 					})
 				2:
-					x: 100 + 245 * width + (25)
+					x: contours[0].nodes[0].expandedTo[1].x + 240 * width - (75)
 					y: contours[1].nodes[1].expandedTo[1].y - 35 + Math.min( - 20 * aperture + 20, - 125 * aperture + 125 )
 					dirIn: 110 - 20 * aperture + 'deg'
 					type: 'smooth'
@@ -69,6 +68,13 @@ exports.glyphs['r'] =
 						distr: 0.75
 					})
 		2:
+			#######################################################
+			#######################################################
+			#######################################################
+			# TODO: make it skeleton only with serifBall param
+			#######################################################
+			#######################################################
+			#######################################################
 			skeleton: false
 			closed: false
 			nodes:
@@ -101,8 +107,8 @@ exports.glyphs['r'] =
 					y: contours[0].nodes[0].y
 				2:
 					anchorLine: 0
-					leftWidth: 1
-					rightWidth: 1
+					leftWidth: 10
+					rightWidth: 20
 		1:
 			base: 'attaque'
 			parentAnchors:

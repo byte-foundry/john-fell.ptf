@@ -1,11 +1,10 @@
 exports.glyphs['R_cap'] =
 	unicode: 'R'
 	ot:
-		advanceWidth: contours[2].nodes[0].expandedTo[0].x + 10 * spacing
-	anchors:
-		0:
-			x: 0
-			y: 0
+		advanceWidth: contours[2].nodes[0].expandedTo[0].x + spacingRight
+	parameters:
+		spacingLeft: 40 * spacing + (25) + serifWidth + 40
+		spacingRight: 10 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -17,13 +16,13 @@ exports.glyphs['R_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 145
+					x: spacingLeft
 					y: 0 + serifHeight + serifCurve * ( 65 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
-						distr: 0
+						distr: 0.25
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -32,7 +31,7 @@ exports.glyphs['R_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
-						distr: 0
+						distr: 0.25
 					})
 		1:
 			skeleton: true
@@ -48,7 +47,7 @@ exports.glyphs['R_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 100
+					x: contours[1].nodes[2].expandedTo[1].x - 100 - 50 * width
 					y: capHeight
 					dirOut: 180 + 'deg'
 					type: 'smooth'
@@ -58,7 +57,7 @@ exports.glyphs['R_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + 245 + (93)
+					x: contours[0].nodes[0].expandedTo[1].x + 245 * width + (93)
 					y: capHeight * ( ( 555 - (12) ) / 750 )
 					dirOut: - 90 + 'deg'
 					tensionOut: 1.15
@@ -69,8 +68,8 @@ exports.glyphs['R_cap'] =
 						distr: 0.25
 					})
 				3:
-					x: contours[0].nodes[0].expandedTo[1].x + (50)
-					y: capHeight * ( 365 / 750 )
+					x: contours[1].nodes[2].expandedTo[1].x - 100 - 50 * width
+					y: capHeight * ( 380 / 750 )
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -91,10 +90,10 @@ exports.glyphs['R_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 785 + (0)
+					x: contours[1].nodes[2].expandedTo[0].x + Math.min( 90 + thickness, 175 * width )
 					y: 0
-					# dirOut: - 176 + 'deg'
 					type: 'smooth'
+					tensionOut: 1.6
 					expand: Object({
 						width: thickness * opticThickness * ( 20 / 85 )
 						angle: 90 + 'deg'
@@ -102,25 +101,25 @@ exports.glyphs['R_cap'] =
 					})
 				1:
 					x: 530 + (29)
-					y: ( ( 95 + (5) ) / 750 ) * capHeight
+					x: contours[2].nodes[2].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[0].x - contours[2].nodes[2].expandedTo[0].x ) * 0.5
+					y: ( ( 75 + (5) ) / 750 ) * capHeight
 					dirIn: Utils.lineAngle( contours[2].nodes[1].expandedTo[1].point, contours[2].nodes[2].expandedTo[1].point )
-					tensionOut: 0
-					tensionIn: 1.3
+					tensionIn: 1.6
 					type: 'smooth'
 					expand: Object({
 						width: thickness * opticThickness * ( 117 / 85 )
-						angle: 10 + 'deg'
+						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				2:
-					x: 340 + (0)
-					y: contours[1].nodes[3].expandedTo[0].y + ( contours[1].nodes[3].expandedTo[1].y - contours[1].nodes[3].expandedTo[0].y ) / 2
+					x: contours[1].nodes[3].expandedTo[0].x - ( 10 / 85 ) * thickness
+					y: contours[1].nodes[3].expandedTo[0].y + ( contours[1].nodes[3].expandedTo[1].y - contours[1].nodes[3].expandedTo[0].y ) * 0.5
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * opticThickness * ( 107 / 85 )
+						width: thickness * opticThickness * ( 95 / 85 )
 						angle: 11 + 'deg'
-						distr: 0.25
+						distr: 0
 					})
 	components:
 		0:
