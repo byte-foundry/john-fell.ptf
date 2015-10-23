@@ -98,7 +98,11 @@ exports.glyphs['serif-v'] =
 										if anchors[2].maxWidthTop != true
 										then Math.min( anchors[2].maxWidthTop, anchors[2].baseRight.y + serifWidth + anchors[2].rightWidth * Math.min( 1, serifWidth ) )
 										else anchors[2].baseRight.y + serifWidth + anchors[2].rightWidth * Math.min( 1, serifWidth )
-							else anchors[2].anchor_0 + serifWidth + anchors[2].rightWidth * Math.min( 1, serifWidth )
+							else
+								Math.min(
+									anchors[2].maxWidthTop,
+									anchors[2].anchor_0 + serifWidth + anchors[2].rightWidth * Math.min( 1, serifWidth )
+								)
 					x:
 						if anchors[2].right == false
 						then anchors[2].baseRight.x
@@ -199,7 +203,11 @@ exports.glyphs['serif-v'] =
 												x: contours[0].nodes[8].x
 												on: [ anchors[2].baseLeft, contours[0].nodes[10].point ]
 											}) - anchors[2].baseLeft.y ) )
-							else contours[0].nodes[10].y - ( contours[0].nodes[10].y - contours[0].nodes[8].y ) * midWidth * anchors[2].midWidthLeft
+							else
+								Math.min(
+									anchors[2].maxWidthTop,
+									contours[0].nodes[10].y - ( contours[0].nodes[10].y - contours[0].nodes[8].y ) * midWidth * anchors[2].midWidthLeft
+								)
 					# x:
 					# 	if anchors[2].left == false
 					# 	then anchors[2].baseLeft.x

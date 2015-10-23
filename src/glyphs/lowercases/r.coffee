@@ -26,7 +26,7 @@ exports.glyphs['r'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
+					y: xHeight - serifHeight * ( 60 / 20 ) - serifCurve * ( 40 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -110,14 +110,20 @@ exports.glyphs['r'] =
 					leftWidth: 10
 					rightWidth: 20
 		1:
-			base: 'attaque'
+			base: 'serif'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[1].expandedTo[0].x
+					x: contours[0].nodes[1].expandedTo[1].x
 					y: contours[0].nodes[1].y
 				1:
-					x: contours[0].nodes[1].expandedTo[1].x
+					x: contours[0].nodes[1].expandedTo[0].x
 					y: contours[0].nodes[1].y
 				2:
 					anchorLine: xHeight
-					leftWidth: 1.25
+					leftWidth: 20
+					right: false
+					attaque: true
+					attaqueAngle: 20
+					directionY: -1
+			parentParameters:
+				serifMedian: serifMedian # - serifMedian / 2 * spurHeight

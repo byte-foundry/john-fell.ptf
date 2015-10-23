@@ -83,7 +83,7 @@ exports.glyphs['u'] =
 					})
 	components:
 		0:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -95,8 +95,9 @@ exports.glyphs['u'] =
 					anchorLine: xHeight
 					leftWidth: 1.2
 					directionY: -1
+					right: false
 		1:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[1].nodes[0].expandedTo[1].x
@@ -108,8 +109,9 @@ exports.glyphs['u'] =
 					anchorLine: xHeight
 					leftWidth: 1.2
 					directionY: -1
+					right: false
 		2:
-			base: 'attaque'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[1].nodes[1].expandedTo[1].x
@@ -118,7 +120,8 @@ exports.glyphs['u'] =
 					x: contours[1].nodes[1].expandedTo[0].x
 					y: contours[1].nodes[1].y
 				2:
-					anchorLine: 0
-					rightWidth: 1.4
-					directionY: - 1
-					directionX: - 1
+					anchorLine: - overshoot
+					rightWidth: 20
+					left: false
+					attaque: true
+					attaqueAngle: 14
