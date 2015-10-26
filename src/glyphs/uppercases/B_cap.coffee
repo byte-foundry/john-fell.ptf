@@ -169,7 +169,7 @@ exports.glyphs['B_cap'] =
 					typeOut: 'line'
 	components:
 		0:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -181,8 +181,9 @@ exports.glyphs['B_cap'] =
 					anchorLine: capHeight
 					leftWidth: 40
 					directionY: -1
+					right: false
 		1:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
@@ -192,3 +193,4 @@ exports.glyphs['B_cap'] =
 					y: contours[0].nodes[1].expandedTo[0].y
 				2:
 					leftWidth: 40
+					right: false

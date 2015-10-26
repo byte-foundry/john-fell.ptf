@@ -141,7 +141,7 @@ exports.glyphs['R_cap'] =
 					leftWidth: 40
 					rightWidth: 40
 		1:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
@@ -153,3 +153,4 @@ exports.glyphs['R_cap'] =
 					anchorLine: capHeight
 					leftWidth: 40
 					directionY: -1
+					right: false

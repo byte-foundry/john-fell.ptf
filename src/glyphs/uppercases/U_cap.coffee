@@ -77,7 +77,7 @@ exports.glyphs['U_cap'] =
 					})
 	components:
 		0:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -89,8 +89,9 @@ exports.glyphs['U_cap'] =
 					anchorLine: capHeight
 					leftWidth: 40
 					directionY: -1
+					right: false
 		1:
-			base: 'serif_left'
+			base: 'serif'
 			parentAnchors:
 				0:
 					x: contours[1].nodes[1].expandedTo[1].x
@@ -102,6 +103,7 @@ exports.glyphs['U_cap'] =
 					anchorLine: capHeight
 					leftWidth: 40
 					directionY: -1
+					right: false
 		2:
 			base: 'attaque'
 			parentAnchors:
