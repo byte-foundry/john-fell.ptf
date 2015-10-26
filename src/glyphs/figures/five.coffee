@@ -116,6 +116,7 @@ exports.glyphs['five'] =
 					baseLeft: contours[1].nodes[0].expandedTo[1].point
 					max0: contours[1].nodes[1].expandedTo[1].point
 					max1: contours[1].nodes[1].expandedTo[1].point
+					maxWidthTop: xHeight + 40
 			# parentParameters:
 			# 	serifMedian: serifMedian * 0.75
 			# 	midWidth: midWidth * 0.98

@@ -174,5 +174,6 @@ exports.glyphs['z'] =
 					rightCurve: 0.5
 					serifMedianLeft: -8
 					directionX: -1
+					maxWidthTop: xHeight + 40
 			transformOrigin: Array( contours[0].nodes[1].expandedTo[0].x, contours[0].nodes[1].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (15) + 'deg' ] )

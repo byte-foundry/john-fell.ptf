@@ -90,19 +90,18 @@ exports.glyphs['R_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[2].expandedTo[0].x + Math.min( 90 + thickness, 175 * width )
+					x: contours[1].nodes[2].expandedTo[0].x + Math.min( 90 + thickness, 175 * width ) - (65 - serifWidth)
 					y: 0
 					type: 'smooth'
 					tensionOut: 1.6
 					expand: Object({
-						width: thickness * opticThickness * ( 20 / 85 )
+						width: thickness * opticThickness * ( serifHeight / 85 )
 						angle: 90 + 'deg'
 						distr: 0
 					})
 				1:
-					x: 530 + (29)
 					x: contours[2].nodes[2].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[0].x - contours[2].nodes[2].expandedTo[0].x ) * 0.5
-					y: ( ( 75 + (5) ) / 750 ) * capHeight
+					y: ( ( (55 + serifHeight) + (5) ) / 750 ) * capHeight
 					dirIn: Utils.lineAngle( contours[2].nodes[1].expandedTo[1].point, contours[2].nodes[2].expandedTo[1].point )
 					tensionIn: 1.6
 					type: 'smooth'

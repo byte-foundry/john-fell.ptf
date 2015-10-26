@@ -44,7 +44,7 @@ exports.glyphs['serif-v'] =
 			nodes:
 				0:
 					# y: Math.max(
-					# 	if anchors[2].maxWidthTop == true
+					# 	if anchors[2].maxWidthTop != false
 					# 	then anchors[2].maxWidthTop - overshoot
 					# 	else anchors[0].y
 					# , anchors[2].max0.y
@@ -95,11 +95,11 @@ exports.glyphs['serif-v'] =
 											on: [ anchors[2].baseRight, contours[0].nodes[0].point ]
 										})
 									else
-										if anchors[2].maxWidthTop == true
+										if anchors[2].maxWidthTop != false
 										then Math.min( anchors[2].maxWidthTop, anchors[2].baseRight.y + serifWidth + anchors[2].rightWidth * Math.min( 1, serifWidth ) )
 										else anchors[2].baseRight.y + serifWidth + anchors[2].rightWidth * Math.min( 1, serifWidth )
 							else
-								if anchors[2].maxWidthTop == true
+								if anchors[2].maxWidthTop != false
 								then Math.min(
 										anchors[2].maxWidthTop,
 										anchors[2].anchor_0 + serifWidth + anchors[2].rightWidth * Math.min( 1, serifWidth )
@@ -120,8 +120,12 @@ exports.glyphs['serif-v'] =
 						if anchors[2].right == false
 						then anchors[2].baseRight.y
 						else contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth
-							# if anchors[2].maxWidthTop == true
-							# then Math.min( capHeight + overshoot * 2 + serifTerminal * serifWidth, contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth )
+							# if anchors[2].maxWidthTop != false
+							# then Math.min(
+							# 		anchors[2].maxWidthTop,
+							# 		contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth
+							# 	)
+							# # Math.min( capHeight + overshoot * 2 + serifTerminal * serifWidth, contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth )
 							# else contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 + serifTerminal * serifWidth
 					x:
 						if anchors[2].right == false
@@ -138,7 +142,7 @@ exports.glyphs['serif-v'] =
 						else
 							if parentAnchors[2].baseRight
 								if anchors[2].baseRight.y < contours[0].nodes[0].y
-									if anchors[2].maxWidthTop == true
+									if anchors[2].maxWidthTop != false
 									then Math.min( anchors[2].maxWidthTop, anchors[2].baseRight.y + serifWidth * midWidth * anchors[2].midWidthRight + anchors[2].rightWidth * Math.min( 1, serifWidth ) )
 									else anchors[2].baseRight.y + serifWidth * midWidth * anchors[2].midWidthRight + anchors[2].rightWidth * Math.min( 1, serifWidth )
 								else
@@ -167,7 +171,7 @@ exports.glyphs['serif-v'] =
 						if anchors[2].attaque == true
 						then anchors[0].y + ( 10 / 85 ) * thickness
 						else contours[0].nodes[4].y - ( contours[0].nodes[4].y - contours[0].nodes[6].y ) / 2
-					x: anchors[2].anchorLine + ( serifHeight * serifArc ) * anchors[2].directionX
+					x: anchors[2].anchorLine - ( serifHeight * serifArc ) * anchors[2].directionX
 					dirIn:
 						if anchors[2].attaque == true
 						then Utils.lineAngle( contours[0].nodes[4].point ,contours[0].nodes[5].point )
@@ -207,7 +211,7 @@ exports.glyphs['serif-v'] =
 												on: [ anchors[2].baseLeft, contours[0].nodes[10].point ]
 											}) - anchors[2].baseLeft.y ) )
 							else
-								if anchors[2].maxWidthTop == true
+								if anchors[2].maxWidthTop != false
 								then Math.min(
 									anchors[2].maxWidthTop,
 									contours[0].nodes[10].y - ( contours[0].nodes[10].y - contours[0].nodes[8].y ) * midWidth * anchors[2].midWidthLeft
