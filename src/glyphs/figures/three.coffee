@@ -20,7 +20,7 @@ exports.glyphs['three'] =
 			nodes:
 				0:
 					x: 37 + (0)
-					y: xHeight - ( 500 - 350 )
+					y: xHeight - 150
 					dirOut: 77 + 'deg'
 					expand: Object({
 						width: thickness * ( 19 / 85 )
@@ -40,6 +40,7 @@ exports.glyphs['three'] =
 				2:
 					x: 290 + (63)
 					y: xHeight * ( 360 / 500 ) + (22)
+					y: contours[0].nodes[3].expandedTo[0].y + ( xHeight - contours[0].nodes[3].expandedTo[0].y ) * 0.65
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					tensionOut: 1.2
@@ -73,7 +74,7 @@ exports.glyphs['three'] =
 					})
 				1:
 					x: 305 + (22)
-					y: - 20 + (6)
+					y: contours[1].nodes[0].expandedTo[1].y + ( contours[0].nodes[3].expandedTo[1].y - contours[1].nodes[0].expandedTo[1].y ) * 0.55
 					type: 'smooth'
 					dirOut: 90 + 'deg'
 					expand: Object({

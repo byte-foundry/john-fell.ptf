@@ -36,7 +36,7 @@ exports.glyphs['five'] =
 					})
 				2:
 					x: 95 + (7)
-					y: 195 + (67)
+					y: ( 195 / 520 ) * xHeight + (67)
 					dirIn: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({

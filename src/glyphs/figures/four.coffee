@@ -3,7 +3,7 @@ exports.glyphs['four'] =
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + (50) + 170 * width - 170
 	parameters:
-		spacingLeft: 10 * spacing + (10)
+		spacingLeft: 5 * spacing + (10)
 		spacingRight: 10 * spacing
 	tags: [
 		'all',
@@ -16,7 +16,7 @@ exports.glyphs['four'] =
 			closed: false
 			nodes:
 				0:
-					x: 320 * width + (85)
+					x: 190 + 130 * width + (85)
 					y: descender * ( 220 / 250 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -25,8 +25,11 @@ exports.glyphs['four'] =
 						distr: 1
 					})
 				1:
-					x: contours[0].nodes[0].x
-					y: xHeight - ( 500 - 430 + thickness - (25 + 60 * width) )
+					x: contours[0].nodes[0].expandedTo[1].x
+					y: Utils.onLine({
+						x: contours[0].nodes[0].expandedTo[1].x - thickness
+						on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+					})
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -34,7 +37,7 @@ exports.glyphs['four'] =
 						distr: 1
 					})
 				2:
-					x: contours[0].nodes[0].x + ( contours[0].nodes[0].expand.width * ( 1 - contours[0].nodes[0].expand.distr ) ) * width
+					x: contours[0].nodes[0].expandedTo[1].x
 					y: xHeight + overshoot + ( 20 / 500 ) * xHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -47,76 +50,76 @@ exports.glyphs['four'] =
 			closed: false
 			nodes:
 				0:
-					x: Utils.onLine({
-							y: thickness * ( 15 / 85 )
-							on: [ contours[0].nodes[2].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
-						})
-					y: thickness * ( 15 / 85 )
+					x: spacingLeft
+					y: 0
+					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 41 / 85 ) * contrast
-						angle: 0 + 'deg'
-						distr: 0.25
+						width: ( 15 / 85 ) * thickness
+						distr: 0
+						angle: 90 + 'deg'
 					})
 				1:
-					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].expandedTo[0].y
-					typeOut: 'line'
+					expandedTo: [
+						x: Utils.onLine({
+							y: 0
+							on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+						})
+						y: 0
+					,
+						x: Utils.onLine({
+							y: contours[1].nodes[2].expandedTo[1].y
+							on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+						})
+						y: contours[1].nodes[2].expandedTo[1].y
+					]
+				2:
+					x: contours[0].nodes[0].expandedTo[1].x + 120 * width
+					y: 0
+					dirOut: 90 + 'deg'
+					typeIn: 'line'
 					expand: Object({
-						width: thickness * ( 35 / 85 ) * contrast
-						angle: 0 + 'deg'
+						width: ( 65 / 85 ) * thickness
 						distr: 0
+						angle: 90 + 'deg'
 					})
 		2:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[0].expandedTo[0].x
-					y: 0
+					x: contours[1].nodes[0].expandedTo[1].x
+					y: contours[1].nodes[0].expandedTo[1].y
+					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 15 / 85 )
-						angle: 90 + 'deg'
+						width: ( 40 / 85 ) * thickness
 						distr: 0
 					})
 				1:
-					x: Utils.onLine({
-						y: thickness * ( 65 / 85 )
-						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
-					})
-					y: thickness * ( 65 / 85 )
+					x: contours[0].nodes[2].expandedTo[0].x
+					y: contours[0].nodes[2].expandedTo[0].y
+					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 65 / 85 )
-						angle: 90 + 'deg'
-						distr: 1
-					})
-				2:
-					x: contours[0].nodes[1].expandedTo[1].x + 175
-					y: 0
-					typeOut: 'line'
-					expand: Object({
-						width: thickness * ( 65 / 85 )
-						angle: 82 + 'deg'
+						width: ( 50 / 85 ) * thickness
 						distr: 0
+						angle: - 90 + 'deg'
 					})
 	components:
 		0:
 			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: contours[2].nodes[2].expandedTo[1].x - serifHeight - serifCurve * ( 110 / 15 )
-					y: contours[2].nodes[2].expandedTo[1].y
+					x: contours[1].nodes[2].expandedTo[1].x - serifHeight - serifCurve * ( 110 / 15 )
+					y: contours[1].nodes[2].expandedTo[1].y
 				1:
-					x: contours[2].nodes[2].expandedTo[0].x - serifHeight - serifCurve * ( 60 / 15 )
-					y: contours[2].nodes[2].expandedTo[0].y
+					x: contours[1].nodes[2].expandedTo[0].x - serifHeight - serifCurve * ( 60 / 15 )
+					y: contours[1].nodes[2].expandedTo[0].y
 				2:
-					anchorLine: contours[2].nodes[2].expandedTo[1].x
+					anchorLine: contours[1].nodes[2].expandedTo[0].x
 					leftWidth: - 10
 			# parentParameters:
 				# serifMedian: serifMedian * 0.65
-			transformOrigin: Array( contours[2].nodes[2].expandedTo[1].x, contours[2].nodes[2].expandedTo[1].y )
+			transformOrigin: Array( contours[1].nodes[2].expandedTo[0].x, contours[1].nodes[2].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (8) + 'deg' ] )
-	transformOrigin: Array( contours[1].nodes[0].x, contours[1].nodes[0].y )
-	transforms: Array( [ 'translateX', 170 * width - 170 ] )
