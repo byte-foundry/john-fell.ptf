@@ -106,31 +106,13 @@ exports.glyphs['d'] =
 					y: contours[0].nodes[1].y
 				2:
 					anchorLine: ascenderHeight
-					leftWidth: 50
-					# spurHeight: 1
-					directionY: -1
+					leftWidth: 20
 					right: false
-					# attaque: true
-			transformOrigin: Array( contours[0].nodes[1].expandedTo[1].x, contours[0].nodes[1].expandedTo[0].y )
-			transforms: Array( [ 'skewY', 10 * serifRotate + 'deg' ] )
+					attaque: true
+					attaqueAngle: 16
+					directionY: -1
 			parentParameters:
-				serifMedian: serifMedian * 0.7
-				serifCurve: serifCurve * ( 8 / 15 )
-		# 1:
-		# 	base: 'attaque'
-		# 	parentAnchors:
-		# 		0:
-		# 			x: contours[0].nodes[0].expandedTo[1].x
-		# 			y: contours[0].nodes[0].y
-		# 		1:
-		# 			x: contours[0].nodes[0].expandedTo[0].x
-		# 			y: contours[0].nodes[0].y
-		# 		2:
-		# 			anchorLine: 0
-		# 			rightWidth: 1.7
-		# 			spurHeight: 1
-		# 			directionY: - 1
-		# 			directionX: - 1
+				serifMedian: serifMedian # - serifMedian / 2 * spurHeight
 		1:
 			base: 'serif'
 			parentAnchors:
@@ -141,48 +123,8 @@ exports.glyphs['d'] =
 					x: contours[0].nodes[0].expandedTo[0].x
 					y: contours[0].nodes[0].y
 				2:
-					anchorLine: 0
-					rightWidth: 35
-					attaque: true
+					anchorLine: - overshoot
+					rightWidth: 20
 					left: false
-					# serifRotate: 14
-			parentParameters:
-				# serifMedian: serifMedian
-				midWidth: midWidth
-			transformOrigin: Array( contours[0].nodes[0].expandedTo[0].x, contours[0].nodes[0].expandedTo[0].y )
-			transforms: Array( [ 'skewY', 14 * serifRotate + 'deg' ] )
-		# 0:
-		# 	base: 'term_TL'
-		# 	parentAnchors:
-		# 		0:
-		# 			x: Utils.onLine({
-		# 				y: anchors[0].y
-		# 				on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
-		# 			})
-		# 			y: anchors[0].y
-		# 			serifWidth: 1.5
-		# 		1:
-		# 			x: Utils.onLine({
-		# 				y: anchors[0].y
-		# 				on: [ contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point ]
-		# 			})
-		# 			y: anchors[0].y
-		# 		2:
-		# 			x: 0
-		# 			y: ascenderHeight
-		# 1:
-		# 	base: 'term_BR'
-		# 	parentAnchors:
-		# 		0:
-		# 			x: Utils.onLine({
-		# 				y: 90 + serifHeight
-		# 				on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
-		# 			})
-		# 			y: 90 + serifHeight
-		# 		1:
-		# 			x: Utils.onLine({
-		# 				y: 90 + serifHeight
-		# 				on: [ contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point ]
-		# 			})
-		# 			y: 90 + serifHeight
-		# 			serifWidth: 1.85
+					attaque: true
+					attaqueAngle: 14

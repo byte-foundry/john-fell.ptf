@@ -11,8 +11,9 @@ exports.glyphs['O_sc'] =
 		0:
 			base: 'O_cap'
 			parentParameters:
-				capHeight: xHeight
-				width: 0.85
+				capHeight: scCapHeight
+				thickness: scThickness
+				width: scWidth
 			parentAnchors:
 				0:
 					x: 0

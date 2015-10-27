@@ -74,8 +74,7 @@ exports.glyphs['seven'] =
 					anchorLine: contours[0].nodes[4].expandedTo[0].x + 10
 					directionX: -1
 					rightWidth: - 20
-					midWidthRight: 1.06
-					midWidthLeft: 0.9
+					maxWidthTop: xHeight + 40
 			parentParameters:
 				serifCurve: serifCurve * ( 25 / 15 )
 				# serifMedian: serifMedian * 0.7
