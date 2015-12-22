@@ -2,6 +2,9 @@ exports.glyphs['H_cap'] =
 	unicode: 'H'
 	ot:
 		advanceWidth: contours[2].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 40 * spacing + (10) + 40
 		spacingRight: 40 * spacing + serifWidth + 40

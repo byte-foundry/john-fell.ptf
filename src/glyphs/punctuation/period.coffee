@@ -2,6 +2,9 @@ exports.glyphs['period'] =
 	unicode: '.'
 	ot:
 		advanceWidth: width * 280 + thickness * 2 - ( 86 * 2 )
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

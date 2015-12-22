@@ -2,6 +2,9 @@ exports.glyphs['three'] =
 	unicode: '3'
 	ot:
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + 40 * spacing
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

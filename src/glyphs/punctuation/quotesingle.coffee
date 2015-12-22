@@ -2,6 +2,9 @@ exports.glyphs['quotesingle'] =
 	unicode: "'"
 	ot:
 		advanceWidth: width * 92 + 112 * spacing
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

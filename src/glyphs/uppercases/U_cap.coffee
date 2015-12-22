@@ -2,6 +2,9 @@ exports.glyphs['U_cap'] =
 	unicode: 'U'
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 5 * spacing + (25) + serifWidth + 40
 		spacingRight: 5 * spacing + serifWidth + 45

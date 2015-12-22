@@ -2,6 +2,9 @@ exports.glyphs['d'] =
 	unicode: 'd'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 45 * spacing + (18)
 		spacingRight: 15 * spacing + serifWidth

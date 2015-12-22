@@ -2,6 +2,9 @@ exports.glyphs['J_cap'] =
 	unicode: 'J'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 40 * spacing + (45) + serifWidth + 40
 		spacingRight: 40 * spacing + serifWidth + 40

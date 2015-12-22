@@ -2,6 +2,9 @@ exports.glyphs['Z_cap'] =
 	unicode: 'Z'
 	ot:
 		advanceWidth: contours[2].nodes[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 25 * spacing - (3)
 		spacingRight: 10 * spacing + serifWidth / 2 * serifRotate

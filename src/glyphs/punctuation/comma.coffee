@@ -2,6 +2,9 @@ exports.glyphs['comma'] =
 	unicode: ','
 	ot:
 		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

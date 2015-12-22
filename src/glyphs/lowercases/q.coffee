@@ -2,6 +2,9 @@ exports.glyphs['q'] =
 	unicode: 'q'
 	ot:
 		advanceWidth: contours[0].nodes[3].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 45 * spacing + (21)
 		spacingRight: 35 * spacing + (16) + serifWidth + 15

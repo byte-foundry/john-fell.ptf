@@ -2,6 +2,9 @@ exports.glyphs['zero'] =
 	unicode: '0'
 	ot:
 		advanceWidth: width * 545 + thickness * 2 - ( 85 * 2 )
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

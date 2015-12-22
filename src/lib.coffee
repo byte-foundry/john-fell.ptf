@@ -11,6 +11,3 @@ exports.lib =
 		# 	if serifHeight > 1
 		# 	then Math.max(1, serifWidth)
 		# 	else serifWidth
-	transforms: Array(
-		['skewX', slant + 'deg']
-	)

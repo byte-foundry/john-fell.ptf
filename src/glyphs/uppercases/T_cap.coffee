@@ -2,6 +2,9 @@ exports.glyphs['T_cap'] =
 	unicode: 'T'
 	ot:
 		advanceWidth: anchors[0].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10) + serifWidth / 2
 		spacingRight: 10 * spacing + serifWidth / 2
