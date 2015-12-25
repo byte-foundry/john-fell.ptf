@@ -1,7 +1,7 @@
 exports.glyphs['acircumflex'] =
 	unicode: 'â'
-	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+	base: 'a'
+	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
 		'latin',
@@ -10,14 +10,9 @@ exports.glyphs['acircumflex'] =
 	]
 	components:
 		0:
-			base: 'a'
-			parentAnchors:
-				0:
-					x: 0
-					y: 0
-		1:
 			base: 'circumflex'
+			copy: true
 			parentAnchors:
 				0:
-					x: 260
-					y: xHeight + 70
+					x: anchors[0].x
+					y: anchors[0].y

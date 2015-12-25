@@ -28,7 +28,6 @@
     "expect": false,
     "inject": false,
     "module": false,
-    "_": false,
     "prototypo": false
   }
 }

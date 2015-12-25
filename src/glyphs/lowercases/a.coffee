@@ -13,6 +13,10 @@ exports.glyphs['a'] =
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].expandedTo[0].x / 2
+			y: xHeight + 20
 	contours:
 		0:
 			skeleton: true
