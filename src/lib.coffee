@@ -7,6 +7,7 @@ exports.lib =
 		contrast: _contrast * -1
 		ascenderHeight: xHeight + ascender
 		spacing: 1.1 * ( width / width ) # dirty workaround
+		diacriticHeight: 60 * ( xHeight / xHeight )
 		# serifHeight:
 		# 	if serifHeight > 1
 		# 	then Math.max(1, serifWidth)

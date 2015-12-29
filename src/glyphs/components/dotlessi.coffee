@@ -1,5 +1,5 @@
-exports.glyphs['i'] =
-	unicode: 'i'
+exports.glyphs['dotlessi'] =
+	unicode: 'ı'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
@@ -9,9 +9,7 @@ exports.glyphs['i'] =
 		spacingLeft: 50 * spacing + (16) + serifWidth + 15
 		spacingRight: 30 * spacing + serifWidth + 15
 	tags: [
-		'all',
-		'latin',
-		'lowercase'
+		'component'
 	]
 	anchors:
 		0:
@@ -23,7 +21,7 @@ exports.glyphs['i'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: 115 + ( 21 )
 					y: 0 + serifHeight + serifCurve
 					typeOut: 'line'
 					expand: Object({
@@ -33,7 +31,7 @@ exports.glyphs['i'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: xHeight - serifHeight * ( 60 / 20 ) - serifCurve * ( 40 / 15 )
+					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					expand: Object({
 						width: thickness
 						distr: 0.25
@@ -51,29 +49,17 @@ exports.glyphs['i'] =
 					y: contours[0].nodes[0].y
 				2:
 					anchorLine: 0
-					leftWidth: 10
-					rightWidth: 10
+					leftWidth: 15
+					rightWidth: 18
 		1:
-			base: 'serif'
+			base: 'attaque'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[1].expandedTo[1].x
+					x: contours[0].nodes[1].expandedTo[0].x
 					y: contours[0].nodes[1].y
 				1:
-					x: contours[0].nodes[1].expandedTo[0].x
+					x: contours[0].nodes[1].expandedTo[1].x
 					y: contours[0].nodes[1].y
 				2:
 					anchorLine: xHeight
-					leftWidth: 20
-					right: false
-					attaque: true
-					attaqueAngle: 16
-					directionY: -1
-			parentParameters:
-				serifMedian: serifMedian # - serifMedian / 2 * spurHeight
-		2:
-			base: 'title'
-			parentAnchors:
-				0:
-					x: contours[0].nodes[1].expandedTo[0].x + thickness * ( 35 / 85 )
-					y: Math.max( xHeight + overshoot + thickness * ( 100 / 86 ), capHeight - 20 )
+					leftWidth: 1.25

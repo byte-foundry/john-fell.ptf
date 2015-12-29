@@ -1,6 +1,6 @@
-exports.glyphs['aacute'] =
-	unicode: 'á'
-	base: 'a'
+exports.glyphs['o_circumflex'] =
+	unicode: 'ô'
+	base: 'o'
 	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
@@ -10,7 +10,7 @@ exports.glyphs['aacute'] =
 	]
 	components:
 		0:
-			base: 'acute'
+			base: 'circumflex'
 			copy: true
 			parentAnchors:
 				0:

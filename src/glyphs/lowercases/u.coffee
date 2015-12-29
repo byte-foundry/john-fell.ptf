@@ -8,15 +8,15 @@ exports.glyphs['u'] =
 	parameters:
 		spacingLeft: 13 * spacing + serifWidth + 15
 		spacingRight: 15 * spacing + serifWidth + 25
-	anchors:
-		0:
-			x: 0
-			y: 0
 	tags: [
 		'all',
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) / 2
+			y: xHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true
@@ -78,7 +78,7 @@ exports.glyphs['u'] =
 					})
 				1:
 					x: contours[1].nodes[0].x
-					y:70 + serifHeight
+					y: 70 + serifHeight
 					dirOut: 90 + 'deg'
 					expand: Object({
 						width: thickness

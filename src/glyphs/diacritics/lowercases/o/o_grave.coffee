@@ -1,6 +1,6 @@
-exports.glyphs['acircumflex'] =
-	unicode: 'â'
-	base: 'a'
+exports.glyphs['o_grave'] =
+	unicode: 'ò'
+	base: 'o'
 	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
@@ -10,7 +10,7 @@ exports.glyphs['acircumflex'] =
 	]
 	components:
 		0:
-			base: 'circumflex'
+			base: 'grave'
 			copy: true
 			parentAnchors:
 				0:
