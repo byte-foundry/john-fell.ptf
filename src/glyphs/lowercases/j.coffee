@@ -13,6 +13,10 @@ exports.glyphs['j'] =
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
+			y: xHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true
@@ -180,8 +184,9 @@ exports.glyphs['j'] =
 			parentParameters:
 				serifMedian: serifMedian # - serifMedian / 2 * spurHeight
 		1:
-			base: 'title'
+			base: 'dot_accent'
+			copy: true
 			parentAnchors:
 				0:
-					x: contours[0].nodes[0].expandedTo[0].x + thickness * ( 35 / 85 )
-					y: Math.max( xHeight + overshoot + thickness * ( 100 / 86 ), capHeight - 20 )
+					x: anchors[0].x
+					y: anchors[0].y

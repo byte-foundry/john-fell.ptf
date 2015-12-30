@@ -72,8 +72,9 @@ exports.glyphs['i'] =
 			parentParameters:
 				serifMedian: serifMedian # - serifMedian / 2 * spurHeight
 		2:
-			base: 'title'
+			base: 'dot_accent'
+			copy: true
 			parentAnchors:
 				0:
-					x: contours[0].nodes[1].expandedTo[0].x + thickness * ( 35 / 85 )
-					y: Math.max( xHeight + overshoot + thickness * ( 100 / 86 ), capHeight - 20 )
+					x: anchors[0].x
+					y: anchors[0].y

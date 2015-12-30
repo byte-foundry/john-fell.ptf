@@ -1,7 +1,7 @@
 exports.glyphs['colon'] =
-	unicode: 58
-	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+	unicode: ':'
+	base: '.'
+	advanceWidth: base.advanceWidth
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
@@ -15,12 +15,6 @@ exports.glyphs['colon'] =
 	]
 	components:
 		0:
-			base: 'dot'
-			parentAnchors:
-				0:
-					x: 125
-					y: - overshoot / 2
-		1:
 			base: 'dot'
 			parentAnchors:
 				0:
