@@ -23,13 +23,13 @@ exports.glyphs['u'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + (21)
 					y: xHeight - serifHeight - serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.25
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -39,7 +39,7 @@ exports.glyphs['u'] =
 					# type: 'smooth'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.25
 					})
 				2:
 					x: contours[0].nodes[1].x + ( contours[0].nodes[3].x - contours[0].nodes[1].x ) * 0.4
@@ -52,14 +52,14 @@ exports.glyphs['u'] =
 						distr: 0
 					})
 				3:
-					x: contours[0].nodes[0].expandedTo[1].x + 220 * width + (6)
+					x: contours[1].nodes[0].expandedTo[0].x + 6
 					y: xHeight * ( ( 130 + 10 ) / 500 )
 					y: xHeight * ( 30 / 500 ) + 110
 					dirIn: Math.max( - 110 , Math.min( - 95 , - ( 120 / 500 ) * xHeight ) ) + 'deg'
 					# dirIn: - 115 - ( 5 / 500 ) * xHeight + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 15 / 86 ) + ( ( 10 / 500 ) * xHeight / 85 ) * thickness
+						width: ( thickness * ( 15 / 86 ) + ( ( 10 / 500 ) * xHeight / 85 ) * thickness ) * contrast
 						angle: 90 + 'deg'
 						distr: 0.25
 					})
@@ -68,13 +68,13 @@ exports.glyphs['u'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[3].x - 6
+					x: contours[0].nodes[0].expandedTo[1].x + 305 * width - (21)
 					y: xHeight - serifHeight - serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.75
 					})
 				1:
 					x: contours[1].nodes[0].x
@@ -82,7 +82,7 @@ exports.glyphs['u'] =
 					dirOut: 90 + 'deg'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.75
 					})
 	components:
 		0:

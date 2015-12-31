@@ -1,6 +1,8 @@
-exports.glyphs['e_dieresis'] =
-	unicode: 'ë'
-	base: 'e'
+exports.glyphs['y_dieresis'] =
+	unicode: 'ÿ'
+	glyphName: "ydieresis"
+	characterName: "LATIN SMALL LETTER Y WITH DIAERESIS"
+	base: 'y'
 	advanceWidth: base.advanceWidth
 	tags: [
 		'all',

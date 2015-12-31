@@ -10,6 +10,8 @@ exports.glyphs['g'] =
 		spacingRight: 35 * spacing
 	anchors:
 		0:
+			x: contours[0].nodes[2].x
+			y: xHeight + diacriticHeight
 			junctionBottom: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[1], contours[0].nodes[0].expandedTo[1], 50 )
 	tags: [
 		'all',

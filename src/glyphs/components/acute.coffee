@@ -49,7 +49,7 @@ exports.glyphs['acute'] =
 					})
 					y: contours[0].nodes[1].y + 75
 					expand: Object({
-						width: thickness * ( 60 / 85 )
+						width: Math.max( 4, thickness * ( 60 / 85 )  )
 						angle: 90 + 45 + 'deg'
 						distr: 0.5
 					})
