@@ -13,6 +13,10 @@ exports.glyphs['O_cap'] =
 		'latin',
 		'uppercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[1].x
+			y: capHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true

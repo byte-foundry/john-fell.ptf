@@ -13,6 +13,10 @@ exports.glyphs['J_cap'] =
 		'latin',
 		'uppercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].x
+			y: capHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true
@@ -25,7 +29,7 @@ exports.glyphs['J_cap'] =
 					dirOut: 90 + 'deg'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
-						distr: 0.25
+						distr: 0.5
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -36,11 +40,11 @@ exports.glyphs['J_cap'] =
 					expand: Object({
 						width: thickness * ( (134 + (80)) / 85 ) * opticThickness
 						angle: 180 - 138 + 20 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[0].x - 40 - 45 * width
-					y: - 185
+					x: contours[0].nodes[0].expandedTo[0].x - 80 - 45 * width
+					y: - 220
 					dirIn: 0 + 'deg'
 					# dirOut: 0 + 'deg'
 					tensionIn: 0.7

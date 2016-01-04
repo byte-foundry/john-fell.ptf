@@ -1,7 +1,7 @@
 exports.glyphs['a_cap_grave'] =
 	unicode: 'À'
-	ot:
-		advanceWidth: width * 680 + thickness * 2 - ( 86 * 2 )
+	base: 'A_cap'
+	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
 		'latin',
@@ -10,14 +10,9 @@ exports.glyphs['a_cap_grave'] =
 	]
 	components:
 		0:
-			base: 'A_cap'
-			parentAnchors:
-				0:
-					x: 0
-					y: 0
-		1:
 			base: 'grave'
+			copy: true
 			parentAnchors:
 				0:
-					x: 300
-					y: capHeight + 70
+					x: anchors[0].x
+					y: anchors[0].y

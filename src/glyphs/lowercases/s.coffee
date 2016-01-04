@@ -29,10 +29,10 @@ exports.glyphs['s'] =
 				0:
 					x: contours[0].nodes[4].expandedTo[1].x - 30
 					y: xHeight - ( 80 / 520 ) * xHeight
-					dirOut: Math.max(
-						1.8,
-						Math.PI - ( 1.06 / 520 ) * xHeight
-					) # 120 + 'deg'
+					# dirOut: Math.max(
+					# 	1.8,
+					# 	Math.PI - ( 1.06 / 520 ) * xHeight
+					# ) # 120 + 'deg'
 					dirOut: 2.08
 					type: 'smooth'
 					expand: Object({
@@ -41,7 +41,7 @@ exports.glyphs['s'] =
 						distr: 0.25
 					})
 				1:
-					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.515
+					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.515
 					x: 215
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
@@ -92,7 +92,7 @@ exports.glyphs['s'] =
 						distr: 0.75
 					})
 				5:
-					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.565
+					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.565
 					x: 230
 					y: - overshoot
 					dirOut: 180 + 'deg'

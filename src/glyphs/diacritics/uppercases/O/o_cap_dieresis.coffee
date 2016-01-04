@@ -1,7 +1,7 @@
 exports.glyphs['o_cap_dieresis'] =
 	unicode: 'Ö'
-	ot:
-		advanceWidth: width * 800 + thickness * 2 - ( 86 * 2 )
+	base: 'O_cap'
+	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
 		'latin',
@@ -10,30 +10,16 @@ exports.glyphs['o_cap_dieresis'] =
 	]
 	components:
 		0:
-			base: 'O_cap'
+			base: 'dot_accent'
+			copy: true
 			parentAnchors:
 				0:
-					x: 0
-					y: 0
+					x: anchors[0].x - 60 - ( 15 / 85 ) * thickness * width
+					y: anchors[0].y
 		1:
-			base: 'dot'
+			base: 'dot_accent'
+			copy: true
 			parentAnchors:
 				0:
-					x: 330 + thickness / 4 - 42 - thickness / 2
-					y: capHeight + 70
-			parentParameters:
-				thickness:
-					if thickness < 40
-					then 40
-					else thickness
-		2:
-			base: 'dot'
-			parentAnchors:
-				0:
-					x: 330 + thickness / 4 + 42 + thickness / 2
-					y: capHeight + 70
-			parentParameters:
-				thickness:
-					if thickness < 40
-					then 40
-					else thickness
+					x: anchors[0].x + 60 + ( 15 / 85 ) * thickness * width
+					y: anchors[0].y

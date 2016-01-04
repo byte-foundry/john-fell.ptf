@@ -1,7 +1,7 @@
 exports.glyphs['u_cap_acute'] =
 	unicode: 'Ú'
-	ot:
-		advanceWidth: width * 750 + thickness * 2 - ( 86 * 2 )
+	base: 'U_cap'
+	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
 		'latin',
@@ -10,14 +10,9 @@ exports.glyphs['u_cap_acute'] =
 	]
 	components:
 		0:
-			base: 'U_cap'
-			parentAnchors:
-				0:
-					x: 0
-					y: 0
-		1:
 			base: 'acute'
+			copy: true
 			parentAnchors:
 				0:
-					x: 360
-					y: capHeight + 70
+					x: anchors[0].x
+					y: anchors[0].y

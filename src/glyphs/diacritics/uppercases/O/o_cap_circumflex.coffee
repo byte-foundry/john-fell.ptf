@@ -1,7 +1,7 @@
 exports.glyphs['o_cap_circumflex'] =
 	unicode: 'Ô'
-	ot:
-		advanceWidth: width * 800 + thickness * 2 - ( 86 * 2 )
+	base: 'O_cap'
+	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
 		'latin',
@@ -10,14 +10,9 @@ exports.glyphs['o_cap_circumflex'] =
 	]
 	components:
 		0:
-			base: 'O_cap'
-			parentAnchors:
-				0:
-					x: 0
-					y: 0
-		1:
 			base: 'circumflex'
+			copy: true
 			parentAnchors:
 				0:
-					x: 400
-					y: capHeight + 70
+					x: anchors[0].x
+					y: anchors[0].y

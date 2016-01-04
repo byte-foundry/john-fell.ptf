@@ -13,6 +13,10 @@ exports.glyphs['A_cap'] =
 		'latin',
 		'uppercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[1].x - contours[0].nodes[1].expandedTo[0].x ) / 2
+			y: capHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true
@@ -28,7 +32,7 @@ exports.glyphs['A_cap'] =
 						distr: 0.25
 					})
 				1:
-					x: ( 245 + 250 * width + (20) ) * ( ( 295 + 10 ) / 495 )
+					# x: ( 245 + 250 * width + (20) ) * ( ( 295 + 10 ) / 495 )
 					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.53
 					# A like avant-garde:
 					# x: ( 495 + 20 ) * width

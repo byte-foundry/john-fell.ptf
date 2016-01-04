@@ -33,7 +33,7 @@ exports.glyphs['u'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: xHeight * ( 160 / 500 )
+					# y: xHeight * ( 160 / 500 )
 					y: xHeight * ( 30 / 500 ) * width + 130
 					dirOut: 90 + 'deg'
 					# type: 'smooth'
@@ -53,7 +53,7 @@ exports.glyphs['u'] =
 					})
 				3:
 					x: contours[1].nodes[0].expandedTo[0].x + 6
-					y: xHeight * ( ( 130 + 10 ) / 500 )
+					# y: xHeight * ( ( 130 + 10 ) / 500 )
 					y: xHeight * ( 30 / 500 ) + 110
 					dirIn: Math.max( - 110 , Math.min( - 95 , - ( 120 / 500 ) * xHeight ) ) + 'deg'
 					# dirIn: - 115 - ( 5 / 500 ) * xHeight + 'deg'
