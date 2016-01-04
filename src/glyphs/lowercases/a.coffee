@@ -1,5 +1,7 @@
 exports.glyphs['a'] =
 	unicode: 'a'
+	glyphName: "a"
+	characterName: "LATIN SMALL LETTER A"
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(

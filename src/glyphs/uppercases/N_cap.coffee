@@ -1,5 +1,7 @@
 exports.glyphs['N_cap'] =
 	unicode: 'N'
+	glyphName: "N"
+	characterName: "LATIN CAPITAL LETTER N"
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(

@@ -1,5 +1,7 @@
 exports.glyphs['w_cap_circumflex'] =
 	unicode: 'Ŵ'
+	glyphName: "Wcircumflex"
+	characterName: "LATIN CAPITAL LETTER W WITH CIRCUMFLEX"
 	base: 'W_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

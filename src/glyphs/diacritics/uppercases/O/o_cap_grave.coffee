@@ -1,5 +1,7 @@
 exports.glyphs['o_cap_grave'] =
 	unicode: 'Ò'
+	glyphName: "Ograve"
+	characterName: "LATIN CAPITAL LETTER O WITH GRAVE"
 	base: 'O_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

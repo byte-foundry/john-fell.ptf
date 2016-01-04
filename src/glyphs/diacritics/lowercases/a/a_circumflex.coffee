@@ -1,5 +1,7 @@
 exports.glyphs['a_circumflex'] =
 	unicode: 'â'
+	glyphName: "acircumflex"
+	characterName: "LATIN SMALL LETTER A WITH CIRCUMFLEX"
 	base: 'a'
 	advanceWidth: base.advanceWidth
 	tags: [

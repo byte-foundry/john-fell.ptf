@@ -1,5 +1,7 @@
 exports.glyphs['u_breve'] =
 	unicode: 'ŭ'
+	glyphName: "ubreve"
+	characterName: "LATIN SMALL LETTER U WITH BREVE"
 	base: 'u'
 	advanceWidth: base.advanceWidth
 	tags: [

@@ -1,5 +1,7 @@
 exports.glyphs['o_breve'] =
 	unicode: 'ŏ'
+	glyphName: "obreve"
+	characterName: "LATIN SMALL LETTER O WITH BREVE"
 	base: 'o'
 	advanceWidth: base.advanceWidth
 	tags: [

@@ -1,5 +1,7 @@
 exports.glyphs['a_cap_dieresis'] =
 	unicode: 'Ä'
+	glyphName: "Adieresis"
+	characterName: "LATIN CAPITAL LETTER A WITH DIAERESIS"
 	base: 'A_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

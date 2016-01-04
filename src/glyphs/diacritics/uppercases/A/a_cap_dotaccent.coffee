@@ -1,5 +1,7 @@
 exports.glyphs['a_cap_dotaccent'] =
 	unicode: 'Ȧ'
+	glyphName: "Adotaccent"
+	characterName: "LATIN CAPITAL LETTER A WITH DOT ABOVE"
 	base: 'A_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

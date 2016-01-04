@@ -1,5 +1,7 @@
 exports.glyphs['o_acute'] =
 	unicode: 'ó'
+	glyphName: "oacute"
+	characterName: "LATIN SMALL LETTER O WITH ACUTE"
 	base: 'o'
 	advanceWidth: base.advanceWidth
 	tags: [

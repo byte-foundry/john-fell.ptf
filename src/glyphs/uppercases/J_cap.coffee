@@ -1,5 +1,7 @@
 exports.glyphs['J_cap'] =
 	unicode: 'J'
+	glyphName: "J"
+	characterName: "LATIN CAPITAL LETTER J"
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(

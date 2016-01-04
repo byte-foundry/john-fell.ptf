@@ -1,5 +1,7 @@
 exports.glyphs['e_cap_breve'] =
 	unicode: 'Ĕ'
+	glyphName: "Ebreve"
+	characterName: "LATIN CAPITAL LETTER E WITH BREVE"
 	base: 'E_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

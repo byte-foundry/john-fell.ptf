@@ -1,5 +1,7 @@
 exports.glyphs['parenleft'] =
 	unicode: '('
+	glyphName: "parenleft"
+	characterName: "LEFT PARENTHESIS"
 	ot:
 		advanceWidth: width * 470 + thickness - 85
 	transforms: Array(

@@ -1,5 +1,7 @@
 exports.glyphs['u_dieresis'] =
 	unicode: 'ü'
+	glyphName: "udieresis"
+	characterName: "LATIN SMALL LETTER U WITH DIAERESIS"
 	base: 'u'
 	advanceWidth: base.advanceWidth
 	tags: [

@@ -1,5 +1,7 @@
 exports.glyphs['R_cap'] =
 	unicode: 'R'
+	glyphName: "R"
+	characterName: "LATIN CAPITAL LETTER R"
 	ot:
 		advanceWidth: contours[2].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(

@@ -1,5 +1,7 @@
 exports.glyphs['quoteright'] =
 	unicode: '’'
+	glyphName: "quoteright"
+	characterName: "RIGHT SINGLE QUOTATION MARK"
 	ot:
 		advanceWidth: width * 120 + thickness * 2 - ( 86 * 2 )
 	transforms: Array(

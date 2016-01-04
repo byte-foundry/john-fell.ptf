@@ -1,5 +1,7 @@
 exports.glyphs['Z_cap'] =
 	unicode: 'Z'
+	glyphName: "Z"
+	characterName: "LATIN CAPITAL LETTER Z"
 	ot:
 		advanceWidth: contours[2].nodes[1].x + spacingRight
 	transforms: Array(

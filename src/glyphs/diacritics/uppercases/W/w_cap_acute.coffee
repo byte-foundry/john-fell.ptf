@@ -1,5 +1,7 @@
 exports.glyphs['w_cap_acute'] =
 	unicode: 'Ẃ'
+	glyphName: "Wacute"
+	characterName: "LATIN CAPITAL LETTER W WITH ACUTE"
 	base: 'W_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

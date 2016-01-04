@@ -1,5 +1,7 @@
 exports.glyphs['e_cap_tilde'] =
 	unicode: 'Ẽ'
+	glyphName: "Etilde"
+	characterName: "LATIN CAPITAL LETTER E WITH TILDE"
 	base: 'E_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

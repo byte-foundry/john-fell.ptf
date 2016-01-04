@@ -1,5 +1,7 @@
 exports.glyphs['i_cap_tilde'] =
 	unicode: 'Ĩ'
+	glyphName: "Itilde"
+	characterName: "LATIN CAPITAL LETTER I WITH TILDE"
 	base: 'I_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

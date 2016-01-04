@@ -1,5 +1,7 @@
 exports.glyphs['o_cap_circumflex'] =
 	unicode: 'Ô'
+	glyphName: "Ocircumflex"
+	characterName: "LATIN CAPITAL LETTER O WITH CIRCUMFLEX"
 	base: 'O_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

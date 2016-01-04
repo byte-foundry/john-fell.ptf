@@ -1,5 +1,7 @@
 exports.glyphs['c_dot_accent'] =
 	unicode: 'ċ'
+	glyphName: "cdotaccent"
+	characterName: "LATIN SMALL LETTER C WITH DOT ABOVE"
 	base: 'c'
 	advanceWidth: base.advanceWidth
 	tags: [

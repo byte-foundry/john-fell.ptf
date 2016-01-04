@@ -1,5 +1,7 @@
 exports.glyphs['a_macron'] =
 	unicode: 'ā'
+	glyphName: "amacron"
+	characterName: "LATIN SMALL LETTER A WITH MACRON"
 	base: 'a'
 	advanceWidth: base.advanceWidth
 	tags: [

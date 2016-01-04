@@ -1,5 +1,7 @@
 exports.glyphs['q'] =
 	unicode: 'q'
+	glyphName: "q"
+	characterName: "LATIN SMALL LETTER Q"
 	ot:
 		advanceWidth: contours[0].nodes[3].expandedTo[1].x + spacingRight
 	transforms: Array(

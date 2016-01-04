@@ -1,5 +1,7 @@
 exports.glyphs['quotedblleft'] =
 	unicode: '“'
+	glyphName: "quotedblleft"
+	characterName: "LEFT DOUBLE QUOTATION MARK"
 	ot:
 		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
 	transforms: Array(

@@ -1,5 +1,7 @@
 exports.glyphs['o_macron'] =
 	unicode: 'ō'
+	glyphName: "omacron"
+	characterName: "LATIN SMALL LETTER O WITH MACRON"
 	base: 'o'
 	advanceWidth: base.advanceWidth
 	tags: [

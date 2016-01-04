@@ -1,5 +1,7 @@
 exports.glyphs['seven'] =
 	unicode: '7'
+	glyphName: "seven"
+	characterName: "DIGIT SEVEN"
 	ot:
 		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 5 * spacing
 	transforms: Array(
