@@ -1,7 +1,12 @@
 exports.glyphs['k'] =
 	unicode: 'k'
+	glyphName: 'k'
+	characterName: 'LATIN SMALL LETTER K'
 	ot:
 		advanceWidth: contours[2].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 50 * spacing + (16) + serifWidth + 15
 		spacingRight: 1 * spacing + serifWidth

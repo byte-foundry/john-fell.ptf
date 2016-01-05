@@ -1,7 +1,12 @@
 exports.glyphs['Y_cap'] =
 	unicode: 'Y'
+	glyphName: 'Y'
+	characterName: 'LATIN CAPITAL LETTER Y'
 	ot:
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (20) + serifWidth
 		spacingRight: 10 * spacing + serifWidth + 15
@@ -10,6 +15,10 @@ exports.glyphs['Y_cap'] =
 		'latin',
 		'uppercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
+			y: capHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true

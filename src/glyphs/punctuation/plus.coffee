@@ -1,7 +1,12 @@
 exports.glyphs['plus'] =
 	unicode: '+'
+	glyphName: 'plus'
+	characterName: 'PLUS SIGN'
 	ot:
 		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 80 * spacing
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

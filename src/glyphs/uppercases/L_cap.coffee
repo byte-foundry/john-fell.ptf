@@ -1,15 +1,27 @@
 exports.glyphs['L_cap'] =
 	unicode: 'L'
+	glyphName: 'L'
+	characterName: 'LATIN CAPITAL LETTER L'
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
-		spacingLeft: 40 * spacing + (25) + serifWidth + 40
+		spacingLeft: 40 * spacing + (45) + serifWidth + 40
 		spacingRight: 10 * spacing + serifWidth
 	tags: [
 		'all',
 		'latin',
 		'uppercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].x
+			y: capHeight + diacriticHeight
+		1:
+			x: contours[0].nodes[0].expandedTo[1].x + serifWidth + 85
+			y: capHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true
@@ -22,7 +34,7 @@ exports.glyphs['L_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
-						distr: 0.25
+						distr: 0.5
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -31,7 +43,7 @@ exports.glyphs['L_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
-						distr: 0.25
+						distr: 0.5
 					})
 		1:
 			skeleton: true

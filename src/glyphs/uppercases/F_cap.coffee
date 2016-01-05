@@ -1,7 +1,12 @@
 exports.glyphs['F_cap'] =
 	unicode: 'F'
+	glyphName: 'F'
+	characterName: 'LATIN CAPITAL LETTER F'
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 40 * spacing + (25) + serifWidth + 40
 		spacingRight: 40 * spacing + serifWidth / 2

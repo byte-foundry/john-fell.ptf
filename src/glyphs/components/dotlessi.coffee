@@ -1,0 +1,67 @@
+exports.glyphs['dotlessi'] =
+	glyphName: 'dotlessi'
+	characterName: 'LATIN SMALL LETTER DOTLESS I'
+	unicode: 'ı'
+	ot:
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
+	parameters:
+		spacingLeft: 50 * spacing + (16) + serifWidth + 15
+		spacingRight: 30 * spacing + serifWidth + 15
+	tags: [
+		'component'
+	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
+			y: xHeight + diacriticHeight
+	contours:
+		0:
+			skeleton: true
+			closed: false
+			nodes:
+				0:
+					x: 115 + ( 21 )
+					y: 0 + serifHeight + serifCurve
+					typeOut: 'line'
+					expand: Object({
+						width: thickness
+						distr: 0.25
+						angle: 0
+					})
+				1:
+					x: contours[0].nodes[0].x
+					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
+					expand: Object({
+						width: thickness
+						distr: 0.25
+						angle: 0
+					})
+	components:
+		0:
+			base: 'serif'
+			parentAnchors:
+				0:
+					x: contours[0].nodes[0].expandedTo[1].x
+					y: contours[0].nodes[0].y
+				1:
+					x: contours[0].nodes[0].expandedTo[0].x
+					y: contours[0].nodes[0].y
+				2:
+					anchorLine: 0
+					leftWidth: 15
+					rightWidth: 18
+		1:
+			base: 'attaque'
+			parentAnchors:
+				0:
+					x: contours[0].nodes[1].expandedTo[0].x
+					y: contours[0].nodes[1].y
+				1:
+					x: contours[0].nodes[1].expandedTo[1].x
+					y: contours[0].nodes[1].y
+				2:
+					anchorLine: xHeight
+					leftWidth: 1.25

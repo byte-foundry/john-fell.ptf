@@ -1,7 +1,12 @@
 exports.glyphs['n'] =
 	unicode: 'n'
+	glyphName: 'n'
+	characterName: 'LATIN SMALL LETTER N'
 	ot:
 		advanceWidth: contours[1].nodes[3].expandedTo[0].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 50 * spacing + (0) + serifWidth + 15
 		spacingRight: 30 * spacing + serifWidth + 15
@@ -10,6 +15,10 @@ exports.glyphs['n'] =
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[3].expandedTo[1].x - contours[0].nodes[0].expandedTo[1].x ) / 2
+			y: xHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true

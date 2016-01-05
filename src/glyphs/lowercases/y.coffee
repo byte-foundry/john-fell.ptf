@@ -1,7 +1,12 @@
 exports.glyphs['y'] =
 	unicode: 'y'
+	glyphName: 'y'
+	characterName: 'LATIN SMALL LETTER Y'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 5 * spacing + (0) + serifWidth + 20
 		spacingRight: 5 * spacing + serifWidth + 20
@@ -10,6 +15,10 @@ exports.glyphs['y'] =
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) / 2
+			y: xHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true

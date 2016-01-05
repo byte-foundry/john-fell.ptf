@@ -1,7 +1,12 @@
 exports.glyphs['B_cap'] =
 	unicode: 'B'
+	glyphName: 'B'
+	characterName: 'LATIN CAPITAL LETTER B'
 	ot:
 		advanceWidth: contours[2].nodes[2].expandedTo[0].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 40 * spacing + (25) + serifWidth + 40
 		spacingRight: 40 * spacing

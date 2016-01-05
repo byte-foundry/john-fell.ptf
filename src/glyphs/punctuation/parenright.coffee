@@ -1,7 +1,12 @@
 exports.glyphs['parenright'] =
 	unicode: ')'
+	glyphName: 'parenright'
+	characterName: 'RIGHT PARENTHESIS'
 	ot:
 		advanceWidth: width * 470 + thickness - 85
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

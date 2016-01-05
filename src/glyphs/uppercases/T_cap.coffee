@@ -1,16 +1,24 @@
 exports.glyphs['T_cap'] =
 	unicode: 'T'
+	glyphName: 'T'
+	characterName: 'LATIN CAPITAL LETTER T'
 	ot:
-		advanceWidth: anchors[0].x + spacingRight
+		advanceWidth: anchors[2].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10) + serifWidth / 2
 		spacingRight: 10 * spacing + serifWidth / 2
 	anchors:
 		0:
-			x: 460 + 210 * width
-			y: capHeight
+			x: contours[0].nodes[0].x
+			y: capHeight + diacriticHeight
 		1:
 			x: 45
+			y: capHeight
+		2:
+			x: 470 + 250 * width
 			y: capHeight
 	tags: [
 		'all',
@@ -23,12 +31,14 @@ exports.glyphs['T_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[1].x + ( anchors[0].x - anchors[1].x ) / 2
+					x: anchors[1].x + ( anchors[2].x - anchors[1].x ) / 2
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
+						angle: 0 + 'deg'
+						distr: 0.5
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -37,13 +47,15 @@ exports.glyphs['T_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 100 / 85 )
+						angle: 0 + 'deg'
+						distr: 0.5
 					})
 		1:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: anchors[0].x - serifHeight - serifCurve * ( 100 / 15 )
+					x: anchors[2].x - serifHeight - serifCurve * ( 100 / 15 )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -80,13 +92,13 @@ exports.glyphs['T_cap'] =
 			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: anchors[0].x - serifHeight - serifCurve * ( 100 /15 )
-					y: anchors[0].y
+					x: anchors[2].x - serifHeight - serifCurve * ( 100 /15 )
+					y: capHeight
 				1:
-					x: anchors[0].x - serifHeight - serifCurve * ( 100 /15 )
-					y: anchors[0].y - thickness * opticThickness * ( 25 / 85 )
+					x: anchors[2].x - serifHeight - serifCurve * ( 100 /15 )
+					y: capHeight - thickness * opticThickness * ( 25 / 85 )
 				2:
-					anchorLine: anchors[0].x
+					anchorLine: anchors[2].x
 					leftWidth: 40
 					maxWidthTop: capHeight + 40
 			parentParameters:
@@ -99,10 +111,10 @@ exports.glyphs['T_cap'] =
 			parentAnchors:
 				0:
 					x: anchors[1].x + serifHeight + serifCurve * ( 100 /15 )
-					y: anchors[1].y
+					y: capHeight
 				1:
 					x: anchors[1].x + serifHeight + serifCurve * ( 100 /15 )
-					y: anchors[1].y - thickness * opticThickness * ( 25 / 85 )
+					y: capHeight - thickness * opticThickness * ( 25 / 85 )
 				2:
 					anchorLine: anchors[1].x
 					leftWidth: 40

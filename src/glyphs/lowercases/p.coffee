@@ -1,7 +1,12 @@
 exports.glyphs['p'] =
 	unicode: 'p'
+	glyphName: 'p'
+	characterName: 'LATIN SMALL LETTER P'
 	ot:
 		advanceWidth: contours[1].nodes[2].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 35 * spacing + (16) + serifWidth + 15
 		spacingRight: 45 * spacing

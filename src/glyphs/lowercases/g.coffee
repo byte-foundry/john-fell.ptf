@@ -1,12 +1,19 @@
 exports.glyphs['g'] =
 	unicode: 'g'
+	glyphName: 'g'
+	characterName: 'LATIN SMALL LETTER G'
 	ot:
 		advanceWidth: contours[1].nodes[4].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 45 * spacing - (5)
 		spacingRight: 35 * spacing
 	anchors:
 		0:
+			x: contours[0].nodes[2].x
+			y: xHeight + diacriticHeight
 			junctionBottom: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[1], contours[0].nodes[0].expandedTo[1], 50 )
 	tags: [
 		'all',

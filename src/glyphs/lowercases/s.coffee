@@ -1,12 +1,19 @@
 exports.glyphs['s'] =
 	unicode: 's'
+	glyphName: 's'
+	characterName: 'LATIN SMALL LETTER S'
 	ot:
 		advanceWidth: contours[0].nodes[4].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 70 * spacing + (8)
 		spacingRight: 50 * spacing
 	anchors:
 		0:
+			x: contours[0].nodes[3].x
+			y: xHeight + diacriticHeight
 			baseSerifTop: Utils.pointOnCurve( contours[0].nodes[1].expandedTo[1], contours[0].nodes[0].expandedTo[1], serifHeight + Math.min( 180, serifCurve * ( 180 / 15 ) ), true )
 			baseSerifBottom: Utils.pointOnCurve( contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[0], serifHeight + Math.min( 90, serifCurve * ( 90 / 15 ) ) )
 			baseSerifTop_: Utils.pointOnCurve( contours[0].nodes[5].expandedTo[0], contours[0].nodes[6].expandedTo[0], serifHeight + Math.min( 150, serifCurve * ( 150 / 15 ) ), true )
@@ -24,10 +31,10 @@ exports.glyphs['s'] =
 				0:
 					x: contours[0].nodes[4].expandedTo[1].x - 30
 					y: xHeight - ( 80 / 520 ) * xHeight
-					dirOut: Math.max(
-						1.8,
-						Math.PI - ( 1.06 / 520 ) * xHeight
-					) # 120 + 'deg'
+					# dirOut: Math.max(
+					# 	1.8,
+					# 	Math.PI - ( 1.06 / 520 ) * xHeight
+					# ) # 120 + 'deg'
 					dirOut: 2.08
 					type: 'smooth'
 					expand: Object({
@@ -36,7 +43,7 @@ exports.glyphs['s'] =
 						distr: 0.25
 					})
 				1:
-					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.515
+					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.515
 					x: 215
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
@@ -87,7 +94,7 @@ exports.glyphs['s'] =
 						distr: 0.75
 					})
 				5:
-					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.565
+					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.565
 					x: 230
 					y: - overshoot
 					dirOut: 180 + 'deg'

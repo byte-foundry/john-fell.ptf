@@ -1,7 +1,12 @@
 exports.glyphs['c'] =
 	unicode: 'c'
+	glyphName: 'c'
+	characterName: 'LATIN SMALL LETTER C'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[0].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 45 * spacing + (19)
 		spacingRight: 30 * spacing
@@ -10,6 +15,10 @@ exports.glyphs['c'] =
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[3].x
+			y: xHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true

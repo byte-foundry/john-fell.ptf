@@ -1,7 +1,12 @@
 exports.glyphs['six'] =
 	unicode: '6'
+	glyphName: 'six'
+	characterName: 'DIGIT SIX'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + 15 * spacing
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 10 * spacing + (10)
 		spacingRight: 10 * spacing

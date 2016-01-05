@@ -1,7 +1,12 @@
 exports.glyphs['e'] =
 	unicode: 'e'
+	glyphName: 'e'
+	characterName: 'LATIN SMALL LETTER E'
 	ot:
 		advanceWidth: contours[0].nodes[2].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 45 * spacing + (18)
 		spacingRight: 30 * spacing
@@ -10,6 +15,10 @@ exports.glyphs['e'] =
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[3].expandedTo[1].x
+			y: xHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true

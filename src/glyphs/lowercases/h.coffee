@@ -1,7 +1,12 @@
 exports.glyphs['h'] =
 	unicode: 'h'
+	glyphName: 'h'
+	characterName: 'LATIN SMALL LETTER H'
 	ot:
 		advanceWidth: contours[1].nodes[3].expandedTo[0].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 40 * spacing - (8) + serifWidth + 40
 		spacingRight: 30 * spacing + serifWidth + 25

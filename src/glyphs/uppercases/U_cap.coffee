@@ -1,7 +1,12 @@
 exports.glyphs['U_cap'] =
 	unicode: 'U'
+	glyphName: 'U'
+	characterName: 'LATIN CAPITAL LETTER U'
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+	transforms: Array(
+		['skewX', slant + 'deg']
+	)
 	parameters:
 		spacingLeft: 5 * spacing + (25) + serifWidth + 40
 		spacingRight: 5 * spacing + serifWidth + 45
@@ -10,6 +15,10 @@ exports.glyphs['U_cap'] =
 		'latin',
 		'uppercase'
 	]
+	anchors:
+		0:
+			x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
+			y: capHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true
