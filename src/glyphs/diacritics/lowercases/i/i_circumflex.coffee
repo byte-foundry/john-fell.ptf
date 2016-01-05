@@ -1,7 +1,7 @@
 exports.glyphs['i_circumflex'] =
 	unicode: 'î'
-	glyphName: "icircumflex"
-	characterName: "LATIN SMALL LETTER I WITH CIRCUMFLEX"
+	glyphName: 'icircumflex'
+	characterName: 'LATIN SMALL LETTER I WITH CIRCUMFLEX'
 	base: 'ı'
 	advanceWidth: base.advanceWidth
 	tags: [

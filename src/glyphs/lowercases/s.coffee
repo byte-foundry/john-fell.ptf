@@ -1,7 +1,7 @@
 exports.glyphs['s'] =
 	unicode: 's'
-	glyphName: "s"
-	characterName: "LATIN SMALL LETTER S"
+	glyphName: 's'
+	characterName: 'LATIN SMALL LETTER S'
 	ot:
 		advanceWidth: contours[0].nodes[4].expandedTo[1].x + spacingRight
 	transforms: Array(

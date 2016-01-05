@@ -1,7 +1,7 @@
 exports.glyphs['y_cap_acute'] =
 	unicode: 'Ý'
-	glyphName: "Yacute"
-	characterName: "LATIN CAPITAL LETTER Y WITH ACUTE"
+	glyphName: 'Yacute'
+	characterName: 'LATIN CAPITAL LETTER Y WITH ACUTE'
 	base: 'Y_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

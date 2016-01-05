@@ -1,7 +1,7 @@
 exports.glyphs['c_cap_acute'] =
 	unicode: 'Ć'
-	glyphName: "Cacute"
-	characterName: "LATIN CAPITAL LETTER C WITH ACUTE"
+	glyphName: 'Cacute'
+	characterName: 'LATIN CAPITAL LETTER C WITH ACUTE'
 	base: 'C_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

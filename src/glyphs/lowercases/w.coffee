@@ -1,7 +1,7 @@
 exports.glyphs['w'] =
 	unicode: 'w'
-	glyphName: "w"
-	characterName: "LATIN SMALL LETTER W"
+	glyphName: 'w'
+	characterName: 'LATIN SMALL LETTER W'
 	ot:
 		advanceWidth: contours[2].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(

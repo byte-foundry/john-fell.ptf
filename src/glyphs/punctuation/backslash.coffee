@@ -1,7 +1,7 @@
 exports.glyphs['backslash'] =
 	unicode: '\\'
-	glyphName: "backslash"
-	characterName: "REVERSE SOLIDUS"
+	glyphName: 'backslash'
+	characterName: 'REVERSE SOLIDUS'
 	ot:
 		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 30 * spacing
 	transforms: Array(

@@ -1,7 +1,7 @@
 exports.glyphs['a_cap_circumflex'] =
 	unicode: 'Â'
-	glyphName: "Acircumflex"
-	characterName: "LATIN CAPITAL LETTER A WITH CIRCUMFLEX"
+	glyphName: 'Acircumflex'
+	characterName: 'LATIN CAPITAL LETTER A WITH CIRCUMFLEX'
 	base: 'A_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

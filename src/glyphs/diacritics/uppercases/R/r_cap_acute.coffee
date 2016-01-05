@@ -1,7 +1,7 @@
 exports.glyphs['r_cap_acute'] =
 	unicode: 'Ŕ'
-	glyphName: "Racute"
-	characterName: "LATIN CAPITAL LETTER R WITH ACUTE"
+	glyphName: 'Racute'
+	characterName: 'LATIN CAPITAL LETTER R WITH ACUTE'
 	base: 'R_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

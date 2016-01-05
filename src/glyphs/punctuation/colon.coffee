@@ -1,7 +1,7 @@
 exports.glyphs['colon'] =
-	unicode: ":"
-	glyphName: "colon"
-	characterName: "COLON"
+	unicode: ':'
+	glyphName: 'colon'
+	characterName: 'COLON'
 	base: '.'
 	advanceWidth: base.advanceWidth
 	transforms: Array(

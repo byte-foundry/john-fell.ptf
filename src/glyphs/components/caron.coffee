@@ -1,6 +1,6 @@
 exports.glyphs['caron'] =
-	glyphName: "caron"
-	characterName: "CARON"
+	glyphName: 'caron'
+	characterName: 'CARON'
 	anchors:
 		0:
 			x: parentAnchors[0].x

@@ -1,7 +1,7 @@
 exports.glyphs['l_caron'] =
 	unicode: 'ľ'
-	glyphName: "lcaron"
-	characterName: "LATIN SMALL LETTER L WITH CARON"
+	glyphName: 'lcaron'
+	characterName: 'LATIN SMALL LETTER L WITH CARON'
 	base: 'l'
 	advanceWidth: base.advanceWidth
 	tags: [

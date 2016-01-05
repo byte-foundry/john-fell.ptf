@@ -1,7 +1,7 @@
 exports.glyphs['n_cap_tilde'] =
 	unicode: 'Ñ'
-	glyphName: "Ntilde"
-	characterName: "LATIN CAPITAL LETTER N WITH TILDE"
+	glyphName: 'Ntilde'
+	characterName: 'LATIN CAPITAL LETTER N WITH TILDE'
 	base: 'N_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

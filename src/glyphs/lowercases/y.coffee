@@ -1,7 +1,7 @@
 exports.glyphs['y'] =
 	unicode: 'y'
-	glyphName: "y"
-	characterName: "LATIN SMALL LETTER Y"
+	glyphName: 'y'
+	characterName: 'LATIN SMALL LETTER Y'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(

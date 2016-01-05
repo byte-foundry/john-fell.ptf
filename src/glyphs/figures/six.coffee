@@ -1,7 +1,7 @@
 exports.glyphs['six'] =
 	unicode: '6'
-	glyphName: "six"
-	characterName: "DIGIT SIX"
+	glyphName: 'six'
+	characterName: 'DIGIT SIX'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + 15 * spacing
 	transforms: Array(

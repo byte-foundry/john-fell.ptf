@@ -1,7 +1,7 @@
 exports.glyphs['parenright'] =
 	unicode: ')'
-	glyphName: "parenright"
-	characterName: "RIGHT PARENTHESIS"
+	glyphName: 'parenright'
+	characterName: 'RIGHT PARENTHESIS'
 	ot:
 		advanceWidth: width * 470 + thickness - 85
 	transforms: Array(

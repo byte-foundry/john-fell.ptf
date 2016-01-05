@@ -1,7 +1,7 @@
 exports.glyphs['three'] =
 	unicode: '3'
-	glyphName: "three"
-	characterName: "DIGIT THREE"
+	glyphName: 'three'
+	characterName: 'DIGIT THREE'
 	ot:
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + 40 * spacing
 	transforms: Array(

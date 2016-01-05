@@ -1,7 +1,7 @@
 exports.glyphs['h_cap_circumflex'] =
 	unicode: 'Ĥ'
-	glyphName: "Hcircumflex"
-	characterName: "LATIN CAPITAL LETTER H WITH CIRCUMFLEX"
+	glyphName: 'Hcircumflex'
+	characterName: 'LATIN CAPITAL LETTER H WITH CIRCUMFLEX'
 	base: 'H_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

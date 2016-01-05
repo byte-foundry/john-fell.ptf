@@ -1,7 +1,7 @@
 exports.glyphs['o_cap_tilde'] =
 	unicode: 'Õ'
-	glyphName: "Otilde"
-	characterName: "LATIN CAPITAL LETTER O WITH TILDE"
+	glyphName: 'Otilde'
+	characterName: 'LATIN CAPITAL LETTER O WITH TILDE'
 	base: 'O_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

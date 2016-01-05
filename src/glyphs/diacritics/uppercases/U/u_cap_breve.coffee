@@ -1,7 +1,7 @@
 exports.glyphs['u_cap_breve'] =
 	unicode: 'Ŭ'
-	glyphName: "Ubreve"
-	characterName: "LATIN CAPITAL LETTER U WITH BREVE"
+	glyphName: 'Ubreve'
+	characterName: 'LATIN CAPITAL LETTER U WITH BREVE'
 	base: 'U_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

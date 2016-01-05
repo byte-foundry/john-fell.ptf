@@ -1,7 +1,7 @@
 exports.glyphs['t'] =
 	unicode: 't'
-	glyphName: "t"
-	characterName: "LATIN SMALL LETTER T"
+	glyphName: 't'
+	characterName: 'LATIN SMALL LETTER T'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(

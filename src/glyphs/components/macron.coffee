@@ -1,6 +1,6 @@
 exports.glyphs['macron'] =
-	glyphName: "macron"
-	characterName: "MACRON"
+	glyphName: 'macron'
+	characterName: 'MACRON'
 	anchors:
 		0:
 			x: parentAnchors[0].x

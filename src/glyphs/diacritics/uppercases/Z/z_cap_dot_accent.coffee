@@ -1,7 +1,7 @@
 exports.glyphs['z_cap_dot_accent'] =
 	unicode: 'Ż'
-	glyphName: "Zdotaccent"
-	characterName: "LATIN CAPITAL LETTER Z WITH DOT ABOVE"
+	glyphName: 'Zdotaccent'
+	characterName: 'LATIN CAPITAL LETTER Z WITH DOT ABOVE'
 	base: 'Z_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

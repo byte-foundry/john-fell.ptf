@@ -1,7 +1,7 @@
 exports.glyphs['y_cap_dieresis'] =
 	unicode: 'Ÿ'
-	glyphName: "Ydieresis"
-	characterName: "LATIN CAPITAL LETTER Y WITH DIAERESIS"
+	glyphName: 'Ydieresis'
+	characterName: 'LATIN CAPITAL LETTER Y WITH DIAERESIS'
 	base: 'Y_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

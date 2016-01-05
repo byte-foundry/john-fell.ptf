@@ -1,7 +1,7 @@
 exports.glyphs['o_grave'] =
 	unicode: 'ò'
-	glyphName: "ograve"
-	characterName: "LATIN SMALL LETTER O WITH GRAVE"
+	glyphName: 'ograve'
+	characterName: 'LATIN SMALL LETTER O WITH GRAVE'
 	base: 'o'
 	advanceWidth: base.advanceWidth
 	tags: [

@@ -1,7 +1,7 @@
 exports.glyphs['e_cap_caron'] =
 	unicode: 'Ě'
-	glyphName: "Ecaron"
-	characterName: "LATIN CAPITAL LETTER E WITH CARON"
+	glyphName: 'Ecaron'
+	characterName: 'LATIN CAPITAL LETTER E WITH CARON'
 	base: 'E_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

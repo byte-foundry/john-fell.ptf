@@ -1,7 +1,7 @@
 exports.glyphs['z_cap_acute'] =
 	unicode: 'Ź'
-	glyphName: "Zacute"
-	characterName: "LATIN CAPITAL LETTER Z WITH ACUTE"
+	glyphName: 'Zacute'
+	characterName: 'LATIN CAPITAL LETTER Z WITH ACUTE'
 	base: 'Z_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

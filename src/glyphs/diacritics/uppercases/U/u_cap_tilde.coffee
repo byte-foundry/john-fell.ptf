@@ -1,7 +1,7 @@
 exports.glyphs['u_cap_tilde'] =
 	unicode: 'Ũ'
-	glyphName: "Utilde"
-	characterName: "LATIN CAPITAL LETTER U WITH TILDE"
+	glyphName: 'Utilde'
+	characterName: 'LATIN CAPITAL LETTER U WITH TILDE'
 	base: 'U_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

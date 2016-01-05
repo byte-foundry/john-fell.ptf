@@ -1,7 +1,7 @@
 exports.glyphs['z_caron'] =
 	unicode: 'ž'
-	glyphName: "zcaron"
-	characterName: "LATIN SMALL LETTER Z WITH CARON"
+	glyphName: 'zcaron'
+	characterName: 'LATIN SMALL LETTER Z WITH CARON'
 	base: 'z'
 	advanceWidth: base.advanceWidth
 	tags: [

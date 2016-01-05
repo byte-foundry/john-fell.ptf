@@ -1,7 +1,7 @@
 exports.glyphs['a_cap_grave'] =
 	unicode: 'À'
-	glyphName: "Agrave"
-	characterName: "LATIN CAPITAL LETTER A WITH GRAVE"
+	glyphName: 'Agrave'
+	characterName: 'LATIN CAPITAL LETTER A WITH GRAVE'
 	base: 'A_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

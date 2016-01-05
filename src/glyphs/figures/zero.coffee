@@ -1,7 +1,7 @@
 exports.glyphs['zero'] =
 	unicode: '0'
-	glyphName: "zero"
-	characterName: "DIGIT ZERO"
+	glyphName: 'zero'
+	characterName: 'DIGIT ZERO'
 	ot:
 		advanceWidth: width * 545 + thickness * 2 - ( 85 * 2 )
 	transforms: Array(

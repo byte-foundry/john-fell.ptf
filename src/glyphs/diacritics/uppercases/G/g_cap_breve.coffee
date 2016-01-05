@@ -1,7 +1,7 @@
 exports.glyphs['g_cap_breve'] =
 	unicode: 'Ğ'
-	glyphName: "Gbreve"
-	characterName: "LATIN CAPITAL LETTER G WITH BREVE"
+	glyphName: 'Gbreve'
+	characterName: 'LATIN CAPITAL LETTER G WITH BREVE'
 	base: 'G_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

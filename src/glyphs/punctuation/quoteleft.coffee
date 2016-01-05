@@ -1,7 +1,7 @@
 exports.glyphs['quoteleft'] =
 	unicode: '‘'
-	glyphName: "quoteleft"
-	characterName: "LEFT SINGLE QUOTATION MARK"
+	glyphName: 'quoteleft'
+	characterName: 'LEFT SINGLE QUOTATION MARK'
 	ot:
 		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
 	transforms: Array(

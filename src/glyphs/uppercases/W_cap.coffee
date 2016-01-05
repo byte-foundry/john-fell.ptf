@@ -1,7 +1,7 @@
 exports.glyphs['W_cap'] =
 	unicode: 'W'
-	glyphName: "W"
-	characterName: "LATIN CAPITAL LETTER W"
+	glyphName: 'W'
+	characterName: 'LATIN CAPITAL LETTER W'
 	ot:
 		advanceWidth: contours[2].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(

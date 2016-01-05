@@ -1,7 +1,7 @@
 exports.glyphs['e_breve'] =
 	unicode: 'ĕ'
-	glyphName: "ebreve"
-	characterName: "LATIN SMALL LETTER E WITH BREVE"
+	glyphName: 'ebreve'
+	characterName: 'LATIN SMALL LETTER E WITH BREVE'
 	base: 'e'
 	advanceWidth: base.advanceWidth
 	tags: [

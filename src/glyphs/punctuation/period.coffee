@@ -1,7 +1,7 @@
 exports.glyphs['period'] =
 	unicode: '.'
-	glyphName: "period"
-	characterName: "FULL STOP"
+	glyphName: 'period'
+	characterName: 'FULL STOP'
 	ot:
 		advanceWidth: contours[0].nodes[2].x + spacingRight
 	transforms: Array(

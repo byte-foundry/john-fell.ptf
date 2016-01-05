@@ -1,7 +1,7 @@
 exports.glyphs['a_cap_breve'] =
 	unicode: 'Ă'
-	glyphName: "Abreve"
-	characterName: "LATIN CAPITAL LETTER A WITH BREVE"
+	glyphName: 'Abreve'
+	characterName: 'LATIN CAPITAL LETTER A WITH BREVE'
 	base: 'A_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

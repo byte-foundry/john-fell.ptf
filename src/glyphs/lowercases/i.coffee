@@ -1,7 +1,7 @@
 exports.glyphs['i'] =
 	unicode: 'i'
-	glyphName: "i"
-	characterName: "LATIN SMALL LETTER I"
+	glyphName: 'i'
+	characterName: 'LATIN SMALL LETTER I'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(

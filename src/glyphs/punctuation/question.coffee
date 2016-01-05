@@ -1,7 +1,7 @@
 exports.glyphs['question'] =
 	unicode: '?'
-	glyphName: "question"
-	characterName: "QUESTION MARK"
+	glyphName: 'question'
+	characterName: 'QUESTION MARK'
 	ot:
 		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
 	transforms: Array(

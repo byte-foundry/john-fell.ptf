@@ -1,7 +1,7 @@
 exports.glyphs['l_cap_acute'] =
 	unicode: 'Ĺ'
-	glyphName: "Lacute"
-	characterName: "LATIN CAPITAL LETTER L WITH ACUTE"
+	glyphName: 'Lacute'
+	characterName: 'LATIN CAPITAL LETTER L WITH ACUTE'
 	base: 'L_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

@@ -1,7 +1,7 @@
 exports.glyphs['exclam'] =
 	unicode: '!'
-	glyphName: "exclam"
-	characterName: "EXCLAMATION MARK"
+	glyphName: 'exclam'
+	characterName: 'EXCLAMATION MARK'
 	ot:
 		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
 	transforms: Array(

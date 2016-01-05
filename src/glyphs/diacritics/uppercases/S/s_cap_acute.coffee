@@ -1,7 +1,7 @@
 exports.glyphs['s_cap_acute'] =
 	unicode: 'Ś'
-	glyphName: "Sacute"
-	characterName: "LATIN CAPITAL LETTER S WITH ACUTE"
+	glyphName: 'Sacute'
+	characterName: 'LATIN CAPITAL LETTER S WITH ACUTE'
 	base: 'S_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

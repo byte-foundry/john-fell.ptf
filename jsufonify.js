@@ -126,9 +126,13 @@ function jsufonify(/*prefixText*/) {
 			// source and then restore/merge the properties we're interested in
 			var glyph = _.clone( charMap[ _glyph.base.charCodeAt(0) ], true );
 
-
 			glyph.name = _glyph.name;
 			glyph.unicode = _glyph.unicode;
+			glyph.tags = _glyph.tags;
+			glyph.glyphName = _glyph.glyphName;
+			glyph.characterName = _glyph.characterName;
+			// merge all parameters (diacritic will overwrite base parameters)
+			_.assign( glyph.parameter, _glyph.parameter );
 			// merge the two array of components
 			[].push.apply(glyph.outline.component, _glyph.outline.component );
 

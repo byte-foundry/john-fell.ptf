@@ -1,7 +1,7 @@
 exports.glyphs['a_cap_tilde'] =
 	unicode: 'Ã'
-	glyphName: "Atilde"
-	characterName: "LATIN CAPITAL LETTER A WITH TILDE"
+	glyphName: 'Atilde'
+	characterName: 'LATIN CAPITAL LETTER A WITH TILDE'
 	base: 'A_cap'
 	advanceWidth: base.advanceWidth
 	tags: [

@@ -1,7 +1,7 @@
 exports.glyphs['i_macron'] =
 	unicode: 'ī'
-	glyphName: "imacron"
-	characterName: "LATIN SMALL LETTER I WITH MACRON"
+	glyphName: 'imacron'
+	characterName: 'LATIN SMALL LETTER I WITH MACRON'
 	altImg: 'full-serifs-i.svg'
 	base: 'ı'
 	advanceWidth: base.advanceWidth
