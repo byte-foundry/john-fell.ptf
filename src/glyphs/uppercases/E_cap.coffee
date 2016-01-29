@@ -30,6 +30,7 @@ exports.glyphs['E_cap'] =
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
+						angle: 0 + 'deg'
 						width: thickness * opticThickness * ( 100 / 85 )
 						distr: 0.25
 					})
@@ -39,6 +40,7 @@ exports.glyphs['E_cap'] =
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
+						angle: 0 + 'deg'
 						width: thickness * opticThickness * ( 100 / 85 )
 						distr: 0.25
 					})
@@ -52,6 +54,7 @@ exports.glyphs['E_cap'] =
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
+						angle: - 90 + 'deg'
 						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 0
 					})
@@ -61,7 +64,8 @@ exports.glyphs['E_cap'] =
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: contours[1].nodes[0].expand.width
+						angle: - 90 + 'deg'
+						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 0
 					})
 		2:
@@ -74,6 +78,7 @@ exports.glyphs['E_cap'] =
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
+						angle: 90 + 'deg'
 						width: thickness * opticThickness * ( 28 / 100 ) * contrast
 						distr: 0
 					})
@@ -83,6 +88,7 @@ exports.glyphs['E_cap'] =
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
+						angle: 90 + 'deg'
 						width: contours[2].nodes[0].expand.width
 						distr: 0
 					})
@@ -96,6 +102,7 @@ exports.glyphs['E_cap'] =
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
+						angle: - 90 + 'deg'
 						# width: Math.max( serifHeight, thickness * opticThickness * ( 20 / 100 ) ) // Fit the thickness to the serifHeight
 						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 1
@@ -105,6 +112,7 @@ exports.glyphs['E_cap'] =
 					y: contours[3].nodes[0].y
 					dirOut: 0 + 'deg'
 					expand: Object({
+						angle: - 90 + 'deg'
 						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 1
 					})
@@ -161,10 +169,10 @@ exports.glyphs['E_cap'] =
 			parentAnchors:
 				0:
 					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
-					y: contours[2].nodes[0].expandedTo[0].y
+					y: contours[2].nodes[0].expandedTo[1].y
 				1:
 					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
-					y: contours[2].nodes[0].expandedTo[1].y
+					y: contours[2].nodes[0].expandedTo[0].y
 				2:
 					anchorLine: contours[2].nodes[1].expandedTo[0].x
 					leftWidth: 75
@@ -204,10 +212,10 @@ exports.glyphs['E_cap'] =
 					x: Math.max(contours[3].nodes[0].expandedTo[0].x, contours[3].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 100 / 15 ) )
 					y: contours[3].nodes[0].expandedTo[0].y
 				2:
-					anchorLine: contours[3].nodes[1].expandedTo[1].x
+					anchorLine: contours[3].nodes[1].expandedTo[0].x
 					rightWidth: 60
 					left: false
 					baseLeft: contours[3].nodes[1].expandedTo[1].point
 					# baseRight: contours[3].nodes[1].expandedTo[0].point
-			transformOrigin: Array( contours[3].nodes[0].expandedTo[0].x, contours[3].nodes[0].expandedTo[0].y )
+			transformOrigin: Array( contours[3].nodes[1].expandedTo[1].x, contours[3].nodes[1].expandedTo[1].y )
 			transforms: Array( [ 'skewX', serifRotate * (8) + 'deg' ] )
