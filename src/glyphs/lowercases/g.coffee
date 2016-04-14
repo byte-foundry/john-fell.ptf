@@ -205,8 +205,8 @@ exports.glyphs['g'] =
 				0:
 					x: contours[2].nodes[0].expandedTo[0].x
 					y: contours[2].nodes[0].expandedTo[0].y
-					dirOut: 90 + 'deg'
-					type: 'smooth'
+					dirOut: - 90 + 'deg'
+					typeIn: 'line'
 				1:
 					x: contours[2].nodes[0].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[1].x - contours[2].nodes[0].expandedTo[0].x ) * ( 35/ 75 )
 					y: contours[2].nodes[0].expandedTo[0].y - thickness * ( 40 / 85 )
@@ -215,5 +215,4 @@ exports.glyphs['g'] =
 				2:
 					x: contours[2].nodes[0].expandedTo[1].x
 					y: contours[2].nodes[0].expandedTo[1].y
-					dirOut: 90 + 'deg'
-					type: 'smooth'
+					dirIn: - 90 + 'deg'

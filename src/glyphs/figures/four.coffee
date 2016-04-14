@@ -55,12 +55,12 @@ exports.glyphs['four'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: contours[0].nodes[0].expandedTo[1].x + 120 * width
 					y: 0
-					dirOut: 90 + 'deg'
+					dirIn: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: ( 15 / 85 ) * thickness
+						width: ( 65 / 85 ) * thickness
 						distr: 0
 						angle: 90 + 'deg'
 					})
@@ -73,18 +73,18 @@ exports.glyphs['four'] =
 						y: 0
 					,
 						x: Utils.onLine({
-							y: contours[1].nodes[2].expandedTo[1].y
+							y: contours[1].nodes[0].expandedTo[1].y
 							on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
 						})
-						y: contours[1].nodes[2].expandedTo[1].y
+						y: contours[1].nodes[0].expandedTo[1].y
 					]
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + 120 * width
+					x: spacingLeft
 					y: 0
-					dirOut: 90 + 'deg'
+					dirIn: 90 + 'deg'
 					typeIn: 'line'
 					expand: Object({
-						width: ( 65 / 85 ) * thickness
+						width: ( 15 / 85 ) * thickness
 						distr: 0
 						angle: 90 + 'deg'
 					})
@@ -93,8 +93,8 @@ exports.glyphs['four'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[0].expandedTo[1].x
-					y: contours[1].nodes[0].expandedTo[1].y
+					x: contours[1].nodes[2].expandedTo[1].x
+					y: contours[1].nodes[2].expandedTo[1].y
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -116,15 +116,15 @@ exports.glyphs['four'] =
 			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: contours[1].nodes[2].expandedTo[1].x - serifHeight - serifCurve * ( 110 / 15 )
-					y: contours[1].nodes[2].expandedTo[1].y
+					x: contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 110 / 15 )
+					y: contours[1].nodes[0].expandedTo[1].y
 				1:
-					x: contours[1].nodes[2].expandedTo[0].x - serifHeight - serifCurve * ( 60 / 15 )
-					y: contours[1].nodes[2].expandedTo[0].y
+					x: contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 60 / 15 )
+					y: contours[1].nodes[0].expandedTo[0].y
 				2:
-					anchorLine: contours[1].nodes[2].expandedTo[0].x
+					anchorLine: contours[1].nodes[0].expandedTo[0].x
 					leftWidth: - 10
 			# parentParameters:
 				# serifMedian: serifMedian * 0.65
-			transformOrigin: Array( contours[1].nodes[2].expandedTo[0].x, contours[1].nodes[2].expandedTo[0].y )
+			transformOrigin: Array( contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].y )
 			transforms: Array( [ 'skewX', serifRotate * (8) + 'deg' ] )

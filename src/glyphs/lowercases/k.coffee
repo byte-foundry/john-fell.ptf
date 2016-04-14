@@ -43,16 +43,6 @@ exports.glyphs['k'] =
 			closed: false
 			nodes:
 				0:
-					x: 150 + 315 * width + (53) + thickness - 85
-					x: contours[2].nodes[0].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[1].x - contours[2].nodes[0].expandedTo[0].x ) * 0.6
-					y: xHeight
-					dirOut: 90 + 'deg'
-					typeOut: 'line'
-					expand: Object({
-						width: thickness * ( 36 / 85 ) * width
-						distr: 0.5
-					})
-				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: xHeight * ( 280 / 500 )
 					dirOut: 90 + 'deg'
@@ -60,6 +50,16 @@ exports.glyphs['k'] =
 					expand: Object({
 						width: thickness * ( 36 / 85 ) * width
 						distr: 0
+					})
+				1:
+					x: 250 + 215 * width + (53) + thickness - 85
+					x: contours[2].nodes[0].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[1].x - contours[2].nodes[0].expandedTo[0].x ) * 0.6
+					y: xHeight
+					dirOut: 90 + 'deg'
+					typeOut: 'line'
+					expand: Object({
+						width: thickness * ( 36 / 85 ) * width
+						distr: 0.5
 					})
 		2:
 			skeleton: true
@@ -76,13 +76,13 @@ exports.glyphs['k'] =
 						distr: 0.5
 					})
 				1:
-					x: contours[1].nodes[1].expandedTo[0].x
-					y: contours[1].nodes[1].y
+					x: contours[1].nodes[0].expandedTo[0].x
+					y: contours[1].nodes[0].y
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 66 / 85 ) + thickness * ( 20 / 85 ) * width
-						angle: Utils.lineAngle( contours[1].nodes[1].point, contours[1].nodes[0].point )
+						angle: Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point )
 						distr: 0
 					})
 	# components:
@@ -135,20 +135,20 @@ exports.glyphs['k'] =
 	# 			0:
 	# 				x: Utils.onLine({
 	# 					y: xHeight - serifHeight - serifCurve
-	# 					on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
+	# 					on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
 	# 				})
 	# 				y: xHeight - serifHeight - serifCurve
 	# 			1:
 	# 				x: Utils.onLine({
 	# 					y: xHeight - serifHeight - serifCurve
-	# 					on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
+	# 					on: [ contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ]
 	# 				})
 	# 				y: xHeight - serifHeight - serifCurve
 	# 			2:
 	# 				anchorLine: xHeight
 	# 				leftWidth: 1.2
 	# 				rightWidth: 1.1
-	# 				angle: Utils.lineAngle( contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point )
+	# 				angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
 	# 				directionY: -1
 	components:
 		0:
@@ -216,22 +216,22 @@ exports.glyphs['k'] =
 				0:
 					x: Utils.onLine({
 						y: xHeight - serifHeight - serifCurve
-						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
+						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
 					})
 					y: xHeight - serifHeight - serifCurve
 				1:
 					x: Utils.onLine({
 						y: xHeight - serifHeight - serifCurve * ( 150 / 15 )
-						on: [ contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ]
+						on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
 					})
 					y: xHeight - serifHeight - serifCurve * ( 150 / 15 )
 				2:
 					anchorLine: xHeight
 					leftWidth: 120
-					max1: contours[1].nodes[1].expandedTo[0].point
+					max1: contours[1].nodes[0].expandedTo[0].point
 					# leftCurve: - 50
 					# rightWidth: 0.9
-					baseLeft: contours[1].nodes[0].expandedTo[0].point
-					baseRight: contours[1].nodes[0].expandedTo[1].point
-					angle: Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point )
+					baseLeft: contours[1].nodes[1].expandedTo[0].point
+					baseRight: contours[1].nodes[1].expandedTo[1].point
+					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point )
 					directionY: -1

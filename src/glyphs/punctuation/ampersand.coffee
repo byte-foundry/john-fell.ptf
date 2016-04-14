@@ -21,79 +21,46 @@ exports.glyphs['ampersand'] =
 			closed: false
 			nodes:
 				0:
-					x: 245 + (4)
-					y: 440
-					dirOut: - 163 + 'deg'
+					x: 710 + (5)
+					y: xHeight
+					dirOut: - 110 + 'deg'
 					type: 'smooth'
+					tensionIn: '0.' + serifCurve
 					expand: Object({
-						width: thickness * ( 16 / 85 )
-						angle: - 18 + 'deg'
-						distr: 0.25
+						width: thickness * ( 20 / 85 )
+						angle: 180 + 'deg'
+						distr: 0.75
 					})
 				1:
+					x: 245
+					y: - overshoot
+					type: 'smooth'
+					dirIn: 0 + 'deg'
+					expand: Object({
+						width: thickness * ( 93 / 85 )
+						angle: 58 + 'deg'
+						distr: 0
+					})
+				2:
 					x: 40 + (22)
 					y: 205
-					dirOut: - 90 + 'deg'
+					dirIn: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 93 / 85 )
 						angle: 16 + 'deg'
 						distr: 0.25
 					})
-				2:
-					x: 245
-					y: - overshoot
-					type: 'smooth'
-					dirOut: 0 + 'deg'
-					expand: Object({
-						width: thickness * ( 93 / 85 )
-						angle: 58 + 'deg'
-						distr: 0
-					})
 				3:
-					x: 710 + (5)
-					y: xHeight
-					dirIn: - 110 + 'deg'
+					x: 245 + (4)
+					y: 440
+					dirIn: - 163 + 'deg'
 					type: 'smooth'
-					tensionOut: '0.' + serifCurve
 					expand: Object({
-						width: thickness * ( 20 / 85 )
-						angle: 180 + 'deg'
-						distr: 0.75
+						width: thickness * ( 16 / 85 )
+						angle: - 18 + 'deg'
+						distr: 0.25
 					})
-				# 3:
-				# 	x: 710 + (5) - serifHeight
-				# 	y: xHeight - serifHeight - 100
-				# 	dirIn: - 110 + 'deg'
-				# 	type: 'smooth'
-				# 	tensionOut: '0.' + serifCurve
-				# 	expand: Object({
-				# 		width: thickness * ( 20 / 85 )
-				# 		angle: 180 + 'deg'
-				# 		distr: 0.75
-				# 		})
-				# 4:
-				# 	x: 710 + (5)
-				# 	y: xHeight - serifHeight
-				# 	dirOut: contours[0].nodes[3].dirIn
-				# 	type: 'smooth'
-				# 	typeOut: 'line'
-				# 	tensionIn: 0
-				# 	expand: Object({
-				# 		width: thickness * ( 20 / 85 ) + serifWidth * 2
-				# 		angle: 180 + 'deg'
-				# 		distr: 0.5
-				# 	})
-				# 5:
-				# 	x: 710 + (5)
-				# 	y: xHeight
-				# 	dirIn: - 110 + 'deg'
-				# 	type: 'smooth'
-				# 	expand: Object({
-				# 		width: thickness * ( 20 / 85 ) + serifWidth * 2
-				# 		angle: 180 + 'deg'
-				# 		distr: 0.5
-				# 	})
 		1:
 			skeleton: true
 			closed: false

@@ -76,7 +76,6 @@ exports.glyphs['question'] =
 				0:
 					x: contours[0].nodes[4].expandedTo[0].x
 					y: contours[0].nodes[4].expandedTo[0].y
-					type: 'smooth'
 					dirOut: 180 + 'deg'
 				1:
 					x: contours[0].nodes[4].expandedTo[0].x - ( 80 / 85 ) * thickness
@@ -89,6 +88,7 @@ exports.glyphs['question'] =
 				3:
 					x: contours[0].nodes[4].expandedTo[1].x
 					y: contours[0].nodes[4].expandedTo[1].y
+					typeOut: 'line'
 	components:
 		0:
 			base: 'dot'

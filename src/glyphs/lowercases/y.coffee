@@ -124,6 +124,7 @@ exports.glyphs['y'] =
 				3:
 					x: contours[2].nodes[2].expandedTo[0].x
 					y: contours[2].nodes[2].expandedTo[0].y
+					typeOut: 'line'
 		# TODO:
 		# This contour is used to set the spacing
 		# We need to call the advanceWidth of the component instead

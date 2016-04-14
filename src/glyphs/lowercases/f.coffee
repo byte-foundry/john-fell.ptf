@@ -70,6 +70,7 @@ exports.glyphs['f'] =
 				3:
 					x: contours[0].nodes[2].expandedTo[1].x
 					y: contours[0].nodes[2].expandedTo[1].y
+					typeOut: 'line'
 					dirIn: 0 + 'deg'
 					tensionIn: 1.2
 		2:

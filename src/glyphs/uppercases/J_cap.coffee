@@ -64,7 +64,6 @@ exports.glyphs['J_cap'] =
 					x: contours[0].nodes[2].expandedTo[0].x
 					y: contours[0].nodes[2].expandedTo[0].y
 					dirOut: 180 + 'deg'
-					type: 'smooth'
 				1:
 					x: contours[1].nodes[0].x - ( 75 / 85 ) * thickness
 					y: contours[1].nodes[0].y + ( 80 / 85 ) * thickness
