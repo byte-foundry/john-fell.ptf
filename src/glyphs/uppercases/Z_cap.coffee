@@ -29,7 +29,7 @@ exports.glyphs['Z_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 20 / 85 )
+						width: thickness * ( 20 / 85 ) * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -38,7 +38,7 @@ exports.glyphs['Z_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 28 / 85 )
+						width: thickness * ( 28 / 85 ) * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -51,7 +51,7 @@ exports.glyphs['Z_cap'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 20 / 85 )
+						width: thickness * ( 20 / 85 ) * contrast
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -60,7 +60,7 @@ exports.glyphs['Z_cap'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 30 / 85 )
+						width: thickness * ( 30 / 85 ) * contrast
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -73,8 +73,8 @@ exports.glyphs['Z_cap'] =
 					y: contours[1].nodes[0].expandedTo[1].y
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 105 / 85 )
-						angle: 167 + 'deg'
+						width: thickness * ( 113 / 85 )
+						angle: Math.PI / 2 + Math.acos( (thickness * ( 20 / 85 ) * contrast) / (thickness * ( 113 / 85 )) ) # 180 - 10 + 'deg'
 						distr: 1
 					})
 				1:
@@ -82,8 +82,8 @@ exports.glyphs['Z_cap'] =
 					y: contours[0].nodes[0].expandedTo[1].y
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 95 / 85 )
-						angle: 167 + 'deg'
+						width: thickness * ( 103 / 85 )
+						angle: Math.PI / 2 + Math.acos( (thickness * ( 20 / 85 ) * contrast) / (thickness * ( 103 / 85 )) ) # 170 + 'deg'
 						distr: 0
 					})
 	components:
