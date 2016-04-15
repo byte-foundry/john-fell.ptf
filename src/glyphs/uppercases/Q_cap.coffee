@@ -12,7 +12,8 @@ exports.glyphs['Q_cap'] =
 		spacingRight: 50 * spacing
 	anchors:
 		0:
-			junction: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[1], contours[0].nodes[0].expandedTo[0], 10 )
+			junctionBottom: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[0], contours[0].nodes[0].expandedTo[0], thickness * 2, false, 10 )
+			junctionTop: Utils.pointOnCurve( contours[0].nodes[0].expandedTo[1], contours[0].nodes[3].expandedTo[1], thickness, true, 10 )
 	tags: [
 		'all',
 		'latin',
@@ -67,35 +68,41 @@ exports.glyphs['Q_cap'] =
 				0:
 					x: contours[0].nodes[2].expandedTo[0].x + 100 + 250 * width
 					y: - 40
-					dirOut: - 155 + 'deg'
-					# tensionIn: 0
+					y: contours[1].nodes[1].y + Math.cos( Math.PI * 10 / 180 ) * ( thickness * ( 60 / 85 ) * opticThickness + thickness * ( 25 / 85 ) * opticThickness * contrast ) / 2 + 40
+					dirOut: Math.PI * ( - 140 ) / 180
 					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 11 / 85 ) * opticThickness * contrast
-						angle: 95 + 'deg'
+						angle: contours[1].nodes[0].dirOut - Math.PI / 2
 						distr: 0
 					})
 				1:
-					x: contours[1].nodes[2].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[1].x - contours[1].nodes[2].expandedTo[1].x ) * 0.5
-					y: - thickness / 2 - ( 135 - 85 / 2 )
-					dirIn: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[2].expandedTo[0].point )
+					x: contours[1].nodes[2].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[1].x - contours[1].nodes[2].expandedTo[1].x ) * 0.6
+					y: - 95 - ( 30 / 90 ) * thickness
+					dirIn: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 60 / 85 ) * opticThickness + thickness * ( 25 / 85 ) * opticThickness * contrast
 						angle: 80 + 'deg'
-						distr: 0
+						distr: 0.5
 					})
 				2:
-					##################################################
-					##################################################
-					########## FIXME: on bottom curve       ##########
-					##################################################
-					##################################################
-					x: anchors[0].junction.x
-					y: anchors[0].junction.y
-					dirIn: Utils.lineAngle( contours[0].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[1].point )
-					expand: Object({
-						width: thickness * ( 110 / 86 )
-						angle: 0 + 'deg'
-						distr: 1
-					})
+					expandedTo:
+						[
+							{
+								x: anchors[0].junctionBottom.x
+								y: anchors[0].junctionBottom.y
+								dirIn: Math.min(
+									anchors[0].junctionBottom.normal,
+									Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[0].point )
+								)
+							}
+							{
+								x: anchors[0].junctionTop.x
+								y: anchors[0].junctionTop.y
+								dirOut: Math.min(
+									anchors[0].junctionTop.normal,
+									Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[0].point )
+								)
+							}
+						]
