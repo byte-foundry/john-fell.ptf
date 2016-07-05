@@ -6,7 +6,7 @@ exports.lib =
 		scWidth: width * 0.7
 		contrast: _contrast * -1
 		ascenderHeight: xHeight + ascender
-		spacing: 1.1 * ( width / width ) # dirty workaround
+		# spacing: 1.1 * ( width / width ) # dirty workaround
 		diacriticHeight: 60 * ( xHeight / xHeight )
 		minThickness: Math.max( 45, ( 95 / 85 ) * thickness )
 		# serifHeight:
