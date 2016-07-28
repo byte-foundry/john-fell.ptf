@@ -200,7 +200,7 @@ exports.glyphs['g'] =
 					})
 		3:
 			skeleton: false
-			closed: false
+			closed: true
 			nodes:
 				0:
 					x: contours[2].nodes[0].expandedTo[0].x
