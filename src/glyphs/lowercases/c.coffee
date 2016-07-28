@@ -90,7 +90,7 @@ exports.glyphs['c'] =
 					})
 		# 1:
 		# 	skeleton: false
-		# 	closed: false
+		# 	closed: true
 		# 	nodes:
 		# 		0:
 		# 			x: contours[0].nodes[3].expandedTo[0].x

@@ -149,7 +149,7 @@ exports.glyphs['B_cap'] =
 					})
 		3:
 			skeleton: false
-			closed: false
+			closed: true
 			nodes:
 				0:
 					x: contours[2].nodes[3].expandedTo[1].x
