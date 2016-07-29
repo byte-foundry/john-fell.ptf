@@ -1,3 +1,4 @@
+# TODO: width + thickness
 exports.glyphs['W_cap'] =
 	unicode: 'W'
 	glyphName: 'W'
@@ -37,7 +38,7 @@ exports.glyphs['W_cap'] =
 						distr: 0
 					})
 				1:
-					x: 325 + (6) + ((20)) # TODO width
+					x: contours[1].nodes[0].expandedTo[1].x + 100 * width + 60 + (28)
 					y: - overshoot
 					typeOut: 'line'
 					expand: Object({
@@ -92,7 +93,7 @@ exports.glyphs['W_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 935 + (10) + ((40)) # TODO width
+					x: contours[3].nodes[0].expandedTo[1].x + 200 * width + 190 + (12)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
@@ -101,7 +102,7 @@ exports.glyphs['W_cap'] =
 						distr: 0.25
 					})
 				1:
-					x: 655 + (6) + ((60)) # TODO width
+					x: contours[1].nodes[2].expandedTo[1].x + 200 * width + 170 + (0)
 					y: - overshoot
 					typeOut: 'line'
 					expand: Object({
@@ -114,7 +115,7 @@ exports.glyphs['W_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 430 + (93) + ((60)) # TODO width
+					x: contours[1].nodes[0].expandedTo[1].x + 200 * width + 190 + (0)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
@@ -175,7 +176,6 @@ exports.glyphs['W_cap'] =
 					baseLeft: contours[1].nodes[0].expandedTo[0].point
 					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
 					directionY: -1
-
 		1:
 			base: 'serif'
 			parentAnchors:

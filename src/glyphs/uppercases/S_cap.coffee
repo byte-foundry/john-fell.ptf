@@ -8,7 +8,7 @@ exports.glyphs['S_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 65 * spacing + (20)
+		spacingLeft: 65 * spacing
 		spacingRight: 40 * spacing
 	anchors:
 		0:
@@ -48,7 +48,7 @@ exports.glyphs['S_cap'] =
 						distr: 0
 					})
 				2:
-					x: spacingLeft
+					x: spacingLeft + (20)
 					y: ( ( 565 - (32) ) / 700 ) * capHeight
 					dirOut: 90 + 'deg'
 					type: 'smooth'

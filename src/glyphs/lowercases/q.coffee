@@ -21,13 +21,16 @@ exports.glyphs['q'] =
 			closed: false
 			nodes:
 				0:
-					x: 200 + 210 * width + (21)
+					x: Math.max(
+						contours[1].nodes[2].expandedTo[0].x + 200 * width + 250 - (20),
+						contours[1].nodes[2].expandedTo[1].x + 0.75 * thickness + 10
+					)
 					y: descender * ( 220 / 250 ) + serifHeight + serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0.25
+						distr: 0.75
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -37,7 +40,7 @@ exports.glyphs['q'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0.25
+						distr: 0.75
 					})
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x

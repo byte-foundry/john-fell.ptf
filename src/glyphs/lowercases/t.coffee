@@ -8,7 +8,7 @@ exports.glyphs['t'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: ( 25 * width + 70 ) * spacing - (10)
+		spacingLeft: ( 25 * width + 70 ) * spacing
 		spacingRight: 10 * spacing
 	tags: [
 		'all',
@@ -25,9 +25,9 @@ exports.glyphs['t'] =
 			closed: false
 			nodes:
 				0:
-					x: 200 + 170 * width + thickness - 85
-					y: xHeight * ( 100 / 500 )
-					dirOut: Math.min( - 140 + ( 31 / 500 ) * xHeight , - 90 ) + 'deg'
+					x: contours[0].nodes[2].expandedTo[0].x + 100 * width + 80
+					y: xHeight * ( ( 30 + ( 70 / 85 ) * thickness ) / 500 )
+					dirOut: Math.min( - 140 + ( ( 30 / 85 ) * thickness / 500 ) * xHeight , - 90 ) + 'deg'
 					expand: Object({
 						width: thickness * ( 11 / 85 )
 						angle: contours[0].nodes[0].dirOut + Math.PI / 2
@@ -44,9 +44,8 @@ exports.glyphs['t'] =
 						distr: 1
 					})
 				2:
-					x: spacingLeft
-					y: xHeight * ( 160 / 500 )
-					y: 160
+					x: spacingLeft - (10)
+					y: xHeight * ( ( 85 + ( 75 / 85 ) * thickness ) / 500 )
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					typeOut: 'line'
@@ -76,7 +75,6 @@ exports.glyphs['t'] =
 					})
 				5:
 					x: contours[0].nodes[2].x + thickness
-					# y: if contours[0].nodes[4].y + 10 > xHeight then xHeight else contours[0].nodes[4].y + 10
 					y: contours[0].nodes[4].y + 10
 					dirOut: - 90 + 'deg'
 					typeOut: 'line'
@@ -86,7 +84,7 @@ exports.glyphs['t'] =
 					})
 				6:
 					x: contours[0].nodes[2].x + thickness
-					y: xHeight * ( 600 / 500 )
+					y: xHeight * ( 620 / 500 )
 					dirOut: - 90 + 'deg'
 					expand: Object({
 						width: thickness * ( 6 / 85 )

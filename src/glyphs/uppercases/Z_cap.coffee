@@ -8,7 +8,7 @@ exports.glyphs['Z_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 25 * spacing - (3)
+		spacingLeft: 25 * spacing
 		spacingRight: 10 * spacing + serifWidth / 2 * serifRotate
 	tags: [
 		'all',
@@ -25,7 +25,7 @@ exports.glyphs['Z_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 360 + 250 * width
+					x: contours[1].nodes[0].expandedTo[0].x + 200 * width + 385 + (0)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
@@ -34,7 +34,7 @@ exports.glyphs['Z_cap'] =
 						distr: 0
 					})
 				1:
-					x: 75 + (0)
+					x: contours[1].nodes[0].expandedTo[0].x + 45 + (0)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
@@ -74,7 +74,7 @@ exports.glyphs['Z_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 105 / 85 )
-						angle: 167 + 'deg'
+						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 105 / 85 )) ) 
 						distr: 1
 					})
 				1:
@@ -83,7 +83,7 @@ exports.glyphs['Z_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 95 / 85 )
-						angle: 167 + 'deg'
+						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 95 / 85 )) )
 						distr: 0
 					})
 	components:
