@@ -104,11 +104,12 @@ exports.glyphs['A_cap'] =
 					})
 		3:
 			skeleton: false
-			closed: false
+			closed: true
 			nodes:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
 					y: contours[0].nodes[1].expandedTo[1].y
+					typeIn: 'line'
 					typeOut: 'line'
 				1:
 					x: Utils.onLine({

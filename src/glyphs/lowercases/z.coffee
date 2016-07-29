@@ -88,7 +88,7 @@ exports.glyphs['z'] =
 					})
 		# 3:
 		# 	skeleton: false
-		# 	closed: false
+		# 	closed: true
 		# 	nodes:
 		# 		0:
 		# 			x: contours[0].nodes[1].expandedTo[0].x
@@ -120,7 +120,7 @@ exports.glyphs['z'] =
 		# 			tensionIn: 1.8
 		# 4:
 		# 	skeleton: false
-		# 	closed: false
+		# 	closed: true
 		# 	nodes:
 		# 		0:
 		# 			x: contours[1].nodes[1].expandedTo[0].x

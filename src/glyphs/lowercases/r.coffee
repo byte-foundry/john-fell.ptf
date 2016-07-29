@@ -85,7 +85,7 @@ exports.glyphs['r'] =
 			#######################################################
 			#######################################################
 			skeleton: false
-			closed: false
+			closed: true
 			nodes:
 				0:
 					x: contours[1].nodes[2].expandedTo[0].x
