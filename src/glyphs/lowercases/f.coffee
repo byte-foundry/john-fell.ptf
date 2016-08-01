@@ -57,6 +57,7 @@ exports.glyphs['f'] =
 					x: contours[0].nodes[2].expandedTo[0].x
 					y: contours[0].nodes[2].expandedTo[0].y
 					dirOut: 0 + 'deg'
+					typeIn: 'line'
 				1:
 					x: contours[0].nodes[2].expandedTo[0].x + 135 * width
 					y: capHeight - 70

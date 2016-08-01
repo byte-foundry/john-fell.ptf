@@ -110,6 +110,7 @@ exports.glyphs['j'] =
 					x: contours[0].nodes[2].expandedTo[1].x
 					y: contours[0].nodes[2].expandedTo[1].y
 					dirOut: contours[0].nodes[2].dirIn
+					typeIn: 'line'
 					# dirOut: 90 + 'deg'
 				1:
 					x: contours[1].nodes[0].x - 75 - 30

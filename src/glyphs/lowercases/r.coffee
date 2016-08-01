@@ -91,6 +91,7 @@ exports.glyphs['r'] =
 					x: contours[1].nodes[2].expandedTo[0].x
 					y: contours[1].nodes[2].expandedTo[0].y
 					dirOut: contours[1].nodes[2].dirIn
+					typeIn: 'line'
 					# type: 'smooth'
 				1:
 					x: contours[1].nodes[2].expandedTo[1].x + ( contours[1].nodes[2].expandedTo[0].x - contours[1].nodes[2].expandedTo[1].x ) / 2

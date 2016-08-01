@@ -162,6 +162,7 @@ exports.glyphs['a'] =
 					x: contours[0].nodes[5].expandedTo[1].x
 					y: contours[0].nodes[5].expandedTo[1].y
 					dirOut: contours[0].nodes[5].dirIn
+					typeIn: 'line'
 				1:
 					x: contours[0].nodes[5].expandedTo[1].x + ( contours[0].nodes[5].expandedTo[0].x - contours[0].nodes[5].expandedTo[1].x ) * ( 50 / 75 )
 					# y: Math.max( contours[0].nodes[5].expandedTo[1].y - thickness * ( 60 / 85 ) - serifBall, contours[1].nodes[3].y - serifBall )
