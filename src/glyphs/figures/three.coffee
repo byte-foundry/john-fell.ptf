@@ -3,13 +3,13 @@ exports.glyphs['three'] =
 	glyphName: 'three'
 	characterName: 'DIGIT THREE'
 	ot:
-		advanceWidth: contours[1].nodes[1].expandedTo[1].x + 40 * spacing
+		advanceWidth: contours[1].nodes[1].expandedTo[1].x + 40
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 10 + (10)
+		spacingRight: 50 * spacing + 10
 	anchors:
 		0:
 			junction: Utils.pointOnCurve( contours[0].nodes[2].expandedTo[0], contours[0].nodes[3].expandedTo[0], thickness, true, 10 )

@@ -8,8 +8,8 @@ exports.glyphs['r'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (16) + serifWidth + 15
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 40 + (16) + serifWidth + 15
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',
@@ -91,6 +91,7 @@ exports.glyphs['r'] =
 					x: contours[1].nodes[2].expandedTo[0].x
 					y: contours[1].nodes[2].expandedTo[0].y
 					dirOut: contours[1].nodes[2].dirIn
+					typeIn: 'line'
 					# type: 'smooth'
 				1:
 					x: contours[1].nodes[2].expandedTo[1].x + ( contours[1].nodes[2].expandedTo[0].x - contours[1].nodes[2].expandedTo[1].x ) / 2

@@ -3,13 +3,13 @@ exports.glyphs['bracketleft'] =
 	glyphName: 'bracketleft'
 	characterName: 'LEFT SQUARE BRACKET'
 	ot:
-		advanceWidth: contours[1].nodes[1].x - 50 * spacing
+		advanceWidth: contours[1].nodes[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 105
+		spacingRight: 50 * spacing + - 50
 	tags: [
 		'all',
 		'latin',
@@ -21,7 +21,7 @@ exports.glyphs['bracketleft'] =
 			closed: false
 			nodes:
 				0:
-					x: 100 + (5)
+					x: spacingLeft + (7)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({

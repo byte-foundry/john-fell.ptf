@@ -3,13 +3,13 @@ exports.glyphs['eight'] =
 	glyphName: 'eight'
 	characterName: 'DIGIT EIGHT'
 	ot:
-		advanceWidth: contours[0].nodes[5].expandedTo[0].x + 40 * spacing
+		advanceWidth: contours[0].nodes[5].expandedTo[0].x + 40
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 10 + (10)
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',

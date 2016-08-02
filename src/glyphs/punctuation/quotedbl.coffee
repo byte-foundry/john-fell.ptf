@@ -1,15 +1,17 @@
+# TODO: spacing
+# TODO: only one componenet is displayed…
 exports.glyphs['quotedbl'] =
 	unicode: '"'
 	glyphName: 'quotedbl'
 	characterName: 'QUOTATION MARK'
 	ot:
-		advanceWidth: width * 212 + 112 * spacing
+		advanceWidth: 200 * width + 125
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 10 + (10)
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',
