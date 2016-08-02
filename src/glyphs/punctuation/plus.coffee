@@ -3,13 +3,13 @@ exports.glyphs['plus'] =
 	glyphName: 'plus'
 	characterName: 'PLUS SIGN'
 	ot:
-		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 80 * spacing
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 100
+		spacingRight: 50 * spacing + 100
 	tags: [
 		'all',
 		'latin',
@@ -21,7 +21,7 @@ exports.glyphs['plus'] =
 			closed: false
 			nodes:
 				0:
-					x: 100
+					x: spacingLeft
 					y: xHeight * ( 220 / 500 ) + (30)
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -30,7 +30,7 @@ exports.glyphs['plus'] =
 						angle: 90 + 'deg'
 					})
 				1:
-					x: 520 * width
+					x: contours[0].nodes[0].x + 200 * width + 220
 					y: xHeight * ( 220 / 500 ) + (30)
 					dirOut: 90 + 'deg'
 					typeOut: 'line'

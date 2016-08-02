@@ -10,8 +10,8 @@ exports.glyphs['g'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 45 * spacing
-		spacingRight: 35 * spacing
+		spacingLeft: 50 * spacing + 45
+		spacingRight: 50 * spacing + 35
 	anchors:
 		0:
 			x: contours[0].nodes[2].x

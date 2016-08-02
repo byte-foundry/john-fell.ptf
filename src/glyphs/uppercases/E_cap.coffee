@@ -8,8 +8,8 @@ exports.glyphs['E_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (25) + serifWidth + 40
-		spacingRight: 40 * spacing + serifWidth / 2
+		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
+		spacingRight: 50 * spacing + 40 + serifWidth / 2
 	anchors:
 		0:
 			x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[1].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2

@@ -8,8 +8,8 @@ exports.glyphs['semicolon'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing + (10)
-		spacingRight: 70 * spacing
+		spacingLeft: 50 * spacing + 70 + (10)
+		spacingRight: 50 * spacing + 70
 	tags: [
 		'all',
 		'latin',

@@ -3,13 +3,13 @@ exports.glyphs['two'] =
 	glyphName: 'two'
 	characterName: 'DIGIT TWO'
 	ot:
-		advanceWidth: contours[0].nodes[2].expandedTo[1].x + 23 * spacing
+		advanceWidth: contours[0].nodes[2].expandedTo[1].x + 23
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 10 + (10)
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',

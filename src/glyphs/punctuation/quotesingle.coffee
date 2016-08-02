@@ -1,15 +1,17 @@
+# TODO: spacing
+# TODO: all…
 exports.glyphs['quotesingle'] =
 	unicode: '\''
 	glyphName: 'quotesingle'
 	characterName: 'APOSTROPHE'
 	ot:
-		advanceWidth: width * 92 + 112 * spacing
+		advanceWidth: width * 92 + 112
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 10
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',

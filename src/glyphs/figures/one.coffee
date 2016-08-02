@@ -3,13 +3,13 @@ exports.glyphs['one'] =
 	glyphName: 'one'
 	characterName: 'DIGIT ONE'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + (50)
+		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 + (50)
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 10 + (10)
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',

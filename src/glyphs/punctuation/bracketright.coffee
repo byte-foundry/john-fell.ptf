@@ -1,15 +1,16 @@
+# TODO: spacing + nodes placement
 exports.glyphs['bracketright'] =
 	unicode: ']'
 	glyphName: 'bracketright'
 	characterName: 'RIGHT SQUARE BRACKET'
 	ot:
-		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 100 * spacing
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + - 30
+		spacingRight: 50 * spacing + 110
 	tags: [
 		'all',
 		'latin',
