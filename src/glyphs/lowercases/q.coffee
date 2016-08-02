@@ -1,3 +1,4 @@
+# TODO: width
 exports.glyphs['q'] =
 	unicode: 'q'
 	glyphName: 'q'

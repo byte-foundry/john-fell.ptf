@@ -1,3 +1,4 @@
+# TODO: width / serifs / thickness
 exports.glyphs['s'] =
 	unicode: 's'
 	glyphName: 's'
@@ -8,7 +9,7 @@ exports.glyphs['s'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing + (8)
+		spacingLeft: 60 * spacing
 		spacingRight: 50 * spacing
 	anchors:
 		0:
@@ -29,13 +30,13 @@ exports.glyphs['s'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[4].expandedTo[1].x - 30
+					x: contours[0].nodes[4].expandedTo[1].x - 30 - (1)
 					y: xHeight - ( 80 / 520 ) * xHeight
 					# dirOut: Math.max(
 					# 	1.8,
 					# 	Math.PI - ( 1.06 / 520 ) * xHeight
 					# ) # 120 + 'deg'
-					dirOut: 2.08
+					dirOut: 115 / 180 * Math.PI
 					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 25 / 85 )
@@ -43,20 +44,19 @@ exports.glyphs['s'] =
 						distr: 0.25
 					})
 				1:
-					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.515
-					x: 215
+					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.5
+					x: (contours[0].nodes[2].x + ( Math.cos( 26 / 180 * Math.PI) * 0.75 * ( 67 / 85 ) * thickness ) ) + ( contours[0].nodes[0].expandedTo[1].x - (contours[0].nodes[2].x + ( Math.cos( 26 / 180 * Math.PI) * 0.75 * ( 67 / 85 ) * thickness ) ) ) * ( 85 / 210 )
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 20 / 85 )
+						width: thickness * ( 20 / 85 ) * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})
 				2:
-					x: spacingLeft
-					# y: xHeight * ( 380 / 520 ) + (22)
-					y: contours[0].nodes[3].y + ( contours[0].nodes[1].expandedTo[1].y - contours[0].nodes[3].y ) * 0.55
+					x: spacingLeft + (25)
+					y: contours[0].nodes[3].expandedTo[0].y + ( contours[0].nodes[1].expandedTo[0].y - contours[0].nodes[3].expandedTo[0].y ) * ( 160 / 290 ) + (8)
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -71,7 +71,7 @@ exports.glyphs['s'] =
 						- 15,
 						Math.max(
 							- 20,
-							- 15 - (15 - ( 15 / 85 ) * thickness)
+							- 15 - (15 - ( 15 / 85 ) * thickness) * width
 						)
 					) + 'deg'
 					type: 'smooth'
@@ -83,9 +83,8 @@ exports.glyphs['s'] =
 						distr: 0.5
 					})
 				4:
-					x: 390 - (16)
-					# y: xHeight * ( 105 / 520 ) + (23)
-					y: contours[0].nodes[5].expandedTo[1].y + (  contours[0].nodes[3].y - contours[0].nodes[5].expandedTo[1].y ) * 0.55
+					x: contours[0].nodes[6].expandedTo[1].x + 200 * width + 130 - (28)
+					y: contours[0].nodes[5].expandedTo[1].y + (  contours[0].nodes[3].expandedTo[1].y - contours[0].nodes[5].expandedTo[1].y ) * ( 140 / 290 ) - (7)
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -94,18 +93,22 @@ exports.glyphs['s'] =
 						distr: 0.75
 					})
 				5:
-					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.565
-					x: 230
+					# x: contours[0].nodes[6].expandedTo[1].x + ( contours[0].nodes[4].expandedTo[1].x - contours[0].nodes[6].expandedTo[1].x ) * 0.5
+					# x: Math.max(
+					# 	contours[0].nodes[6].expandedTo[1].x + ( (contours[0].nodes[4].x + Math.cos( 20 / 180 * Math.PI ) * 0.25 * ( 70 / 85 ) * thickness) - contours[0].nodes[6].expandedTo[1].x ) * ( 170 / 330 ),
+					# 	contours[0].nodes[6].expandedTo[0].x + ( (contours[0].nodes[4].x - Math.cos( 20 / 180 * Math.PI ) * 0.75 * ( 70 / 85 ) * thickness) - contours[0].nodes[6].expandedTo[0].x ) * ( 170 / 330 )
+					# )
+					x: contours[0].nodes[6].expandedTo[0].x + ( (contours[0].nodes[4].x - Math.cos( 20 / 180 * Math.PI ) * 0.75 * ( 70 / 85 ) * thickness) - contours[0].nodes[6].expandedTo[0].x ) * ( 135 / 230 )
 					y: - overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 20 / 85 )
+						width: thickness * ( 20 / 85 ) * contrast
 						angle: 180 + 90 + 'deg'
 						distr: 1
 					})
 				6:
-					x: spacingLeft - 10
+					x: spacingLeft + (17)
 					y: ( 100 / 520 ) * xHeight
 					# dirIn: Math.min(
 					# 	1.8,
@@ -116,7 +119,7 @@ exports.glyphs['s'] =
 					expand: Object({
 						width: thickness * ( 25 / 85 )
 						angle: contours[0].nodes[6].dirIn - Math.PI / 2
-						distr: 0.25
+						distr: 0.75
 					})
 	components:
 		0:

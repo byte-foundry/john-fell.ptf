@@ -34,7 +34,7 @@ exports.glyphs['t'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].x * ( 240 / 370 )
+					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[1].x - contours[0].nodes[2].expandedTo[1].x ) * 0.5
 					y: - overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
@@ -44,7 +44,7 @@ exports.glyphs['t'] =
 						distr: 1
 					})
 				2:
-					x: spacingLeft - (10)
+					x: spacingLeft
 					y: xHeight * ( ( 85 + ( 75 / 85 ) * thickness ) / 500 )
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
