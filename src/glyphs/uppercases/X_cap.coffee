@@ -22,7 +22,7 @@ exports.glyphs['X_cap'] =
 			nodes:
 				0:
 					x: contours[2].nodes[0].expandedTo[0].x + 25
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -32,7 +32,7 @@ exports.glyphs['X_cap'] =
 					})
 				1:
 					x: contours[2].nodes[0].expandedTo[1].x + 220 + 250 * width + (0)
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -46,7 +46,7 @@ exports.glyphs['X_cap'] =
 			nodes:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x - ( 35 / 85 ) * thickness
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -75,7 +75,7 @@ exports.glyphs['X_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
 					expand: Object({

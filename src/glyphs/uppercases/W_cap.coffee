@@ -52,7 +52,7 @@ exports.glyphs['W_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 110 / 85 ) * opticThickness
@@ -94,7 +94,7 @@ exports.glyphs['W_cap'] =
 			nodes:
 				0:
 					x: contours[3].nodes[0].expandedTo[1].x + 200 * width + 190 + (12)
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 39 / 85 )
@@ -116,7 +116,7 @@ exports.glyphs['W_cap'] =
 			nodes:
 				0:
 					x: contours[1].nodes[0].expandedTo[1].x + 200 * width + 190 + (0)
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 110 / 85 )
