@@ -120,35 +120,37 @@ exports.glyphs['N_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: 0 + serifHeight + serifCurve * ( 100 / 15 )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 						on: [ contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[1].point ]
 					})
-					y: 0 + serifHeight + serifCurve * ( 100 / 15 )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: 0 + serifHeight + serifCurve * ( 100 / 15 )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
 						on: [ contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point ]
 					})
-					y: 0 + serifHeight + serifCurve * ( 100 / 15 )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
 				2:
 					leftWidth: 60
 					rightWidth: 60
+					baseRight: contours[0].nodes[0].expandedTo[1].point
+					baseLeft: contours[0].nodes[0].expandedTo[0].point
 					angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point )
 		1:
 			base: 'serif'
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: capHeight - serifHeight - serifCurve * ( 100 / 15 )
+						y: Math.max( contours[1].nodes[1].y, capHeight - serifHeight - serifCurve * ( 100 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
 					})
-					y: capHeight - serifHeight - serifCurve * ( 100 / 15 )
+					y: Math.max( contours[1].nodes[1].y, capHeight - serifHeight - serifCurve * ( 100 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: capHeight - serifHeight - serifCurve * ( 100 / 15 )
+						y: Math.max( contours[3].nodes[2].y, capHeight - serifHeight - serifCurve * ( 100 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
 					})
-					y: capHeight - serifHeight - serifCurve * ( 100 / 15 )
+					y: Math.max( contours[3].nodes[2].y, capHeight - serifHeight - serifCurve * ( 100 / 15 ) )
 				2:
 					anchorLine: capHeight
 					leftWidth: 60

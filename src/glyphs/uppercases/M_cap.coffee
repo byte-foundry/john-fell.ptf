@@ -131,10 +131,10 @@ exports.glyphs['M_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 						on: [ contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[1].point ]
 					})
-					y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
 						y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
