@@ -22,7 +22,7 @@ exports.glyphs['V_cap'] =
 			nodes:
 				0:
 					x: contours[1].nodes[0].expandedTo[1].x + 230 + 250 * width + (5)
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 40 / 85 ) * opticThickness
@@ -44,7 +44,7 @@ exports.glyphs['V_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 115 / 85 ) * opticThickness

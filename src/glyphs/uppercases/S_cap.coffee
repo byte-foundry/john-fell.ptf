@@ -22,7 +22,7 @@ exports.glyphs['S_cap'] =
 	tags: [
 		'all',
 		'latin',
-		'lowercase'
+		'uppercase'
 	]
 	contours:
 		0:

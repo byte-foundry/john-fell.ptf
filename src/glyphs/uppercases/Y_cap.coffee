@@ -62,7 +62,7 @@ exports.glyphs['Y_cap'] =
 						]
 				1:
 					x: contours[2].nodes[1].expandedTo[1].x + 190 + 250 * width + (12)
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -90,7 +90,7 @@ exports.glyphs['Y_cap'] =
 						]
 				1:
 					x: spacingLeft
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 118 / 85 ) * opticThickness

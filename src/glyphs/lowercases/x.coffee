@@ -22,7 +22,7 @@ exports.glyphs['x'] =
 			nodes:
 				0:
 					x: spacingLeft - 10
-					y: xHeight
+					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -32,7 +32,7 @@ exports.glyphs['x'] =
 					})
 				1:
 					x: contours[2].nodes[1].expandedTo[1].x + 280 * width + (25)
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -49,7 +49,7 @@ exports.glyphs['x'] =
 						contours[0].nodes[0].expandedTo[1].x + 280 * width - (15),
 						contours[0].nodes[1].expandedTo[0].x
 					)
-					y: xHeight
+					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -89,7 +89,7 @@ exports.glyphs['x'] =
 					})
 				1:
 					x: spacingLeft
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
 					expand: Object({

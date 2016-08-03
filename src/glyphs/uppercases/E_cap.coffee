@@ -26,7 +26,7 @@ exports.glyphs['E_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0 + serifHeight + serifCurve * ( 65 /15 )
+					y: 0 + serifHeight + serifCurve * ( 65 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -36,7 +36,7 @@ exports.glyphs['E_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: capHeight - serifHeight - serifCurve * ( 65 /15 )
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -59,7 +59,7 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 60 + 250 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 110 + 200 * width
 					y: contours[1].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -83,7 +83,7 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 250 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 200 * width + 50 - Math.max( 0, serifHeight * serifArc )
 					y: capHeight * ( 385 / 750 ) * crossbar
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -108,7 +108,7 @@ exports.glyphs['E_cap'] =
 						distr: 1
 					})
 				1:
-					x: contours[1].nodes[0].x + 85 + 250 * width
+					x: contours[1].nodes[0].x + 135 + 200 * width
 					y: contours[3].nodes[0].y
 					dirOut: 0 + 'deg'
 					expand: Object({
@@ -174,7 +174,7 @@ exports.glyphs['E_cap'] =
 					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
 					y: contours[2].nodes[0].expandedTo[0].y
 				2:
-					anchorLine: contours[2].nodes[1].expandedTo[0].x
+					anchorLine: contours[2].nodes[1].expandedTo[0].x + Math.max( 0, serifHeight * serifArc )
 					leftWidth: 75
 					rightWidth: 75
 					# baseRight: contours[2].nodes[1].expandedTo[0].point

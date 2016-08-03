@@ -51,7 +51,7 @@ exports.glyphs['w'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: xHeight
+					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 95 / 85 )
@@ -76,7 +76,7 @@ exports.glyphs['w'] =
 			nodes:
 				0:
 					x: contours[3].nodes[0].expandedTo[1].x + 90 + 180 * width - (10) + ( thickness * ( 40 / 85 ) / 2 )
-					y: xHeight
+					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 40 / 85 )
@@ -98,7 +98,7 @@ exports.glyphs['w'] =
 			nodes:
 				0:
 					x: contours[1].nodes[0].expandedTo[1].x + 180 * width - (10) + ( thickness * ( 95 / 85 ) / 2 )
-					y: xHeight
+					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 95 / 85 )

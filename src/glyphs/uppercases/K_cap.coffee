@@ -1,3 +1,4 @@
+# TODO: serifArc bottom right
 exports.glyphs['K_cap'] =
 	unicode: 'K'
 	glyphName: 'K'
@@ -45,7 +46,7 @@ exports.glyphs['K_cap'] =
 				0:
 					x: 545 - (10) + thickness - 85
 					x: contours[0].nodes[0].expandedTo[1].x + 60 + 250 * width + (16)
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({

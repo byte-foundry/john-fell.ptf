@@ -1,3 +1,4 @@
+# TODO: winding rules
 exports.glyphs['M_cap'] =
 	unicode: 'M'
 	glyphName: 'M'
@@ -22,7 +23,7 @@ exports.glyphs['M_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -31,7 +32,7 @@ exports.glyphs['M_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].x + 20
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -44,7 +45,7 @@ exports.glyphs['M_cap'] =
 			nodes:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x + 300 + 250 * width
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -53,7 +54,7 @@ exports.glyphs['M_cap'] =
 					})
 				1:
 					x: contours[1].nodes[0].x - 20
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -66,7 +67,7 @@ exports.glyphs['M_cap'] =
 			nodes:
 				0:
 					x: contours[1].nodes[1].expandedTo[0].x
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 35 / 85 ) * opticThickness
@@ -75,7 +76,7 @@ exports.glyphs['M_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * 0.5
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 25 / 85 ) * opticThickness
@@ -88,7 +89,7 @@ exports.glyphs['M_cap'] =
 			nodes:
 				0:
 					x: contours[0].nodes[0].expandedTo[0].x - Math.min( 15 * ( thickness / 85 ), 0 )
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 120 / 85 ) * opticThickness

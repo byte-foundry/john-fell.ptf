@@ -26,7 +26,7 @@ exports.glyphs['A_cap'] =
 			nodes:
 				0:
 					x: contours[1].nodes[0].expandedTo[1].x + 200 + 232 * width + (20)
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 105 / 85 ) * opticThickness
@@ -55,7 +55,7 @@ exports.glyphs['A_cap'] =
 					# 	on: [ contours[0].nodes[1].point, anchors[1].point ]
 					# })
 					x: spacingLeft
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 30 / 85 ) * opticThickness * contrast
