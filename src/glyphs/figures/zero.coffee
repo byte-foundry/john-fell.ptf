@@ -1,3 +1,4 @@
+# TODO: spacing
 exports.glyphs['zero'] =
 	unicode: '0'
 	glyphName: 'zero'

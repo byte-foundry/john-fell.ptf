@@ -26,7 +26,7 @@ exports.glyphs['F_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -94,10 +94,16 @@ exports.glyphs['F_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y
+					y: Math.min(
+						contours[2].nodes[0].expandedTo[0].y,
+						serifHeight + serifCurve * ( 65 /15 )
+					)
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y
+					y: Math.min(
+						contours[2].nodes[0].expandedTo[0].y,
+						serifHeight + serifCurve * ( 65 /15 )
+					)
 				2:
 					anchorLine: 0
 					leftWidth: 40
@@ -120,11 +126,11 @@ exports.glyphs['F_cap'] =
 			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
-					y: contours[2].nodes[0].expandedTo[0].y
-				1:
-					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
+					x: Math.max(contours[2].nodes[0].expandedTo[1].x + 10, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
 					y: contours[2].nodes[0].expandedTo[1].y
+				1:
+					x: Math.max(contours[2].nodes[0].expandedTo[1].x + 10, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
+					y: contours[2].nodes[0].expandedTo[0].y
 				2:
 					anchorLine: contours[2].nodes[1].expandedTo[0].x + Math.max( 0, serifHeight * serifArc )
 					leftWidth: 80

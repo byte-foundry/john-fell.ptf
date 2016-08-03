@@ -8,17 +8,17 @@ exports.glyphs['T_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10) + serifWidth / 2
-		spacingRight: 50 * spacing + 10 + serifWidth / 2
+		spacingLeft: 50 * spacing + 55
+		spacingRight: 50 * spacing + 55
 	anchors:
 		0:
 			x: contours[0].nodes[0].x
 			y: capHeight + diacriticHeight
 		1:
-			x: 45
+			x: spacingLeft
 			y: capHeight
 		2:
-			x: 470 + 250 * width
+			x: spacingLeft + 465 + 200 * width
 			y: capHeight
 	tags: [
 		'all',
@@ -55,7 +55,7 @@ exports.glyphs['T_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[2].x - serifHeight - serifCurve * ( 100 / 15 )
+					x: anchors[2].x - Math.max( 0, serifHeight * serifArc )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -65,7 +65,7 @@ exports.glyphs['T_cap'] =
 						distr: 1
 					})
 				1:
-					x: anchors[1].x + serifHeight + serifCurve * ( 100 / 15 )
+					x: anchors[1].x + Math.max( 0, serifHeight * serifArc )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -92,10 +92,10 @@ exports.glyphs['T_cap'] =
 			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: anchors[2].x - serifHeight - serifCurve * ( 100 /15 )
+					x: Math.max( contours[0].nodes[1].x, anchors[2].x - serifHeight - serifCurve * ( 100 /15 ) )
 					y: capHeight
 				1:
-					x: anchors[2].x - serifHeight - serifCurve * ( 100 /15 )
+					x: Math.max( contours[0].nodes[1].x, anchors[2].x - serifHeight - serifCurve * ( 100 /15 ) )
 					y: capHeight - thickness * opticThickness * ( 25 / 85 )
 				2:
 					anchorLine: anchors[2].x
@@ -110,10 +110,10 @@ exports.glyphs['T_cap'] =
 			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: anchors[1].x + serifHeight + serifCurve * ( 100 /15 )
+					x: Math.min( contours[0].nodes[1].x, anchors[1].x + serifHeight + serifCurve * ( 100 /15 ) )
 					y: capHeight
 				1:
-					x: anchors[1].x + serifHeight + serifCurve * ( 100 /15 )
+					x: Math.min( contours[0].nodes[1].x, anchors[1].x + serifHeight + serifCurve * ( 100 /15 ) )
 					y: capHeight - thickness * opticThickness * ( 25 / 85 )
 				2:
 					anchorLine: anchors[1].x

@@ -139,10 +139,10 @@ exports.glyphs['A_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
+						y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
 					})
-					y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
+					y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 				1:
 					x: Utils.onLine({
 						y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
@@ -173,11 +173,10 @@ exports.glyphs['A_cap'] =
 					y: Math.min( contours[0].nodes[1].expandedTo[1].y, serifHeight + serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: Math.min( contours[0].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
-
+						y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
 						on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
 					})
-					y: Math.min( contours[0].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
+					y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
 
 				2:
 					anchorLine: 0

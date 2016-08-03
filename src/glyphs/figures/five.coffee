@@ -1,3 +1,4 @@
+# TODO: spacing
 exports.glyphs['five'] =
 	unicode: '5'
 	glyphName: 'five'
