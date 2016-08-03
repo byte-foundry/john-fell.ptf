@@ -103,10 +103,10 @@ exports.glyphs['Y_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: Math.max( contours[0].nodes[1].y, contours[0].nodes[0].y )
+					y: Math.min( contours[0].nodes[1].y, contours[0].nodes[0].y )
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x
-					y: Math.max( contours[0].nodes[1].y, contours[0].nodes[0].y )
+					y: Math.min( contours[0].nodes[1].y, contours[0].nodes[0].y )
 				2:
 					anchorLine: 0
 					leftWidth: 40
