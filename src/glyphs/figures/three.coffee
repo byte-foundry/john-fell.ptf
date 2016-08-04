@@ -1,16 +1,15 @@
-# TODO: spacing
 exports.glyphs['three'] =
 	unicode: '3'
 	glyphName: 'three'
 	characterName: 'DIGIT THREE'
 	ot:
-		advanceWidth: contours[1].nodes[1].expandedTo[1].x + 40
+		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 20
+		spacingRight: 50 * spacing + 40
 	anchors:
 		0:
 			junction: Utils.pointOnCurve( contours[0].nodes[2].expandedTo[0], contours[0].nodes[3].expandedTo[0], thickness, true, 10 )
@@ -25,7 +24,7 @@ exports.glyphs['three'] =
 			closed: false
 			nodes:
 				0:
-					x: 37 + (0)
+					x: contours[1].nodes[0].expandedTo[1].x + (5)
 					y: xHeight - 150
 					dirOut: 77 + 'deg'
 					expand: Object({
@@ -34,7 +33,7 @@ exports.glyphs['three'] =
 						distr: 0.25
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * ( 170 / 325 )
+					x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * ( 188 / 343 )
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
@@ -44,8 +43,10 @@ exports.glyphs['three'] =
 						distr: 0
 					})
 				2:
-					x: 290 + (63)
-					y: xHeight * ( 360 / 500 ) + (22)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 140 - (3),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * thickness * ( 95 / 85 ) + 10
+					)
 					y: contours[0].nodes[3].expandedTo[0].y + ( xHeight - contours[0].nodes[3].expandedTo[0].y ) * 0.65
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
@@ -56,7 +57,7 @@ exports.glyphs['three'] =
 						distr: 0.25
 					})
 				3:
-					x: 115 + (0)
+					x: contours[0].nodes[0].expandedTo[1].x + 60
 					y: xHeight * ( 170 / 500 ) - (9)
 					dirIn: 23 + 'deg'
 					type: 'smooth'
@@ -70,7 +71,7 @@ exports.glyphs['three'] =
 			closed: false
 			nodes:
 				0:
-					x: 20
+					x: spacingLeft
 					y: descender * ( 232 / 250 )
 					dirOut: 6 + 'deg'
 					expand: Object({
@@ -79,7 +80,10 @@ exports.glyphs['three'] =
 						distr: 1
 					})
 				1:
-					x: 305 + (22)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 70 + (37),
+						contours[0].nodes[2].expandedTo[1].x
+					)
 					y: contours[1].nodes[0].expandedTo[1].y + ( contours[0].nodes[3].expandedTo[1].y - contours[1].nodes[0].expandedTo[1].y ) * 0.55
 					type: 'smooth'
 					dirOut: 90 + 'deg'

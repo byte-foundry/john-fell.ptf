@@ -1,16 +1,15 @@
-# TODO: spacing
 exports.glyphs['eight'] =
 	unicode: '8'
 	glyphName: 'eight'
 	characterName: 'DIGIT EIGHT'
 	ot:
-		advanceWidth: contours[0].nodes[5].expandedTo[0].x + 40
+		advanceWidth: contours[0].nodes[5].expandedTo[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 40
+		spacingRight: 50 * spacing + 40
 	tags: [
 		'all',
 		'latin',
@@ -32,7 +31,7 @@ exports.glyphs['eight'] =
 						distr: 0.5
 					})
 				1:
-					x: 403 * width + (54)
+					x: contours[0].nodes[3].expandedTo[1].x + 200 * width + 210 - (17)
 					y: ( 590 / 750 ) * capHeight + (6)
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -51,7 +50,7 @@ exports.glyphs['eight'] =
 						distr: 1
 					})
 				3:
-					x: 64 + (17)
+					x: contours[0].nodes[7].x + 24
 					y: ( 580 / 750 ) * capHeight + (8)
 					type: 'smooth'
 					dirOut: 90 + 'deg'
@@ -64,7 +63,7 @@ exports.glyphs['eight'] =
 				4:
 					x: contours[0].nodes[8].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[8].expandedTo[0].x ) * 0.5
 					y: contours[0].nodes[8].expandedTo[1].y + ( contours[0].nodes[0].expandedTo[0].y - contours[0].nodes[8].expandedTo[1].y ) * 0.5
-					dirOut: Utils.lineAngle( contours[0].nodes[8].expandedTo[0].point, contours[0].nodes[0].expandedTo[1].point )
+					# dirOut: Utils.lineAngle( contours[0].nodes[8].expandedTo[0].point, contours[0].nodes[0].expandedTo[1].point )
 					dirOut: - ( 22 / 750 ) * capHeight + ( 10 * width - 10 ) + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -73,7 +72,7 @@ exports.glyphs['eight'] =
 						distr: 0.5
 					})
 				5:
-					x: 437 * width + (49)
+					x: contours[0].nodes[7].expandedTo[0].x + 200 * width + 260 - (14)
 					y: ( 154 / 750 ) * capHeight + (28)
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
@@ -94,7 +93,7 @@ exports.glyphs['eight'] =
 						distr: 0
 					})
 				7:
-					x: 40 + (18)
+					x: spacingLeft + (18)
 					y: ( 174 / 750 ) * capHeight
 					dirOut: 90 + 'deg'
 					type: 'smooth'

@@ -1,16 +1,15 @@
-# TODO: spacing
 exports.glyphs['nine'] =
 	unicode: '9'
 	glyphName: 'nine'
 	characterName: 'DIGIT NINE'
 	ot:
-		advanceWidth: contours[0].nodes[1].expandedTo[0].x + 40
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 50
+		spacingRight: 50 * spacing + 15
 	tags: [
 		'all',
 		'latin',
@@ -22,63 +21,74 @@ exports.glyphs['nine'] =
 			closed: false
 			nodes:
 				0:
-					x: 20
-					y: - 230
-					dirOut: 12 + 'deg'
+					x: contours[0].nodes[3].expandedTo[0].x + 30 + (5)
+					y: capHeight
+					dirOut: - Math.min(
+						180,
+						Math.max(
+							168,
+							168 * width
+						)
+					) + 'deg'
 					expand: Object({
-						width: thickness * ( 12 / 85 )
-						angle: 104 + 'deg'
+						width: thickness * ( 13 / 85 )
+						angle: - 76 + 'deg'
 						distr: 0
 					})
 				1:
-					x: 515 - (21)
-					y: ( 220 / 500 ) * xHeight
-					dirOut: 90 + 'deg'
-					tensionIn: 0.9
-					type: 'smooth'
-					expand: Object({
-						width: thickness * ( 96 / 85 )
-						angle: 152 + 'deg'
-						distr: 0.25
-					})
-				2:
-					x: 275
-					y: xHeight + overshoot
-					dirOut: 180 + 'deg'
-					type: 'smooth'
-					expand: Object({
-						width: thickness * ( 25 / 85 )
-						angle: - 78 + 'deg'
-						distr: 0
-					})
-				3:
-					x: 50 + (22)
-					y: ( 275 / 500 ) * xHeight
+					x: spacingLeft + (21)
+					y: capHeight * ( 280 / 750 )
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 90 / 85 )
-						angle: - 3 + 'deg'
+						width: thickness * ( 96 / 85 )
+						angle: - 28 + 'deg'
 						distr: 0.25
 					})
-				4:
-					x: 275
-					y: ( 40 / 500 ) * xHeight
+				2:
+					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[3].expandedTo[0].x - contours[0].nodes[1].expandedTo[0].x ) * ( 240 / 465 )
+					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 27 / 85 )
-						angle: 68 + 'deg'
+						width: thickness * ( 25 / 85 ) * contrast
+						angle: 101 + 'deg'
 						distr: 0
+					})
+				3:
+					x: Math.max(
+						contours[0].nodes[1].expandedTo[0].x + 200 * width + 265 - (21),
+						contours[0].nodes[1].expandedTo[1].x + 0.25 * thickness + 10
+					)
+					y: capHeight * ( 240 / 750 )
+					dirOut: 90 + 'deg'
+					type: 'smooth'
+					expand: Object({
+						width: thickness
+						angle: 180 - 3 + 'deg'
+						distr: 0.25
+					})
+				4:
+					x: contours[0].nodes[5].expandedTo[0].x + ( contours[0].nodes[3].expandedTo[0].x - contours[0].nodes[5].expandedTo[0].x ) * ( 175 / 400 )
+					y: xHeight * ( 460 / 500 )
+					dirOut: 0 + 'deg'
+					type: 'smooth'
+					expand: Object({
+						width: thickness * ( 27 / 85 ) * contrast
+						angle: - 111 + 'deg'
+						distr: 0.25
 					})
 				5:
 					x: contours[0].nodes[1].expandedTo[1].x
 					y: contours[0].nodes[1].expandedTo[1].y
-					dirIn: - 90 + 'deg'
-					tensionIn: 0.9
-					type: 'smooth'
+					dirIn: 90 + 'deg'
 					expand: Object({
-						width: thickness * ( 27 / 85 )
-						angle: 180 - 23 + 'deg'
+						width: thickness * ( 29 / 85 )
+						angle: 180 + 121 + 'deg'
 						distr: 1
 					})
+			transformOrigin: Array( (contours[0].nodes[0].expandedTo[1].x + spacingRight) / 2, 0 )
+			transforms: Array(
+				['translateY', ( xHeight ) ],
+				['rotate', 180 + 'deg']
+			)
