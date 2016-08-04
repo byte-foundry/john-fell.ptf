@@ -1,3 +1,4 @@
+# TODO: spur + serifCurve
 exports.glyphs['U_cap'] =
 	unicode: 'U'
 	glyphName: 'U'
