@@ -4,13 +4,13 @@ exports.glyphs['five'] =
 	glyphName: 'five'
 	characterName: 'DIGIT FIVE'
 	ot:
-		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 30
+		advanceWidth: contours[0].nodes[1].expandedTo[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 50
+		spacingRight: 50 * spacing + 30
 	tags: [
 		'all',
 		'latin',
@@ -22,7 +22,7 @@ exports.glyphs['five'] =
 			closed: false
 			nodes:
 				0:
-					x: 60
+					x: spacingLeft + 10
 					y: - 230
 					dirOut: 7 + 'deg'
 					expand: Object({
@@ -31,7 +31,7 @@ exports.glyphs['five'] =
 						distr: 0.25
 					})
 				1:
-					x: 335 + (52)
+					x: spacingLeft + 200 * width + 85 + (52)
 					y: 20 + (23)
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -41,7 +41,7 @@ exports.glyphs['five'] =
 						distr: 0.25
 					})
 				2:
-					x: 95 + (7)
+					x: spacingLeft + 35 + (7)
 					y: ( 195 / 520 ) * xHeight + (67)
 					dirIn: 0 + 'deg'
 					typeOut: 'line'
@@ -74,18 +74,18 @@ exports.glyphs['five'] =
 			skeleton: true
 			closed: false
 			nodes:
-				2:
-					x: contours[0].nodes[4].expandedTo[1].x
-					y: contours[0].nodes[4].expandedTo[1].y
+				0:
+					x: contours[0].nodes[1].expandedTo[0].x - 50
+					y: xHeight
 					dirIn: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 30 / 85 )
-						angle: 0 + 'deg'
+						width: thickness * ( 75 / 85 )
+						angle: - 100 + 'deg'
 						distr: 0
 					})
 				1:
-					x: 105 + (0)
+					x: contours[1].nodes[2].expandedTo[0].x + 55 * width
 					y: xHeight
 					dirIn: 0 + 'deg'
 					typeOut: 'line'
@@ -94,15 +94,14 @@ exports.glyphs['five'] =
 						angle: - 78 + 'deg'
 						distr: 0
 					})
-				0:
-					x: contours[0].nodes[1].expandedTo[1].x + ( contours[0].nodes[1].expandedTo[0].x - contours[0].nodes[1].expandedTo[1].x ) * 0.4
-					x: contours[0].nodes[1].expandedTo[0].x - 50
-					y: xHeight
+				2:
+					x: contours[0].nodes[4].expandedTo[1].x
+					y: contours[0].nodes[4].expandedTo[1].y
 					dirIn: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 75 / 85 )
-						angle: - 100 + 'deg'
+						width: thickness * ( 30 / 85 )
+						angle: 0 + 'deg'
 						distr: 0
 					})
 	components:

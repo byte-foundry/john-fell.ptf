@@ -4,13 +4,13 @@ exports.glyphs['two'] =
 	glyphName: 'two'
 	characterName: 'DIGIT TWO'
 	ot:
-		advanceWidth: contours[0].nodes[2].expandedTo[1].x + 23
+		advanceWidth: contours[0].nodes[2].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 30
+		spacingRight: 50 * spacing + 100
 	tags: [
 		'all',
 		'latin',
@@ -22,16 +22,15 @@ exports.glyphs['two'] =
 			closed: false
 			nodes:
 				0:
-					x: 44 + (10)
+					x: contours[0].nodes[3].x + 14 + (4)
 					y: ( 295 / 500 ) * xHeight - (2)
 					dirOut: 79 + 'deg'
 					expand: Object({
-						width: thickness * ( 14 / 85 )
+						width: thickness * ( 18 / 85 )
 						angle: 180 - 12 + 'deg'
-						distr: 0.25
+						distr: 0.75
 					})
 				1:
-					x: 275 + (0)
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) * 0.55
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
@@ -42,18 +41,21 @@ exports.glyphs['two'] =
 						distr: 1
 					})
 				2:
-					x: 355 * width + (22)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 195 - (36),
+						contours[0].nodes[0].expandedTo[1].x + 0.25 * thickness * ( 87 / 85 ) + 10
+					)
 					y: ( 335 / 500 ) * xHeight + (5)
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					tensionOut: 1.3
 					expand: Object({
-						width: thickness * ( 89 / 85 )
+						width: thickness * ( 87 / 85 )
 						angle: 13 + 'deg'
-						distr: 0.25
+						distr: 0.75
 					})
 				3:
-					x: 30
+					x: spacingLeft
 					y: 0
 					dirIn: 27 + 'deg'
 					dirIn: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[0].expandedTo[1].point ) * 0.88
@@ -83,8 +85,7 @@ exports.glyphs['two'] =
 							}
 						]
 				1:
-					x: 430 * width + (0)
-					x: contours[0].nodes[2].x + ( 30 + 25 * width )
+					x: contours[0].nodes[2].x + 10
 					y: 0
 					dirOut: 0 + 'deg'
 					typeOut: 'line'

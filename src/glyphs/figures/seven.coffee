@@ -4,13 +4,13 @@ exports.glyphs['seven'] =
 	glyphName: 'seven'
 	characterName: 'DIGIT SEVEN'
 	ot:
-		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 5
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 80
+		spacingRight: 50 * spacing + 5
 	tags: [
 		'all',
 		'latin',
@@ -22,7 +22,7 @@ exports.glyphs['seven'] =
 			closed: false
 			nodes:
 				0:
-					x: 109 + (16)
+					x: contours[0].nodes[4].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[4].x ) * ( 30 / 370 ) + (16)
 					y: ( 220 / 250 ) * descender
 					typeOut: 'line'
 					expand: Object({
@@ -31,7 +31,7 @@ exports.glyphs['seven'] =
 						distr: 0.25
 					})
 				1:
-					x: 428 + (6)
+					x: contours[0].nodes[4].x + 200 * width + 145 + (6)
 					y: ( 485 / 500 ) * xHeight
 					typeOut: 'line'
 					expand: Object({
@@ -58,7 +58,7 @@ exports.glyphs['seven'] =
 						distr: 1
 					})
 				4:
-					x: 80
+					x: spacingLeft
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
