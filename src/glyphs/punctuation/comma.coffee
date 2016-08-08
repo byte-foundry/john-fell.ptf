@@ -1,3 +1,4 @@
+# todo: thickness
 exports.glyphs['comma'] =
 	unicode: ','
 	glyphName: 'comma'
