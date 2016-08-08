@@ -1,12 +1,14 @@
 # Todo: spacing
-exports.glyphs['question'] =
-	unicode: '?'
-	glyphName: 'question'
-	characterName: 'QUESTION MARK'
+exports.glyphs['questiondown'] =
+	unicode: '¿'
+	glyphName: 'questiondown'
+	characterName: 'INVERTED QUESTION MARK'
 	ot:
 		advanceWidth: contours[0].nodes[3].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX', slant + 'deg'],
+		['scaleY', -1], ['translateY', - xHeight],
+		['scaleX', -1], ['translateX', - (contours[0].nodes[3].expandedTo[1].x + spacingRight) ]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 35
