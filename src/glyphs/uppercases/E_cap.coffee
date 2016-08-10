@@ -8,8 +8,8 @@ exports.glyphs['E_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (25) + serifWidth + 40
-		spacingRight: 40 * spacing + serifWidth / 2
+		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
+		spacingRight: 50 * spacing + 40 + serifWidth / 2
 	anchors:
 		0:
 			x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[1].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
@@ -26,7 +26,7 @@ exports.glyphs['E_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0 + serifHeight + serifCurve * ( 65 /15 )
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -36,7 +36,7 @@ exports.glyphs['E_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: capHeight - serifHeight - serifCurve * ( 65 /15 )
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -59,7 +59,7 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 60 + 250 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 110 + 200 * width
 					y: contours[1].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -83,7 +83,7 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 250 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 200 * width + 50 - Math.max( 0, serifHeight * serifArc )
 					y: capHeight * ( 385 / 750 ) * crossbar
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -108,7 +108,7 @@ exports.glyphs['E_cap'] =
 						distr: 1
 					})
 				1:
-					x: contours[1].nodes[0].x + 85 + 250 * width
+					x: contours[1].nodes[0].x + 135 + 200 * width
 					y: contours[3].nodes[0].y
 					dirOut: 0 + 'deg'
 					expand: Object({
@@ -121,7 +121,13 @@ exports.glyphs['E_cap'] =
 			closed: true
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + ( serifHeight + serifCurve ) * ( 80 / 35 )
+					x: Math.min(
+						contours[0].nodes[0].expandedTo[1].x + ( serifHeight + serifCurve ) * ( 80 / 35 ),
+						Math.max(
+							contours[3].nodes[0].expandedTo[1].x,
+							contours[3].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 )
+						)
+					)
 					y: contours[3].nodes[0].expand.width
 					tensionOut: 1.5
 				1:
@@ -143,10 +149,16 @@ exports.glyphs['E_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: capHeight - serifHeight - serifCurve * ( 65 /15 )
+					y: Math.max(
+						contours[2].nodes[0].expandedTo[1].y,
+						capHeight - serifHeight - serifCurve * ( 65 /15 )
+					)
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x
-					y: capHeight - serifHeight - serifCurve * ( 65 /15 )
+					y: Math.max(
+						contours[2].nodes[0].expandedTo[1].y,
+						capHeight - serifHeight - serifCurve * ( 65 /15 )
+					)
 				2:
 					anchorLine: capHeight
 					leftWidth: 40
@@ -157,10 +169,16 @@ exports.glyphs['E_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: serifHeight + serifCurve * ( 65 /15 )
+					y: Math.min(
+						contours[2].nodes[0].expandedTo[0].y,
+						serifHeight + serifCurve * ( 65 /15 )
+					)
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x
-					y: serifHeight + serifCurve * ( 65 /15 )
+					y: Math.min(
+						contours[2].nodes[0].expandedTo[0].y,
+						serifHeight + serifCurve * ( 65 /15 )
+					)
 				2:
 					leftWidth: 40
 					right: false
@@ -168,13 +186,13 @@ exports.glyphs['E_cap'] =
 			base: 'serif-v'
 			parentAnchors:
 				0:
-					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
+					x: Math.max(contours[2].nodes[0].expandedTo[1].x + 10, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
 					y: contours[2].nodes[0].expandedTo[1].y
 				1:
-					x: Math.max(contours[2].nodes[0].expandedTo[1].x, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
+					x: Math.max(contours[2].nodes[0].expandedTo[1].x + 10, contours[2].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 ) )
 					y: contours[2].nodes[0].expandedTo[0].y
 				2:
-					anchorLine: contours[2].nodes[1].expandedTo[0].x
+					anchorLine: contours[2].nodes[1].expandedTo[0].x + Math.max( 0, serifHeight * serifArc )
 					leftWidth: 75
 					rightWidth: 75
 					# baseRight: contours[2].nodes[1].expandedTo[0].point

@@ -3,13 +3,13 @@ exports.glyphs['ampersand'] =
 	glyphName: 'ampersand'
 	characterName: 'AMPERSAND'
 	ot:
-		advanceWidth: contours[0].nodes[3].expandedTo[1].x + serifWidth + 10 * spacing
+		advanceWidth: contours[0].nodes[3].expandedTo[1].x + serifWidth + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 10 + (10)
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',

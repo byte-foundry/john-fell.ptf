@@ -8,8 +8,8 @@ exports.glyphs['Q_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 55 * spacing + (22)
-		spacingRight: 50 * spacing
+		spacingLeft: 50 * spacing + 55 + (22)
+		spacingRight: 50 * spacing + 50
 	anchors:
 		0:
 			junctionBottom: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[0], contours[0].nodes[0].expandedTo[0], thickness * 2, false, 10 )

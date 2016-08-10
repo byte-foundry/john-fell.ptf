@@ -8,8 +8,8 @@ exports.glyphs['L_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (45) + serifWidth + 40
-		spacingRight: 10 * spacing + serifWidth
+		spacingLeft: 50 * spacing + 40 + (45) + serifWidth + 40
+		spacingRight: 50 * spacing + 10 + serifWidth
 	tags: [
 		'all',
 		'latin',
@@ -29,7 +29,7 @@ exports.glyphs['L_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: capHeight - serifHeight - serifCurve * ( 60 / 15 )
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -38,7 +38,7 @@ exports.glyphs['L_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -93,10 +93,10 @@ exports.glyphs['L_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y
+					y: Math.max( capHeight / 2, contours[0].nodes[0].y - serifHeight - serifCurve * ( 65 / 15 ) )
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y
+					y: Math.max( capHeight / 2, contours[0].nodes[0].y - serifHeight - serifCurve * ( 65 / 15 ) )
 				2:
 					anchorLine: capHeight
 					leftWidth: 40
@@ -107,31 +107,13 @@ exports.glyphs['L_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].expandedTo[1].y + serifHeight + serifCurve * ( 65 /15 )
+					y: Math.min( capHeight / 2, contours[0].nodes[1].y + serifHeight + serifCurve * ( 65 / 15 ) )
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].expandedTo[0].y + serifHeight + serifCurve * ( 65 /15 )
+					y: Math.min( capHeight / 2, contours[0].nodes[1].y + serifHeight + serifCurve * ( 65 / 15 ) )
 				2:
 					leftWidth: 40
 					right: false
-		2:
-			base: 'serif'
-			parentAnchors:
-				0:
-					x: Math.max(contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 100 /15 ) )
-					y: contours[1].nodes[0].expandedTo[1].y
-				1:
-					x: Math.max(contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 100 /15 ) )
-					y: contours[1].nodes[0].expandedTo[0].y
-				2:
-					anchorLine: contours[1].nodes[0].expandedTo[0].x
-					bottomWidth: 60
-					topWidth: 60
-					# bottomMedian: 0.94
-					topMedian: 0.94
-					serifHeight: 0.8
-					directionY: -1
-					# shift: 10
 		2:
 			base: 'serif-v'
 			parentAnchors:

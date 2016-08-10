@@ -1,15 +1,16 @@
+# TODO: winding rules
 exports.glyphs['M_cap'] =
 	unicode: 'M'
 	glyphName: 'M'
 	characterName: 'LATIN CAPITAL LETTER M'
 	ot:
-		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 15 * spacing + (20) + serifWidth + 40
-		spacingRight: 15 * spacing + serifWidth + 40
+		spacingLeft: 50 * spacing + 15 + (20) + serifWidth + 40
+		spacingRight: 50 * spacing + 15 + serifWidth + 40
 	tags: [
 		'all',
 		'latin',
@@ -21,23 +22,21 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[1].x + 20
-					y: capHeight
-					dirOut: 90 + 'deg'
-					typeOut: 'line'
-					expand: Object({
-						width: thickness * ( 25 / 85 ) * opticThickness
-						angle: 0 + 'deg'
-						distr: 0.25
-					})
-				1:
 					x: spacingLeft
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 35 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						distr: 0.25
+					})
+				1:
+					x: contours[0].nodes[0].x + 20
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
+					dirOut: 90 + 'deg'
+					typeOut: 'line'
+					expand: Object({
+						width: thickness * ( 25 / 85 ) * opticThickness
 						distr: 0.25
 					})
 		1:
@@ -45,20 +44,21 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[1].x - 20
-					y: capHeight
+					x: contours[0].nodes[1].expandedTo[1].x + 300 + 250 * width
+					y: 0 + Math.max( 0, serifHeight * serifArc )
+					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 95 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						width: thickness * ( 100 / 85 ) * opticThickness
 						distr: 0.25
 					})
 				1:
-					x: contours[0].nodes[1].expandedTo[1].x + 300 + 250 * width
-					y: 0
+					x: contours[1].nodes[0].x - 20
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
+					dirOut: 90 + 'deg'
+					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						width: thickness * ( 95 / 85 ) * opticThickness
 						distr: 0.25
 					})
 		2:
@@ -66,8 +66,8 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[0].expandedTo[0].x
-					y: capHeight
+					x: contours[1].nodes[1].expandedTo[0].x
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 35 / 85 ) * opticThickness
@@ -75,8 +75,8 @@ exports.glyphs['M_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[1].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[1].expandedTo[1].x ) * 0.5
-					y: 0
+					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * 0.5
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 25 / 85 ) * opticThickness
@@ -88,8 +88,8 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[1].expandedTo[0].x - Math.min( 15 * ( thickness / 85 ), 0 )
-					y: capHeight
+					x: contours[0].nodes[0].expandedTo[0].x - Math.min( 15 * ( thickness / 85 ), 0 )
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 120 / 85 ) * opticThickness
@@ -131,61 +131,61 @@ exports.glyphs['M_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: Math.min( contours[0].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 						on: [ contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[1].point ]
 					})
-					y: Math.min( contours[0].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: Math.min( contours[0].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
 						on: [ contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point ]
 					})
-					y: Math.min( contours[0].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
 				2:
 					leftWidth: 60
 					rightWidth: 60
-					baseRight: contours[0].nodes[1].expandedTo[1].point
-					baseLeft: contours[0].nodes[1].expandedTo[0].point
-					angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point )
+					baseRight: contours[0].nodes[0].expandedTo[1].point
+					baseLeft: contours[0].nodes[0].expandedTo[0].point
+					angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point )
 		1:
 			base: 'serif'
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: Math.min( contours[1].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
 					})
-					y: Math.min( contours[1].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: Math.min( contours[1].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
+						y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
 					})
-					y: Math.min( contours[1].nodes[0].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
+					y: Math.min( contours[0].nodes[1].expandedTo[0].y, 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 				2:
 					leftWidth: 40
 					rightWidth: 40
-					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
+					angle: Utils.lineAngle( contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point )
 		2:
 			base: 'serif'
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: Math.max( contours[1].nodes[1].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 150 / 15 ) )
-						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
+						y: Math.max( contours[1].nodes[0].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 150 / 15 ) )
+						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
 					})
-					y: Math.max( contours[1].nodes[1].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 150 / 15 ) )
+					y: Math.max( contours[1].nodes[0].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 150 / 15 ) )
 				1:
-					x: contours[1].nodes[0].expandedTo[0].x
-					y: contours[1].nodes[0].expandedTo[0].y
+					x: contours[1].nodes[1].expandedTo[0].x
+					y: contours[1].nodes[1].expandedTo[0].y
 				2:
 					anchorLine: capHeight
 					rightWidth: 40
 					left: false
-					baseLeft: contours[1].nodes[0].expandedTo[0].point
-					baseRight: contours[1].nodes[0].expandedTo[1].point
+					baseLeft: contours[1].nodes[1].expandedTo[0].point
+					baseRight: contours[1].nodes[1].expandedTo[1].point
 					directionY: -1
-					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point )
+					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
 		3:
 			base: 'serif'
 			parentAnchors:

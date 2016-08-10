@@ -1,3 +1,4 @@
+# TODO: serifArc bottom right
 exports.glyphs['K_cap'] =
 	unicode: 'K'
 	glyphName: 'K'
@@ -8,8 +9,8 @@ exports.glyphs['K_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (25) + serifWidth + 40
-		spacingRight: 10 * spacing + serifWidth + 10
+		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
+		spacingRight: 50 * spacing + 10 + serifWidth + 10
 	tags: [
 		'all',
 		'latin',
@@ -22,7 +23,7 @@ exports.glyphs['K_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -31,7 +32,7 @@ exports.glyphs['K_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: capHeight - serifHeight - serifCurve * ( 60 / 15 )
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -45,7 +46,7 @@ exports.glyphs['K_cap'] =
 				0:
 					x: 545 - (10) + thickness - 85
 					x: contours[0].nodes[0].expandedTo[1].x + 60 + 250 * width + (16)
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -77,7 +78,7 @@ exports.glyphs['K_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + 70 + 250 * width + (60)
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -91,10 +92,10 @@ exports.glyphs['K_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y
+					y: contours[0].nodes[0].y + serifCurve * ( 60 / 15 )
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y
+					y: contours[0].nodes[0].y + serifCurve * ( 60 / 15 )
 				2:
 					leftWidth: 40
 					rightWidth: 40
@@ -103,10 +104,10 @@ exports.glyphs['K_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].y
+					y: contours[0].nodes[1].y - serifCurve * ( 60 / 15 )
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].y
+					y: contours[0].nodes[1].y - serifCurve * ( 60 / 15 )
 				2:
 					anchorLine: capHeight
 					leftWidth: 40
@@ -117,16 +118,16 @@ exports.glyphs['K_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: Math.max( contours[1].nodes[1].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 90 / 15 ) )
+						y: Math.max( contours[2].nodes[0].expandedTo[1].y, capHeight - serifHeight - serifCurve * ( 90 / 15 ) )
 						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
 					})
-					y: Math.max( contours[1].nodes[1].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 90 / 15 ) )
+					y: Math.max( contours[2].nodes[0].expandedTo[1].y, capHeight - serifHeight - serifCurve * ( 90 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: Math.max( contours[1].nodes[1].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
+						y: Math.max( contours[2].nodes[0].expandedTo[1].y, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
 						on: [ contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ]
 					})
-					y: Math.max( contours[1].nodes[1].expandedTo[0].y, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
+					y: Math.max( contours[2].nodes[0].expandedTo[1].y, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
 				2:
 					anchorLine: capHeight
 					leftWidth: 75
@@ -140,16 +141,16 @@ exports.glyphs['K_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: 0 + serifHeight + serifCurve * ( 65 / 15 )
+						y: Math.min( contours[2].nodes[0].expandedTo[0].y , 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 						on: [ contours[2].nodes[1].expandedTo[1].point, contours[2].nodes[0].expandedTo[1].point ]
 					})
-					y: 0 + serifHeight + serifCurve * ( 65 / 15 )
+					y: Math.min( contours[2].nodes[0].expandedTo[0].y , 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: 0 + serifHeight + serifCurve * ( 65 / 15 )
+						y: Math.min( contours[2].nodes[0].expandedTo[0].y , 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 						on: [ contours[2].nodes[1].expandedTo[0].point, contours[2].nodes[0].expandedTo[0].point ]
 					})
-					y: 0 + serifHeight + serifCurve * ( 65 / 15 )
+					y: Math.min( contours[2].nodes[0].expandedTo[0].y , 0 + serifHeight + serifCurve * ( 65 / 15 ) )
 				2:
 					leftWidth: 65
 					rightWidth: 20

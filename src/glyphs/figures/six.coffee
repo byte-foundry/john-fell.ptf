@@ -1,15 +1,16 @@
+# TODO: spacing
 exports.glyphs['six'] =
 	unicode: '6'
 	glyphName: 'six'
 	characterName: 'DIGIT SIX'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[1].x + 15 * spacing
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 50
+		spacingRight: 50 * spacing + 15
 	tags: [
 		'all',
 		'latin',
@@ -21,16 +22,22 @@ exports.glyphs['six'] =
 			closed: false
 			nodes:
 				0:
-					x: 545 + (5)
+					x: contours[0].nodes[3].expandedTo[0].x + 30 + (5)
 					y: capHeight
-					dirOut: - 168 + 'deg'
+					dirOut: - Math.min(
+						180,
+						Math.max(
+							168,
+							168 * width
+						)
+					) + 'deg'
 					expand: Object({
 						width: thickness * ( 13 / 85 )
 						angle: - 76 + 'deg'
 						distr: 0
 					})
 				1:
-					x: 60 + (21)
+					x: spacingLeft + (21)
 					y: capHeight * ( 280 / 750 )
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
@@ -40,7 +47,7 @@ exports.glyphs['six'] =
 						distr: 0.25
 					})
 				2:
-					x: 300 + (0)
+					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[3].expandedTo[0].x - contours[0].nodes[1].expandedTo[0].x ) * ( 240 / 465 )
 					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
@@ -50,7 +57,10 @@ exports.glyphs['six'] =
 						distr: 0
 					})
 				3:
-					x: 425 + (75)
+					x: Math.max(
+						contours[0].nodes[1].expandedTo[0].x + 200 * width + 265 - (21),
+						contours[0].nodes[1].expandedTo[1].x + 0.25 * thickness + 10
+					)
 					y: capHeight * ( 240 / 750 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -60,7 +70,7 @@ exports.glyphs['six'] =
 						distr: 0.25
 					})
 				4:
-					x: 300 + (0)
+					x: contours[0].nodes[5].expandedTo[0].x + ( contours[0].nodes[3].expandedTo[0].x - contours[0].nodes[5].expandedTo[0].x ) * ( 175 / 400 )
 					y: xHeight * ( 460 / 500 )
 					dirOut: 0 + 'deg'
 					type: 'smooth'

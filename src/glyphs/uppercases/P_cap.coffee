@@ -8,8 +8,8 @@ exports.glyphs['P_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (25) + serifWidth + 40
-		spacingRight: 20 * spacing
+		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
+		spacingRight: 50 * spacing + 20
 	anchors:
 		0:
 			x: 0
@@ -26,7 +26,7 @@ exports.glyphs['P_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0 + serifHeight + serifCurve * ( 65 / 15 )
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -35,7 +35,7 @@ exports.glyphs['P_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -100,10 +100,10 @@ exports.glyphs['P_cap'] =
 			parentAnchors:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y
+					y: contours[0].nodes[0].y + serifHeight + serifCurve * ( 65 / 15 )
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y
+					y: contours[0].nodes[0].y + serifHeight + serifCurve * ( 65 / 15 )
 				2:
 					anchorLine: 0
 					leftWidth: 40

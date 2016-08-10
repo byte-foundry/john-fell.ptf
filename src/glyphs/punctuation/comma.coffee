@@ -1,3 +1,4 @@
+# todo: thickness
 exports.glyphs['comma'] =
 	unicode: ','
 	glyphName: 'comma'
@@ -8,8 +9,8 @@ exports.glyphs['comma'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing + (10)
-		spacingRight: 70 * spacing
+		spacingLeft: 50 * spacing + 70 + (10)
+		spacingRight: 50 * spacing + 70
 	anchors:
 		0:
 			x: 550 - 86 + thickness

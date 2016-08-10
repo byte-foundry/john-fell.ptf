@@ -1,3 +1,5 @@
+# TODO: thickness
+# TODO: a node missing
 exports.glyphs['g'] =
 	unicode: 'g'
 	glyphName: 'g'
@@ -8,8 +10,8 @@ exports.glyphs['g'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 45 * spacing - (5)
-		spacingRight: 35 * spacing
+		spacingLeft: 50 * spacing + 45
+		spacingRight: 50 * spacing + 35
 	anchors:
 		0:
 			x: contours[0].nodes[2].x
@@ -26,17 +28,20 @@ exports.glyphs['g'] =
 			closed: true
 			nodes:
 				0:
-					x: ( contours[0].nodes[3].expandedTo[0].x + contours[0].nodes[1].expandedTo[0].x ) / 2 - 5
+					x: ( contours[0].nodes[3].expandedTo[0].x + contours[0].nodes[1].expandedTo[0].x ) / 2
 					y: ( 188 / 500 ) * xHeight
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 25 / 85 )
-						angle: 57 + 'deg'
+						width: thickness * ( 20 / 85 )
+						angle: 90 + 'deg'
 						distr: 0
 					})
 				1:
-					x: 100 + 240 * width + 65
+					x: Math.max(
+						contours[0].nodes[3].expandedTo[0].x + 200 * width + 160 - (21),
+						contours[0].nodes[3].expandedTo[1].x + 0.75 * thickness + 10
+					)
 					y: contours[0].nodes[3].y
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
@@ -45,13 +50,13 @@ exports.glyphs['g'] =
 						distr: 0.25
 					})
 				2:
-					x: ( contours[0].nodes[3].expandedTo[0].x + contours[0].nodes[1].expandedTo[0].x ) / 2 + 5
+					x: contours[0].nodes[0].x
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 25 / 85 )
-						angle: - 127 + 'deg'
+						width: thickness * ( 20 / 85 )
+						angle: - 90 + 'deg'
 						distr: 0
 					})
 				3:
@@ -69,100 +74,94 @@ exports.glyphs['g'] =
 			closed: false
 			nodes:
 				0:
-					x: 170
-					y: contours[0].nodes[0].expandedTo[1].y
+					x: contours[0].nodes[0].x
+					y: contours[0].nodes[0].expandedTo[0].y
 					# x: anchors[0].junctionBottom.x
 					# y: anchors[0].junctionBottom.y
-					dirOut: - 176 + 'deg'
+					dirOut: - 180 + 'deg'
 					# dirOut: Utils.lineAngle( contours[1].nodes[2].point, contours[1].nodes[3].point ) - Math.PI / 2 * 90 * 4
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 56 / 85 )
-						angle: - 10 + 'deg'
-						distr: 0
+						width: thickness * ( 18 / 85 )
+						angle: - 75 + 'deg'
+						distr: 1
 					})
 				1:
-					x: spacingLeft + 10
-					y: ( 100 / 500 ) * xHeight
+					x: spacingLeft + 10 + (12)
+					y: ( 105 / 500 ) * xHeight + (6)
 					# dirOut: contours[1].nodes[2].dirOut + Math.PI / 2
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 56 / 85 )
 						angle: 27 + 'deg'
-						distr: 0
+						distr: 0.25
 					})
 				2:
-					x: 155
-					y:
-						if xHeight > 42
-						then 0 + (42/500) * xHeight
-						else 0 - (42/500) * xHeight
-					# dirIn: Utils.lineAngle( contours[1].nodes[2].point, contours[1].nodes[3].point )
-					# dirOut: 0 + 'deg'
+					x: contours[1].nodes[6].expandedTo[1].x + ( contours[1].nodes[4].expandedTo[1].x - contours[1].nodes[6].expandedTo[1].x ) * ( 134 / 440 )
+					y: 0 + (42)
 					tensionOut: 0.5
 					type: 'smooth'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						angle: 88 + 'deg'
+						angle: 87 + 'deg'
 						distr: 0.5
 					})
 				3:
-					x: contours[1].nodes[4].x - 120
-					y:
-						if xHeight > 42
-						then 4 + 21 + (21/500) * xHeight
-						else 4 - 21 - (21/500) * xHeight
+					x: contours[1].nodes[4].expandedTo[1].x - ( contours[1].nodes[4].expandedTo[1].x - contours[1].nodes[6].expandedTo[1].x ) * ( 190 / 440 )
+					y: 0 + (42)
 					dirOut: Utils.lineAngle( contours[1].nodes[2].point, contours[1].nodes[3].point )
-					# tensionIn: 0
+					tensionOut: 1.2
 					type: 'smooth'
 					expand: Object({
 						width: thickness
-						angle: 83 + 'deg'
+						angle: 84 + 'deg'
 						distr: 0.5
 					})
 				4:
-					x: 200 + 205 * width + (21)
-					y: ( 85 / 250 ) * descender
+					x: Math.max(
+						contours[1].nodes[6].expandedTo[1].x + 200 * width + 240 - (18),
+						contours[1].nodes[6].expandedTo[0].x + 0.25 * thickness * ( 73 / 85 ) + 10
+					)
+					y: (( 230 / 250 ) * descender) + ( (contours[1].nodes[3].y + Math.sin( 84 / 180 * Math.PI ) * thickness / 2 ) - (( 230 / 250 ) * descender) ) * 0.5
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 73 / 85 )
 						angle: 16 + 'deg'
-						distr: 0.25
+						distr: 0.75
 					})
 				5:
-						x: 255
-						x: contours[1].nodes[2].x + ( contours[1].nodes[3].x - contours[1].nodes[2].x ) * 0.5
-						y: ( 230 / 250 ) * descender
-						dirOut: 0 + 'deg'
-						type: 'smooth'
-						expand: Object({
-							width: thickness * ( 20 / 85 )
-							angle: 180 + 76 + 'deg'
-							distr: 1
-						})
+					x: contours[1].nodes[4].expandedTo[1].x - ( contours[1].nodes[4].expandedTo[1].x - contours[1].nodes[6].expandedTo[1].x ) * 0.5
+					y: ( 230 / 250 ) * descender
+					dirOut: 0 + 'deg'
+					type: 'smooth'
+					expand: Object({
+						width: thickness * ( 20 / 85 )
+						angle: 180 + 76 + 'deg'
+						distr: 1
+					})
 				6:
-						x: spacingLeft
-						y: ( 95 / 250 ) * descender
-						dirOut: 90 + 'deg'
-						type: 'smooth'
-						expand: Object({
-							width: thickness * ( 73 / 85 )
-							angle: 180 + 16 + 'deg'
-							distr: 1
-						})
+					x: spacingLeft + (18)
+					y: ( 95 / 250 ) * descender + (5)
+					dirOut: 90 + 'deg'
+					type: 'smooth'
+					expand: Object({
+						width: thickness * ( 73 / 85 )
+						angle: 180 + 16 + 'deg'
+						distr: 0.75
+					})
 				7:
-						x: 140
-						y: contours[1].nodes[2].expandedTo[0].y + thickness * ( 10 / 85 )
-						dirIn: - 168 + 'deg'
-						type: 'smooth'
-						expand: Object({
-							width: thickness * ( 28 / 85 )
-							angle: 180 + 'deg'
-							distr: 1
-						})
+					x: contours[1].nodes[2].expandedTo[0].x
+					y: contours[1].nodes[2].expandedTo[0].y + thickness * ( 10 / 85 )
+					dirIn: - 168 + 'deg'
+					type: 'smooth'
+					expand: Object({
+						width: thickness * ( 23 / 85 )
+						angle: 180 + 'deg'
+						distr: 0.25
+					})
 		2:
 			skeleton: true
 			closed: false
@@ -205,7 +204,7 @@ exports.glyphs['g'] =
 				0:
 					x: contours[2].nodes[0].expandedTo[0].x
 					y: contours[2].nodes[0].expandedTo[0].y
-					dirOut: - 90 + 'deg'
+					dirOut: 90 + 'deg'
 					typeIn: 'line'
 				1:
 					x: contours[2].nodes[0].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[1].x - contours[2].nodes[0].expandedTo[0].x ) * ( 35/ 75 )
@@ -215,4 +214,4 @@ exports.glyphs['g'] =
 				2:
 					x: contours[2].nodes[0].expandedTo[1].x
 					y: contours[2].nodes[0].expandedTo[1].y
-					dirIn: - 90 + 'deg'
+					dirIn: -90 + 'deg'

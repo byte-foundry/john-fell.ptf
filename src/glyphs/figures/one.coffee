@@ -1,15 +1,16 @@
+# TODO: spacing
 exports.glyphs['one'] =
 	unicode: '1'
 	glyphName: 'one'
 	characterName: 'DIGIT ONE'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + (50)
+		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 40 + serifWidth + serifWidth * ( 35 / 65 )
+		spacingRight: 50 * spacing + 40 + serifWidth + serifWidth * ( 35 / 65 )
 	tags: [
 		'all',
 		'latin',
@@ -21,13 +22,13 @@ exports.glyphs['one'] =
 			closed: false
 			nodes:
 				0:
-					x: 145
+					x: spacingLeft + thickness / 2
 					y: 0 + serifHeight + serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.5
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -36,7 +37,7 @@ exports.glyphs['one'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0
+						distr: 0.5
 					})
 	components:
 		0:

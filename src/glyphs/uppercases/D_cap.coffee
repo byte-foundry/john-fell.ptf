@@ -8,8 +8,8 @@ exports.glyphs['D_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (25) + serifWidth + 40
-		spacingRight: 55 * spacing
+		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
+		spacingRight: 50 * spacing + 55
 	tags: [
 		'all',
 		'latin',
@@ -26,7 +26,7 @@ exports.glyphs['D_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: capHeight
+					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
@@ -35,7 +35,7 @@ exports.glyphs['D_cap'] =
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
@@ -48,7 +48,7 @@ exports.glyphs['D_cap'] =
 			nodes:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].expandedTo[1].y
+					y: capHeight
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 20 / 85 ) * opticThickness * contrast
@@ -57,7 +57,7 @@ exports.glyphs['D_cap'] =
 					})
 				1:
 					x: contours[1].nodes[0].x + 120 * width
-					y: contours[0].nodes[0].expandedTo[1].y
+					y: contours[1].nodes[0].expandedTo[0].y
 					dirOut: 0 + 'deg'
 					tensionOut: 1.1
 					expand: Object({

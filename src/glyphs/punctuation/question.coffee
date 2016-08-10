@@ -1,15 +1,16 @@
+# Todo: spacing
 exports.glyphs['question'] =
 	unicode: '?'
 	glyphName: 'question'
 	characterName: 'QUESTION MARK'
 	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+		advanceWidth: contours[0].nodes[3].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 35
+		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
 		'latin',

@@ -8,8 +8,8 @@ exports.glyphs['Z_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 25 * spacing - (3)
-		spacingRight: 10 * spacing + serifWidth / 2 * serifRotate
+		spacingLeft: 50 * spacing + 25
+		spacingRight: 50 * spacing + 10 + serifWidth / 2 * serifRotate
 	tags: [
 		'all',
 		'latin',
@@ -25,20 +25,20 @@ exports.glyphs['Z_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: 360 + 250 * width
+					x: contours[1].nodes[0].expandedTo[0].x + 200 * width + 385 + (0)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 20 / 85 ) * contrast
+						width: thickness * ( 20 / 85 )
 						angle: - 90 + 'deg'
 						distr: 0
 					})
 				1:
-					x: 75 + (0)
+					x: contours[1].nodes[0].expandedTo[0].x + 45 + (0)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 28 / 85 ) * contrast
+						width: thickness * ( 28 / 85 )
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -51,7 +51,7 @@ exports.glyphs['Z_cap'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 20 / 85 ) * contrast
+						width: thickness * ( 20 / 85 )
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -60,7 +60,7 @@ exports.glyphs['Z_cap'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 30 / 85 ) * contrast
+						width: thickness * ( 30 / 85 )
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -73,8 +73,8 @@ exports.glyphs['Z_cap'] =
 					y: contours[1].nodes[0].expandedTo[1].y
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 113 / 85 )
-						angle: Math.PI / 2 + Math.acos( (thickness * ( 20 / 85 ) * contrast) / (thickness * ( 113 / 85 )) ) # 180 - 10 + 'deg'
+						width: thickness * ( 105 / 85 )
+						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 105 / 85 )) )
 						distr: 1
 					})
 				1:
@@ -82,8 +82,8 @@ exports.glyphs['Z_cap'] =
 					y: contours[0].nodes[0].expandedTo[1].y
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 103 / 85 )
-						angle: Math.PI / 2 + Math.acos( (thickness * ( 20 / 85 ) * contrast) / (thickness * ( 103 / 85 )) ) # 170 + 'deg'
+						width: thickness * ( 95 / 85 )
+						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 95 / 85 )) )
 						distr: 0
 					})
 	components:

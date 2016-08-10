@@ -3,13 +3,13 @@ exports.glyphs['hyphen'] =
 	glyphName: 'hyphen'
 	characterName: 'HYPHEN-MINUS'
 	ot:
-		advanceWidth: contours[0].nodes[1].expandedTo[1].x + 80 * spacing
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 80
+		spacingRight: 50 * spacing + 80
 	tags: [
 		'all',
 		'latin',
@@ -21,20 +21,22 @@ exports.glyphs['hyphen'] =
 			closed: false
 			nodes:
 				0:
-					x: 80
+					x: spacingLeft
 					y: xHeight * ( 285 / 500 ) * crossbar
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 70 / 85 ) * opticThickness
 						angle: 90 + 'deg'
+						distr: 0.5
 					})
 				1:
-					x: 310 * width
+					x: contours[0].nodes[0].x + 200 * width + 70
 					y: xHeight * ( 285 / 500 ) * crossbar
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 70 / 85 ) * opticThickness
 						angle: 90 + 'deg'
+						distr: 0.5
 					})

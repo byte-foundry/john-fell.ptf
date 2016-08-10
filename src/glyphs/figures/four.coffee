@@ -1,15 +1,16 @@
+# TODO: spacing
 exports.glyphs['four'] =
 	unicode: '4'
 	glyphName: 'four'
 	characterName: 'DIGIT FOUR'
 	ot:
-		advanceWidth: contours[0].nodes[0].expandedTo[0].x + serifWidth * 1.6 + 40 * spacing + (50) + 170 * width - 170
+		advanceWidth: contours[1].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 5 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 5
+		spacingRight: 50 * spacing + 25
 	tags: [
 		'all',
 		'latin',
@@ -22,6 +23,7 @@ exports.glyphs['four'] =
 			nodes:
 				0:
 					x: 190 + 130 * width + (85)
+					x: contours[1].nodes[2].expandedTo[0].x + 200 * width + 200
 					y: descender * ( 220 / 250 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -55,9 +57,8 @@ exports.glyphs['four'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + 120 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 180 * width
 					y: 0
-					dirIn: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: ( 65 / 85 ) * thickness
@@ -79,9 +80,8 @@ exports.glyphs['four'] =
 						y: contours[1].nodes[0].expandedTo[1].y
 					]
 				2:
-					x: spacingLeft
+					x: spacingLeft + (10)
 					y: 0
-					dirIn: 90 + 'deg'
 					typeIn: 'line'
 					expand: Object({
 						width: ( 15 / 85 ) * thickness

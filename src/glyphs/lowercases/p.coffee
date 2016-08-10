@@ -8,8 +8,8 @@ exports.glyphs['p'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 35 * spacing + (16) + serifWidth + 15
-		spacingRight: 45 * spacing
+		spacingLeft: 50 * spacing + 35 + (16) + serifWidth + 15
+		spacingRight: 50 * spacing + 45
 	tags: [
 		'all',
 		'latin',

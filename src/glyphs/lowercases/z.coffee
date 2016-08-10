@@ -8,8 +8,8 @@ exports.glyphs['z'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing + (0)
-		spacingRight: 40 * spacing
+		spacingLeft: 50 * spacing + 40
+		spacingRight: 50 * spacing + 40
 	tags: [
 		'all',
 		'latin',
@@ -25,7 +25,7 @@ exports.glyphs['z'] =
 			closed: false
 			nodes:
 				0:
-					x: 200 + 235 * width + (0)
+					x: contours[1].nodes[1].x + 5
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
@@ -56,7 +56,7 @@ exports.glyphs['z'] =
 						distr: 0
 					})
 				1:
-					x: 200 + 230 * width + (0)
+					x: contours[1].nodes[0].x + 200 * width + 190
 					y: 0
 					typeOut: 'line'
 					expand: Object({
@@ -74,7 +74,7 @@ exports.glyphs['z'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 92 / 85 )
-						angle: 167 + 'deg'
+						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 92 / 85 )) )
 						distr: 1
 					})
 				1:
@@ -83,7 +83,7 @@ exports.glyphs['z'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 89 / 85 )
-						angle: 167 + 'deg'
+						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 89 / 85 )) )
 						distr: 0
 					})
 		# 3:

@@ -3,13 +3,13 @@ exports.glyphs['exclam'] =
 	glyphName: 'exclam'
 	characterName: 'EXCLAMATION MARK'
 	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
+		spacingLeft: 50 * spacing + 70
+		spacingRight: 50 * spacing + 70
 	tags: [
 		'all',
 		'latin',
@@ -21,37 +21,38 @@ exports.glyphs['exclam'] =
 			closed: false
 			nodes:
 				0:
-					x: 125
+					x: contours[0].nodes[1].x
 					y: capHeight + overshoot / 2
 					dirOut: 0 + 'deg'
 					tensionOut: 1.3
 					expand: Object({
-						width: thickness * ( 30 / 85 )
+						width: 0
 						angle: 0 + 'deg'
+						distr: 0.5
 					})
 				1:
-					x: contours[0].nodes[0].x
-					y: capHeight - 70
-					# dirIn: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[2].expandedTo[0].point )
-					# dirIn: 90 + 'deg'
+					x: spacingLeft + (thickness * ( 104 / 85 )) / 2
+					y: capHeight - 50 - ( 50 / 85 ) * thickness
 					type: 'smooth'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 110 / 85 )
+						width: thickness * ( 104 / 85 )
 						angle: 0 + 'deg'
+						distr: 0.5
 					})
 				2:
 					x: contours[0].nodes[0].x
-					y: ( 230 / 500 ) * xHeight
+					y: ( 210 / 500 ) * xHeight
 					dirOut: 0 + 'deg'
 					expand: Object({
-						width: thickness * ( 10 / 85 )
+						width: thickness * ( 16 / 85 )
 						angle: 0 + 'deg'
+						distr: 0.5
 					})
 	components:
 		0:
 			base: 'dot'
 			parentAnchors:
 				0:
-					x: 125
-					y: -5
+					x: contours[0].nodes[1].x
+					y: - overshoot / 2

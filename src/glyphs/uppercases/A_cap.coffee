@@ -8,8 +8,8 @@ exports.glyphs['A_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (20) + serifWidth * 1.8
-		spacingRight: 15 * spacing + serifWidth + 15
+		spacingLeft: 50 * spacing + 10 + (20) + serifWidth * 1.8
+		spacingRight: 50 * spacing + 15 + serifWidth + 15
 	tags: [
 		'all',
 		'latin',
@@ -26,7 +26,7 @@ exports.glyphs['A_cap'] =
 			nodes:
 				0:
 					x: contours[1].nodes[0].expandedTo[1].x + 200 + 232 * width + (20)
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 105 / 85 ) * opticThickness
@@ -55,7 +55,7 @@ exports.glyphs['A_cap'] =
 					# 	on: [ contours[0].nodes[1].point, anchors[1].point ]
 					# })
 					x: spacingLeft
-					y: 0
+					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 30 / 85 ) * opticThickness * contrast
@@ -109,6 +109,7 @@ exports.glyphs['A_cap'] =
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
 					y: contours[0].nodes[1].expandedTo[1].y
+					typeIn: 'line'
 					typeOut: 'line'
 				1:
 					x: Utils.onLine({
@@ -138,10 +139,10 @@ exports.glyphs['A_cap'] =
 			parentAnchors:
 				0:
 					x: Utils.onLine({
-						y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
+						y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 						on: [ contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point ]
 					})
-					y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
+					y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
 				1:
 					x: Utils.onLine({
 						y: Math.min( contours[1].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 150 / 15 ) )
@@ -172,11 +173,10 @@ exports.glyphs['A_cap'] =
 					y: Math.min( contours[0].nodes[1].expandedTo[1].y, serifHeight + serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
-						y: Math.min( contours[0].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
-
+						y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
 						on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
 					})
-					y: Math.min( contours[0].nodes[1].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
+					y: Math.min( contours[2].nodes[0].expandedTo[0].y, serifHeight + serifCurve * ( 120 / 15 ) )
 
 				2:
 					anchorLine: 0

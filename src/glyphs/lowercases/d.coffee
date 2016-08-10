@@ -8,8 +8,8 @@ exports.glyphs['d'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 45 * spacing + (18)
-		spacingRight: 15 * spacing + serifWidth
+		spacingLeft: 50 * spacing + 45
+		spacingRight: 50 * spacing + 15 + serifWidth
 	tags: [
 		'all',
 		'latin',
@@ -25,13 +25,16 @@ exports.glyphs['d'] =
 			closed: false
 			nodes:
 				0:
-					x: 200 + 215 * width + (21)
+					x: Math.max(
+						contours[1].nodes[2].expandedTo[0].x + 200 * width + 255 - (9),
+						contours[1].nodes[2].expandedTo[1].x + 0.75 * thickness + 10
+					)
 					y: 90 + serifHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0.25
+						distr: 0.75
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -40,7 +43,7 @@ exports.glyphs['d'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0.25
+						distr: 0.75
 					})
 		1:
 			skeleton: true
@@ -57,8 +60,7 @@ exports.glyphs['d'] =
 						distr: 0.25
 					})
 				1:
-					x: 265
-					x: contours[1].nodes[2].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[0].x - contours[1].nodes[2].expandedTo[0].x ) * 0.6
+					x: contours[1].nodes[2].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[1].x - contours[1].nodes[2].expandedTo[1].x ) * 0.57 + (2)
 					y: - overshoot / 2
 					dirOut: 0 + 'deg'
 					type: 'smooth'
@@ -68,18 +70,17 @@ exports.glyphs['d'] =
 						distr: 0
 					})
 				2:
-					x: spacingLeft
+					x: spacingLeft + (23)
 					y: xHeight * ( 257 / 500 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 95 / 86 )
-						angle: 6 + 'deg'
+						width: thickness * ( 91 / 86 )
+						angle: 15 + 'deg'
 						distr: 0.25
 					})
 				3:
-					x: 275
-					x: contours[1].nodes[2].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[0].x - contours[1].nodes[2].expandedTo[0].x ) * 0.6
+					x: contours[1].nodes[2].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[1].x - contours[1].nodes[2].expandedTo[1].x ) * 0.65 - (4)
 					y: xHeight + overshoot
 					dirIn: 0 + 'deg'
 					tensionIn: 1.1

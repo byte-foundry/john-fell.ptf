@@ -1,19 +1,16 @@
+# TODO: spacing
 exports.glyphs['zero'] =
 	unicode: '0'
 	glyphName: 'zero'
 	characterName: 'DIGIT ZERO'
 	ot:
-		advanceWidth: width * 545 + thickness * 2 - ( 85 * 2 )
+		advanceWidth: contours[0].nodes[2].expandedTo[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 10 * spacing + (10)
-		spacingRight: 10 * spacing
-	anchors:
-		0:
-			x: ( 525 + (37) ) * width
-			y: xHeight * ( 250 / 500 )
+		spacingLeft: 50 * spacing + 45
+		spacingRight: 50 * spacing + 45
 	tags: [
 		'all',
 		'latin',
@@ -25,8 +22,8 @@ exports.glyphs['zero'] =
 			closed: true
 			nodes:
 				0:
-					x: 45 + (12)
-					y: anchors[0].y
+					x: spacingLeft + (10)
+					y: xHeight * ( 250 / 500 )
 					dirOut: 90 + 'deg'
 					tensionOut: 0.9
 					expand: Object({
@@ -44,8 +41,8 @@ exports.glyphs['zero'] =
 						distr: 0
 					})
 				2:
-					x: anchors[0].x
-					y: anchors[0].y
+					x: spacingLeft + xHeight + overshoot * 2 - (10)
+					y: contours[0].nodes[0].y
 					dirOut: - 90 + 'deg'
 					tensionOut: 0.9
 					expand: Object({
