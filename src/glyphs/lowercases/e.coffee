@@ -32,6 +32,7 @@ exports.glyphs['e'] =
 					expand: Object({
 						width: thickness * ( 20 / 85 )
 						distr: 1
+						angle: -90 + 'deg'
 					})
 				1:
 					x: contours[0].nodes[2].x
