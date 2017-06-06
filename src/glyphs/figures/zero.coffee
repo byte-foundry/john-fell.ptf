@@ -29,6 +29,7 @@ exports.glyphs['zero'] =
 					expand: Object({
 						width: thickness * ( 40 / 85 )
 						distr: 0.25
+						angle: 0 + 'deg'
 					})
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[0].expandedTo[1].x ) / 2
@@ -48,6 +49,7 @@ exports.glyphs['zero'] =
 					expand: Object({
 						width: thickness * ( 40 / 85 )
 						distr: 0.25
+						angle: 180 + 'deg'
 					})
 				3:
 					x: contours[0].nodes[1].x
