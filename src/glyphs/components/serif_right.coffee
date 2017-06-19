@@ -40,19 +40,19 @@ exports.glyphs['serif_right'] =
 				3:
 					x: contours[0].nodes[4].x + ( contours[0].nodes[2].x - contours[0].nodes[4].x ) / 2 + serifTerminal * serifWidth
 					y: anchors[2].anchorLine + (( serifHeight * serifMedian ) / 2 ) * anchors[2].directionY
-					dirIn: Utils.lineAngle( contours[0].nodes[4].point ,contours[0].nodes[2].point )
-					type: 'smooth'
+					dirIn: Utils.lineAngle({x: contours[0].nodes[4].x , y: contours[0].nodes[4].y},{x: contours[0].nodes[2].x, y: contours[0].nodes[2].y} )
+					typeOut: 'smooth'
 					tensionOut: serifTerminalCurve
 					tensionIn: serifTerminalCurve
 				4:
 					x: contours[0].nodes[6].x + serifWidth * anchors[2].rightWidth
 					y: anchors[2].anchorLine + ( serifHeight * serifMedian ) * anchors[2].directionY
 					tensionOut: serifTerminalCurve
-					type: 'smooth'
+					typeIn: 'smooth'
 				5:
 					x: Math.min( contours[0].nodes[4].x - serifWidth / 10, anchors[0].x + serifHeight + serifCurve * anchors[2].rightWidth * anchors[2].rightCurve ) # serifWidth / 10 to avoid weird behavior with curve/median
 					y: anchors[2].anchorLine + ( serifHeight ) * anchors[2].directionY
-					type: 'smooth'
+					typeOut: 'line'
 					typeIn: 'line'
 					tensionIn: serifRoundness
 				6:

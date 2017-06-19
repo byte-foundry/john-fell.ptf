@@ -32,21 +32,19 @@ exports.glyphs['L_cap'] =
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x
 					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -55,19 +53,19 @@ exports.glyphs['L_cap'] =
 					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width
 					y: 0
 					dirOut: 0 + 'deg'
-					expand: Object({
+					expand:
 						width: thickness * opticThickness * ( 20 / 100 )
+						angle: Math.PI / 2
 						distr: 1
-					})
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: contours[1].nodes[0].expand.width
 						distr: 1
-					})
+						angle: Math.PI / 2
 		2:
 			skeleton: false
 			closed: true
@@ -91,47 +89,23 @@ exports.glyphs['L_cap'] =
 					typeOut: 'line'
 	components:
 		0:
-			base: 'serif'
+			base: ['serif-vertical', 'none']
+			id: 'bottomleft'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x
-					y: Math.max( capHeight / 2, contours[0].nodes[0].y - serifHeight - serifCurve * ( 65 / 15 ) )
-				1:
-					x: contours[0].nodes[0].expandedTo[0].x
-					y: Math.max( capHeight / 2, contours[0].nodes[0].y - serifHeight - serifCurve * ( 65 / 15 ) )
-				2:
-					anchorLine: capHeight
-					leftWidth: 40
-					rightWidth: 40
-					directionY: -1
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+			transformOrigin: contours[0].nodes[0]
+			transforms: Array(
+				[ 'scaleY', -1 ]
+			)
 		1:
-			base: 'serif'
+			base: ['serif-vertical', 'none']
+			id: 'topleft'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[1].expandedTo[1].x
-					y: Math.min( capHeight / 2, contours[0].nodes[1].y + serifHeight + serifCurve * ( 65 / 15 ) )
-				1:
-					x: contours[0].nodes[1].expandedTo[0].x
-					y: Math.min( capHeight / 2, contours[0].nodes[1].y + serifHeight + serifCurve * ( 65 / 15 ) )
-				2:
-					leftWidth: 40
-					right: false
-		2:
-			base: 'serif-v'
-			parentAnchors:
-				0:
-					x: Math.max(contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 165 / 15 ) )
-					y: contours[1].nodes[0].expandedTo[0].y
-				1:
-					x: Math.max(contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 165 / 15 ) )
-					y: contours[1].nodes[0].expandedTo[1].y
-				2:
-					anchorLine: contours[1].nodes[0].expandedTo[1].x
-					rightWidth: 100
-					left: false
-					baseLeft: contours[1].nodes[0].expandedTo[1].point
-			parentParameters:
-				# serifMedian: serifMedian * 0.75
-				midWidth: midWidth * 0.98
-			transformOrigin: Array( contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].y )
-			transforms: Array( [ 'skewX', serifRotate * (15) + 'deg' ] )
+					base: contours[0].nodes[1].expandedTo[0]
+					noneAnchor: contours[0].nodes[1].expandedTo[0]
+					opposite: contours[0].nodes[1].expandedTo[1]
+					reversed: true

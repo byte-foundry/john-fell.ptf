@@ -16,26 +16,25 @@ exports.glyphs['_quotesingle'] =
 					y: anchors[0].y
 					dirOut: 0 + 'deg'
 					tensionOut: 1.3
-					expand: Object({
+					expand:
 						width: thickness * ( 20 / 85 )
 						angle: 0 + 'deg'
-					})
+						distr: 0
 				1:
 					x: contours[0].nodes[0].x
 					y: anchors[0].y - 45
-					# dirIn: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[2].expandedTo[0].point )
+					# dirIn: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].ey},{x:  contours[0].nodes[2].x, y:  contours[0].nodes[2].expandedTo[0].y}.expandedTo[0] )
 					# dirIn: 90 + 'deg'
-					type: 'smooth'
+					type: 'line'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 70 / 85 )
 						angle: 0 + 'deg'
-					})
+						distr: 0
 				2:
 					x: contours[0].nodes[0].x
 					y: anchors[0].y - 190
 					dirOut: 0 + 'deg'
-					expand: Object({
+					expand:
 						width: thickness * ( 10 / 85 )
 						angle: 0 + 'deg'
-					})

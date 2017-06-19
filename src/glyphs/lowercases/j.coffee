@@ -26,75 +26,33 @@ exports.glyphs['j'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: xHeight - serifHeight * ( 60 / 20 ) - serifCurve * ( 40 / 15 )
+					y: xHeight - Math.max( 0, serifHeight * serifArc ) - ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 0.25
-					})
+						angle: 0
 				1:
 					x: contours[0].nodes[0].x
 					y: ( 50 / 85 ) * thickness
 					# y: 50
 					dirOut: 90 + 'deg'
 					# typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 0.25
-					})
-				# 2:
-				# 	x: contours[0].nodes[1].expandedTo[0].x
-				# 	y: 0
-				# 	dirIn: 90 + 'deg'
-				# 	typeOut: 'line'
-				# 	expand: Object({
-				# 		width: contours[0].nodes[1].expandedTo[0].y
-				# 		distr: 1
-				# 		angle: - 90 + 'deg'
-				# 	})
-				# 3:	# hack
-				# 	# x: contours[0].nodes[1].expandedTo[0].x
-				# 	# y: 0
-				# 	# type: 'smooth'
-				# 	# expand: Object({
-				# 	# 	width: 100
-				# 	# 	distr: 0
-				# 	# 	angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, { x:contours[0].nodes[1].expandedTo[0].x, y: 0 } ) + Math.PI
-				# 	# })
-				# 	expandedTo: [
-				# 		x: contours[0].nodes[2].expandedTo[0].x
-				# 		y: contours[0].nodes[2].expandedTo[0].y
-				# 		# typeOut: 'line'
-				# 	,
-				# 		x: contours[0].nodes[1].expandedTo[1].x
-				# 		y: contours[0].nodes[1].expandedTo[1].y
-				# 		dirIn: - 90 + 'deg'
-				# 	]
-				# 4:	# hack
-				# 	x: contours[0].nodes[1].expandedTo[0].x
-				# 	y: 0
-				# 	type: 'smooth'
-				# 	# dirOut: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[5].expandedTo[1].point ) * ( Math.PI * thickness ) / Math.PI
-				# 	dirOut: - Math.max( 90, 90 - ( 45 / 85 ) * thickness / 45 ) + 'deg'
-				# 	expand: Object({
-				# 		width: thickness * ( 64 / 85 )
-				# 		distr: 0
-				# 		angle: - ( 34 / 85 ) * thickness + 'deg'
-				# 	})
-				# 5:
-				# 4:
+						angle: 0
 				2:
 					x: contours[0].nodes[1].expandedTo[0].x - 35
 					y: - 130
 					# type: 'smooth'
 					dirIn: Math.PI / 6 # 33 + 'deg'
 					# tensionIn: 1.4
-					expand: Object({
+					expand:
 						width: thickness * ( 20 / 85 )
 						distr: 1
 						angle: - 34 + 'deg'
-					})
 		#######################################################
 		#######################################################
 		#######################################################
@@ -111,85 +69,71 @@ exports.glyphs['j'] =
 					y: contours[0].nodes[2].expandedTo[1].y
 					dirOut: contours[0].nodes[2].dirIn
 					typeIn: 'line'
-					# dirOut: 90 + 'deg'
 				1:
 					x: contours[1].nodes[0].x - 75 - 30
 					y: contours[1].nodes[0].y - 25 - 30
-					type: 'smooth'
-					dirIn: Utils.lineAngle( contours[0].nodes[2].expandedTo[1].point, contours[1].nodes[2].point )
+					typeOut: 'smooth'
+					dirIn: Utils.lineAngle({x: contours[0].nodes[2].expandedTo[1].x, y: contours[0].nodes[2].expandedTo[1].y},{x:  contours[1].nodes[2].x, y:  contours[1].nodes[2].y})
 				2:
 					x: contours[1].nodes[1].x - 60
 					y: contours[1].nodes[1].y + 45
-					type: 'smooth'
+					typeIn: 'smooth'
 					dirOut: 90 + 'deg'
 				3:
 					x: contours[1].nodes[2].x + 45
 					y: contours[1].nodes[2].y + 40
-					type: 'smooth'
+					typeOut: 'smooth'
 					dirOut: 0 + 'deg'
 					# tensionOut: 0.3
-				# 2:
-				# 	x: ( 65 / 85 ) * thickness
-				# 	x: 65
-				# 	y: - 160
-				# 	dirIn: - 146 + 'deg'
-				# 	type: 'smooth'
-				# 3:
-				# 	x: - 15
-				# 	y: - 190
-				# 	dirOut: 0 + 'deg'
-				# 	type: 'smooth'
-				# 4:
-				# 	x: - 70
-				# 	y: - 140
-				# 	dirOut: 90 + 'deg'
-				# 	type: 'smooth'
-				# 5:
-				# 	x: - 25
-				# 	y: - 95
-				# 	dirOut: 0 + 'deg'
-				# 	type: 'smooth'
-				# 6:
-				# 	x: 55
-				# 	y: - 125
-				# 	dirOut: 0 + 'deg'
-				# 	type: 'smooth'
-				# 7:
-				# 	x: contours[0].nodes[2].expandedTo[0].x
-				# 	y: 0
-				# 	dirOut: 90 + 'deg'
-				# 	type: 'smooth'
 				4:
 					x: contours[0].nodes[2].expandedTo[0].x
 					y: contours[0].nodes[2].expandedTo[0].y
-					dirIn: contours[1].nodes[0].dirOut
-					# dirIn: contours[0].nodes[2].dirIn + Math.Pi
-					dirIn: 0 + 'deg'
-					# dirIn: - 123 + 'deg'
-					# type: 'smooth'
-	components:
-		0:
-			base: 'serif'
-			parentAnchors:
+					dirIn: 0
+					typeOut: 'line'
+		2:
+			skeleton: false
+			closed: true
+			nodes:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y
+					y: xHeight
+					typeOut: 'line'
+					dirIn: Utils.lineAngle({x: contours[2].nodes[0].x, y: contours[2].nodes[0].y}, {x: contours[2].nodes[4].x, y: contours[2].nodes[4].y}) - Math.PI / 12 * spurHeight * -serifArc / 1.5
 				1:
-					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y
+					x: contours[0].nodes[0].expandedTo[1].x
+					y: contours[0].nodes[0].expandedTo[1].y - 10
+					typeOut: 'line'
 				2:
-					anchorLine: xHeight
-					leftWidth: 20
-					right: false
-					attaque: true
-					attaqueAngle: 16
-					directionY: -1
-			parentParameters:
-				serifMedian: serifMedian # - serifMedian / 2 * spurHeight
+					x: contours[0].nodes[0].x
+					y: contours[0].nodes[0].expandedTo[1].y - 10
+					typeOut: 'line'
+				3:
+					x: contours[0].nodes[0].x
+					y: contours[0].nodes[0].expandedTo[1].y
+					typeOut: 'line'
+				4:
+					x: ( contours[0].nodes[0].expandedTo[0].x + contours[0].nodes[0].expandedTo[1].x ) / 2
+					y: xHeight - serifHeight * serifArc
+					dirOut: Math.PI / 12 * spurHeight * Math.abs(serifArc / 1.5)
+					typeIn: 'line'
+	components:
+		0:
+			base: ['serif-vertical', 'none']
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+			transformOrigin: contours[0].nodes[0]
+			transforms: Array(
+				[ 'scaleY', -1 ]
+				[ 'skewY', 15 * spurHeight + 'deg' ]
+				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
+			)
 		1:
 			base: 'dot_accent'
 			copy: true
 			parentAnchors:
 				0:
-					x: anchors[0].x
-					y: anchors[0].y
+					x: parentAnchors[0].x
+					y: parentAnchors[0].y

@@ -28,20 +28,18 @@ exports.glyphs['Z_cap'] =
 					x: contours[1].nodes[0].expandedTo[0].x + 200 * width + 385 + (0)
 					y: capHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 20 / 85 )
 						angle: - 90 + 'deg'
 						distr: 0
-					})
 				1:
 					x: contours[1].nodes[0].expandedTo[0].x + 45 + (0)
 					y: capHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 28 / 85 )
 						angle: - 90 + 'deg'
 						distr: 0
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -50,20 +48,18 @@ exports.glyphs['Z_cap'] =
 					x: spacingLeft
 					y: 0
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 20 / 85 )
 						angle: 90 + 'deg'
 						distr: 0
-					})
 				1:
 					x: contours[0].nodes[0].x - 4
 					y: 0
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 30 / 85 )
 						angle: 90 + 'deg'
 						distr: 0
-					})
 		2:
 			skeleton: true
 			closed: false
@@ -72,20 +68,18 @@ exports.glyphs['Z_cap'] =
 					x: contours[1].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[0].expandedTo[1].y
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 105 / 85 )
 						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 105 / 85 )) )
 						distr: 1
-					})
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[0].nodes[0].expandedTo[1].y
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 95 / 85 )
 						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 95 / 85 )) )
 						distr: 0
-					})
 	components:
 		0:
 			base: 'serif-v'
@@ -94,7 +88,7 @@ exports.glyphs['Z_cap'] =
 					x: Math.max(contours[1].nodes[0].expandedTo[1].x, contours[1].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 140 / 15 ) )
 					y: Utils.onLine({
 						x: Math.max(contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 140 / 15 ) )
-						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
+						on: [ contours[1].nodes[0].expandedTo[1], contours[1].nodes[1].expandedTo[1] ]
 					})
 				1:
 					x: Math.max(contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 140 / 15 ) )
@@ -103,7 +97,7 @@ exports.glyphs['Z_cap'] =
 					anchorLine: contours[1].nodes[1].expandedTo[0].x
 					rightWidth: 90
 					left: false
-					baseLeft: contours[1].nodes[1].expandedTo[0].point
+					baseLeft: contours[1].nodes[1].expandedTo[0]
 			parentParameters:
 				serifHeight: serifHeight * ( 26 / 20 )
 				serifMedian: serifMedian * 0.77
@@ -120,13 +114,13 @@ exports.glyphs['Z_cap'] =
 					x: Math.min(contours[0].nodes[0].expandedTo[0].x, contours[0].nodes[1].expandedTo[0].x + serifHeight + serifCurve * ( 150 / 15 ) )
 					y: Utils.onLine({
 						x: Math.max(contours[0].nodes[1].expandedTo[0].x, contours[0].nodes[1].expandedTo[0].x + serifHeight + serifCurve * ( 150 / 15 ) )
-						on: [ contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point ]
+						on: [ contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1] ]
 					})
 				2:
 					anchorLine: contours[0].nodes[1].expandedTo[0].x
 					leftWidth: 105
 					right: false
-					baseRight: contours[0].nodes[1].expandedTo[0].point
+					baseRight: contours[0].nodes[1].expandedTo[0]
 					directionX: -1
 			parentParameters:
 				serifHeight: serifHeight * ( 28 / 20 )

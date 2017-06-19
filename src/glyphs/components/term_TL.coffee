@@ -35,14 +35,13 @@ exports.glyphs['term_TL'] =
 					dirIn: 12 + ( 45 * serifMedian - 45 ) + 'deg'
 					# tensionOut: 0
 					# tensionIn: Math.min( serifRoundness * 1.6, 1.8 )
-					type: 'smooth'
 				3:
 					x: parentAnchors[0].x - ( serifWidth + serifHeight * serifCurve ) * parentAnchors[0].serifWidth
 					y: parentAnchors[2].y - Math.min( thickness * ( 60 / 85 ), 60 )
 					dirOut: 90 + 'deg'
 					tensionOut: 0
 					tensionIn: 0
-					type: 'smooth'
+					typeIn: 'smooth'
 				4:
 					x: parentAnchors[1].x - thickness * ( 10 / 86 )
 					y: parentAnchors[2].y
@@ -50,14 +49,14 @@ exports.glyphs['term_TL'] =
 					dirOut: 0 + 'deg'
 					tensionOut: 0
 					tensionIn: 0
-					type: 'smooth'
+					typeIn: 'smooth'
 				5:
 					x: parentAnchors[1].x + parentAnchors[2].x
 					y: parentAnchors[2].y
 					# lType: 'line'
 					dirOut: 90 + 'deg'
 					tensionOut: 0
-					type: 'smooth'
+					typeIn: 'smooth'
 				6:
 					x: parentAnchors[1].x
 					y: contours[0].nodes[3].y
@@ -65,7 +64,7 @@ exports.glyphs['term_TL'] =
 					dirOut: 0 + 'deg'
 					# tensionOut: 0
 					# tensionIn: 0
-					type: 'smooth'
+					typeIn: 'smooth'
 				7:
 					x: parentAnchors[1].x
 					y: parentAnchors[1].y

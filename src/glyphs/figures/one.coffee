@@ -26,19 +26,19 @@ exports.glyphs['one'] =
 					y: 0 + serifHeight + serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 0.5
-					})
+						angle: 0
 				1:
 					x: contours[0].nodes[0].x
 					y: xHeight - serifHeight - serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 0.5
-					})
+						angle: 0
 	components:
 		0:
 			base: 'serif'

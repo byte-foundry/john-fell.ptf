@@ -24,17 +24,15 @@ exports.glyphs['slash'] =
 					x: contours[0].nodes[1].x + 260 + (22)
 					y: capHeight + overshoot * 2
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 50 / 85 )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: spacingLeft + (22)
 					y: - 80
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 50 / 85 )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})

@@ -36,11 +36,11 @@ exports.glyphs['term_BR'] =
 					x: contours[0].nodes[3].x
 					y: contours[0].nodes[3].y + serifHeight / 2 * serifMedian
 					# dirOut: - 169 * spurHeight + 'deg'
-					dirOut: Utils.lineAngle( contours[0].nodes[2].point, contours[0].nodes[3].point )
+					dirOut: Utils.lineAngle({x: contours[0].nodes[2].x, y: contours[0].nodes[2].y},{x:  contours[0].nodes[3].x, y:  contours[0].nodes[3].y} )
 					tensionOut: 1.4
 				5:
 					x: parentAnchors[1].x
 					y: parentAnchors[1].y
 					dirOut: - 90 + 'deg'
 					tensionIn: 1.5
-					type: 'smooth'
+					typeIn: 'smooth'

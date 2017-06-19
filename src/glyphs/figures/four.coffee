@@ -27,31 +27,31 @@ exports.glyphs['four'] =
 					y: descender * ( 220 / 250 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 1
-					})
+						angle: 0
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: Utils.onLine({
 						x: contours[0].nodes[0].expandedTo[1].x - thickness
-						on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+						on: [ contours[2].nodes[0].expandedTo[1], contours[2].nodes[1].expandedTo[1] ]
 					})
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 1
-					})
+						angle: 0
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: xHeight + overshoot + ( 20 / 500 ) * xHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 11 / 85 )
 						distr: 1
-					})
+						angle: 0
 		1:
 			skeleton: true
 			closed: false
@@ -60,22 +60,21 @@ exports.glyphs['four'] =
 					x: contours[0].nodes[0].expandedTo[1].x + 180 * width
 					y: 0
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 65 / 85 ) * thickness
 						distr: 0
 						angle: 90 + 'deg'
-					})
 				1:
 					expandedTo: [
 						x: Utils.onLine({
 							y: 0
-							on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+							on: [ contours[2].nodes[0].expandedTo[1], contours[2].nodes[1].expandedTo[1] ]
 						})
 						y: 0
 					,
 						x: Utils.onLine({
 							y: contours[1].nodes[0].expandedTo[1].y
-							on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+							on: [ contours[2].nodes[0].expandedTo[1], contours[2].nodes[1].expandedTo[1] ]
 						})
 						y: contours[1].nodes[0].expandedTo[1].y
 					]
@@ -83,11 +82,10 @@ exports.glyphs['four'] =
 					x: spacingLeft + (10)
 					y: 0
 					typeIn: 'line'
-					expand: Object({
+					expand:
 						width: ( 15 / 85 ) * thickness
 						distr: 0
 						angle: 90 + 'deg'
-					})
 		2:
 			skeleton: true
 			closed: false
@@ -97,20 +95,19 @@ exports.glyphs['four'] =
 					y: contours[1].nodes[2].expandedTo[1].y
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 40 / 85 ) * thickness
 						distr: 0
-					})
+						angle: 0
 				1:
 					x: contours[0].nodes[2].expandedTo[0].x
 					y: contours[0].nodes[2].expandedTo[0].y
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 50 / 85 ) * thickness
 						distr: 0
 						angle: - 90 + 'deg'
-					})
 	components:
 		0:
 			base: 'serif-v'

@@ -18,7 +18,7 @@ exports.glyphs['dot_accent'] =
 					x: anchors[0].x
 					y: anchors[0].y
 					dirOut: 180 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				1:
 					x: anchors[0].x - Math.max(
 						40,
@@ -35,7 +35,7 @@ exports.glyphs['dot_accent'] =
 						)
 					) / 2
 					dirOut: 90 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				2:
 					x: anchors[0].x
 					y: anchors[0].y + Math.max(
@@ -46,7 +46,7 @@ exports.glyphs['dot_accent'] =
 						)
 					)
 					dirOut: 0 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				3:
 					x: anchors[0].x + Math.max(
 						40,
@@ -63,4 +63,4 @@ exports.glyphs['dot_accent'] =
 						)
 					) / 2
 					dirOut: - 90 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'

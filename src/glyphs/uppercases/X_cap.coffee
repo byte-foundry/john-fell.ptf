@@ -26,21 +26,19 @@ exports.glyphs['X_cap'] =
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 118 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
-					})
 				1:
 					x: contours[2].nodes[0].expandedTo[1].x + 220 + 250 * width + (0)
 					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 119 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -50,26 +48,24 @@ exports.glyphs['X_cap'] =
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 45 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
-					})
 				1:
 					x: Utils.onLine({
 						y: capHeight * ( 395 / 750 )
-						on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[1].point ]
+						on: [ contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[1] ]
 					})
 					y: capHeight * ( 395 / 750 )
 					x: contours[2].nodes[1].x
 					y: contours[2].nodes[1].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 25 / 85 ) * opticThickness * contrast
 						angle: 0 + 'deg'
 						distr: 0
-					})
 		2:
 			skeleton: true
 			closed: false
@@ -79,24 +75,22 @@ exports.glyphs['X_cap'] =
 					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: - 109 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 40 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.75
-					})
 				1:
 					x: Utils.onLine({
 						y: capHeight * ( 380 / 750 )
-						on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[1].point ]
+						on: [ contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[1] ]
 					})
 					y: capHeight * ( 380 / 750 )
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 25 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.75
-					})
 	components:
 		0:
 			base: 'serif'
@@ -104,55 +98,55 @@ exports.glyphs['X_cap'] =
 				0:
 					x: Utils.onLine({
 						y: Math.min( contours[2].nodes[1].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
-						on: [ contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[1].point ]
+						on: [ contours[2].nodes[0].expandedTo[1], contours[2].nodes[1].expandedTo[1] ]
 					})
 					y: Math.min( contours[2].nodes[1].y, 0 + serifHeight + serifCurve * ( 130 / 15 ) )
 				1:
 					x: Utils.onLine({
 						y: Math.min( contours[2].nodes[1].y, 0 + serifHeight + serifCurve * ( 100 / 15 ) )
-						on: [ contours[2].nodes[0].expandedTo[0].point, contours[2].nodes[1].expandedTo[0].point ]
+						on: [ contours[2].nodes[0].expandedTo[0], contours[2].nodes[1].expandedTo[0] ]
 					})
 					y: Math.min( contours[2].nodes[1].y, 0 + serifHeight + serifCurve * ( 100 / 15 ) )
 				2:
 					leftWidth: 40
 					rightWidth: 120
-					baseRight: contours[2].nodes[0].expandedTo[1].point
-					baseLeft: contours[2].nodes[0].expandedTo[0].point
-					angle: Utils.lineAngle( contours[2].nodes[1].expandedTo[0].point, contours[2].nodes[0].expandedTo[0].point )
+					baseRight: contours[2].nodes[0].expandedTo[1]
+					baseLeft: contours[2].nodes[0].expandedTo[0]
+					angle: Utils.lineAngle({x: contours[2].nodes[1].expandedTo[0].x, y: contours[2].nodes[1].expandedTo[0].y},{x:  contours[2].nodes[0].expandedTo[0].x, y:  contours[2].nodes[0].expandedTo[0].y})
 		1:
 			base: 'serif'
 			parentAnchors:
 				0:
 					x: Utils.onLine({
 						y: Math.min( capHeight / 2, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
-						on: [ contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point ]
+						on: [ contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1] ]
 					})
 					y: Math.min( capHeight / 2, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
 						y: Math.min( capHeight / 2, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
-						on: [ contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ]
+						on: [ contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[0] ]
 					})
 					y: Math.min( capHeight / 2, 0 + serifHeight + serifCurve * ( 120 / 15 ) )
 				2:
 					leftWidth: 60
 					rightWidth: 20
-					baseRight: contours[0].nodes[1].expandedTo[1].point
-					baseLeft: contours[0].nodes[1].expandedTo[0].point
-					angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point )
+					baseRight: contours[0].nodes[1].expandedTo[1]
+					baseLeft: contours[0].nodes[1].expandedTo[0]
+					angle: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[0].expandedTo[0].x, y:  contours[0].nodes[0].expandedTo[0].y})
 		2:
 			base: 'serif'
 			parentAnchors:
 				0:
 					x: Utils.onLine({
 						y: Math.max( capHeight / 2, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
-						on: [ contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[1].point ]
+						on: [ contours[0].nodes[1].expandedTo[1], contours[0].nodes[0].expandedTo[1] ]
 					})
 					y: Math.max( capHeight / 2, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
 				1:
 					x: Utils.onLine({
 						y: Math.max( capHeight / 2, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
-						on: [ contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point ]
+						on: [ contours[0].nodes[1].expandedTo[0], contours[0].nodes[0].expandedTo[0] ]
 					})
 					y: Math.max( capHeight / 2, capHeight - serifHeight - serifCurve * ( 120 / 15 ) )
 				2:
@@ -160,22 +154,22 @@ exports.glyphs['X_cap'] =
 					directionY: -1
 					leftWidth: 10
 					rightWidth: 60
-					baseRight: contours[0].nodes[0].expandedTo[1].point
-					baseLeft: contours[0].nodes[0].expandedTo[0].point
-					angle: Utils.lineAngle( contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point )
+					baseRight: contours[0].nodes[0].expandedTo[1]
+					baseLeft: contours[0].nodes[0].expandedTo[0]
+					angle: Utils.lineAngle({x: contours[0].nodes[0].expandedTo[0].x, y: contours[0].nodes[0].expandedTo[0].y},{x:  contours[0].nodes[1].expandedTo[0].x, y:  contours[0].nodes[1].expandedTo[0].y})
 		3:
 			base: 'serif'
 			parentAnchors:
 				0:
 					x: Utils.onLine({
 						y: Math.max(10 + contours[1].nodes[1].y, capHeight - serifHeight - serifCurve * ( 150 / 15 ) )
-						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
+						on: [ contours[1].nodes[0].expandedTo[1], contours[1].nodes[1].expandedTo[1] ]
 					})
 					y: Math.max(10 + contours[1].nodes[1].y, capHeight - serifHeight - serifCurve * ( 150 / 15 ) )
 				1:
 					x: Utils.onLine({
 						y: Math.max(10 + contours[1].nodes[1].y, capHeight - serifHeight - serifCurve * ( 130 / 15 ) )
-						on: [ contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ]
+						on: [ contours[1].nodes[0].expandedTo[0], contours[1].nodes[1].expandedTo[0] ]
 					})
 					y: Math.max(10 + contours[1].nodes[1].y, capHeight - serifHeight - serifCurve * ( 130 / 15 ) )
 				2:
@@ -183,6 +177,6 @@ exports.glyphs['X_cap'] =
 					directionY: -1
 					leftWidth: 70
 					rightWidth: 20
-					baseRight: contours[1].nodes[0].expandedTo[1].point
-					baseLeft: contours[1].nodes[0].expandedTo[0].point
-					angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
+					baseRight: contours[1].nodes[0].expandedTo[1]
+					baseLeft: contours[1].nodes[0].expandedTo[0]
+					angle: Utils.lineAngle({x: contours[1].nodes[0].expandedTo[0].x, y: contours[1].nodes[0].expandedTo[0].y},{x:  contours[1].nodes[1].expandedTo[0].x, y:  contours[1].nodes[1].expandedTo[0].y})

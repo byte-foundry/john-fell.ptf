@@ -18,17 +18,15 @@ exports.glyphs['macron'] =
 					x: anchors[0].x - 150 * width
 					y: anchors[0].y + 100
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 80 / 115 )
 						angle: 90 + 'deg'
 						distr: 0.25
-					})
 				1:
 					x: anchors[0].x + 150 * width
 					y: contours[0].nodes[0].y
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 80 / 115 )
 						angle: 90 + 'deg'
 						distr: 0.25
-					})

@@ -25,47 +25,42 @@ exports.glyphs['seven'] =
 					x: contours[0].nodes[4].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[4].x ) * ( 30 / 370 ) + (16)
 					y: ( 220 / 250 ) * descender
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 65 / 85 )
 						angle: 0 + 'deg'
 						distr: 0.25
-					})
 				1:
 					x: contours[0].nodes[4].x + 200 * width + 145 + (6)
 					y: ( 485 / 500 ) * xHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 25 / 85 ) * contrast
 						angle: 0 + 'deg'
 						distr: 0.25
-					})
 				2:
 					x: contours[0].nodes[1].expandedTo[1].x
 					y: contours[0].nodes[1].expandedTo[1].y
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 15 / 500 ) * xHeight
 						angle: 90 + 'deg'
 						distr: 0
-					})
 				3:
 					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[1].x - contours[0].nodes[1].expandedTo[0].x ) * 0.5
 					y: xHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 75 / 85 )
-						angle: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point )
+						angle: Utils.lineAngle({x: contours[0].nodes[0].x, y: contours[0].nodes[0].y},{x:  contours[0].nodes[1].x, y:  contours[0].nodes[1].y} )
 						distr: 1
-					})
 				4:
 					x: spacingLeft
 					y: xHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 75 / 85 )
-						angle: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point )
+						angle: Utils.lineAngle({x: contours[0].nodes[0].x, y: contours[0].nodes[0].y},{x:  contours[0].nodes[1].x, y:  contours[0].nodes[1].y} )
 						distr: 1
-					})
 	components:
 		0:
 			base: 'serif-v'

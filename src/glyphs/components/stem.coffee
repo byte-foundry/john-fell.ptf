@@ -15,19 +15,17 @@ exports.glyphs['stem'] =
 					x: anchors[0].x
 					y: 0 + serifHeight + serifCurve
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 0.25
 						angle: 0
-					})
 				1:
 					x: anchors[0].x
 					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
-					expand: Object({
+					expand:
 						width: thickness
 						distr: 0.25
 						angle: 0
-					})
 	components:
 		0:
 			base: 'serif'

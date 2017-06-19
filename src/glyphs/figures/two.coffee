@@ -25,21 +25,19 @@ exports.glyphs['two'] =
 					x: contours[0].nodes[3].x + 14 + (4)
 					y: ( 295 / 500 ) * xHeight - (2)
 					dirOut: 79 + 'deg'
-					expand: Object({
+					expand:
 						width: thickness * ( 18 / 85 )
 						angle: 180 - 12 + 'deg'
 						distr: 0.75
-					})
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) * 0.55
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
-					type: 'smooth'
-					expand: Object({
+					typeIn: 'smooth'
+					expand:
 						width: Math.min( thickness * ( 78 / 85 ), 120 )
 						angle: 180 - 124 + 'deg'
 						distr: 1
-					})
 				2:
 					x: Math.max(
 						contours[0].nodes[0].expandedTo[0].x + 200 * width + 195 - (36),
@@ -47,25 +45,23 @@ exports.glyphs['two'] =
 					)
 					y: ( 335 / 500 ) * xHeight + (5)
 					dirOut: - 90 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 					tensionOut: 1.3
-					expand: Object({
+					expand:
 						width: thickness * ( 87 / 85 )
 						angle: 13 + 'deg'
 						distr: 0.75
-					})
 				3:
 					x: spacingLeft
 					y: 0
 					dirIn: 27 + 'deg'
-					dirIn: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[0].expandedTo[1].point ) * 0.88
+					dirIn: Utils.lineAngle({x: contours[1].nodes[0].expandedTo[0].x, y: contours[1].nodes[0].expandedTo[0].y},{x:  contours[1].nodes[0].expandedTo[1].x, y:  contours[1].nodes[0].expandedTo[1].y} ) * 0.88
 					tensionIn: 0.9
-					type: 'smooth'
-					expand: Object({
+					typeOut: 'smooth'
+					expand:
 						width: ( 15 / 85 ) * thickness
 						angle: 180 + 90 + 'deg'
 						distr: 1
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -89,11 +85,10 @@ exports.glyphs['two'] =
 					y: 0
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 89 / 85 )
 						angle: 58 + 'deg'
 						distr: 0
-					})
 	components:
 		0:
 			base: 'serif-v'
@@ -108,9 +103,9 @@ exports.glyphs['two'] =
 					anchorLine: contours[1].nodes[1].expandedTo[1].x
 					leftWidth: - 10
 					left: false
-					baseLeft: contours[1].nodes[1].expandedTo[0].point
-					max0: contours[1].nodes[0].expandedTo[1].point
-					max1: contours[1].nodes[0].expandedTo[0].point
+					baseLeft: contours[1].nodes[1].expandedTo[0]
+					max0: contours[1].nodes[0].expandedTo[1]
+					max1: contours[1].nodes[0].expandedTo[0]
 			parentParameters:
 				# serifMedian: serifMedian * 0.65
 				midWidth: midWidth * 0.9

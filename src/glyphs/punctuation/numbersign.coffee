@@ -27,21 +27,19 @@ exports.glyphs['numbersign'] =
 					y: 200
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 70 / 90 ) * thickness
 						angle: 82 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[2].nodes[1].expandedTo[1].x + 200 * width + 100 + (20)
 					y: 200
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 70 / 90 ) * thickness
 						angle: 82 + 'deg'
 						distr: 0.5
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -51,11 +49,10 @@ exports.glyphs['numbersign'] =
 					y: xHeight - 40
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 70 / 90 ) * thickness
 						angle: 82 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x +
 						Math.tan( 8 * Math.PI / 180 ) *
@@ -63,11 +60,10 @@ exports.glyphs['numbersign'] =
 					y: xHeight - 40
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 70 / 90 ) * thickness
 						angle: 82 + 'deg'
 						distr: 0.5
-					})
 		2:
 			skeleton: true
 			closed: false
@@ -77,11 +73,10 @@ exports.glyphs['numbersign'] =
 					y: xHeight + contours[0].nodes[0].expandedTo[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x + Math.max(
 						thickness / 2,
@@ -90,11 +85,10 @@ exports.glyphs['numbersign'] =
 					y: 0
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 		3:
 			skeleton: true
 			closed: false
@@ -104,18 +98,16 @@ exports.glyphs['numbersign'] =
 					y: contours[2].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x - Math.max( thickness / 2, 80 * width ) - (81)
 					y: 0
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})

@@ -29,19 +29,19 @@ exports.glyphs['P_cap'] =
 					y: 0 + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						distr: 0
-					})
+						angle: 0
 				1:
 					x: contours[0].nodes[0].x
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						distr: 0
-					})
+						angle: 0
 		1:
 			skeleton: true
 			closed: false
@@ -51,49 +51,47 @@ exports.glyphs['P_cap'] =
 					y: capHeight
 					dirOut: 0 + 'deg'
 					# typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * opticThickness * ( 20 / 100 )
 						distr: 0
-					})
+						angle: 0
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + 100 * width
 					y: capHeight
 					dirOut: 180 + 'deg'
-					type: 'smooth'
-					expand: Object({
+					typeIn: 'smooth'
+					expand:
 						width: thickness * opticThickness * ( 36 / 100 )
 						angle: - 146 + 'deg'
 						distr: 0
-					})
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x + ( 245+ (70) ) * width
 					y: capHeight * ( ( 555 - (12) ) / 750 )
 					dirOut: - 90 + 'deg'
 					tensionOut: 1.15
-					type: 'smooth'
-					expand: Object({
+					typeIn: 'smooth'
+					expand:
 						width: thickness * opticThickness * ( 112 / 100 )
 						angle: 180 - 10 + 'deg'
 						distr: 0.25
-					})
 				3:
 					x: contours[0].nodes[0].expandedTo[1].x + 50 * width
 					y: capHeight * ( 365 / 750 )
 					dirOut: 180 + 'deg'
-					type: 'smooth'
-					expand: Object({
+					typeIn: 'smooth'
+					expand:
 						width: thickness * opticThickness * ( 25 / 100 )
 						distr: 1
-					})
+						angle: 0
 				4:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[3].y
 					dirOut: 180 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: contours[1].nodes[3].expand.width
 						distr: 1
-					})
+						angle: 0
 	components:
 		0:
 			base: 'serif'

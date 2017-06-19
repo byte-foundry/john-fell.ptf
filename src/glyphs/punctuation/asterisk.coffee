@@ -22,29 +22,26 @@ exports.glyphs['asterisk'] =
 					x: spacingLeft + 140
 					y: capHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x
 					y: capHeight - 120
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 5 / 90 ) * thickness * contrast
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				2:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[1].y - ( contours[0].nodes[0].y - contours[0].nodes[1].y )
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 		1:
 			skeleton: false
 			closed: true
@@ -52,16 +49,16 @@ exports.glyphs['asterisk'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[0].x
 					y: contours[0].nodes[0].expandedTo[0].y
-					dirOut: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point )
+					dirOut: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[0].expandedTo[0].x, y:  contours[0].nodes[0].expandedTo[0].y})
 				1:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[0].y + Math.min( 35, ( 35 / 90 ) * thickness )
 					dirOut: 0 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[0].nodes[0].expandedTo[1].y
-					dirIn: Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )
+					dirIn: Utils.lineAngle({x: contours[0].nodes[0].expandedTo[1].x, y: contours[0].nodes[0].expandedTo[1].y},{x:  contours[0].nodes[1].expandedTo[1].x, y:  contours[0].nodes[1].expandedTo[1].y})
 					typeOut: 'line'
 		2:
 			skeleton: false
@@ -70,16 +67,16 @@ exports.glyphs['asterisk'] =
 				0:
 					x: contours[0].nodes[2].expandedTo[0].x
 					y: contours[0].nodes[2].expandedTo[0].y
-					dirOut: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[2].expandedTo[0].point )
+					dirOut: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y})
 				1:
 					x: contours[0].nodes[2].x
 					y: contours[0].nodes[2].y - Math.min( 35, ( 35 / 90 ) * thickness )
 					dirOut: 0 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[2].expandedTo[1].x
 					y: contours[0].nodes[2].expandedTo[1].y
-					dirIn: Utils.lineAngle( contours[0].nodes[2].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )
+					dirIn: Utils.lineAngle({x: contours[0].nodes[2].expandedTo[1].x, y: contours[0].nodes[2].expandedTo[1].y},{x:  contours[0].nodes[1].expandedTo[1].x, y:  contours[0].nodes[1].expandedTo[1].y})
 					typeOut: 'line'
 		3:
 			skeleton: true
@@ -89,30 +86,27 @@ exports.glyphs['asterisk'] =
 					x: spacingLeft + 140
 					y: capHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x
 					y: capHeight - 120
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 5 / 90 ) * thickness * contrast
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				2:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[1].y - ( contours[0].nodes[0].y - contours[0].nodes[1].y )
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
-			transformOrigin: contours[0].nodes[1].point
+			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'rotate', 60 + 'deg' ]
 			)
@@ -123,18 +117,18 @@ exports.glyphs['asterisk'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[0].x
 					y: contours[0].nodes[0].expandedTo[0].y
-					dirOut: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point )
+					dirOut: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[0].expandedTo[0].x, y:  contours[0].nodes[0].expandedTo[0].y})
 				1:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[0].y + Math.min( 35, ( 35 / 90 ) * thickness )
 					dirOut: 0 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[0].nodes[0].expandedTo[1].y
-					dirIn: Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )
+					dirIn: Utils.lineAngle({x: contours[0].nodes[0].expandedTo[1].x, y: contours[0].nodes[0].expandedTo[1].y},{x:  contours[0].nodes[1].expandedTo[1].x, y:  contours[0].nodes[1].expandedTo[1].y})
 					typeOut: 'line'
-			transformOrigin: contours[0].nodes[1].point
+			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'rotate', 60 + 'deg' ]
 			)
@@ -145,18 +139,18 @@ exports.glyphs['asterisk'] =
 				0:
 					x: contours[0].nodes[2].expandedTo[0].x
 					y: contours[0].nodes[2].expandedTo[0].y
-					dirOut: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[2].expandedTo[0].point )
+					dirOut: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y})
 				1:
 					x: contours[0].nodes[2].x
 					y: contours[0].nodes[2].y - Math.min( 35, ( 35 / 90 ) * thickness )
 					dirOut: 0 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[2].expandedTo[1].x
 					y: contours[0].nodes[2].expandedTo[1].y
-					dirIn: Utils.lineAngle( contours[0].nodes[2].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )
+					dirIn: Utils.lineAngle({x: contours[0].nodes[2].expandedTo[1].x, y: contours[0].nodes[2].expandedTo[1].y},{x:  contours[0].nodes[1].expandedTo[1].x, y:  contours[0].nodes[1].expandedTo[1].y})
 					typeOut: 'line'
-			transformOrigin: contours[0].nodes[1].point
+			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'rotate', 60 + 'deg' ]
 			)
@@ -168,30 +162,27 @@ exports.glyphs['asterisk'] =
 					x: spacingLeft + 140
 					y: capHeight
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x
 					y: capHeight - 120
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 5 / 90 ) * thickness * contrast
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				2:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[1].y - ( contours[0].nodes[0].y - contours[0].nodes[1].y )
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
-			transformOrigin: contours[0].nodes[1].point
+			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'rotate', 120 + 'deg' ]
 			)
@@ -202,18 +193,18 @@ exports.glyphs['asterisk'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[0].x
 					y: contours[0].nodes[0].expandedTo[0].y
-					dirOut: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point )
+					dirOut: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[0].expandedTo[0].x, y:  contours[0].nodes[0].expandedTo[0].y})
 				1:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[0].y + Math.min( 35, ( 35 / 90 ) * thickness )
 					dirOut: 0 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[0].nodes[0].expandedTo[1].y
-					dirIn: Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )
+					dirIn: Utils.lineAngle({x: contours[0].nodes[0].expandedTo[1].x, y: contours[0].nodes[0].expandedTo[1].y},{x:  contours[0].nodes[1].expandedTo[1].x, y:  contours[0].nodes[1].expandedTo[1].y})
 					typeOut: 'line'
-			transformOrigin: contours[0].nodes[1].point
+			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'rotate', 120 + 'deg' ]
 			)
@@ -224,18 +215,18 @@ exports.glyphs['asterisk'] =
 				0:
 					x: contours[0].nodes[2].expandedTo[0].x
 					y: contours[0].nodes[2].expandedTo[0].y
-					dirOut: Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[2].expandedTo[0].point )
+					dirOut: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y})
 				1:
 					x: contours[0].nodes[2].x
 					y: contours[0].nodes[2].y - Math.min( 35, ( 35 / 90 ) * thickness )
 					dirOut: 0 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[2].expandedTo[1].x
 					y: contours[0].nodes[2].expandedTo[1].y
-					dirIn: Utils.lineAngle( contours[0].nodes[2].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )
+					dirIn: Utils.lineAngle({x: contours[0].nodes[2].expandedTo[1].x, y: contours[0].nodes[2].expandedTo[1].y},{x:  contours[0].nodes[1].expandedTo[1].x, y:  contours[0].nodes[1].expandedTo[1].y})
 					typeOut: 'line'
-			transformOrigin: contours[0].nodes[1].point
+			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'rotate', 120 + 'deg' ]
 			)

@@ -35,21 +35,19 @@ exports.glyphs['T_cap'] =
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * opticThickness * ( 100 / 85 )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x
 					y: capHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * opticThickness * ( 100 / 85 )
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -59,21 +57,19 @@ exports.glyphs['T_cap'] =
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * opticThickness * ( 25 / 85 )
 						angle: 90 + 'deg'
 						distr: 1
-					})
 				1:
 					x: anchors[1].x + Math.max( 0, serifHeight * serifArc )
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * opticThickness * ( 25 / 85 )
 						angle: 90 + 'deg'
 						distr: 1
-					})
 	components:
 		0:
 			base: 'serif'

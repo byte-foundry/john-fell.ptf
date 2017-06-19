@@ -32,7 +32,7 @@ exports.glyphs['attaque'] =
 					y: contours[0].nodes[2].y - ( serifHeight * serifMedian / 2 ) * anchors[2].directionY
 					# tensionIn: Math.min(serifRoundness * 0.78, 1.8 )
 					tensionIn: serifRoundness * 1.4
-					dirIn: Utils.lineAngle( contours[0].nodes[2].point, contours[0].nodes[3].point )
+					dirIn: Utils.lineAngle({x: contours[0].nodes[2].x, y: contours[0].nodes[2].y},{x:  contours[0].nodes[3].x, y:  contours[0].nodes[3].y} )
 					dirIn: 3 + ( 45 * serifMedian - 45 ) + 'deg'
 					typeOut: 'line'
 				2:

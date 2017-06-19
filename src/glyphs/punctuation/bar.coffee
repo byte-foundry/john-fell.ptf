@@ -26,18 +26,16 @@ exports.glyphs['bar'] =
 					y: ascenderHeight + 50
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 70 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x
 					y: ( 200 / 250 ) * descender - 50
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 70 / 90 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
-					})

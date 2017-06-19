@@ -29,40 +29,36 @@ exports.glyphs['U_cap'] =
 					x: spacingLeft
 					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
-					})
 				1:
 					x: contours[0].nodes[0].x
 					y: Math.min( 170, ( 220 / 750 ) * capHeight )
 					y: 180 + ( 40 / 750 ) * capHeight * width
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
-					})
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * Math.min( 0.4, 0.25 * width )
 					y: - overshoot
 					dirOut: 0 + 'deg'
-					type: 'smooth'
-					expand: Object({
+					typeIn: 'smooth'
+					expand:
 						width: thickness * ( 76 / 85 ) * opticThickness
 						angle: 58 + 'deg'
 						distr: 0
-					})
 				3:
 					x: contours[1].nodes[0].expandedTo[0].x
 					y: 120 - (4) + ( 40 / 750 ) * capHeight * width
-					type: 'smooth'
+					typeOut: 'smooth'
 					dirIn: - 115 + 'deg'
-					expand: Object({
+					expand:
 						width: thickness * ( 45 / 85 ) * opticThickness
 						angle: 90 + 'deg'
 						distr: 0.25
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -72,19 +68,19 @@ exports.glyphs['U_cap'] =
 					y: 90 + serifHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						distr: 0.25
-					})
+						angle: 0
 				1:
 					x: contours[1].nodes[0].x
 					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						distr: 0.25
-					})
+						angle: 0
 	components:
 		0:
 			base: 'serif'

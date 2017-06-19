@@ -28,39 +28,37 @@ exports.glyphs['Q_cap'] =
 					x: spacingLeft
 					y: capHeight * ( 375 / 750 )
 					dirOut: 90 + 'deg'
-					expand: Object({
+					expand:
 						width: thickness * ( 110 / 86 )
 						distr: 0.25
-					})
+						angle: 0
 				1:
 					x: ( contours[0].nodes[0].expandedTo[0].x + contours[0].nodes[2].expandedTo[0].x ) / 2 - 5
 					y: capHeight + overshoot
 					dirOut: 0 + 'deg'
-					type: 'smooth'
-					expand: Object({
+					typeIn: 'smooth'
+					expand:
 						width: thickness * contrast * ( 26 / 86 )
 						angle: - 100 + 'deg'
 						distr: 0
-					})
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x + 360 + 250 * width # ( 665 + (100) ) * width
 					y: contours[0].nodes[0].y
 					dirOut: - 90 + 'deg'
-					expand: Object({
+					expand:
 						width: thickness * ( 110 / 86 )
 						distr: 0.25
-					})
+						angle: 0
 				3:
 					x: ( contours[0].nodes[0].expandedTo[0].x + contours[0].nodes[2].expandedTo[0].x ) / 2 - 15
 					y: - overshoot
 					dirOut: 180 + 'deg'
-					type: 'smooth'
+					typeIn: 'smooth'
 					tensionOut: 0.5
-					expand: Object({
+					expand:
 						width: thickness * contrast * ( 26 / 86 )
 						angle: - 101 + 180 + 'deg'
 						distr: 0
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -70,22 +68,20 @@ exports.glyphs['Q_cap'] =
 					y: - 40
 					y: contours[1].nodes[1].y + Math.cos( Math.PI * 10 / 180 ) * ( thickness * ( 60 / 85 ) * opticThickness + thickness * ( 25 / 85 ) * opticThickness * contrast ) / 2 + 40
 					dirOut: Math.PI * ( - 140 ) / 180
-					type: 'smooth'
-					expand: Object({
+					typeIn: 'smooth'
+					expand:
 						width: thickness * ( 11 / 85 ) * opticThickness * contrast
 						angle: contours[1].nodes[0].dirOut - Math.PI / 2
 						distr: 0
-					})
 				1:
 					x: contours[1].nodes[2].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[1].x - contours[1].nodes[2].expandedTo[1].x ) * 0.6
 					y: - 95 - ( 30 / 90 ) * thickness
 					dirIn: 0 + 'deg'
-					type: 'smooth'
-					expand: Object({
+					typeOut: 'smooth'
+					expand:
 						width: thickness * ( 60 / 85 ) * opticThickness + thickness * ( 25 / 85 ) * opticThickness * contrast
 						angle: 80 + 'deg'
 						distr: 0.5
-					})
 				2:
 					expandedTo:
 						[
@@ -94,7 +90,7 @@ exports.glyphs['Q_cap'] =
 								y: anchors[0].junctionBottom.y
 								dirIn: Math.min(
 									anchors[0].junctionBottom.normal,
-									Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[0].point )
+									Utils.lineAngle({x: contours[1].nodes[1].expandedTo[1].x, y: contours[1].nodes[1].expandedTo[1].y},{x:  contours[0].nodes[0].expandedTo[1].x, y:  contours[0].nodes[0].expandedTo[1].y})
 								)
 							}
 							{
@@ -102,7 +98,7 @@ exports.glyphs['Q_cap'] =
 								y: anchors[0].junctionTop.y
 								dirOut: Math.min(
 									anchors[0].junctionTop.normal,
-									Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[0].point )
+									Utils.lineAngle({x: contours[1].nodes[1].expandedTo[1].x, y: contours[1].nodes[1].expandedTo[1].y},{x:  contours[0].nodes[0].expandedTo[0].x, y:  contours[0].nodes[0].expandedTo[0].y})
 								)
 							}
 						]

@@ -27,21 +27,19 @@ exports.glyphs['equal'] =
 					y: xHeight / 2 + 50
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 40 / 90 ) * thickness
 						angle: - 90 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[0].x + 200 * width + 180
 					y: contours[0].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 40 / 90 ) * thickness
 						angle: - 90 + 'deg'
 						distr: 0.5
-					})
 		1:
 			skeleton: true
 			closed: false
@@ -52,18 +50,16 @@ exports.glyphs['equal'] =
 					y: xHeight / 2 - 50
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 40 / 90 ) * thickness
 						angle: - 90 + 'deg'
 						distr: 0.5
-					})
 				1:
 					x: contours[0].nodes[1].x
 					y: contours[1].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
-					expand: Object({
+					expand:
 						width: ( 40 / 90 ) * thickness
 						angle: - 90 + 'deg'
 						distr: 0.5
-					})

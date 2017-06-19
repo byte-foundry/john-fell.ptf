@@ -34,19 +34,18 @@ exports.glyphs['serif_top'] =
 				1:
 					x: anchors[2].anchorLine - serifHeight * anchors[2].serifHeight
 					y: Math.min( contours[0].nodes[2].y + serifWidth / 10, anchors[0].y + serifHeight + serifCurve + anchors[2].bottomWidth * anchors[2].bottomCurve )
-					type: 'smooth'
+					typeIn: 'line'
 					typeOut: 'line'
 					tensionIn: serifRoundness
 				2:
 					x: contours[0].nodes[4].x - ( serifHeight * anchors[2].serifHeight * serifMedian * anchors[2].bottomMedian )
 					y: contours[0].nodes[0].y - serifWidth - anchors[2].bottomWidth
 					tensionOut: serifTerminalCurve
-					type: 'smooth'
 				3:
 					x: contours[0].nodes[2].x + ( contours[0].nodes[4].x - contours[0].nodes[2].x ) / 2
 					y: contours[0].nodes[2].y + ( contours[0].nodes[4].y - contours[0].nodes[2].y ) / 2 - serifTerminal * serifWidth
-					dirOut: Utils.lineAngle( contours[0].nodes[2].point ,contours[0].nodes[4].point )
-					type: 'smooth'
+					dirOut: Utils.lineAngle({x: contours[0].nodes[2].x , y: contours[0].nodes[2].y},{x: contours[0].nodes[4].x, y: contours[0].nodes[4].y} )
+					typeIn: 'smooth'
 					tensionOut: serifTerminalCurve
 					tensionIn: serifTerminalCurve
 				4:
