@@ -2,6 +2,7 @@ exports.glyphs['a'] =
 	unicode: 'a'
 	glyphName: 'a'
 	characterName: 'LATIN SMALL LETTER A'
+	altImg: 'alt-fell-a-0.svg'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(
