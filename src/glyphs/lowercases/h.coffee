@@ -34,8 +34,8 @@ exports.glyphs['h'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						distr: 0.25
 						angle: 0
+						distr: 0.25
 					})
 				1:
 					x: contours[0].nodes[0].x
