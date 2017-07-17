@@ -57,12 +57,15 @@ exports.glyphs['t'] =
 					})
 				3:
 					x: contours[0].nodes[2].x
-					y: if Math.max( xHeight * ( 455 / 500 ) - thickness + 86, contours[1].nodes[0].expandedTo[1].y ) > xHeight - 10 then xHeight - 10 else Math.max( xHeight * ( 455 / 500 ) - thickness + 86, contours[1].nodes[0].expandedTo[1].y )
+					y:
+						if Math.max( xHeight * ( 455 / 500 ) - thickness + 86, contours[1].nodes[0].expandedTo[1].y ) > xHeight - 10
+						then xHeight - 10
+						else Math.max( xHeight * ( 455 / 500 ) - thickness + 86, contours[1].nodes[0].expandedTo[1].y )
 					dirOut: - 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						angle: 0
+						angle: 180 + 'deg'
 						distr: 1
 					})
 				4:
@@ -72,6 +75,7 @@ exports.glyphs['t'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness + 65
+						angle: 180 + 'deg'
 						distr: 0
 					})
 				5:
@@ -81,6 +85,7 @@ exports.glyphs['t'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness + 65
+						angle: 180 + 'deg'
 						distr: 0
 					})
 				6:
@@ -89,6 +94,7 @@ exports.glyphs['t'] =
 					dirOut: - 90 + 'deg'
 					expand: Object({
 						width: thickness * ( 6 / 85 )
+						angle: 180 + 'deg'
 						distr: 0
 					})
 		1:

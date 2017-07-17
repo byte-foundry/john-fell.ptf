@@ -8,7 +8,7 @@ exports.glyphs['c'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 45 + (19)
+		spacingLeft: 50 * spacing + 45
 		spacingRight: 50 * spacing + 30
 	tags: [
 		'all',
@@ -19,14 +19,16 @@ exports.glyphs['c'] =
 		0:
 			x: contours[0].nodes[3].x
 			y: xHeight + diacriticHeight
+		1:
+			x: contours[0].nodes[1].x
+			y: contours[0].nodes[1].y + ( 10 / 85 ) * thickness * contrast
 	contours:
 		0:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[2].expandedTo[1].x + 90 + 250 * width
-					# y: ( 135 / 500 ) * xHeight
+					x: contours[0].nodes[2].expandedTo[0].x + 186 + 250 * width
 					y: Math.max( - overshoot + thickness / 10, 40 + xHeight * ( 88 / 500 ) * aperture )
 					dirOut: - 109 + 'deg'
 					dirOut: Math.min( - 145 + ( 31 / 500 ) * xHeight * aperture , - 90 ) + 'deg'
@@ -43,12 +45,12 @@ exports.glyphs['c'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 60 / 85 )
+						width: thickness * ( 60 / 85 ) * contrast
 						angle: 60 + 'deg'
 						distr: 0
 					})
 				2:
-					x: spacingLeft
+					x: spacingLeft + (19/85) * thickness
 					y: xHeight * ( 235 / 500 ) + (10)
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -64,7 +66,7 @@ exports.glyphs['c'] =
 					# dirIn: -90 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 20 / 85 )
+						width: thickness * ( 20 / 85 ) * contrast
 						angle: - 104 + 'deg'
 						distr: 0
 					})

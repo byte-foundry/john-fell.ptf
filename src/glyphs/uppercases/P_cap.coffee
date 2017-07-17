@@ -31,7 +31,7 @@ exports.glyphs['P_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0
+						angle: 0 + 'deg'
 						distr: 0
 					})
 				1:

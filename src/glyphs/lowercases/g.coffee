@@ -47,7 +47,7 @@ exports.glyphs['g'] =
 					type: 'smooth'
 					expand: Object({
 						width: thickness
-						angle: 0
+						angle: 180 + 'deg'
 						distr: 0.25
 					})
 				2:
@@ -67,6 +67,7 @@ exports.glyphs['g'] =
 					type: 'smooth'
 					expand: Object({
 						width: thickness
+						angle: 0 + 'deg'
 						distr: 0.25
 					})
 

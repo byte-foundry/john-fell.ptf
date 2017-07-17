@@ -35,7 +35,7 @@ exports.glyphs['a_alt'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						angle: 0
+						angle: 0 + 'deg'
 						distr: 0.75
 					})
 				1:
@@ -45,6 +45,7 @@ exports.glyphs['a_alt'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
+						angle: 0 + 'deg'
 						distr: 0.75
 					})
 				2:

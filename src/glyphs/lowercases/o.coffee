@@ -32,7 +32,7 @@ exports.glyphs['o'] =
 					dirOut: 90 + 'deg'
 					expand: Object({
 						width: thickness * ( 95 / 86 )
-						angle: 0
+						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				1:

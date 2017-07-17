@@ -56,9 +56,9 @@ exports.glyphs['L_cap'] =
 					y: 0
 					dirOut: 0 + 'deg'
 					expand: Object({
-						width: thickness * opticThickness * ( 20 / 100 )
-						angle: 0
-						distr: 1
+						width: thickness * opticThickness * ( 20 / 100 ) * contrast
+						angle: 90 + 'deg'
+						distr: 0
 					})
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -67,7 +67,8 @@ exports.glyphs['L_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: contours[1].nodes[0].expand.width
-						distr: 1
+						angle: 90 + 'deg'
+						distr: 0
 					})
 		2:
 			skeleton: false
@@ -122,7 +123,7 @@ exports.glyphs['L_cap'] =
 			parentAnchors:
 				0:
 					x: Math.max(contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[0].expandedTo[1].x - serifHeight - serifCurve * ( 165 / 15 ) )
-					y: contours[1].nodes[0].expandedTo[0].y
+					y: contours[1].nodes[0].expandedTo[1].y
 				1:
 					x: Math.max(contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].x - serifHeight - serifCurve * ( 165 / 15 ) )
 					y: contours[1].nodes[0].expandedTo[1].y
@@ -134,5 +135,5 @@ exports.glyphs['L_cap'] =
 			parentParameters:
 				# serifMedian: serifMedian * 0.75
 				midWidth: midWidth * 0.98
-			transformOrigin: Array( contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[0].expandedTo[0].y )
+			transformOrigin: Array( contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[0].expandedTo[1].y )
 			transforms: Array( [ 'skewX', serifRotate * (15) + 'deg' ] )

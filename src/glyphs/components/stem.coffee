@@ -17,16 +17,16 @@ exports.glyphs['stem'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
+						angle: 0 + 'deg'
 						distr: 0.25
-						angle: 0
 					})
 				1:
 					x: anchors[0].x
 					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
 					expand: Object({
 						width: thickness
+						angle: 0 + 'deg'
 						distr: 0.25
-						angle: 0
 					})
 	components:
 		0:
