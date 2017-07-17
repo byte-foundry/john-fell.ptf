@@ -57,6 +57,7 @@ exports.glyphs['L_cap'] =
 					dirOut: 0 + 'deg'
 					expand: Object({
 						width: thickness * opticThickness * ( 20 / 100 )
+						angle: 0
 						distr: 1
 					})
 				1:

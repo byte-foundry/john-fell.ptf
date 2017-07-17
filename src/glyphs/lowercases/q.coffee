@@ -31,6 +31,7 @@ exports.glyphs['q'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
+						angle: 0
 						distr: 0.75
 					})
 				1:

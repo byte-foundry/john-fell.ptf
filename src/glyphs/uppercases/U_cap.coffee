@@ -74,6 +74,7 @@ exports.glyphs['U_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
+						angle: 0
 						distr: 0.25
 					})
 				1:
