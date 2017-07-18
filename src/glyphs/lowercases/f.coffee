@@ -8,7 +8,7 @@ exports.glyphs['f'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 40 + (21) + serifWidth + 15
+		spacingLeft: 50 * spacing + 40 + serifWidth + 15
 		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
@@ -21,7 +21,7 @@ exports.glyphs['f'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + (21/85) * thickness
 					y: 0 + serifHeight + serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'

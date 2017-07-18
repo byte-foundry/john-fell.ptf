@@ -4,12 +4,12 @@ exports.glyphs['U_cap'] =
 	glyphName: 'U'
 	characterName: 'LATIN CAPITAL LETTER U'
 	ot:
-		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
+		advanceWidth: contours[1].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 5 + (25) + serifWidth + 40
+		spacingLeft: 50 * spacing + 5 + serifWidth + 40
 		spacingRight: 50 * spacing + 5 + serifWidth + 45
 	tags: [
 		'all',
@@ -18,7 +18,7 @@ exports.glyphs['U_cap'] =
 	]
 	anchors:
 		0:
-			x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
+			x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) / 2
 			y: capHeight + diacriticHeight
 	contours:
 		0:
@@ -26,7 +26,7 @@ exports.glyphs['U_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + (25/85) * thickness
 					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
 					typeOut: 'line'
 					expand: Object({
@@ -44,7 +44,7 @@ exports.glyphs['U_cap'] =
 						distr: 0.25
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * Math.min( 0.4, 0.25 * width )
+					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[1].x ) * Math.min( 0.4, 0.25 * width )
 					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
@@ -54,7 +54,7 @@ exports.glyphs['U_cap'] =
 						distr: 0
 					})
 				3:
-					x: contours[1].nodes[0].expandedTo[0].x
+					x: contours[1].nodes[0].expandedTo[1].x
 					y: 120 - (4) + ( 40 / 750 ) * capHeight * width
 					type: 'smooth'
 					dirIn: - 115 + 'deg'
@@ -68,14 +68,17 @@ exports.glyphs['U_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width + (25)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 335 + 200 * width - (25),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 100 / 85 ) * thickness * opticThickness + 10
+					)
 					y: 90 + serifHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0 + 'deg'
-						distr: 0.25
+						width: ( 100 / 85 ) * thickness * opticThickness
+						angle: 180 + 'deg'
+						distr: 0.75
 					})
 				1:
 					x: contours[1].nodes[0].x
@@ -84,7 +87,8 @@ exports.glyphs['U_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * ( 100 / 85 ) * opticThickness
-						distr: 0.25
+						angle: 180 + 'deg'
+						distr: 0.75
 					})
 	components:
 		0:
@@ -105,11 +109,11 @@ exports.glyphs['U_cap'] =
 			base: 'serif'
 			parentAnchors:
 				0:
-					x: contours[1].nodes[1].expandedTo[1].x
-					y: contours[1].nodes[1].expandedTo[1].y
-				1:
 					x: contours[1].nodes[1].expandedTo[0].x
 					y: contours[1].nodes[1].expandedTo[0].y
+				1:
+					x: contours[1].nodes[1].expandedTo[1].x
+					y: contours[1].nodes[1].expandedTo[1].y
 				2:
 					anchorLine: capHeight
 					leftWidth: 40
@@ -119,10 +123,10 @@ exports.glyphs['U_cap'] =
 			base: 'attaque'
 			parentAnchors:
 				0:
-					x: contours[1].nodes[0].expandedTo[1].x
+					x: contours[1].nodes[0].expandedTo[0].x
 					y: contours[1].nodes[0].y
 				1:
-					x: contours[1].nodes[0].expandedTo[0].x
+					x: contours[1].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[0].y
 				2:
 					anchorLine: 0

@@ -44,7 +44,10 @@ exports.glyphs['Q_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + 360 + 250 * width # ( 665 + (100) ) * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 550 + 200 * width - (27),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * thickness * ( 110 / 86 ) + 10
+					)
 					y: contours[0].nodes[0].y
 					dirOut: - 90 + 'deg'
 					expand: Object({

@@ -27,9 +27,10 @@ exports.glyphs['o'] =
 			closed: true
 			nodes:
 				0:
-					x: spacingLeft + (19)
+					x: spacingLeft + (19/85) * thickness
 					y: xHeight * ( 250 / 500 )
 					dirOut: 90 + 'deg'
+					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 95 / 86 )
 						angle: 0 + 'deg'
@@ -39,6 +40,7 @@ exports.glyphs['o'] =
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * 0.5
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
+					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 26 / 86 ) * contrast
 						angle: - 90 + 'deg'
@@ -46,11 +48,12 @@ exports.glyphs['o'] =
 					})
 				2:
 					x: Math.max(
-						contours[0].nodes[0].expandedTo[0].x + 200 * width + 300 - (0),
+						contours[0].nodes[0].expandedTo[0].x + 300 + 200 * width - (23),
 						contours[0].nodes[0].expandedTo[1].x + 0.75 * thickness * ( 95 / 86 ) + 10
 					)
 					y: contours[0].nodes[0].y
 					dirOut: - 90 + 'deg'
+					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 95 / 86 )
 						angle: 180 + 'deg'
@@ -60,6 +63,7 @@ exports.glyphs['o'] =
 					x: contours[0].nodes[1].x
 					y: - overshoot
 					dirOut: 180 + 'deg'
+					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 26 / 86 ) * contrast
 						angle: 90 + 'deg'

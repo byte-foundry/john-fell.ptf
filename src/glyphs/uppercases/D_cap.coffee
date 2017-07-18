@@ -8,7 +8,7 @@ exports.glyphs['D_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
+		spacingLeft: 50 * spacing + 40 + serifWidth + 40
 		spacingRight: 50 * spacing + 55
 	tags: [
 		'all',
@@ -25,7 +25,7 @@ exports.glyphs['D_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + (25/85) * thickness
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({

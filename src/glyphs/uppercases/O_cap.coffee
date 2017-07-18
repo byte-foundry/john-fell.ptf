@@ -8,7 +8,7 @@ exports.glyphs['O_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 55 + (22)
+		spacingLeft: 50 * spacing + 55
 		spacingRight: 50 * spacing + 55
 	tags: [
 		'all',
@@ -27,9 +27,10 @@ exports.glyphs['O_cap'] =
 			closed: true
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + (22/85) * thickness
 					y: capHeight * ( 375 / 750 )
 					dirOut: 90 + 'deg'
+					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 110 / 86 )
 						angle: 0 + 'deg'
@@ -46,9 +47,13 @@ exports.glyphs['O_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + 360 + 250 * width # ( 665 + (100) ) * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 550 + 200 * width - (27),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * thickness * ( 110 / 86 ) + 10
+					)
 					y: contours[0].nodes[0].y
 					dirOut: - 90 + 'deg'
+					type: 'smooth'
 					expand: Object({
 						width: thickness * ( 110 / 86 )
 						distr: 0.25

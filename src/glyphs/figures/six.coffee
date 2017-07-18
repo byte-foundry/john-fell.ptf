@@ -37,7 +37,7 @@ exports.glyphs['six'] =
 						distr: 0
 					})
 				1:
-					x: spacingLeft + (21)
+					x: spacingLeft + (21/85) * thickness
 					y: capHeight * ( 280 / 750 )
 					dirOut: - 90 + 'deg'
 					type: 'smooth'

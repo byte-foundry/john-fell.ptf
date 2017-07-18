@@ -42,34 +42,36 @@ exports.glyphs['m'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x
-					y: xHeight - 135 + ( thickness - 85 ) / 4 + (25)
-					dirOut:
-						if width <= 1.2
-						then 60 - 60 * width + 60 + 'deg'
-						else 60 - 5 * width + 'deg'
+					x: contours[0].nodes[1].expandedTo[1].x - ( 4 / 85 ) * thickness
+					y: xHeight - 140 + ( thickness - 85 ) / 4 + (25) + 30 / width - 30
+					dirOut: Utils.lineAngle( contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[0].point ) + ( 20 / 180 * Math.PI )
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 25 / 85 ) * contrast * width
+						width: thickness * ( 10 / 85 ) + thickness * ( 15 / 85 ) * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[3].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * 0.55
+					x: contours[0].nodes[1].expandedTo[1].x + ( contours[1].nodes[3].expandedTo[0].x - contours[0].nodes[1].expandedTo[1].x ) * 0.55
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
-					# angle: Math.max( - thickness - 77 * contrast, Math.max( - 129 * width, - 129 ) ) + 'deg'
-					# angle: - 129 + axis + 'deg'
-					tensionOut: 1.2
+					tensionOut: 1.1
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 72 / 85 )
-						angle: - 119 + 'deg'
+						# width: thickness * ( 80 / 85 ) / 2 + thickness * ( 80 / 85 ) / 2 * contrast
+						width: thickness * ( 40 / 85 ) + thickness * ( 40 / 85 ) * contrast
+						angle: Math.max( - 129 , - 129 - 10 * contrast * width + 10 ) + 'deg'
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[1].expandedTo[1].x + 220 * width + (64)
-					y: xHeight - 170 - thickness + 85
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 190 + 200 * width - (0),
+						contours[0].nodes[0].expandedTo[1].x + 0.25 * thickness + 10
+					)
+					y: xHeight - Math.min(
+						165,
+						( 165 / 500 ) * xHeight
+					)
 					dirOut: - 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
@@ -90,33 +92,36 @@ exports.glyphs['m'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[2].expandedTo[0].x - ( 5 / 85 ) * thickness
-					# y: xHeight * ( 370 / 500 )
-					y: contours[1].nodes[0].y
-					dirOut: if width <= 1.2 then 60 - 60 * width + 60 + 'deg' else 60 - 5 * width + 'deg'
+					x: contours[1].nodes[3].expandedTo[0].x - ( 4 / 85 ) * thickness
+					y: xHeight - 140 + ( thickness - 85 ) / 4 + (25) + 30 / width - 30
+					dirOut: Utils.lineAngle( contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[0].point ) + ( 20 / 180 * Math.PI )
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 25 / 85 ) * contrast * width
+						width: thickness * ( 10 / 85 ) + thickness * ( 15 / 85 ) * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})
 				1:
-					x: contours[1].nodes[3].expandedTo[0].x + ( contours[2].nodes[3].expandedTo[0].x - contours[1].nodes[3].expandedTo[0].x ) * 0.55
+					x: contours[2].nodes[0].expandedTo[1].x + ( contours[2].nodes[3].expandedTo[0].x - contours[2].nodes[0].expandedTo[1].x ) * 0.55
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
-					# angle: Math.max( - thickness - 77 * contrast, Math.max( - 129 * width, - 129 ) ) + 'deg'
-					# angle: - 129 + axis + 'deg'
-					tensionOut: 1.2
+					tensionOut: 1.1
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 72 / 85 )
-						angle: - 119 + 'deg'
+						# width: thickness * ( 80 / 85 ) / 2 + thickness * ( 80 / 85 ) / 2 * contrast
+						width: thickness * ( 40 / 85 ) + thickness * ( 40 / 85 ) * contrast
+						angle: Math.max( - 129 , - 129 - 10 * contrast * width + 10 ) + 'deg'
 						distr: 0
 					})
 				2:
-					x: contours[1].nodes[2].x + 300 * width
-					x: contours[1].nodes[2].expandedTo[0].x + 220 * width + (64)
-					y: xHeight - 170 - thickness + 85
+					x: Math.max(
+						contours[1].nodes[3].expandedTo[1].x + 190 + 200 * width - (0),
+						contours[1].nodes[3].expandedTo[0].x + 0.25 * thickness + 10
+					)
+					y: xHeight - Math.min(
+						165,
+						( 165 / 500 ) * xHeight
+					)
 					dirOut: - 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({

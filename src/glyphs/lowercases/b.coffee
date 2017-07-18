@@ -106,7 +106,10 @@ exports.glyphs['b'] =
 						distr: 1
 					})
 				3:
-					x: contours[0].nodes[3].expandedTo[1].x + 100 + 265 * width - (21)
+					x: Math.max(
+						contours[0].nodes[3].expandedTo[0].x + 200 + 250 * width - (21),
+						contours[0].nodes[3].expandedTo[1].x + 0.25 * ( 97 / 86 ) * thickness + 10
+					)
 					y: xHeight * ( 250 / 500 )
 					dirIn: 90 + 'deg'
 					type: 'smooth'

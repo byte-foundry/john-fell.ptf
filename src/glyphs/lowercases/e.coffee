@@ -8,7 +8,7 @@ exports.glyphs['e'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 45 + (18)
+		spacingLeft: 50 * spacing + 45
 		spacingRight: 50 * spacing + 30
 	tags: [
 		'all',
@@ -30,7 +30,7 @@ exports.glyphs['e'] =
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * ( 20 / 85 )
+						width: ( 20 / 85 ) * thickness * contrast
 						distr: 1
 						angle: -90 + 'deg'
 					})
@@ -40,13 +40,17 @@ exports.glyphs['e'] =
 					dirOut: 0 + 'deg'
 					expand: Object({
 						angle: - 90 + 'deg'
-						width: thickness * ( 25 / 85 )
+						width: ( 25 / 85 ) * thickness * contrast
 						distr: 1
 					})
 				2:
 					x: contours[0].nodes[4].expandedTo[1].x + 100 + 274 * width + (67)
 					y: xHeight * ( 340 / 500 ) * crossbar
 					dirOut: Math.max( 90, 150 - ( 50 / 500 ) * xHeight ) + 'deg'
+					dirOut: Math.max(
+						Utils.lineAngle( contours[0].nodes[2].expandedTo[0].point, contours[0].nodes[3].expandedTo[0].point ) - ( 30 / 180 * Math.PI ),
+						Math.PI / 2
+					)
 					tensionOut: 1.2
 					expand: Object({
 						width: thickness * ( 94 / 85 )
@@ -54,17 +58,17 @@ exports.glyphs['e'] =
 						distr: 0.75
 					})
 				3:
-					x: contours[0].nodes[4].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[4].expandedTo[1].x ) * (295-50)/(495-50)
+					x: ( contours[0].nodes[2].expandedTo[1].x + contours[0].nodes[4].expandedTo[1].x ) * ( 255 / 465 )
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: thickness * ( 20 / 85 )
+						width: ( 20 / 85 ) * thickness * contrast
 						angle: - 104 + 180 + 'deg'
 						distr: 1
 					})
 				4:
-					x: spacingLeft
+					x: spacingLeft + (18/85) * thickness
 					y: xHeight * ( 240 / 500 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -74,14 +78,14 @@ exports.glyphs['e'] =
 						distr: 0.75
 					})
 				5:
-					x: contours[0].nodes[4].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[4].expandedTo[1].x ) * 0.5
+					x: ( contours[0].nodes[4].expandedTo[1].x + contours[0].nodes[6].x ) * ( 240 / 456 )
 					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					# dirIn: 0 + 'deg'
 					expand: Object({
 						angle: 70 + 180 + 'deg'
-						width: thickness * ( 60 / 85 )
+						width: ( 60 / 85 ) * thickness * contrast
 						distr: 1
 					})
 				6:

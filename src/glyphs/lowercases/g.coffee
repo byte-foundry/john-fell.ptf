@@ -61,7 +61,7 @@ exports.glyphs['g'] =
 						distr: 0
 					})
 				3:
-					x: spacingLeft + 30 + (21)
+					x: spacingLeft + 30 + (21/85) * thickness
 					y: ( 350 / 500 ) * xHeight
 					dirOut: 90 + 'deg'
 					type: 'smooth'
@@ -89,7 +89,7 @@ exports.glyphs['g'] =
 						distr: 1
 					})
 				1:
-					x: spacingLeft + 10 + (12)
+					x: spacingLeft + 10 + (12/85) * thickness
 					y: ( 105 / 500 ) * xHeight + (6)
 					# dirOut: contours[1].nodes[2].dirOut + Math.PI / 2
 					dirOut: 90 + 'deg'

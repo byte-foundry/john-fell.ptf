@@ -25,7 +25,7 @@ exports.glyphs['u'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + (21)
+					x: spacingLeft + (21/85) * thickness
 					y: xHeight - serifHeight - serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -59,7 +59,7 @@ exports.glyphs['u'] =
 					# y: xHeight * ( ( 130 + 10 ) / 500 )
 					y: xHeight * ( 30 / 500 ) + 110
 					dirIn: Math.max( - 110 , Math.min( - 95 , - ( 120 / 500 ) * xHeight ) ) + 'deg'
-					# dirIn: - 115 - ( 5 / 500 ) * xHeight + 'deg'
+					dirIn: Utils.lineAngle( contours[0].nodes[3].expandedTo[1].point, contours[0].nodes[2].expandedTo[0].point ) + ( 15 / 180 * Math.PI )
 					type: 'smooth'
 					expand: Object({
 						width: ( thickness * ( 15 / 86 ) + ( ( 10 / 500 ) * xHeight / 85 ) * thickness ) * contrast
@@ -71,7 +71,10 @@ exports.glyphs['u'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + 305 * width - (21)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 190 + 200 * width - (21),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * thickness + 10
+					)
 					y: xHeight - serifHeight - serifCurve
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
