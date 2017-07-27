@@ -3,7 +3,7 @@ exports.glyphs['ampersand'] =
 	glyphName: 'ampersand'
 	characterName: 'AMPERSAND'
 	ot:
-		advanceWidth: contours[0].nodes[3].expandedTo[1].x + serifWidth + spacingRight
+		advanceWidth: contours[1].nodes[7].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)

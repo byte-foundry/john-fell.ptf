@@ -3,13 +3,13 @@ exports.glyphs['period'] =
 	glyphName: 'period'
 	characterName: 'FULL STOP'
 	ot:
-		advanceWidth: contours[0].nodes[2].x + spacingRight
+		advanceWidth: contours[0].nodes[3].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 70 + (10)
-		spacingRight: 50 * spacing + 70
+		spacingLeft: 50 * spacing + 65
+		spacingRight: 50 * spacing + 65
 	tags: [
 		'all',
 		'latin',
@@ -17,7 +17,7 @@ exports.glyphs['period'] =
 	]
 	anchors:
 		0:
-			x: 125
+			x: spacingLeft + 60
 			y: - overshoot / 2
 	contours:
 		0:

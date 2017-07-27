@@ -8,8 +8,8 @@ exports.glyphs['colon'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 65
+		spacingRight: 50 * spacing + 65
 	tags: [
 		'all',
 		'latin',
@@ -20,5 +20,11 @@ exports.glyphs['colon'] =
 			base: 'dot'
 			parentAnchors:
 				0:
-					x: 125
-					y: xHeight + overshoot / 2 - 120
+					x: anchors[0].x
+					y: xHeight + overshoot / 2 - Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					)
