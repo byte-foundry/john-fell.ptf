@@ -52,7 +52,10 @@ exports.glyphs['L_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 235 + 200 * width,
+						contours[0].nodes[0].expandedTo[1].x + 335
+					)
 					y: 0
 					dirOut: 0 + 'deg'
 					expand: Object({

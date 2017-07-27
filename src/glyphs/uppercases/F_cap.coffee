@@ -48,8 +48,10 @@ exports.glyphs['F_cap'] =
 			closed: false
 			nodes:
 				0:
-					# x: 305 + 250 * width + ( thickness / 2 - 43 )
-					x: contours[0].nodes[0].expandedTo[1].x + 110 + 200 * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 213 + 200 * width,
+						contours[0].nodes[0].expandedTo[1].x + 313
+					)
 					y: capHeight
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -80,8 +82,10 @@ exports.glyphs['F_cap'] =
 						distr: 0
 					})
 				1:
-					# x: 235 + 250 * width
-					x: contours[0].nodes[0].expandedTo[1].x + 200 * width + 40 - Math.max( 0, serifHeight * serifArc )
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 147 + 200 * width,
+						contours[0].nodes[0].expandedTo[1].x + 247
+					)
 					y: capHeight * ( 385 / 750 ) * crossbar
 					dirOut: 0 + 'deg'
 					typeOut: 'line'

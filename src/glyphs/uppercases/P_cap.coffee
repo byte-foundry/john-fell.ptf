@@ -54,10 +54,14 @@ exports.glyphs['P_cap'] =
 					# typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * ( 20 / 100 )
+						angle: - 90 + 'deg'
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 100 * width
+					x: Math.max(
+						contours[1].nodes[2].expandedTo[0].x - 255,
+						contours[0].nodes[1].expandedTo[1].x
+					)
 					y: capHeight
 					dirOut: 180 + 'deg'
 					type: 'smooth'
@@ -67,7 +71,10 @@ exports.glyphs['P_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + ( 245+ (70) ) * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 255 + 200 * width - (28),
+						contours[0].nodes[0].expandedTo[1].x + 355
+					)
 					y: capHeight * ( ( 555 - (12) ) / 750 )
 					dirOut: - 90 + 'deg'
 					tensionOut: 1.15
@@ -78,12 +85,13 @@ exports.glyphs['P_cap'] =
 						distr: 0.25
 					})
 				3:
-					x: contours[0].nodes[0].expandedTo[1].x + 50 * width
+					x: contours[1].nodes[1].expandedTo[1].x
 					y: capHeight * ( 365 / 750 )
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: thickness * opticThickness * ( 25 / 100 )
+						angle: 90 + 'deg'
 						distr: 1
 					})
 				4:
@@ -93,6 +101,7 @@ exports.glyphs['P_cap'] =
 					typeOut: 'line'
 					expand: Object({
 						width: contours[1].nodes[3].expand.width
+						angle: 90 + 'deg'
 						distr: 1
 					})
 	components:

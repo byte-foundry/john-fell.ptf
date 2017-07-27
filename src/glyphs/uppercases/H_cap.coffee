@@ -8,7 +8,7 @@ exports.glyphs['H_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 40 + (10) + 40
+		spacingLeft: 50 * spacing + 40 + serifWidth + 40
 		spacingRight: 50 * spacing + 40 + serifWidth + 40
 	anchors:
 		0:
@@ -25,7 +25,7 @@ exports.glyphs['H_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + serifWidth + 40 + (11)
+					x: spacingLeft + (25/85) * thickness
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -68,7 +68,10 @@ exports.glyphs['H_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + 200 + 235 * width - (25)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 335 + 200 * width - (25),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * thickness * opticThickness * ( 100 / 85 ) + 10
+					)
 					y: 0 + serifHeight + serifCurve * ( 60 / 15 )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'

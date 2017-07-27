@@ -59,7 +59,10 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 110 + 200 * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 213 + 200 * width,
+						contours[0].nodes[0].expandedTo[1].x + 313
+					)
 					y: contours[1].nodes[0].y
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -83,7 +86,10 @@ exports.glyphs['E_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 200 * width + 50 - Math.max( 0, serifHeight * serifArc )
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 147 + 200 * width,
+						contours[0].nodes[0].expandedTo[1].x + 247
+					)
 					y: capHeight * ( 385 / 750 ) * crossbar
 					dirOut: 0 + 'deg'
 					typeOut: 'line'
@@ -108,7 +114,10 @@ exports.glyphs['E_cap'] =
 						distr: 1
 					})
 				1:
-					x: contours[1].nodes[0].x + 135 + 200 * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 235 + 200 * width,
+						contours[0].nodes[0].expandedTo[1].x + 335
+					)
 					y: contours[3].nodes[0].y
 					dirOut: 0 + 'deg'
 					expand: Object({
