@@ -13,22 +13,52 @@ exports.glyphs['_quoteleft'] =
 			nodes:
 				0:
 					x: anchors[0].x
-					y: anchors[0].y - 120
+					y: anchors[0].y
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 				1:
-					x: contours[0].nodes[0].x - thickness * ( 32 / 85 )
-					y: contours[0].nodes[0].y - thickness * ( 80 / 85 ) / 2
+					x: anchors[0].x - Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
+					y: anchors[0].y + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 				2:
-					x: contours[0].nodes[0].x
-					y: contours[0].nodes[0].y - thickness * ( 80 / 85 )
+					x: anchors[0].x
+					y: anchors[0].y + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					)
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 				3:
-					x: contours[0].nodes[0].x + thickness * ( 80 / 85 ) / 2
-					y: contours[0].nodes[0].y - thickness * ( 80 / 85 ) / 2
+					x: anchors[0].x + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
+					y: anchors[0].y + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 		1:
@@ -39,29 +69,28 @@ exports.glyphs['_quoteleft'] =
 					x: contours[0].nodes[2].x
 					y: contours[0].nodes[2].y
 					dirOut: 0 + 'deg'
-					# type: 'smooth'
+					type: 'smooth'
 					expand: Object({
-						width: 32
+						width: ( 43 / 85 ) * thickness
 						angle: - 90 + 'deg'
-						distr: 1
+						distr: 0
 					})
 				1:
-					x: contours[0].nodes[1].x
-					y: contours[0].nodes[3].y + ( contours[0].nodes[0].y - contours[0].nodes[3].y ) / 2 + (5)
+					x: contours[0].nodes[3].x
+					y: anchors[0].y + 20
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 30 / 85 ) * thickness
-						angle: 180 + 32 + 'deg'
-						distr: .3
+						width: ( 20 / 85 ) * thickness + Math.min( ( 23 / 85 ) * thickness, 23 )
+						angle: 190 + 'deg'
+						distr: 0.5
 					})
 				2:
-					x: anchors[0].x + 30
-					y: anchors[0].y
-					dirIn: Math.max(Math.min(40 - thickness + 80, 40) , 15) + 'deg'
+					x: contours[0].nodes[1].x
+					y: anchors[0].y - 40 - Math.min( thickness, 120 )
 					type: 'smooth'
 					expand: Object({
-						width: 15
-						angle: 130 + 'deg'
-						distr: 1
+						width: Math.min( ( 18 / 85 ) * thickness, 18 )
+						angle: 106 + 'deg'
+						distr: 0
 					})

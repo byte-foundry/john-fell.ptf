@@ -95,16 +95,16 @@ exports.glyphs['comma'] =
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 43 / 85 ) * thickness
+						width: ( 20 / 85 ) * thickness + Math.min( ( 23 / 85 ) * thickness, 23 )
 						angle: 190 + 'deg'
 						distr: 0.5
 					})
 				2:
 					x: contours[0].nodes[1].x
-					y: anchors[0].y - 60 - Math.min( thickness, 150 )
+					y: anchors[0].y - 40 - Math.min( thickness, 120 )
 					type: 'smooth'
 					expand: Object({
-						width: ( 18 / 85 ) * thickness
+						width: Math.min( ( 18 / 85 ) * thickness, 18 )
 						angle: 106 + 'deg'
 						distr: 0
 					})

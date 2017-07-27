@@ -3,22 +3,123 @@ exports.glyphs['quoteleft'] =
 	glyphName: 'quoteleft'
 	characterName: 'LEFT SINGLE QUOTATION MARK'
 	ot:
-		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
+		advanceWidth: contours[0].nodes[3].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX', slant + 'deg'],
+		['scaleX', - 1 ],
+		['scaleY', - 1 ]
+		['translateX', - contours[0].nodes[3].x - spacingRight ]
+		['translateY', - capHeight * 2 + Math.max(
+			40,
+			Math.min(
+				160,
+				thickness * ( 120 / 85 )
+			)
+		)],
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
-		spacingRight: 50 * spacing + 10
+		spacingLeft: 50 * spacing + 65
+		spacingRight: 50 * spacing + 65
 	tags: [
 		'all',
 		'latin',
 		'punctuation'
 	]
-	components:
+	anchors:
 		0:
-			base: '_quoteleft'
-			parentAnchors:
+			x: spacingLeft + 60
+			y: capHeight + overshoot - Math.max(
+				40,
+				Math.min(
+					160,
+					thickness * ( 120 / 85 )
+				)
+			)
+	contours:
+		0:
+			skeleton: false
+			closed: true
+			nodes:
 				0:
-					x: 42 + (48)
-					y: capHeight + overshoot
+					x: anchors[0].x
+					y: anchors[0].y
+					dirOut: 180 + 'deg'
+					type: 'smooth'
+				1:
+					x: anchors[0].x - Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
+					y: anchors[0].y + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
+					dirOut: 90 + 'deg'
+					type: 'smooth'
+				2:
+					x: anchors[0].x
+					y: anchors[0].y + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					)
+					dirOut: 0 + 'deg'
+					type: 'smooth'
+				3:
+					x: anchors[0].x + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
+					y: anchors[0].y + Math.max(
+						40,
+						Math.min(
+							160,
+							thickness * ( 120 / 85 )
+						)
+					) / 2
+					dirOut: - 90 + 'deg'
+					type: 'smooth'
+		1:
+			skeleton: true
+			closed: false
+			nodes:
+				0:
+					x: contours[0].nodes[2].x
+					y: contours[0].nodes[2].y
+					dirOut: 0 + 'deg'
+					type: 'smooth'
+					expand: Object({
+						width: ( 43 / 85 ) * thickness
+						angle: - 90 + 'deg'
+						distr: 0
+					})
+				1:
+					x: contours[0].nodes[3].x
+					y: anchors[0].y + 20
+					dirOut: - 90 + 'deg'
+					type: 'smooth'
+					expand: Object({
+						width: ( 20 / 85 ) * thickness + Math.min( ( 23 / 85 ) * thickness, 23 )
+						angle: 190 + 'deg'
+						distr: 0.5
+					})
+				2:
+					x: contours[0].nodes[1].x
+					y: anchors[0].y - 40 - Math.min( thickness, 120 )
+					type: 'smooth'
+					expand: Object({
+						width: Math.min( ( 18 / 85 ) * thickness, 18 )
+						angle: 106 + 'deg'
+						distr: 0
+					})
