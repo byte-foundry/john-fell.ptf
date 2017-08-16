@@ -15,10 +15,6 @@ exports.glyphs['S_cap'] =
 		0:
 			x: contours[0].nodes[1].x + ( contours[0].nodes[3].x - contours[0].nodes[1].x ) * 0.5
 			y: capHeight + diacriticHeight
-			baseSerifTop: Utils.pointOnCurve( contours[0].nodes[1].expandedTo[1], contours[0].nodes[0].expandedTo[1], serifHeight + Math.min( 180, serifCurve * ( 180 / 15 ) ), true )
-			baseSerifBottom: Utils.pointOnCurve( contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[0], serifHeight + Math.min( 90, serifCurve * ( 90 / 15 ) ) )
-			baseSerifTop_: Utils.pointOnCurve( contours[0].nodes[5].expandedTo[0], contours[0].nodes[6].expandedTo[0], serifHeight + Math.min( 150, serifCurve * ( 150 / 15 ) ), true )
-			baseSerifBottom_: Utils.pointOnCurve( contours[0].nodes[6].expandedTo[1], contours[0].nodes[5].expandedTo[1], serifHeight + Math.min( 120, serifCurve * ( 120 / 15 ) ) )
 	tags: [
 		'all',
 		'latin',
@@ -120,6 +116,7 @@ exports.glyphs['S_cap'] =
 			id: 'top'
 			parentAnchors:
 				0:
+					baseDir: contours[0].nodes[6].dirIn
 					baseWidth: contours[0].nodes[6].expandedTo[1]
 					baseHeight: contours[0].nodes[6].expandedTo[1]
 					noneAnchor: contours[0].nodes[6].expandedTo[1]
@@ -132,6 +129,7 @@ exports.glyphs['S_cap'] =
 			id: 'bottom'
 			parentAnchors:
 				0:
+					baseDir: contours[0].nodes[0].dirOut
 					baseWidth: contours[0].nodes[0].expandedTo[0]
 					baseHeight: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
