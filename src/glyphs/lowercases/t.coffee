@@ -44,9 +44,8 @@ exports.glyphs['t'] =
 				2:
 					x: spacingLeft
 					y: xHeight * ( ( 85 + ( 75 / 85 ) * thickness ) / 500 )
-					dirOut: - 90 + 'deg'
-					typeIn: 'smooth'
 					typeOut: 'line'
+					dirIn: -Math.PI / 2
 					tensionIn: 1.2
 					expand:
 						width: thickness
@@ -55,7 +54,7 @@ exports.glyphs['t'] =
 				3:
 					x: contours[0].nodes[2].x
 					y: if Math.max( xHeight * ( 455 / 500 ) - thickness + 86, contours[1].nodes[0].expandedTo[1].y ) > xHeight - 10 then xHeight - 10 else Math.max( xHeight * ( 455 / 500 ) - thickness + 86, contours[1].nodes[0].expandedTo[1].y )
-					dirOut: - 90 + 'deg'
+					typeIn: 'line'
 					typeOut: 'line'
 					expand:
 						width: thickness
@@ -64,7 +63,7 @@ exports.glyphs['t'] =
 				4:
 					x: contours[0].nodes[2].x + thickness
 					y: contours[0].nodes[3].y
-					dirOut: - 90 + 'deg'
+					typeIn: 'line'
 					typeOut: 'line'
 					expand:
 						width: thickness + 65
@@ -73,7 +72,7 @@ exports.glyphs['t'] =
 				5:
 					x: contours[0].nodes[2].x + thickness
 					y: contours[0].nodes[4].y + 10
-					dirOut: - 90 + 'deg'
+					typeIn: 'line'
 					typeOut: 'line'
 					expand:
 						width: thickness + 65

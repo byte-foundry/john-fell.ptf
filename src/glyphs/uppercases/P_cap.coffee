@@ -49,16 +49,15 @@ exports.glyphs['P_cap'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: capHeight
-					dirOut: 0 + 'deg'
-					# typeOut: 'line'
+					typeOut: 'line'
 					expand:
 						width: thickness * opticThickness * ( 20 / 100 )
 						distr: 0
-						angle: 0
+						angle: -Math.PI / 2
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + 100 * width
 					y: capHeight
-					dirOut: 180 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 					expand:
 						width: thickness * opticThickness * ( 36 / 100 )
@@ -67,7 +66,7 @@ exports.glyphs['P_cap'] =
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x + ( 245+ (70) ) * width
 					y: capHeight * ( ( 555 - (12) ) / 750 )
-					dirOut: - 90 + 'deg'
+					dirOut: 90 + 'deg'
 					tensionOut: 1.15
 					typeIn: 'smooth'
 					expand:
@@ -77,46 +76,50 @@ exports.glyphs['P_cap'] =
 				3:
 					x: contours[0].nodes[0].expandedTo[1].x + 50 * width
 					y: capHeight * ( 365 / 750 )
-					dirOut: 180 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 					expand:
 						width: thickness * opticThickness * ( 25 / 100 )
 						distr: 1
-						angle: 0
+						angle: Math.PI / 2
 				4:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[3].y
-					dirOut: 180 + 'deg'
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: contours[1].nodes[3].expand.width
 						distr: 1
-						angle: 0
+						angle: Math.PI / 2
 	components:
 		0:
-			base: 'serif'
+			base: ['serif-vertical', 'none']
+			id: 'bottomleft'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y + serifHeight + serifCurve * ( 65 / 15 )
-				1:
-					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y + serifHeight + serifCurve * ( 65 / 15 )
-				2:
-					anchorLine: 0
-					leftWidth: 40
-					rightWidth: 40
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
 		1:
-			base: 'serif'
+			base: ['serif-vertical', 'none']
+			id: 'topleft'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].expandedTo[1].y - serifHeight - serifCurve * ( 65 / 15 )
-				1:
-					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].expandedTo[0].y - serifHeight - serifCurve * ( 65 / 15 )
-				2:
-					anchorLine: capHeight
-					leftWidth: 40
-					directionY: -1
-					right: false
+					base: contours[0].nodes[1].expandedTo[0]
+					noneAnchor: contours[0].nodes[1].expandedTo[0]
+					opposite: contours[0].nodes[1].expandedTo[1]
+			transformOrigin: contours[0].nodes[1].expandedTo[1]
+			transforms: Array(
+				['scaleY', -1]
+			)
+		2:
+			base: ['serif-vertical', 'none']
+			id: 'topright'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[1]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+			transformOrigin: contours[0].nodes[0].expandedTo[1]
+			transforms: Array(
+				['scaleX', -1]
+			)

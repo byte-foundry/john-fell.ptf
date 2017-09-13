@@ -112,7 +112,7 @@ exports.glyphs['w'] =
 	components:
 		0:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'topleft'
+			id: 'firstleft'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[0]
@@ -127,7 +127,7 @@ exports.glyphs['w'] =
 			)
 		1:
 			base: ['serif-oblique-acute', 'none']
-			id: 'topright'
+			id: 'firstright'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[1]
@@ -141,7 +141,7 @@ exports.glyphs['w'] =
 			)
 		2:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'topleft'
+			id: 'secondleft'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[0].expandedTo[0]
@@ -156,7 +156,7 @@ exports.glyphs['w'] =
 			)
 		3:
 			base: ['serif-oblique-acute', 'none']
-			id: 'topright'
+			id: 'secondright'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[0].expandedTo[1]
@@ -170,7 +170,7 @@ exports.glyphs['w'] =
 			)
 		4:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'topleft2'
+			id: 'thirdleft'
 			parentAnchors:
 				0:
 					base: contours[3].nodes[0].expandedTo[0]
@@ -185,7 +185,7 @@ exports.glyphs['w'] =
 			)
 		5:
 			base: ['serif-oblique-acute', 'none']
-			id: 'topright2'
+			id: 'thirdright'
 			parentAnchors:
 				0:
 					base: contours[3].nodes[0].expandedTo[1]

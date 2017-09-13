@@ -103,17 +103,25 @@ exports.glyphs['q'] =
 						angle: - 104 + 'deg'
 						distr: 0
 				4:
-					dirIn: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
-					dirOut:
-						if thickness < 30
-						then Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
-						else 118 + 'deg'
 					expandedTo: [
-						x: contours[0].nodes[2].expandedTo[0].x
-						y: contours[0].nodes[2].expandedTo[0].y
-					,
-						x: contours[0].nodes[1].expandedTo[0].x
-						y: contours[0].nodes[1].expandedTo[0].y
+						{
+							x: contours[0].nodes[2].expandedTo[0].x
+							y: contours[0].nodes[2].expandedTo[0].y
+							dirIn: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
+							dirOut:
+								if thickness < 30
+								then Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
+								else 118 + 'deg'
+						},
+						{
+							x: contours[0].nodes[1].expandedTo[0].x
+							y: contours[0].nodes[1].expandedTo[0].y
+							dirIn: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
+							dirOut:
+								if thickness < 30
+								then Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
+								else 118 + 'deg'
+						}
 					]
 	components:
 		0:

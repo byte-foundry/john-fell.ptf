@@ -35,7 +35,7 @@ exports.glyphs['y'] =
 				1:
 					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.42
 					y: - overshoot
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 25 / 85 )
 						angle: 0 + 'deg'
@@ -56,7 +56,7 @@ exports.glyphs['y'] =
 					x: contours[0].nodes[1].expandedTo[0].x + contours[0].nodes[1].expand.width
 					x: contours[0].nodes[1].expandedTo[0].x
 					y: - overshoot
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width:
 							if width < 1
@@ -82,7 +82,7 @@ exports.glyphs['y'] =
 						on: [ contours[0].nodes[0].expandedTo[0], contours[2].nodes[0].expandedTo[1] ]
 					})
 					y: ( 140 / 250 ) * descender
-					# dirOut: Utils.lineAngle({x: contours[2].nodes[0].x, y: contours[2].nodes[0].y},{x:  contours[2].nodes[1].x, y:  contours[2].nodes[1].y} )
+					dirOut: Utils.lineAngle({x: contours[2].nodes[0].x, y: contours[2].nodes[0].y},{x:  contours[2].nodes[1].x, y:  contours[2].nodes[1].y} )
 					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 28 / 85 )
@@ -93,7 +93,6 @@ exports.glyphs['y'] =
 					x: contours[2].nodes[1].expandedTo[1].x - 30
 					y: contours[2].nodes[1].y - 25
 					dirIn: 0 + 'deg'
-					# dirOut: 0 + 'deg'
 					typeOut: 'smooth'
 					expand:
 						width: thickness * ( 80 / 85 )
@@ -137,48 +136,60 @@ exports.glyphs['y'] =
 		# 				distr: 0.25
 	components:
 		0:
-			base: 'serif'
+			base: ['serif-oblique-obtuse', 'none']
+			id: 'thirdleft'
 			parentAnchors:
 				0:
-					x: Utils.onLine({
-						y: xHeight - serifHeight - serifCurve * ( 115 / 65 )
-						on: [ contours[1].nodes[0].expandedTo[1], contours[1].nodes[1].expandedTo[1] ]
-					})
-					y: xHeight - serifHeight - serifCurve * ( 115 / 65 )
-				1:
-					x: Utils.onLine({
-						y: xHeight - serifHeight - serifCurve * ( 115 / 65 )
-						on: [ contours[1].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[0] ]
-					})
-					y: xHeight - serifHeight - serifCurve * ( 115 / 65 )
-				2:
-					anchorLine: xHeight
-					leftWidth: 5
-					rightWidth: 10
-					baseLeft: contours[1].nodes[0].expandedTo[0]
-					baseRight: contours[1].nodes[0].expandedTo[1]
-					angle: Utils.lineAngle({x: contours[1].nodes[0].expandedTo[0].x, y: contours[1].nodes[0].expandedTo[0].y},{x:  contours[1].nodes[1].expandedTo[0].x, y:  contours[1].nodes[1].expandedTo[0].y})
-					directionY: -1
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+					obliqueEndPoint: contours[0].nodes[1].expandedTo[0]
+					scaleX: -1
+			transformOrigin: contours[0].nodes[0].expandedTo[0]
+			transforms: Array(
+				[ 'scaleX', -1 ],
+				[ 'scaleY', -1 ]
+			)
 		1:
-			base: 'serif'
+			base: ['serif-oblique-acute', 'none']
+			id: 'thirdright'
 			parentAnchors:
 				0:
-					x: Utils.onLine({
-						y: xHeight - serifHeight - serifCurve * ( 200 / 65 )
-						on: [ contours[0].nodes[1].expandedTo[1], contours[0].nodes[0].expandedTo[1] ]
-					})
-					y: xHeight - serifHeight - serifCurve * ( 200 / 65 )
-				1:
-					x: Utils.onLine({
-						y: xHeight - serifHeight - serifCurve * ( 130 / 65 )
-						on: [ contours[0].nodes[1].expandedTo[0], contours[0].nodes[0].expandedTo[0] ]
-					})
-					y: xHeight - serifHeight - serifCurve * ( 130 / 65 )
-				2:
-					anchorLine: xHeight
-					leftWidth: 30
-					rightWidth: 20
-					baseLeft: contours[0].nodes[0].expandedTo[0]
-					baseRight: contours[0].nodes[0].expandedTo[1]
-					angle: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[0].expandedTo[0].x, y:  contours[0].nodes[0].expandedTo[0].y})
-					directionY: -1
+					base: contours[0].nodes[0].expandedTo[1]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+					obliqueEndPoint: contours[0].nodes[1].expandedTo[1]
+			transformOrigin: contours[0].nodes[0].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ],
+				[ 'scaleY', -1 ]
+			)
+		2:
+			base: ['serif-oblique-obtuse', 'none']
+			id: 'thirdleft'
+			parentAnchors:
+				0:
+					base: contours[1].nodes[0].expandedTo[0]
+					noneAnchor: contours[1].nodes[0].expandedTo[0]
+					opposite: contours[1].nodes[0].expandedTo[1]
+					obliqueEndPoint: contours[1].nodes[1].expandedTo[0]
+					scaleX: -1
+			transformOrigin: contours[1].nodes[0].expandedTo[0]
+			transforms: Array(
+				[ 'scaleX', -1 ],
+				[ 'scaleY', -1 ]
+			)
+		3:
+			base: ['serif-oblique-acute', 'none']
+			id: 'thirdright'
+			parentAnchors:
+				0:
+					base: contours[1].nodes[0].expandedTo[1]
+					noneAnchor: contours[1].nodes[0].expandedTo[1]
+					opposite: contours[1].nodes[0].expandedTo[0]
+					obliqueEndPoint: contours[1].nodes[1].expandedTo[1]
+			transformOrigin: contours[1].nodes[0].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ],
+				[ 'scaleY', -1 ]
+			)

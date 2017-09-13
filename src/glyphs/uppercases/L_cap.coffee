@@ -55,7 +55,7 @@ exports.glyphs['L_cap'] =
 					dirOut: 0 + 'deg'
 					expand:
 						width: thickness * opticThickness * ( 20 / 100 )
-						angle: Math.PI / 2
+						angle: -Math.PI / 2
 						distr: 1
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -65,7 +65,7 @@ exports.glyphs['L_cap'] =
 					expand:
 						width: contours[1].nodes[0].expand.width
 						distr: 1
-						angle: Math.PI / 2
+						angle: -Math.PI / 2
 		2:
 			skeleton: false
 			closed: true
@@ -90,7 +90,7 @@ exports.glyphs['L_cap'] =
 	components:
 		0:
 			base: ['serif-vertical', 'none']
-			id: 'bottomleft'
+			id: 'topleft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -102,10 +102,35 @@ exports.glyphs['L_cap'] =
 			)
 		1:
 			base: ['serif-vertical', 'none']
-			id: 'topleft'
+			id: 'bottomleft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]
 					noneAnchor: contours[0].nodes[1].expandedTo[0]
 					opposite: contours[0].nodes[1].expandedTo[1]
-					reversed: true
+		2:
+			base: ['serif-vertical', 'none']
+			id: 'topright'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[1]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+					scaleX: -1
+			transformOrigin: contours[0].nodes[0].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ]
+				[ 'scaleY', -1 ]
+			)
+		3:
+			base: ['serif-horizontal', 'none']
+			id: 'topright'
+			parentAnchors:
+				0:
+					base: contours[1].nodes[0].expandedTo[0]
+					noneAnchor: contours[1].nodes[0].expandedTo[0]
+					opposite: contours[1].nodes[0].expandedTo[1]
+			transformOrigin: contours[1].nodes[0].expandedTo[0]
+			transforms: Array(
+				[ 'scaleY', -1 ]
+			)

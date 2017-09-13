@@ -12,8 +12,8 @@ exports.glyphs['Q_cap'] =
 		spacingRight: 50 * spacing + 50
 	anchors:
 		0:
-			junctionBottom: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[0], contours[0].nodes[0].expandedTo[0], thickness * 2, false, 10 )
-			junctionTop: Utils.pointOnCurve( contours[0].nodes[0].expandedTo[1], contours[0].nodes[3].expandedTo[1], thickness, true, 10 )
+			junctionBottom: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[0], contours[0].nodes[3].expandedTo[0].handleOut, contours[0].nodes[0].expandedTo[0], contours[0].nodes[0].expandedTo[0].handleIn, thickness * 2, false, 10 )
+			junctionTop: Utils.pointOnCurve( contours[0].nodes[0].expandedTo[1], contours[0].nodes[0].expandedTo[1].handleOut, contours[0].nodes[3].expandedTo[1], contours[0].nodes[3].expandedTo[1].handleIn, thickness, true, 10 )
 	tags: [
 		'all',
 		'latin',
@@ -48,7 +48,7 @@ exports.glyphs['Q_cap'] =
 					expand:
 						width: thickness * ( 110 / 86 )
 						distr: 0.25
-						angle: 0
+						angle: Math.PI
 				3:
 					x: ( contours[0].nodes[0].expandedTo[0].x + contours[0].nodes[2].expandedTo[0].x ) / 2 - 15
 					y: - overshoot
@@ -68,7 +68,6 @@ exports.glyphs['Q_cap'] =
 					y: - 40
 					y: contours[1].nodes[1].y + Math.cos( Math.PI * 10 / 180 ) * ( thickness * ( 60 / 85 ) * opticThickness + thickness * ( 25 / 85 ) * opticThickness * contrast ) / 2 + 40
 					dirOut: Math.PI * ( - 140 ) / 180
-					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 11 / 85 ) * opticThickness * contrast
 						angle: contours[1].nodes[0].dirOut - Math.PI / 2
@@ -96,9 +95,9 @@ exports.glyphs['Q_cap'] =
 							{
 								x: anchors[0].junctionTop.x
 								y: anchors[0].junctionTop.y
-								dirOut: Math.min(
-									anchors[0].junctionTop.normal,
-									Utils.lineAngle({x: contours[1].nodes[1].expandedTo[1].x, y: contours[1].nodes[1].expandedTo[1].y},{x:  contours[0].nodes[0].expandedTo[0].x, y:  contours[0].nodes[0].expandedTo[0].y})
+								dirIn: Math.min(
+									anchors[0].junctionBottom.normal,
+									Utils.lineAngle({x: contours[1].nodes[1].expandedTo[1].x, y: contours[1].nodes[1].expandedTo[1].y},{x:  contours[0].nodes[0].expandedTo[1].x, y:  contours[0].nodes[0].expandedTo[1].y})
 								)
 							}
 						]

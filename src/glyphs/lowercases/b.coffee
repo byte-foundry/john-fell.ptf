@@ -23,7 +23,7 @@ exports.glyphs['b'] =
 				0:
 					x: contours[0].nodes[3].expandedTo[0].x
 					y: 0
-					dirOut: 90 + 'deg'
+					typeIn: 'line'
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 5 / 85 )
@@ -33,7 +33,7 @@ exports.glyphs['b'] =
 					x: contours[0].nodes[3].expandedTo[0].x
 					# y: xHeight * ( 195 / 500 )
 					y: 195
-					dirOut: 90 + 'deg'
+					typeOut: 'line'
 					typeIn: 'line'
 					expand:
 						width: thickness
@@ -43,7 +43,7 @@ exports.glyphs['b'] =
 					x: contours[0].nodes[3].x
 					# y: xHeight * ( 195 / 500 )
 					y: contours[0].nodes[1].y
-					dirOut: 90 + 'deg'
+					typeIn: 'line'
 					typeOut: 'line'
 					expand:
 						width: thickness
@@ -52,7 +52,7 @@ exports.glyphs['b'] =
 				3:
 					x: spacingLeft + (11)
 					y: ascenderHeight - Math.max( 0, serifHeight * serifArc ) - ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
-					dirOut: 90 + 'deg'
+					typeIn: 'line'
 					typeOut: 'line'
 					expand:
 						width: thickness
@@ -66,24 +66,28 @@ exports.glyphs['b'] =
 					x: contours[0].nodes[3].expandedTo[1].x
 					# y: xHeight * ( 195 / 500 )
 					y: contours[0].nodes[2].expandedTo[1].y
-					dirOut: - 90 + 'deg'
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 50 / 86 )
 						distr: 0
 						angle: Math.PI
 				1:
-					dirOut: Math.max( - 70, Math.min( -50 , if width <= 1.2 then - ( 65 / 85 ) * thickness + 65 * width - 65 else - ( 65 / 85 ) * thickness + 15 * width ) ) + 'deg'
-					dirIn: Math.max( - 70, Math.min( -50 , if width <= 1.2 then - ( 53 / 85 ) * thickness + 53 * width - 53 else - ( 58 / 85 ) * thickness + 15 * width ) ) + 'deg'
 					expandedTo: [
-						x: contours[0].nodes[3].expandedTo[1].x
-						y: 70
-					,
-						x: Utils.onLine({
+						{
+							x: contours[0].nodes[3].expandedTo[1].x
+							y: 70
+							dirOut: Math.max( - 70, Math.min( -50 , if width <= 1.2 then - ( 65 / 85 ) * thickness + 65 * width - 65 else - ( 65 / 85 ) * thickness + 15 * width ) ) + 'deg'
+							dirIn: Math.max( - 70, Math.min( -50 , if width <= 1.2 then - ( 53 / 85 ) * thickness + 53 * width - 53 else - ( 58 / 85 ) * thickness + 15 * width ) ) + 'deg'
+						},
+						{
+							x: Utils.onLine({
+								y: contours[1].nodes[1].expandedTo[0].y - 5
+								on: [ contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1] ]
+							})
 							y: contours[1].nodes[1].expandedTo[0].y - 5
-							on: [ contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1] ]
-						})
-						y: contours[1].nodes[1].expandedTo[0].y - 5
+							dirOut: Math.max( - 70, Math.min( -50 , if width <= 1.2 then - ( 65 / 85 ) * thickness + 65 * width - 65 else - ( 65 / 85 ) * thickness + 15 * width ) ) + 'deg'
+							dirIn: Math.max( - 70, Math.min( -50 , if width <= 1.2 then - ( 53 / 85 ) * thickness + 53 * width - 53 else - ( 58 / 85 ) * thickness + 15 * width ) ) + 'deg'
+						}
 					]
 				2:
 					x: contours[1].nodes[5].expandedTo[1].x + ( contours[1].nodes[3].expandedTo[0].x - contours[1].nodes[5].expandedTo[1].x ) * 0.5

@@ -26,7 +26,7 @@ exports.glyphs['R_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0 + serifHeight + serifCurve * ( 65 / 15 )
+					y: 0
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -35,7 +35,7 @@ exports.glyphs['R_cap'] =
 						angle: 0
 				1:
 					x: contours[0].nodes[0].x
-					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
+					y: capHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -54,7 +54,7 @@ exports.glyphs['R_cap'] =
 					expand:
 						width: thickness * opticThickness * ( 20 / 85 )
 						distr: 0
-						angle: 0
+						angle: -Math.PI / 2
 				1:
 					x: contours[1].nodes[2].expandedTo[1].x - 100 - 50 * width
 					y: capHeight
@@ -82,7 +82,7 @@ exports.glyphs['R_cap'] =
 					expand:
 						width: thickness * opticThickness * ( 25 / 85 )
 						distr: 1
-						angle: 0
+						angle: Math.PI / 2
 				4:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[3].y
@@ -91,7 +91,7 @@ exports.glyphs['R_cap'] =
 					expand:
 						width: contours[1].nodes[3].expand.width
 						distr: 1
-						angle: 0
+						angle: Math.PI / 2
 		2:
 			skeleton: true
 			closed: false
@@ -124,36 +124,3 @@ exports.glyphs['R_cap'] =
 						width: thickness * opticThickness * ( 95 / 85 )
 						angle: 11 + 'deg'
 						distr: 0
-	components:
-		0:
-			base: 'serif'
-			parentAnchors:
-				0:
-					x: Utils.onLine({
-						y: serifHeight + serifCurve
-						on: [ contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1] ]
-					})
-					y: serifHeight + serifCurve * ( 65 /15 )
-				1:
-					x: Utils.onLine({
-						y: serifHeight + serifCurve
-						on: [ contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[0] ]
-					})
-					y: serifHeight + serifCurve * ( 65 /15 )
-				2:
-					leftWidth: 40
-					rightWidth: 40
-		1:
-			base: 'serif'
-			parentAnchors:
-				0:
-					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].expandedTo[1].y
-				1:
-					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].expandedTo[0].y
-				2:
-					anchorLine: capHeight
-					leftWidth: 40
-					directionY: -1
-					right: false

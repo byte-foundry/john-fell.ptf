@@ -50,7 +50,7 @@ exports.glyphs['O_cap'] =
 					expand:
 						width: thickness * ( 110 / 86 )
 						distr: 0.25
-						angle: 0
+						angle: -Math.PI
 				3:
 					x: ( contours[0].nodes[0].expandedTo[0].x + contours[0].nodes[2].expandedTo[0].x ) / 2 - 15
 					y: - overshoot
