@@ -13,7 +13,7 @@ exports.glyphs['three'] =
 		spacingRight: 50 * spacing + 40
 	anchors:
 		0:
-			junction: Utils.pointOnCurve( contours[0].nodes[2].expandedTo[0], contours[0].nodes[3].expandedTo[0], thickness, true, 10 )
+			junction: Utils.pointOnCurve( contours[0].nodes[2].expandedTo[0], contours[0].nodes[2].expandedTo[0].handleIn, contours[0].nodes[3].expandedTo[0], contours[0].nodes[3].expandedTo[0].handleOut, thickness, true, 10 )
 	tags: [
 		'all',
 		'latin',

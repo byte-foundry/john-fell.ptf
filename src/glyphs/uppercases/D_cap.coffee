@@ -113,6 +113,9 @@ exports.glyphs['D_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'topleft'
@@ -122,3 +125,6 @@ exports.glyphs['D_cap'] =
 					noneAnchor: contours[0].nodes[1].expandedTo[0]
 					opposite: contours[0].nodes[1].expandedTo[1]
 					reversed: true
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

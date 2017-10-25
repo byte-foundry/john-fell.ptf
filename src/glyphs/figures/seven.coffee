@@ -33,6 +33,7 @@ exports.glyphs['seven'] =
 					x: contours[0].nodes[4].x + 200 * width + 145 + (6)
 					y: ( 485 / 500 ) * xHeight
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 25 / 85 ) * contrast
 						angle: 0 + 'deg'
@@ -41,6 +42,7 @@ exports.glyphs['seven'] =
 					x: contours[0].nodes[1].expandedTo[1].x
 					y: contours[0].nodes[1].expandedTo[1].y
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 15 / 500 ) * xHeight
 						angle: 90 + 'deg'
@@ -49,6 +51,7 @@ exports.glyphs['seven'] =
 					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[1].x - contours[0].nodes[1].expandedTo[0].x ) * 0.5
 					y: xHeight
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 75 / 85 )
 						angle: Utils.lineAngle({x: contours[0].nodes[0].x, y: contours[0].nodes[0].y},{x:  contours[0].nodes[1].x, y:  contours[0].nodes[1].y} )
@@ -56,28 +59,47 @@ exports.glyphs['seven'] =
 				4:
 					x: spacingLeft
 					y: xHeight
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 75 / 85 )
 						angle: Utils.lineAngle({x: contours[0].nodes[0].x, y: contours[0].nodes[0].y},{x:  contours[0].nodes[1].x, y:  contours[0].nodes[1].y} )
 						distr: 1
 	components:
 		0:
-			base: 'serif-v'
+			base: ['serif-horizontal', 'none']
 			parentAnchors:
 				0:
-					x: contours[0].nodes[4].expandedTo[1].x + serifHeight + serifCurve * ( 45 / 15 )
-					y: contours[0].nodes[4].expandedTo[1].y
-				1:
-					x: contours[0].nodes[4].expandedTo[0].x + serifHeight + serifCurve * ( 60 / 15 )
-					y: contours[0].nodes[4].expandedTo[0].y
-				2:
-					anchorLine: contours[0].nodes[4].expandedTo[0].x + 10
-					directionX: -1
-					rightWidth: - 20
-					maxWidthTop: xHeight + 40
-			parentParameters:
-				serifCurve: serifCurve * ( 25 / 15 )
-				# serifMedian: serifMedian * 0.7
-			transformOrigin: Array( contours[0].nodes[4].expandedTo[1].x, contours[0].nodes[4].expandedTo[1].y )
-			transforms: Array( [ 'skewX', serifRotate * (24) + 'deg' ] )
+					base: contours[0].nodes[4].expandedTo[0]
+					noneAnchor: contours[0].nodes[4].expandedTo[0]
+					opposite: contours[0].nodes[4].expandedTo[1]
+			parameters:
+				serifMedian: serifMedian * 0.65
+				serifWidth: serifWidth - 5
+				serifCurve: serifCurve + 30
+				serifHeight: serifHeight + 10
+				midWidth: midWidth * 0.88
+			transformOrigin: contours[0].nodes[4].expandedTo[0]
+			transforms: Array(
+				[ 'scaleX', -1],
+				[ 'skewX', serifRotate * (25) + 'deg' ]
+			)
+		1:
+			base: ['serif-horizontal', 'none']
+			parentAnchors:
+				0:
+					base: contours[0].nodes[4].expandedTo[1]
+					noneAnchor: contours[0].nodes[4].expandedTo[1]
+					opposite: contours[0].nodes[4].expandedTo[0]
+			parameters:
+				serifMedian: serifMedian * 0.65
+				serifWidth: serifWidth - 18
+				serifCurve: serifCurve + 30
+				serifHeight: serifHeight + 10
+				midWidth: midWidth * 1.15
+			transformOrigin: contours[0].nodes[4].expandedTo[1]
+			transforms: Array(
+				[ 'scaleY', -1],
+				[ 'scaleX', -1],
+				[ 'skewX', serifRotate * (25) + 'deg' ]
+				['translateX', (contours[0].nodes[4].expandedTo[1].y - contours[0].nodes[4].expandedTo[0].y) * Math.sin((serifRotate - 1) * 25/180 * Math.PI)]
+			)

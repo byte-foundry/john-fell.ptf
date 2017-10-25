@@ -62,7 +62,7 @@ exports.glyphs['v'] =
 						distr: 0
 	components:
 		0:
-			base: ['serif-oblique-obtuse', 'none']
+			base: ['serif-oblique-acute', 'none']
 			id: 'topleft'
 			parentAnchors:
 				0:
@@ -77,7 +77,7 @@ exports.glyphs['v'] =
 				[ 'scaleY', -1 ]
 			)
 		1:
-			base: ['serif-oblique-acute', 'none']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'topright'
 			parentAnchors:
 				0:
@@ -91,7 +91,7 @@ exports.glyphs['v'] =
 				[ 'scaleY', -1 ]
 			)
 		2:
-			base: ['serif-oblique-acute', 'none']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'topleft2'
 			parentAnchors:
 				0:

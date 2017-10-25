@@ -11,6 +11,9 @@ exports.glyphs['s'] =
 	parameters:
 		spacingLeft: 50 * spacing + 60
 		spacingRight: 50 * spacing + 50
+		serifRotate: serifRotate - 1
+		serifCurve: serifCurve + 70
+		serifWidth: serifWidth + 30
 	anchors:
 		0:
 			x: contours[0].nodes[3].x
@@ -104,7 +107,26 @@ exports.glyphs['s'] =
 	components:
 		0:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'bottom'
+			parentAnchors:
+				0:
+					baseDir: contours[0].nodes[6].dirIn
+					baseWidth: contours[0].nodes[6].expandedTo[0]
+					baseHeight: contours[0].nodes[6].expandedTo[1]
+					noneAnchor: contours[0].nodes[6].expandedTo[0]
+					opposite: contours[0].nodes[6].expandedTo[1]
+					curveEnd: contours[0].nodes[5].expandedTo[0]
+					rotationAngle: -15
+					rotationCenter: contours[0].nodes[6].expandedTo[1]
+					left: true
+					inverseOrder: true
+			parameters:
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 8
+				serifWidth: serifWidth - 22
+		1:
+			base: ['serif-curve-inside-auto', 'none']
+			id: 'bottomtop'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[6].dirIn
@@ -117,16 +139,44 @@ exports.glyphs['s'] =
 					rotationCenter: contours[0].nodes[6].expandedTo[1]
 					down: true
 					left: true
-		1:
+			parameters:
+				serifCurve: serifCurve - 37
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 7
+		2:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'bottom'
+			id: 'top'
 			parentAnchors:
 				0:
-					baseDir: contours[0].nodes[0].dirIn
+					baseDir: contours[0].nodes[0].dirOut
 					baseWidth: contours[0].nodes[0].expandedTo[0]
 					baseHeight: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
 					curveEnd: contours[0].nodes[1].expandedTo[0]
-					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					rotationAngle: -15
 					rotationCenter: contours[0].nodes[0].expandedTo[0]
+			parameters:
+				serifCurve: serifCurve - 37
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 7
+				serifWidth: serifWidth - 11
+		3:
+			base: ['serif-curve-inside-auto', 'none']
+			id: 'top'
+			parentAnchors:
+				0:
+					baseDir: contours[0].nodes[0].dirOut
+					baseWidth: contours[0].nodes[0].expandedTo[1]
+					baseHeight: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+					curveEnd: contours[0].nodes[1].expandedTo[1]
+					rotationAngle: -15
+					rotationCenter: contours[0].nodes[0].expandedTo[0]
+					down: true
+					inverseOrder: true
+			parameters:
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 8
+				serifWidth: serifWidth - 22

@@ -31,7 +31,7 @@ exports.glyphs['slash'] =
 				1:
 					x: spacingLeft + (22)
 					y: - 80
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 50 / 85 )
 						angle: 0 + 'deg'

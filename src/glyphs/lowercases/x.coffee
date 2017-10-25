@@ -101,6 +101,8 @@ exports.glyphs['x'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		1:
 			base: ['serif-oblique-acute', 'none']
 			id: 'thirdright'
@@ -115,8 +117,10 @@ exports.glyphs['x'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		2:
-			base: ['serif-oblique-obtuse', 'none']
+			base: ['serif-oblique-acute', 'none']
 			id: 'thirdleft'
 			parentAnchors:
 				0:
@@ -130,8 +134,10 @@ exports.glyphs['x'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		3:
-			base: ['serif-oblique-acute', 'none']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdright'
 			parentAnchors:
 				0:
@@ -144,8 +150,10 @@ exports.glyphs['x'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		4:
-			base: ['serif-oblique-obtuse', 'none']
+			base: ['serif-oblique-acute', 'none']
 			id: 'thirdleft'
 			parentAnchors:
 				0:
@@ -154,8 +162,10 @@ exports.glyphs['x'] =
 					opposite: contours[2].nodes[1].expandedTo[0]
 					obliqueEndPoint: contours[2].nodes[0].expandedTo[1]
 					scaleX: -1
+			parameters:
+				serifCurve: serifCurve + 40
 		5:
-			base: ['serif-oblique-acute', 'none']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdright'
 			parentAnchors:
 				0:
@@ -163,6 +173,8 @@ exports.glyphs['x'] =
 					noneAnchor: contours[2].nodes[1].expandedTo[0]
 					opposite: contours[2].nodes[1].expandedTo[1]
 					obliqueEndPoint: contours[2].nodes[0].expandedTo[0]
+			parameters:
+				serifCurve: serifCurve + 40
 		6:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdleft'
@@ -173,6 +185,8 @@ exports.glyphs['x'] =
 					opposite: contours[0].nodes[1].expandedTo[0]
 					obliqueEndPoint: contours[0].nodes[0].expandedTo[1]
 					scaleX: -1
+			parameters:
+				serifCurve: serifCurve + 40
 		7:
 			base: ['serif-oblique-acute', 'none']
 			id: 'thirdright'
@@ -182,3 +196,5 @@ exports.glyphs['x'] =
 					noneAnchor: contours[0].nodes[1].expandedTo[0]
 					opposite: contours[0].nodes[1].expandedTo[1]
 					obliqueEndPoint: contours[0].nodes[0].expandedTo[0]
+			parameters:
+				serifCurve: serifCurve + 40

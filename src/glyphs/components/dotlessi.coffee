@@ -23,8 +23,8 @@ exports.glyphs['dotlessi'] =
 			closed: false
 			nodes:
 				0:
-					x: 115 + ( 21 )
-					y: 0 + serifHeight + serifCurve
+					x: spacingLeft
+					y: Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand:
 						width: thickness
@@ -32,34 +32,68 @@ exports.glyphs['dotlessi'] =
 						angle: 0
 				1:
 					x: contours[0].nodes[0].x
-					y: xHeight - spurHeight * ( 60 ) - serifHeight * ( 10 / 20 ) - serifCurve * ( 40 / 15 )
+					y: xHeight - Math.max( 0, serifHeight * serifArc ) - ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
 					expand:
 						width: thickness
 						distr: 0.25
 						angle: 0
-	components:
-		0:
-			base: 'serif'
-			parentAnchors:
-				0:
-					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y
-				1:
-					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y
-				2:
-					anchorLine: 0
-					leftWidth: 15
-					rightWidth: 18
 		1:
-			base: 'attaque'
-			parentAnchors:
+			skeleton: false
+			closed: true
+			nodes:
 				0:
-					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].y
+					x: contours[0].nodes[1].expandedTo[1].x
+					y: xHeight
+					typeOut: 'line'
+					dirIn: Utils.lineAngle({x: contours[1].nodes[0].x, y: contours[1].nodes[0].y}, {x: contours[1].nodes[4].x, y: contours[1].nodes[4].y}) - Math.PI / 12 * spurHeight * -serifArc / 1.5
 				1:
 					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].y
+					y: contours[0].nodes[1].expandedTo[1].y - 10
+					typeOut: 'line'
 				2:
-					anchorLine: xHeight
-					leftWidth: 1.25
+					x: contours[0].nodes[1].x
+					y: contours[0].nodes[1].expandedTo[1].y - 10
+					typeOut: 'line'
+				3:
+					x: contours[0].nodes[1].x
+					y: contours[0].nodes[1].expandedTo[1].y
+					typeOut: 'line'
+				4:
+					x: ( contours[0].nodes[1].expandedTo[0].x + contours[0].nodes[1].expandedTo[1].x ) / 2
+					y: xHeight - serifHeight * serifArc
+					dirOut: Math.PI / 12 * spurHeight * Math.abs(serifArc / 1.5)
+					typeIn: 'line'
+	components:
+		0:
+			base: ['serif-vertical', 'none']
+			id: 'bottomleft'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+		1:
+			base: ['serif-vertical', 'none']
+			id: 'bottomright'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[1]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+			transformOrigin: contours[0].nodes[0].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ]
+			)
+		2:
+			base: ['serif-vertical', 'none']
+			parentAnchors:
+				0:
+					base: contours[0].nodes[1].expandedTo[0]
+					noneAnchor: contours[0].nodes[1].expandedTo[0]
+					opposite: contours[0].nodes[1].expandedTo[1]
+			transformOrigin: contours[0].nodes[1]
+			transforms: Array(
+				[ 'scaleY', -1 ]
+				[ 'skewY', 15 * spurHeight + 'deg' ]
+				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
+			)

@@ -23,7 +23,7 @@ exports.glyphs['one'] =
 			nodes:
 				0:
 					x: spacingLeft + thickness / 2
-					y: 0 + serifHeight + serifCurve
+					y: 0
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -32,7 +32,7 @@ exports.glyphs['one'] =
 						angle: 0
 				1:
 					x: contours[0].nodes[0].x
-					y: xHeight - serifHeight - serifCurve
+					y: xHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -41,28 +41,59 @@ exports.glyphs['one'] =
 						angle: 0
 	components:
 		0:
-			base: 'serif'
+			base: ['serif-vertical', 'none']
+			id: 'bottomleft'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].y
-				1:
-					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].y
-				2:
-					leftWidth: 35
-					rightWidth: 35
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
-			base: 'serif'
+			base: ['serif-vertical', 'none']
+			id: 'bottomright'
 			parentAnchors:
 				0:
-					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].y
-				1:
-					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].y
-				2:
-					anchorLine: xHeight
-					directionY: -1
-					leftWidth: 35
-					rightWidth: 35
+					base: contours[0].nodes[0].expandedTo[1]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+			transformOrigin: contours[0].nodes[0].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
+		2:
+			base: ['serif-vertical', 'none']
+			id: 'bottomleft'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[1].expandedTo[0]
+					noneAnchor: contours[0].nodes[1].expandedTo[0]
+					opposite: contours[0].nodes[1].expandedTo[1]
+			transformOrigin: contours[0].nodes[1].expandedTo[0]
+			transforms: Array(
+				[ 'scaleY', -1 ]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
+		3:
+			base: ['serif-vertical', 'none']
+			id: 'bottomright'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[1].expandedTo[1]
+					noneAnchor: contours[0].nodes[1].expandedTo[1]
+					opposite: contours[0].nodes[1].expandedTo[0]
+			transformOrigin: contours[0].nodes[1].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ]
+				[ 'scaleY', -1 ]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

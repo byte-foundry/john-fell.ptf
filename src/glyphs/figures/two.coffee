@@ -55,7 +55,6 @@ exports.glyphs['two'] =
 					x: spacingLeft
 					y: 0
 					dirIn: 27 + 'deg'
-					dirIn: Utils.lineAngle({x: contours[1].nodes[0].expandedTo[0].x, y: contours[1].nodes[0].expandedTo[0].y},{x:  contours[1].nodes[0].expandedTo[1].x, y:  contours[1].nodes[0].expandedTo[1].y} ) * 0.88
 					tensionIn: 0.9
 					typeOut: 'smooth'
 					expand:
@@ -91,23 +90,19 @@ exports.glyphs['two'] =
 						distr: 0
 	components:
 		0:
-			base: 'serif-v'
+			base: ['serif-horizontal', 'none']
+			id: 'topright'
 			parentAnchors:
 				0:
-					x: contours[1].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 110 / 15 )
-					y: contours[1].nodes[1].expandedTo[1].y
-				1:
-					x: contours[1].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 60 / 15 )
-					y: contours[1].nodes[1].expandedTo[0].y
-				2:
-					anchorLine: contours[1].nodes[1].expandedTo[1].x
-					leftWidth: - 10
-					left: false
-					baseLeft: contours[1].nodes[1].expandedTo[0]
-					max0: contours[1].nodes[0].expandedTo[1]
-					max1: contours[1].nodes[0].expandedTo[0]
-			parentParameters:
-				# serifMedian: serifMedian * 0.65
-				midWidth: midWidth * 0.9
-			transformOrigin: Array( contours[1].nodes[1].expandedTo[1].x, contours[1].nodes[1].expandedTo[1].y )
-			transforms: Array( [ 'skewX', serifRotate * (32) + 'deg' ] )
+					base: contours[1].nodes[1].expandedTo[1]
+					noneAnchor: contours[1].nodes[1].expandedTo[1]
+					opposite: contours[1].nodes[1].expandedTo[0]
+			transformOrigin: contours[1].nodes[1].expandedTo[1]
+			transforms: Array(
+				[ 'scaleY', -1],
+				[ 'skewX', 35 * serifRotate + 'deg' ]
+			)
+			parameters:
+				serifMedian: serifMedian * 0.65
+				midWidth: midWidth * 0.914
+				serifCurve: serifCurve + 50

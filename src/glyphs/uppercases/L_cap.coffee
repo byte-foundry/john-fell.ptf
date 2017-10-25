@@ -100,6 +100,9 @@ exports.glyphs['L_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
@@ -108,6 +111,9 @@ exports.glyphs['L_cap'] =
 					base: contours[0].nodes[1].expandedTo[0]
 					noneAnchor: contours[0].nodes[1].expandedTo[0]
 					opposite: contours[0].nodes[1].expandedTo[1]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'topright'
@@ -122,6 +128,9 @@ exports.glyphs['L_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-horizontal', 'none']
 			id: 'topright'
@@ -133,4 +142,11 @@ exports.glyphs['L_cap'] =
 			transformOrigin: contours[1].nodes[0].expandedTo[0]
 			transforms: Array(
 				[ 'scaleY', -1 ]
+				[ 'skewX', 10 * serifRotate + 'deg' ],
+				[ 'translateX', ( Math.tan( (10 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 25 / 100 ) * contrast ) ) ]
 			)
+			parameters:
+				serifCurve: serifCurve + 90
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 25
+				serifWidth: serifWidth + 60

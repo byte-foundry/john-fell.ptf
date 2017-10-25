@@ -37,6 +37,7 @@ exports.glyphs['serif-oblique-acute'] =
 					})
 					y: anchors[0].y + serifHeight + serifCurve
 					dirOut: Utils.lineAngle( {x: anchors[0].x, y: anchors[0].y}, {x: anchors[2].x, y: anchors[2].y} )
+					typeIn: 'line'
 					tensionOut: serifRoundness
 				1:
 					x: Utils.onLine({
@@ -96,3 +97,4 @@ exports.glyphs['serif-oblique-acute'] =
 					}) + Math.abs( parentAnchors[0].opposite.x - parentAnchors[0].base.x ) * 0.5 * anchors[3].scaleX
 					y: contours[0].nodes[0].y
 					typeOut: 'line'
+					typeIn: 'line'

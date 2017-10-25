@@ -142,6 +142,10 @@ exports.glyphs['k'] =
 				[ 'skewY', 15 * spurHeight + 'deg' ]
 				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
+			parameters:
+				serifCurve: serifCurve + 30
+				serifMedian: serifMedian / 2 - 0.12
+				serifHeight: serifHeight + 12
 		3:
 			base: ['serif-oblique-acute', 'none']
 			id: 'topleft2'
@@ -158,6 +162,9 @@ exports.glyphs['k'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 110
+				serifCurve: serifCurve + 85
 		4:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'topright2'
@@ -172,6 +179,9 @@ exports.glyphs['k'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 50
 		5:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'bottomright2'
@@ -183,6 +193,9 @@ exports.glyphs['k'] =
 					obliqueEndPoint: contours[2].nodes[1].expandedTo[1]
 					reversed: true
 					scaleX: -1
+			parameters:
+				serifWidth: serifWidth - 15
+				serifCurve: serifCurve + 35
 		6:
 			base: ['serif-oblique-acute', 'none']
 			id: 'topleft2'
@@ -192,3 +205,5 @@ exports.glyphs['k'] =
 					noneAnchor: contours[2].nodes[0].expandedTo[0]
 					opposite: contours[2].nodes[0].expandedTo[1]
 					obliqueEndPoint: contours[2].nodes[1].expandedTo[0]
+			parameters:
+				serifCurve: serifCurve + 25

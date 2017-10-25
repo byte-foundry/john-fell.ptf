@@ -27,7 +27,7 @@ exports.glyphs['U_cap'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
+					y: capHeight
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
@@ -65,7 +65,7 @@ exports.glyphs['U_cap'] =
 			nodes:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width + (25)
-					y: 90 + serifHeight
+					y: Math.max( 0, serifHeight * serifArc ) + ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 100/85 * opticThickness / 2 ) )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -74,53 +74,83 @@ exports.glyphs['U_cap'] =
 						angle: 0
 				1:
 					x: contours[1].nodes[0].x
-					y: capHeight - serifHeight - serifCurve * ( 65 / 15 )
+					y: capHeight
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						distr: 0.25
 						angle: 0
-	components:
-		0:
-			base: 'serif'
-			parentAnchors:
-				0:
-					x: contours[0].nodes[0].expandedTo[1].x
-					y: contours[0].nodes[0].expandedTo[1].y
-				1:
-					x: contours[0].nodes[0].expandedTo[0].x
-					y: contours[0].nodes[0].expandedTo[0].y
-				2:
-					anchorLine: capHeight
-					leftWidth: 40
-					directionY: -1
-					right: false
-		1:
-			base: 'serif'
-			parentAnchors:
-				0:
-					x: contours[1].nodes[1].expandedTo[1].x
-					y: contours[1].nodes[1].expandedTo[1].y
-				1:
-					x: contours[1].nodes[1].expandedTo[0].x
-					y: contours[1].nodes[1].expandedTo[0].y
-				2:
-					anchorLine: capHeight
-					leftWidth: 40
-					directionY: -1
-					right: false
 		2:
-			base: 'attaque'
-			parentAnchors:
+			skeleton: false
+			closed: true
+			nodes:
 				0:
-					x: contours[1].nodes[0].expandedTo[1].x
-					y: contours[1].nodes[0].y
+					x: contours[1].nodes[0].expandedTo[0].x
+					y: 0
+					typeOut: 'line'
+					dirIn: Utils.lineAngle({x: contours[2].nodes[0].x, y: contours[2].nodes[0].y}, {x: contours[2].nodes[4].x, y: contours[2].nodes[4].y}) - Math.PI / 12 * spurHeight * -serifArc / 1.5
 				1:
 					x: contours[1].nodes[0].expandedTo[0].x
-					y: contours[1].nodes[0].y
+					y: contours[1].nodes[0].expandedTo[0].y + 10
+					typeOut: 'line'
 				2:
-					anchorLine: 0
-					rightWidth: 1.6
-					directionY: - 1
-					directionX: - 1
+					x: contours[1].nodes[0].expandedTo[1].x
+					y: contours[1].nodes[0].expandedTo[0].y + 10
+					typeOut: 'line'
+				3:
+					x: contours[1].nodes[0].expandedTo[1].x
+					y: contours[1].nodes[0].expandedTo[0].y
+					typeOut: 'line'
+				4:
+					x: ( contours[1].nodes[0].expandedTo[0].x + contours[1].nodes[0].expandedTo[1].x ) / 2
+					y: - serifHeight * serifArc
+					dirOut: Math.PI / 15 * spurHeight * Math.abs(serifArc / 1.5)
+					typeIn: 'line'
+	components:
+		0:
+			base: ['serif-vertical', 'none']
+			id: 'bottomleft'
+			parentAnchors:
+				0:
+					base: contours[1].nodes[0].expandedTo[1]
+					noneAnchor: contours[1].nodes[0].expandedTo[1]
+					opposite: contours[1].nodes[0].expandedTo[0]
+			transformOrigin: contours[1].nodes[0].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ]
+				[ 'skewY', 15 * spurHeight + 'deg' ]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
+		1:
+			base: ['serif-vertical', 'none']
+			id: 'topright'
+			parentAnchors:
+				0:
+					base: contours[1].nodes[1].expandedTo[0]
+					noneAnchor: contours[1].nodes[1].expandedTo[0]
+					opposite: contours[1].nodes[1].expandedTo[1]
+			transformOrigin: contours[1].nodes[1].expandedTo[0]
+			transforms: Array(
+				['scaleY', -1]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
+		2:
+			base: ['serif-vertical', 'none']
+			id: 'topright'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+			transformOrigin: contours[0].nodes[0].expandedTo[0]
+			transforms: Array(
+				['scaleY', -1]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

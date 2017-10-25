@@ -29,7 +29,7 @@ exports.glyphs['d'] =
 						contours[1].nodes[2].expandedTo[0].x + 200 * width + 255 - (9),
 						contours[1].nodes[2].expandedTo[1].x + 0.75 * thickness + 10
 					)
-					y: 0 + Math.max( 0, serifHeight * serifArc ) + ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
+					y: 0 + ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -166,6 +166,9 @@ exports.glyphs['d'] =
 				[ 'skewY', 15 * spurHeight + 'deg' ]
 				[ 'translateY',-( Math.tan( (15 * spurHeight) / 180 * Math.PI ) ) ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			parentAnchors:
@@ -179,5 +182,7 @@ exports.glyphs['d'] =
 				[ 'skewY', 15 * spurHeight + 'deg' ]
 				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.75 ) ) ]
 			)
-			parentParameters:
-				serifMedian: serifMedian # - serifMedian / 2 * spurHeight
+			parameters:
+				serifCurve: serifCurve + 30
+				serifMedian: serifMedian / 2 - 0.12
+				serifHeight: serifHeight + 12

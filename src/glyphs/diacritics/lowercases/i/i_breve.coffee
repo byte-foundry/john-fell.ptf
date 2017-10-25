@@ -2,7 +2,7 @@ exports.glyphs['i_breve'] =
 	unicode: 'ĭ'
 	glyphName: 'ibreve'
 	characterName: 'LATIN SMALL LETTER I WITH BREVE'
-	base: 'ı'
+	base: 'dotlessi'
 	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
@@ -16,5 +16,5 @@ exports.glyphs['i_breve'] =
 			copy: true
 			parentAnchors:
 				0:
-					x: anchors[0].x
-					y: anchors[0].y
+					x: parentAnchors[0].x
+					y: parentAnchors[0].y

@@ -120,6 +120,9 @@ exports.glyphs['N_cap'] =
 					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
 					obliqueEndPoint: contours[0].nodes[1].expandedTo[0]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'bottomright'
@@ -130,6 +133,9 @@ exports.glyphs['N_cap'] =
 					opposite: contours[0].nodes[0].expandedTo[0]
 					obliqueEndPoint: contours[0].nodes[1].expandedTo[1]
 					scaleX: -1
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'toprightleft'
@@ -142,6 +148,9 @@ exports.glyphs['N_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'toprightright'
@@ -156,6 +165,9 @@ exports.glyphs['N_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		4:
 			base: ['none', 'serif-oblique-acute']
 			id: 'topleftright'
@@ -170,6 +182,9 @@ exports.glyphs['N_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		5:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'topleftleft'
@@ -185,3 +200,6 @@ exports.glyphs['N_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

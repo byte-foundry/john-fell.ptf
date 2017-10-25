@@ -2,7 +2,7 @@ exports.glyphs['colon'] =
 	unicode: ':'
 	glyphName: 'colon'
 	characterName: 'COLON'
-	base: '.'
+	base: 'period'
 	advanceWidth: base.advanceWidth
 	transforms: Array(
 		['skewX', slant + 'deg']

@@ -34,7 +34,7 @@ exports.glyphs['exclamdown'] =
 				1:
 					x: spacingLeft + (thickness * ( 104 / 85 )) / 2
 					y: capHeight - 50 - ( 50 / 85 ) * thickness
-					typeIn: 'line'
+					typeIn: 'smooth'
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 104 / 85 )

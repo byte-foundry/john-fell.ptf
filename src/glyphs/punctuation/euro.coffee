@@ -10,14 +10,13 @@ exports.glyphs['euro'] =
 	parameters:
 		spacingLeft: 50 * spacing + 55
 		spacingRight: 50 * spacing + 50
+		serifRotate: serifRotate - 1
+		serifCurve: serifCurve + 70
+		serifWidth: serifWidth + 30
 	anchors:
 		0:
 			x: contours[0].nodes[1].x
 			y: capHeight + diacriticHeight
-			baseSerifTop: Utils.pointOnCurve( contours[0].nodes[1].expandedTo[1], contours[0].nodes[0].expandedTo[1], serifHeight + Math.min( 180, serifCurve * ( 180 / 15 ) ), true )
-			baseSerifBottom: Utils.pointOnCurve( contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[0], serifHeight + Math.min( 130, serifCurve * ( 130 / 15 ) ) )
-			baseSerifTop_: Utils.pointOnCurve( contours[0].nodes[4].expandedTo[1], contours[0].nodes[3].expandedTo[1], serifHeight + Math.min( 150, serifCurve * ( 150 / 15 ) ) )
-			baseSerifBottom_: Utils.pointOnCurve( contours[0].nodes[3].expandedTo[0], contours[0].nodes[4].expandedTo[0], serifHeight + Math.min( 130, serifCurve * ( 130 / 15 ) ), true )
 	tags: [
 		'all',
 		'latin',
@@ -49,7 +48,7 @@ exports.glyphs['euro'] =
 						angle: - 68 + 'deg'
 						distr: 0
 				2:
-					x: spacingLeft + (22) + 50
+					x: spacingLeft + 72
 					y: capHeight * ( 375 / 750 )
 					typeIn: 'smooth'
 					expand:
@@ -70,7 +69,7 @@ exports.glyphs['euro'] =
 					x: contours[0].nodes[0].x
 					y: Math.max( - overshoot + thickness / 10, 40 + xHeight * ( 60 / 500 ) * aperture )
 					y: ( 125 / 750 ) * capHeight - Math.min( 20 * aperture - 20, 125 * aperture - 125 )
-					dirIn: Math.min( - 180 + ( 50 / 500 ) * xHeight * aperture , - 90 ) + 'deg'
+					dirIn: Math.min( - 180 + ( 50 / 500 ) * xHeight * aperture , - 90 ) / 180 * Math.PI
 					expand:
 						width: thickness * ( 30 / 85 ) * opticThickness + thickness * ( 10 / 85 ) * opticThickness * contrast
 						angle: contours[0].nodes[4].dirIn - Math.PI / 2
@@ -90,7 +89,7 @@ exports.glyphs['euro'] =
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[1].expandedTo[0].x ) * 0.2
 					y: contours[0].nodes[2].y + 25
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 65 / 90 ) * thickness
 						angle: 82 + 'deg'
@@ -110,7 +109,7 @@ exports.glyphs['euro'] =
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[1].expandedTo[0].x ) * 0.2
 					y: contours[0].nodes[2].y - 25
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 65 / 90 ) * thickness
 						angle: 82 + 'deg'
@@ -121,22 +120,72 @@ exports.glyphs['euro'] =
 			id: 'top'
 			parentAnchors:
 				0:
+					baseDir: contours[0].nodes[4].dirIn
 					baseWidth: contours[0].nodes[4].expandedTo[1]
-					baseHeight: contours[0].nodes[4].expandedTo[1]
+					baseHeight: contours[0].nodes[4].expandedTo[0]
 					noneAnchor: contours[0].nodes[4].expandedTo[1]
 					opposite: contours[0].nodes[4].expandedTo[0]
 					curveEnd: contours[0].nodes[3].expandedTo[1]
 					rotationAngle: -15
-					rotationCenter: contours[0].nodes[4].expandedTo[1]
+					rotationCenter: contours[0].nodes[4].expandedTo[0]
+			parameters:
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 35
+				serifWidth: serifWidth - 15
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-curve-inside-auto', 'none']
 			id: 'top'
 			parentAnchors:
 				0:
+					baseDir: contours[0].nodes[4].dirIn
+					baseWidth: contours[0].nodes[4].expandedTo[0]
+					baseHeight: contours[0].nodes[4].expandedTo[0]
+					noneAnchor: contours[0].nodes[4].expandedTo[1]
+					opposite: contours[0].nodes[4].expandedTo[0]
+					curveEnd: contours[0].nodes[3].expandedTo[0]
+					rotationAngle: -15
+					rotationCenter: contours[0].nodes[4].expandedTo[0]
+					down: true
+					inverseOrder: true
+			parameters:
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 10
+				serifWidth: serifWidth + 24
+		2:
+			base: ['serif-curve-inside-auto', 'none']
+			id: 'top'
+			parentAnchors:
+				0:
+					baseDir: contours[0].nodes[0].dirOut
+					baseWidth: contours[0].nodes[0].expandedTo[0]
+					baseHeight: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+					curveEnd: contours[0].nodes[1].expandedTo[0]
+					rotationAngle: -15
+					rotationCenter: contours[0].nodes[0].expandedTo[0]
+			parameters:
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 10
+				serifWidth: serifWidth + 21
+		3:
+			base: ['serif-curve-inside-auto', 'none']
+			id: 'top'
+			parentAnchors:
+				0:
+					baseDir: contours[0].nodes[0].dirOut
 					baseWidth: contours[0].nodes[0].expandedTo[1]
-					baseHeight: contours[0].nodes[0].expandedTo[1]
+					baseHeight: contours[0].nodes[0].expandedTo[0]
 					noneAnchor: contours[0].nodes[0].expandedTo[1]
 					opposite: contours[0].nodes[0].expandedTo[0]
 					curveEnd: contours[0].nodes[1].expandedTo[1]
 					rotationAngle: -15
-					rotationCenter: contours[0].nodes[0].expandedTo[1]
+					rotationCenter: contours[0].nodes[0].expandedTo[0]
+					down: true
+					inverseOrder: true
+			parameters:
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 35
+				serifWidth: serifWidth - 15
+				serifCurve: serifCurve + 35

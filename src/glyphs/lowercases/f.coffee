@@ -22,7 +22,7 @@ exports.glyphs['f'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: 0 + serifHeight + serifCurve
+					y: 0
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -40,9 +40,8 @@ exports.glyphs['f'] =
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x + 135 * width
 					y: capHeight + overshoot / 2
-					dirOut: 0 + 'deg'
+					dirIn: 0 + 'deg'
 					tensionIn: 1.1
-					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 40 / 85 )
 						angle: - 139 + 'deg'

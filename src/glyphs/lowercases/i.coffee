@@ -102,3 +102,7 @@ exports.glyphs['i'] =
 				[ 'skewY', 15 * spurHeight + 'deg' ]
 				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
+			parameters:
+				serifCurve: serifCurve + 30
+				serifMedian: serifMedian / 2 - 0.12
+				serifHeight: serifHeight + 12

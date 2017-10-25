@@ -89,37 +89,55 @@ exports.glyphs['z'] =
 					base: contours[0].nodes[1].expandedTo[0]
 					noneAnchor: contours[0].nodes[1].expandedTo[0]
 					opposite: contours[0].nodes[1].expandedTo[1]
-			transformOrigin: contours[0].nodes[1]
+			transformOrigin: contours[0].nodes[1].expandedTo[0]
 			transforms: Array(
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 				[ 'skewX', 15 * spurHeight + 'deg' ],
 				[ 'translateX',- ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
+			parameters:
+				serifWidth: serifWidth - 33
+				serifMedian: serifMedian * 0.8
+				serifCurve: serifCurve + 15
+				serifHeight: serifHeight + 7
 		1:
-			base: ['serif-horizontal', 'none']
+			base: ['serif-hz-oblique-obtuse', 'none']
 			id: 'middletop'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[1]
 					noneAnchor: contours[0].nodes[1].expandedTo[1]
 					opposite: contours[0].nodes[1].expandedTo[0]
-					reversed: true
+					obliqueEndPoint: contours[0].nodes[0].expandedTo[1]
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'scaleX', -1 ]
 				[ 'skewX', 15 * spurHeight + 'deg' ],
 				[ 'translateX',-( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
+			parameters:
+				serifWidth: serifWidth + 33
+				serifMedian: serifMedian * 0.38
+				serifCurve: serifCurve + 70
+				serifHeight: serifHeight + 30
 		2:
-			base: ['serif-horizontal', 'none']
+			base: ['serif-hz-oblique-obtuse', 'none']
 			id: 'middletop'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[1].expandedTo[1]
 					noneAnchor: contours[1].nodes[1].expandedTo[1]
 					opposite: contours[1].nodes[1].expandedTo[0]
+					obliqueEndPoint: contours[1].nodes[0].expandedTo[1]
 			transformOrigin: contours[1].nodes[1].expandedTo[1]
 			transforms: Array(
+				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
+				[ 'skewX', 15 * spurHeight + 'deg' ],
+				[ 'translateX',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
+			parameters:
+				serifWidth: serifWidth + 33
+				serifMedian: serifMedian * 0.38
+				serifCurve: serifCurve + 70
+				serifHeight: serifHeight + 30

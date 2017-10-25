@@ -10,6 +10,8 @@ exports.glyphs['F_cap'] =
 	parameters:
 		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
 		spacingRight: 50 * spacing + 40 + serifWidth / 2
+		serifCurve: serifCurve + 55
+		serifWidth: serifWidth + 40
 	anchors:
 		0:
 			x: 0
@@ -160,6 +162,11 @@ exports.glyphs['F_cap'] =
 				[ 'skewX', - 7 * serifRotate + 'deg' ],
 				[ 'translateX', ( Math.tan( (7 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 20 / 100 ) * contrast ) ) ]
 			)
+			parameters:
+				serifCurve: serifCurve + 10
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 25
+				serifWidth: serifWidth + 30
 		4:
 			base: ['serif-horizontal', 'none']
 			id: 'middletop'
@@ -169,6 +176,11 @@ exports.glyphs['F_cap'] =
 					noneAnchor: contours[2].nodes[1].expandedTo[0]
 					opposite: contours[2].nodes[1].expandedTo[1]
 					reversed: true
+			parameters:
+				serifCurve: serifCurve + 10
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 25
+				serifWidth: serifWidth + 30
 		5:
 			base: ['serif-horizontal', 'none']
 			id: 'middlebottom'
@@ -182,3 +194,8 @@ exports.glyphs['F_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 10
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 25
+				serifWidth: serifWidth + 30

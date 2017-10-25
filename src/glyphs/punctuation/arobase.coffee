@@ -87,7 +87,7 @@ exports.glyphs['arobase'] =
 				7:
 					x: contours[0].nodes[6].x + 15 + Math.min( 55, ( 55 / 500 ) * xHeight )
 					y: ( 480 / 500 ) * xHeight
-					dirOut: 0 + 'deg'
+					typeIn: 'line'
 					expand:
 						width: ( 85 / 90 ) * thickness
 						angle: 180 + 0 + 'deg'

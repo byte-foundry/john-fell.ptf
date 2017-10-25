@@ -10,6 +10,8 @@ exports.glyphs['A_cap'] =
 	parameters:
 		spacingLeft: 50 * spacing + 10 + (20) + serifWidth * 1.8
 		spacingRight: 50 * spacing + 15 + serifWidth + 15
+		serifHeight: serifHeight * serifOpticThickness
+		serifCurve: serifCurve + 85
 	tags: [
 		'all',
 		'latin',
@@ -122,7 +124,7 @@ exports.glyphs['A_cap'] =
 					tensionIn: serifRoundness
 	components:
 		0:
-			base: ['serif-oblique-obtuse', 'none']
+			base: ['serif-oblique-acute', 'none']
 			id: 'bottomleft'
 			parentAnchors:
 				0:
@@ -130,8 +132,10 @@ exports.glyphs['A_cap'] =
 					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
 					obliqueEndPoint: contours[0].nodes[1].expandedTo[0]
+			parameters:
+				serifWidth: serifWidth + 70
 		1:
-			base: ['serif-oblique-acute', 'none']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'bottomright'
 			parentAnchors:
 				0:
@@ -140,6 +144,8 @@ exports.glyphs['A_cap'] =
 					opposite: contours[0].nodes[0].expandedTo[0]
 					obliqueEndPoint: contours[0].nodes[1].expandedTo[1]
 					scaleX: -1
+			parameters:
+				serifWidth: serifWidth + 30
 		2:
 			base: ['serif-oblique-acute', 'none']
 			id: 'bottomleft2'
@@ -150,6 +156,8 @@ exports.glyphs['A_cap'] =
 					opposite: contours[1].nodes[0].expandedTo[0]
 					obliqueEndPoint: contours[1].nodes[1].expandedTo[1]
 					scaleX: -1
+			parameters:
+				serifWidth: serifWidth + 70
 		3:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'bottomright2'
@@ -159,3 +167,5 @@ exports.glyphs['A_cap'] =
 					noneAnchor: contours[1].nodes[0].expandedTo[0]
 					opposite: contours[1].nodes[0].expandedTo[1]
 					obliqueEndPoint: contours[1].nodes[1].expandedTo[0]
+			parameters:
+				serifWidth: serifWidth + 70

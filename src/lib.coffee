@@ -7,6 +7,7 @@ exports.lib =
 		contrast: _contrast * -1
 		ascenderHeight: xHeight + ascender
 		minThickness: Math.max( 45, ( 95 / 85 ) * thickness )
+		serifOpticThickness: opticThickness * 1.25
 		# serifHeight:
 		# 	if serifHeight > 1
 		# 	then Math.max(1, serifWidth)

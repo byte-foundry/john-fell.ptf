@@ -95,6 +95,9 @@ exports.glyphs['H_cap'] =
 					base: contours[0].nodes[0].expandedTo[0]
 					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
@@ -107,6 +110,9 @@ exports.glyphs['H_cap'] =
 			transforms: Array(
 				[ 'scaleX', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
@@ -119,6 +125,9 @@ exports.glyphs['H_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
@@ -132,6 +141,9 @@ exports.glyphs['H_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		4:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
@@ -140,6 +152,9 @@ exports.glyphs['H_cap'] =
 					base: contours[2].nodes[0].expandedTo[0]
 					noneAnchor: contours[2].nodes[0].expandedTo[0]
 					opposite: contours[2].nodes[0].expandedTo[1]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		5:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
@@ -152,6 +167,9 @@ exports.glyphs['H_cap'] =
 			transforms: Array(
 				[ 'scaleX', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		6:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
@@ -164,6 +182,9 @@ exports.glyphs['H_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		7:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
@@ -177,3 +198,6 @@ exports.glyphs['H_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

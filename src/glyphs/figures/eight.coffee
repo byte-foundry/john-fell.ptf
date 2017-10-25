@@ -43,6 +43,7 @@ exports.glyphs['eight'] =
 					x: contours[0].nodes[3].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[0].x - contours[0].nodes[3].expandedTo[0].x ) * 0.5
 					y: capHeight + overshoot
 					dirOut: 180 + 'deg'
+					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 20 / 85 ) * contrast
 						angle: 180 - 90 + 'deg'
@@ -61,7 +62,7 @@ exports.glyphs['eight'] =
 					x: contours[0].nodes[8].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[8].expandedTo[0].x ) * 0.5
 					y: contours[0].nodes[8].expandedTo[1].y + ( contours[0].nodes[0].expandedTo[0].y - contours[0].nodes[8].expandedTo[1].y ) * 0.5
 					# dirOut: Utils.lineAngle({x: contours[0].nodes[8].expandedTo[0].x, y: contours[0].nodes[8].ey},{x:  contours[0].nodes[0].x, y:  contours[0].nodes[0].expandedTo[1].y}.expandedTo[1] )
-					dirOut: - ( 22 / 750 ) * capHeight + ( 10 * width - 10 ) + 'deg'
+					dirOut: (- ( 22 / 750 ) * capHeight + ( 10 * width - 10 )) / 180 * Math.PI
 					typeIn: 'smooth'
 					expand:
 						width: thickness

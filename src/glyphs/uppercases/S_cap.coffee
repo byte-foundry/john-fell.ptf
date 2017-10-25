@@ -11,6 +11,10 @@ exports.glyphs['S_cap'] =
 	parameters:
 		spacingLeft: 50 * spacing + 50
 		spacingRight: 50 * spacing + 40
+		serifRotate: serifRotate - 1
+		serifCurve: serifCurve + 70
+		serifWidth: serifWidth + 30
+		serifHeight: serifHeight * serifOpticThickness
 	anchors:
 		0:
 			x: contours[0].nodes[1].x + ( contours[0].nodes[3].x - contours[0].nodes[1].x ) * 0.5
@@ -113,7 +117,27 @@ exports.glyphs['S_cap'] =
 	components:
 		0:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'bottom'
+			parentAnchors:
+				0:
+					baseDir: contours[0].nodes[6].dirIn
+					baseWidth: contours[0].nodes[6].expandedTo[0]
+					baseHeight: contours[0].nodes[6].expandedTo[1]
+					noneAnchor: contours[0].nodes[6].expandedTo[0]
+					opposite: contours[0].nodes[6].expandedTo[1]
+					curveEnd: contours[0].nodes[5].expandedTo[0]
+					rotationAngle: -15
+					rotationCenter: contours[0].nodes[6].expandedTo[1]
+					left: true
+					inverseOrder: true
+			parameters:
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 35
+				serifWidth: serifWidth - 15
+				serifCurve: serifCurve + 35
+		1:
+			base: ['serif-curve-inside-auto', 'none']
+			id: 'bottomtop'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[6].dirIn
@@ -124,17 +148,47 @@ exports.glyphs['S_cap'] =
 					curveEnd: contours[0].nodes[5].expandedTo[1]
 					rotationAngle: -15
 					rotationCenter: contours[0].nodes[6].expandedTo[1]
-		1:
+					down: true
+					left: true
+			parameters:
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 10
+				serifWidth: serifWidth + 52
+		2:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'bottom'
+			id: 'top'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut
 					baseWidth: contours[0].nodes[0].expandedTo[0]
 					baseHeight: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
 					curveEnd: contours[0].nodes[1].expandedTo[0]
-					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					rotationAngle: -15
+					rotationCenter: contours[0].nodes[0].expandedTo[0]
+			parameters:
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 10
+				serifWidth: serifWidth + 16
+				serifCurve: serifCurve - 20
+		3:
+			base: ['serif-curve-inside-auto', 'none']
+			id: 'top'
+			parentAnchors:
+				0:
+					baseDir: contours[0].nodes[0].dirOut
+					baseWidth: contours[0].nodes[0].expandedTo[1]
+					baseHeight: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+					curveEnd: contours[0].nodes[1].expandedTo[1]
 					rotationAngle: -15
 					rotationCenter: contours[0].nodes[0].expandedTo[0]
 					down: true
+					inverseOrder: true
+			parameters:
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 35
+				serifWidth: serifWidth - 15
+				serifCurve: serifCurve + 35

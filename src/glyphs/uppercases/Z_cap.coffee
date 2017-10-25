@@ -35,7 +35,7 @@ exports.glyphs['Z_cap'] =
 				1:
 					x: contours[1].nodes[0].expandedTo[0].x + 45 + (0)
 					y: capHeight
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 28 / 85 )
 						angle: - 90 + 'deg'
@@ -55,7 +55,7 @@ exports.glyphs['Z_cap'] =
 				1:
 					x: contours[0].nodes[0].x - 4
 					y: 0
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 30 / 85 )
 						angle: 90 + 'deg'
@@ -75,56 +75,97 @@ exports.glyphs['Z_cap'] =
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[0].nodes[0].expandedTo[1].y
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 95 / 85 )
 						angle: ( Math.PI / 2 ) + Math.acos( (thickness * ( 20 / 85 )) / (thickness * ( 95 / 85 )) )
 						distr: 0
+		3:
+			skeleton: false
+			closed: true
+			nodes:
+				0:
+					x: contours[0].nodes[1].expandedTo[0].x + 10
+					y: contours[0].nodes[1].expandedTo[0].y
+					typeOut: 'line'
+					typeIn: 'line'
+				1:
+					x: contours[0].nodes[1].expandedTo[0].x
+					y: contours[0].nodes[1].expandedTo[0].y
+					typeOut: 'line'
+					typeIn: 'line'
+				2:
+					x: contours[0].nodes[1].expandedTo[1].x - Math.tan( (5 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 29 / 85 ))
+					y: contours[0].nodes[1].expandedTo[1].y
+					typeOut: 'line'
+					typeIn: 'line'
+				3:
+					x: contours[0].nodes[1].expandedTo[1].x + 10
+					y: contours[0].nodes[1].expandedTo[1].y
+					typeOut: 'line'
+					typeIn: 'line'
+		4:
+			skeleton: false
+			closed: true
+			nodes:
+				0:
+					x: contours[1].nodes[1].expandedTo[0].x - 10
+					y: contours[1].nodes[1].expandedTo[0].y
+					typeOut: 'line'
+					typeIn: 'line'
+				1:
+					x: contours[1].nodes[1].expandedTo[0].x
+					y: contours[1].nodes[1].expandedTo[0].y
+					typeOut: 'line'
+					typeIn: 'line'
+				2:
+					x: contours[1].nodes[1].expandedTo[1].x - Math.tan( (-13 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 30 / 85 ))
+					y: contours[1].nodes[1].expandedTo[1].y
+					typeOut: 'line'
+					typeIn: 'line'
+				3:
+					x: contours[1].nodes[1].expandedTo[1].x - 10
+					y: contours[1].nodes[1].expandedTo[1].y
+					typeOut: 'line'
+					typeIn: 'line'
 	components:
 		0:
-			base: 'serif-v'
+			base: ['serif-hz-oblique-obtuse', 'none']
+			id: 'middletop'
 			parentAnchors:
 				0:
-					x: Math.max(contours[1].nodes[0].expandedTo[1].x, contours[1].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 140 / 15 ) )
-					y: Utils.onLine({
-						x: Math.max(contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 140 / 15 ) )
-						on: [ contours[1].nodes[0].expandedTo[1], contours[1].nodes[1].expandedTo[1] ]
-					})
-				1:
-					x: Math.max(contours[1].nodes[0].expandedTo[0].x, contours[1].nodes[1].expandedTo[0].x - serifHeight - serifCurve * ( 140 / 15 ) )
-					y: contours[1].nodes[1].expandedTo[0].y
-				2:
-					anchorLine: contours[1].nodes[1].expandedTo[0].x
-					rightWidth: 90
-					left: false
-					baseLeft: contours[1].nodes[1].expandedTo[0]
-			parentParameters:
-				serifHeight: serifHeight * ( 26 / 20 )
-				serifMedian: serifMedian * 0.77
-				midWidth: midWidth * 0.98
-			transformOrigin: Array( contours[1].nodes[1].expandedTo[0].x, contours[1].nodes[1].expandedTo[0].y )
-			transforms: Array( [ 'skewX', serifRotate * (14) + 'deg' ] )
+					base: contours[0].nodes[1].expandedTo[1]
+					noneAnchor: contours[0].nodes[1].expandedTo[1]
+					opposite: contours[0].nodes[1].expandedTo[0]
+					obliqueEndPoint: contours[0].nodes[0].expandedTo[1]
+			transformOrigin: contours[0].nodes[1].expandedTo[1]
+			transforms: Array(
+				[ 'skewX', 5 * serifRotate + 'deg' ],
+				[ 'translateX',-( Math.tan( (5 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 28 / 85 )) ) ]
+			)
+			parameters:
+				serifCurve: serifCurve + 90
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 25
+				serifWidth: serifWidth + 60
 		1:
-			base: 'serif-v'
+			base: ['serif-hz-oblique-obtuse', 'none']
+			id: 'middletop'
 			parentAnchors:
 				0:
-					x: Math.min(contours[0].nodes[0].expandedTo[1].x, contours[0].nodes[1].expandedTo[1].x + serifHeight + serifCurve * ( 150 / 15 ) )
-					y: contours[0].nodes[1].expandedTo[0].y
-				1:
-					x: Math.min(contours[0].nodes[0].expandedTo[0].x, contours[0].nodes[1].expandedTo[0].x + serifHeight + serifCurve * ( 150 / 15 ) )
-					y: Utils.onLine({
-						x: Math.max(contours[0].nodes[1].expandedTo[0].x, contours[0].nodes[1].expandedTo[0].x + serifHeight + serifCurve * ( 150 / 15 ) )
-						on: [ contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1] ]
-					})
-				2:
-					anchorLine: contours[0].nodes[1].expandedTo[0].x
-					leftWidth: 105
-					right: false
-					baseRight: contours[0].nodes[1].expandedTo[0]
-					directionX: -1
-			parentParameters:
-				serifHeight: serifHeight * ( 28 / 20 )
-				serifMedian: serifMedian * 0.93
-				midWidth: midWidth * 0.98
-			transformOrigin: Array( contours[0].nodes[1].expandedTo[0].x, contours[0].nodes[1].expandedTo[0].y )
-			transforms: Array( [ 'skewX', serifRotate * (8) + 'deg' ] )
+					base: contours[1].nodes[1].expandedTo[1]
+					noneAnchor: contours[1].nodes[1].expandedTo[1]
+					opposite: contours[1].nodes[1].expandedTo[0]
+					obliqueEndPoint: contours[1].nodes[0].expandedTo[1]
+			transformOrigin: contours[1].nodes[1].expandedTo[1]
+			transforms: Array(
+				[ 'scaleX', -1 ]
+				[ 'scaleY', -1 ]
+				[ 'skewX', 13 * serifRotate + 'deg' ],
+				[ 'translateX', -( Math.tan( (-13 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * (  30 / 85 )) ) ]
+			)
+			parameters:
+				serifCurve: serifCurve + 90
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 25
+				serifWidth: serifWidth + 60

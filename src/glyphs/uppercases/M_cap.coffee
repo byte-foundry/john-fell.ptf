@@ -127,6 +127,9 @@ exports.glyphs['M_cap'] =
 					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
 					obliqueEndPoint: contours[0].nodes[1].expandedTo[0]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-oblique-acute', 'none']
 			id: 'bottomright'
@@ -137,6 +140,9 @@ exports.glyphs['M_cap'] =
 					opposite: contours[0].nodes[0].expandedTo[0]
 					obliqueEndPoint: contours[0].nodes[1].expandedTo[1]
 					scaleX: -1
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-oblique-acute', 'none']
 			id: 'bottomleft2'
@@ -146,6 +152,9 @@ exports.glyphs['M_cap'] =
 					noneAnchor: contours[1].nodes[0].expandedTo[0]
 					opposite: contours[1].nodes[0].expandedTo[1]
 					obliqueEndPoint: contours[1].nodes[1].expandedTo[0]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'bottomright2'
@@ -156,8 +165,11 @@ exports.glyphs['M_cap'] =
 					opposite: contours[1].nodes[0].expandedTo[0]
 					obliqueEndPoint: contours[1].nodes[1].expandedTo[1]
 					scaleX: -1
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		4:
-			base: ['none', 'serif-oblique-obtuse']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'firstleft'
 			parentAnchors:
 				0:
@@ -171,8 +183,11 @@ exports.glyphs['M_cap'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		5:
-			base: ['serif-oblique-acute', 'none']
+			base: ['none', 'serif-oblique-acute']
 			id: 'firstright'
 			parentAnchors:
 				0:
@@ -185,8 +200,11 @@ exports.glyphs['M_cap'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		6:
-			base: ['none', 'serif-oblique-acute']
+			base: ['serif-oblique-acute', 'none']
 			id: 'secondleft'
 			parentAnchors:
 				0:
@@ -199,8 +217,11 @@ exports.glyphs['M_cap'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		7:
-			base: ['serif-oblique-acute', 'none']
+			base: ['none', 'serif-oblique-acute']
 			id: 'secondright'
 			parentAnchors:
 				0:
@@ -214,3 +235,6 @@ exports.glyphs['M_cap'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

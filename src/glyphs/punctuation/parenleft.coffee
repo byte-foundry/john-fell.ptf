@@ -42,7 +42,6 @@ exports.glyphs['parenleft'] =
 					x: 320 - (7)
 					y: ( 180 / 210 ) * descender
 					dirIn: 143 + 'deg'
-					typeOut: 'smooth'
 					expand:
 						width: thickness * ( 11 / 85 )
 						angle: 62 + 'deg'

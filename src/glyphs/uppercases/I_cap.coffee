@@ -51,6 +51,9 @@ exports.glyphs['I_cap'] =
 					base: contours[0].nodes[0].expandedTo[0]
 					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
@@ -63,6 +66,9 @@ exports.glyphs['I_cap'] =
 			transforms: Array(
 				[ 'scaleX', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
@@ -75,6 +81,9 @@ exports.glyphs['I_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
@@ -88,3 +97,6 @@ exports.glyphs['I_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

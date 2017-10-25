@@ -124,7 +124,7 @@ exports.glyphs['u'] =
 				[ 'scaleY', -1 ]
 			)
 		1:
-			base: ['serif-vertical', 'none']
+			base: ['none', 'serif-vertical']
 			id: 'bottomright'
 			parentAnchors:
 				0:
@@ -150,6 +150,9 @@ exports.glyphs['u'] =
 				[ 'skewY', 15 * spurHeight + 'deg' ]
 				[ 'translateY',-( Math.tan( (15 * spurHeight) / 180 * Math.PI ) ) ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft2'
@@ -163,7 +166,7 @@ exports.glyphs['u'] =
 				[ 'scaleY', -1 ]
 			)
 		4:
-			base: ['serif-vertical', 'none']
+			base: ['none', 'serif-vertical']
 			id: 'bottomright2'
 			parentAnchors:
 				0:

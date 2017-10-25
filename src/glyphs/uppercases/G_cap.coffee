@@ -13,6 +13,7 @@ exports.glyphs['G_cap'] =
 		serifRotate: serifRotate - 1
 		serifCurve: serifCurve + 70
 		serifWidth: serifWidth + 30
+		serifHeight: serifHeight * serifOpticThickness
 	anchors:
 		0:
 			x: contours[0].nodes[1].x
@@ -134,6 +135,10 @@ exports.glyphs['G_cap'] =
 					curveEnd: contours[0].nodes[1].expandedTo[0]
 					rotationAngle: -15
 					rotationCenter: contours[0].nodes[0].expandedTo[0]
+			parameters:
+				serifMedian: serifMedian / 2
+				serifHeight: serifHeight + 10
+				serifWidth: serifWidth + 21
 		1:
 			base: ['serif-curve-inside-auto', 'none']
 			id: 'top'
@@ -149,6 +154,11 @@ exports.glyphs['G_cap'] =
 					rotationCenter: contours[0].nodes[0].expandedTo[0]
 					down: true
 					inverseOrder: true
+			parameters:
+				serifMedian: serifMedian * 0.375
+				serifHeight: serifHeight + 35
+				serifWidth: serifWidth - 15
+				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'

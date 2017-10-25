@@ -99,6 +99,9 @@ exports.glyphs['P_cap'] =
 					base: contours[0].nodes[0].expandedTo[0]
 					noneAnchor: contours[0].nodes[0].expandedTo[0]
 					opposite: contours[0].nodes[0].expandedTo[1]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'topleft'
@@ -111,6 +114,9 @@ exports.glyphs['P_cap'] =
 			transforms: Array(
 				['scaleY', -1]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'topright'
@@ -123,3 +129,6 @@ exports.glyphs['P_cap'] =
 			transforms: Array(
 				['scaleX', -1]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

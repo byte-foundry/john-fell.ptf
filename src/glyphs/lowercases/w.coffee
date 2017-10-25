@@ -140,7 +140,7 @@ exports.glyphs['w'] =
 				[ 'scaleY', -1 ]
 			)
 		2:
-			base: ['serif-oblique-obtuse', 'none']
+			base: ['serif-oblique-acute', 'none']
 			id: 'secondleft'
 			parentAnchors:
 				0:
@@ -155,7 +155,7 @@ exports.glyphs['w'] =
 				[ 'scaleY', -1 ]
 			)
 		3:
-			base: ['serif-oblique-acute', 'none']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'secondright'
 			parentAnchors:
 				0:

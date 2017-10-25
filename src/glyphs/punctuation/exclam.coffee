@@ -32,8 +32,9 @@ exports.glyphs['exclam'] =
 				1:
 					x: spacingLeft + (thickness * ( 104 / 85 )) / 2
 					y: capHeight - 50 - ( 50 / 85 ) * thickness
-					typeIn: 'line'
 					typeOut: 'line'
+					typeIn: 'smooth'
+					tensionOut: 0.3
 					expand:
 						width: thickness * ( 104 / 85 )
 						angle: 0 + 'deg'
@@ -41,7 +42,7 @@ exports.glyphs['exclam'] =
 				2:
 					x: contours[0].nodes[0].x
 					y: ( 210 / 500 ) * xHeight
-					dirOut: 0 + 'deg'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 16 / 85 )
 						angle: 0 + 'deg'

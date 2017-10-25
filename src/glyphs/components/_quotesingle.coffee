@@ -19,22 +19,21 @@ exports.glyphs['_quotesingle'] =
 					expand:
 						width: thickness * ( 20 / 85 )
 						angle: 0 + 'deg'
-						distr: 0
+						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x
 					y: anchors[0].y - 45
-					# dirIn: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].ey},{x:  contours[0].nodes[2].x, y:  contours[0].nodes[2].expandedTo[0].y}.expandedTo[0] )
-					# dirIn: 90 + 'deg'
-					type: 'line'
+					typeIn: 'smooth'
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 70 / 85 )
 						angle: 0 + 'deg'
-						distr: 0
+						distr: 0.5
 				2:
 					x: contours[0].nodes[0].x
 					y: anchors[0].y - 190
-					dirOut: 0 + 'deg'
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 10 / 85 )
 						angle: 0 + 'deg'
+						distr: 0.5

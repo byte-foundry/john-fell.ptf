@@ -16,6 +16,10 @@ exports.glyphs['nine'] =
 		'latin',
 		'figures'
 	]
+	anchors:
+		0:
+			x: (contours[0].nodes[0].expandedTo[1].x + spacingRight) / 2
+			y: 0
 	contours:
 		0:
 			skeleton: true
@@ -82,8 +86,8 @@ exports.glyphs['nine'] =
 						width: thickness * ( 29 / 85 )
 						angle: 180 + 121 + 'deg'
 						distr: 1
-			transformOrigin: Array( (contours[0].nodes[0].expandedTo[1].x + spacingRight) / 2, 0 )
+			transformOrigin: Object({ x: (contours[0].nodes[0].expandedTo[1].x + spacingRight) / 2, y: 0})
 			transforms: Array(
-				['translateY', ( xHeight ) ],
-				['rotate', 180 + 'deg']
+				['rotate', Math.PI],
+				['translateY', ( xHeight ) ]
 			)

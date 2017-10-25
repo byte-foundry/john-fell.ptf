@@ -10,6 +10,7 @@ exports.glyphs['B_cap'] =
 	parameters:
 		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
 		spacingRight: 50 * spacing + 40
+		serifHeight: serifHeight * serifOpticThickness
 	tags: [
 		'all',
 		'latin',
@@ -175,6 +176,9 @@ exports.glyphs['B_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'topleft'
@@ -184,3 +188,6 @@ exports.glyphs['B_cap'] =
 					noneAnchor: contours[0].nodes[1].expandedTo[0]
 					opposite: contours[0].nodes[1].expandedTo[1]
 					reversed: true
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

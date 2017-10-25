@@ -124,3 +124,45 @@ exports.glyphs['R_cap'] =
 						width: thickness * opticThickness * ( 95 / 85 )
 						angle: 11 + 'deg'
 						distr: 0
+	components:
+		0:
+			base: ['serif-vertical', 'none']
+			id: 'bottomleft'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[0]
+					noneAnchor: contours[0].nodes[0].expandedTo[0]
+					opposite: contours[0].nodes[0].expandedTo[1]
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
+		1:
+			base: ['serif-vertical', 'none']
+			id: 'topleft'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[1].expandedTo[0]
+					noneAnchor: contours[0].nodes[1].expandedTo[0]
+					opposite: contours[0].nodes[1].expandedTo[1]
+			transformOrigin: contours[0].nodes[1].expandedTo[1]
+			transforms: Array(
+				['scaleY', -1]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
+		2:
+			base: ['serif-vertical', 'none']
+			id: 'topright'
+			parentAnchors:
+				0:
+					base: contours[0].nodes[0].expandedTo[1]
+					noneAnchor: contours[0].nodes[0].expandedTo[1]
+					opposite: contours[0].nodes[0].expandedTo[0]
+			transformOrigin: contours[0].nodes[0].expandedTo[1]
+			transforms: Array(
+				['scaleX', -1]
+			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35

@@ -28,7 +28,7 @@ exports.glyphs['plus'] =
 					expand:
 						width: thickness * ( 60 / 85 )
 						angle: 90 + 'deg'
-						distr: 0
+						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x + 200 * width + 220
 					y: xHeight * ( 220 / 500 ) + (30)
@@ -37,7 +37,7 @@ exports.glyphs['plus'] =
 					expand:
 						width: thickness * ( 60 / 85 )
 						angle: 90 + 'deg'
-						distr: 0
+						distr: 0.5
 		1:
 			skeleton: true
 			closed: false
@@ -50,7 +50,7 @@ exports.glyphs['plus'] =
 					expand:
 						width: thickness * ( 66 / 85 )
 						angle: 0 + 'deg'
-						distr: 0
+						distr: 0.5
 				1:
 					x: contours[1].nodes[0].x
 					y: contours[0].nodes[0].y - ( ( contours[0].nodes[1].x - contours[0].nodes[0].x ) / 2 )
@@ -59,3 +59,4 @@ exports.glyphs['plus'] =
 					expand:
 						width: thickness * ( 66 / 85 )
 						angle: 0 + 'deg'
+						distr: 0.5

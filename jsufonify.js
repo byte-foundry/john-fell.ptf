@@ -7,6 +7,74 @@ var through = require('through2'),
 // consts
 const PLUGIN_NAME = 'gulp-jsufonify';
 
+function ufoToPtf( src ) {
+	if ( src.parameter ) {
+		src.parameters = src.parameter;
+		delete src.parameter;
+	}
+
+	if ( src.anchor ) {
+		src.anchors = src.anchor;
+		delete src.anchor;
+	}
+
+	if ( src.outline && src.outline.contour ) {
+		src.contours = src.outline.contour;
+		delete src.outline.contour;
+	}
+
+	if ( src.contours ) {
+		src.contours.forEach(function(contour) {
+			if ( contour.point ) {
+				contour.nodes = contour.point;
+				delete contour.point;
+			}
+		});
+	}
+
+	if ( src.outline && src.outline.component ) {
+		src.components = src.outline.component;
+
+		src.components.forEach(function(component) {
+			if ( component.anchor ) {
+				component.parentAnchors = component.anchor;
+				delete component.anchor;
+			}
+
+			if ( component.parameter ) {
+				component.parentParameters = component.parameter;
+				delete component.parameter;
+			}
+		});
+
+		delete src.outline.component;
+	}
+
+	delete src.outline;
+
+	if ( src.lib && src.lib.transforms ) {
+		src.transforms = src.lib.transforms;
+		delete src.lib.transforms;
+	}
+
+	if ( src.lib && src.lib.transformOrigin ) {
+		src.transformOrigin = src.lib.transformOrigin;
+		delete src.lib.transformOrigin;
+	}
+
+	if ( src.lib && src.lib.parameters ) {
+		src.parameters = src.lib.parameters;
+		delete src.lib.parameters;
+	}
+
+	if ( src.lib && src.lib.solvingOrder ) {
+		src.solvingOrder = src.lib.solvingOrder;
+		delete src.lib.solvingOrder;
+	}
+
+	return src;
+};
+
 function addComponents( glyph ) {
 	_(glyph.components).forEach(function( component, i ) {
 		glyph.outline.component[i] = component;
@@ -27,6 +95,35 @@ function addComponents( glyph ) {
 	});
 }
 
+function linkToRelatedGlyphs(glyph, glyphsByName) {
+	var base = glyphsByName[glyph.base];
+
+	base.relatedGlyphs = base.relatedGlyphs || [];
+	glyph.relatedGlyphs = glyph.relatedGlyphs || [];
+
+	base.relatedGlyphs.forEach(function(name) {
+		glyphsByName[name].relatedGlyphs = glyphsByName[name].relatedGlyphs || [];
+		glyphsByName[name].relatedGlyphs.push(glyph.name);
+	});
+	glyph.relatedGlyphs = glyph.relatedGlyphs.concat(base.name, base.relatedGlyphs);
+
+	base.relatedGlyphs.push(glyph.name);
+}
+
+function relatedGlyphsToUnicode(glyph, glyphsByName) {
+	const glyphs = {};
+	glyph.relatedGlyphs.forEach((name) => {
+		const relGlyph = glyphsByName[name];
+
+		if (!glyphs[relGlyph.unicode]) {
+			glyphs[relGlyph.unicode] = {};
+		}
+
+		glyphs[relGlyph.unicode] = name;
+	});
+	glyph.relatedGlyphs = glyphs;
+}
+
 // plugin level function (dealing with files)
 function jsufonify(/*prefixText*/) {
 
@@ -40,6 +137,7 @@ function jsufonify(/*prefixText*/) {
 		font = sandbox.exports;
 
 		var charMap = {};
+		var altMap = {};
 
 		// WIP: convert ptf object to jsufon
 		_.forEach(font.glyphs, function( glyph, name ) {
@@ -52,6 +150,7 @@ function jsufonify(/*prefixText*/) {
 				glyph.unicode = glyph.unicode.charCodeAt(0);
 			}
 			charMap[glyph.unicode] = glyph;
+			altMap[glyph.name] = glyph;
 
 			// glyph.anchors -> glyph.anchor
 			if ( glyph.anchors ) {
@@ -115,6 +214,22 @@ function jsufonify(/*prefixText*/) {
 			return glyph;
 		});
 
+		_.forEach(font.glyphs, function(glyph) {
+			if(glyph.base === undefined) {
+				return;
+			}
+
+			linkToRelatedGlyphs(glyph, font.glyphs);
+		})
+
+		_.forEach(font.glyphs, function(glyph) {
+			if(glyph.relatedGlyphs === undefined) {
+				return;
+			}
+
+			relatedGlyphsToUnicode(glyph, font.glyphs);
+		})
+
 		// temporary workaround, add diacritics base handling here
 		_.forEach(font.glyphs, function( _glyph ) {
 			// Temporary workaround: deal with diacritics here.
@@ -124,7 +239,7 @@ function jsufonify(/*prefixText*/) {
 
 			// we'll save the diacritics sourcs, replace it with the base glyph
 			// source and then restore/merge the properties we're interested in
-			var glyph = _.clone( charMap[ _glyph.base.charCodeAt(0) ], true );
+			var glyph = _.clone( altMap[ _glyph.base ], true );
 
 			glyph.name = _glyph.name;
 			glyph.unicode = _glyph.unicode;

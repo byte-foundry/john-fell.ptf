@@ -136,7 +136,7 @@ exports.glyphs['y'] =
 		# 				distr: 0.25
 	components:
 		0:
-			base: ['serif-oblique-obtuse', 'none']
+			base: ['serif-oblique-acute', 'none']
 			id: 'thirdleft'
 			parentAnchors:
 				0:
@@ -150,8 +150,10 @@ exports.glyphs['y'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		1:
-			base: ['serif-oblique-acute', 'none']
+			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdright'
 			parentAnchors:
 				0:
@@ -164,6 +166,8 @@ exports.glyphs['y'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		2:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdleft'
@@ -179,6 +183,8 @@ exports.glyphs['y'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		3:
 			base: ['serif-oblique-acute', 'none']
 			id: 'thirdright'
@@ -193,3 +199,5 @@ exports.glyphs['y'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40

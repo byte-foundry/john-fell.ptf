@@ -93,6 +93,9 @@ exports.glyphs['J_cap'] =
 			transforms: Array(
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
@@ -106,3 +109,6 @@ exports.glyphs['J_cap'] =
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifWidth: serifWidth + 20
+				serifCurve: serifCurve + 35
