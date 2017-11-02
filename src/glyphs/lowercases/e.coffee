@@ -42,8 +42,8 @@ exports.glyphs['e'] =
 						width: thickness * ( 25 / 85 )
 						distr: 1
 				2:
-					x: contours[0].nodes[4].expandedTo[1].x + 100 + 274 * width + (67)
-					y: xHeight * ( 340 / 500 ) * crossbar
+					x: contours[0].nodes[4].expandedTo[1].x + 100 + 274 * width + (67) + Math.max(0, (thickness - 120) * 33 / 60)
+					y: xHeight * ( 340 / 500 ) * crossbar - Math.max(0, (thickness - 120) * 33 / 60)
 					dirOut: Math.max( 90, 150 - ( 50 / 500 ) * xHeight ) + 'deg'
 					tensionOut: 1.2
 					expand:
@@ -56,8 +56,8 @@ exports.glyphs['e'] =
 					dirOut: 180 + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 20 / 85 )
-						angle: - 104 + 180 + 'deg'
+						width: thickness * ( 20 / 85 ) + Math.max(0, (thickness - 120) * 14 / 60)
+						angle: (- 104 + 180) / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.46 / 60)
 						distr: 1
 				4:
 					x: spacingLeft
@@ -75,8 +75,8 @@ exports.glyphs['e'] =
 					typeIn: 'smooth'
 					# dirIn: 0 + 'deg'
 					expand:
-						angle: 70 + 180 + 'deg'
-						width: thickness * ( 60 / 85 )
+						angle: (70 + 180) / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.32 / 60)
+						width: thickness * ( 60 / 85 ) + Math.max(0, (thickness - 120) * 8 / 60)
 						distr: 1
 				6:
 					x: contours[0].nodes[2].expandedTo[1].x - ( 20 / 85 ) * thickness + ( 10 / 85 ) * thickness * aperture - 10

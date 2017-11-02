@@ -26,8 +26,8 @@ exports.glyphs['d'] =
 			nodes:
 				0:
 					x: Math.max(
-						contours[1].nodes[2].expandedTo[0].x + 200 * width + 255 - (9),
-						contours[1].nodes[2].expandedTo[1].x + 0.75 * thickness + 10
+						contours[1].nodes[2].expandedTo[0].x + 200 * width + 234 + Math.max(0, (thickness - 120) * 52 / 60),
+						contours[1].nodes[2].expandedTo[1].x + 0.75 * thickness + 10 + Math.max(0, (thickness - 120) * 52 / 60)
 					)
 					y: 0 + ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
 					dirOut: 90 + 'deg'
@@ -55,7 +55,7 @@ exports.glyphs['d'] =
 					dirOut: - 125 + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 30 / 85 )
+						width: thickness * ( 30 / 85 ) * contrast
 						angle: 90 + 'deg'
 						distr: 0.25
 				1:
@@ -65,16 +65,16 @@ exports.glyphs['d'] =
 					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 50 / 85 )
-						angle: 45 + 'deg'
+						angle: 45 / 180 * Math.PI
 						distr: 0
 				2:
-					x: spacingLeft + (23)
+					x: spacingLeft + contours[1].nodes[2].expand.width * Math.cos(contours[1].nodes[2].expand.angle) * 0.25
 					y: xHeight * ( 257 / 500 )
 					dirOut: 90 + 'deg'
 					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 91 / 86 )
-						angle: 15 + 'deg'
+						angle: 15 / 180 * Math.PI
 						distr: 0.25
 				3:
 					x: contours[1].nodes[2].expandedTo[0].x + ( contours[0].nodes[1].expandedTo[1].x - contours[1].nodes[2].expandedTo[1].x ) * 0.65 - (4)
@@ -83,21 +83,21 @@ exports.glyphs['d'] =
 					tensionIn: 1.1
 					typeOut: 'smooth'
 					expand:
-						width: thickness * ( 27 / 86 )
-						angle: - 68 + 'deg'
+						width: thickness * ( 27 / 86 )+ Math.max(0, (thickness - 120) * 16 / 60)
+						angle: - 68 / 180 * Math.PI + Math.max(0, (thickness - 120) * 0.4 / 60)
 						distr: 0
 				4:
-					x: contours[0].nodes[0].expandedTo[0].x + thickness * ( 5 / 85 )
-					y: xHeight - xHeight * ( ( 500 - 385 ) / 500 )
-					y: xHeight - xHeight * ( 115 / 500 )
-					dirIn: 116 + 'deg'
+					x: contours[0].nodes[0].expandedTo[0].x
+					y: xHeight - xHeight * ( 125 / 500 )
 					dirIn: Math.max( 146 - ( 30 / 500 ) * xHeight, 90 ) + 'deg'
+					dirIn: 107 + 'deg'
 					# dirOut: 90 + 'deg'
 					tensionIn: 0.9
 					typeOut: 'smooth'
 					expand:
 						width: Math.min( thickness * ( 54 / 86 ), ( thickness * ( 54 / 86 ) / 500 ) * xHeight )
-						angle: 180 + 34 + 'deg'
+						width: thickness * ( 81 / 86 ) * contrast
+						angle: 180 + 13 + 'deg'
 						distr: 1
 		2:
 			skeleton: false

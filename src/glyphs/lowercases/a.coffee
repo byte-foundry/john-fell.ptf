@@ -25,13 +25,12 @@ exports.glyphs['a'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[2].expandedTo[1].x + 120 - (0)
-					y: Math.min( 115, ( 115 / 500 ) * xHeight )
-					y: contours[0].nodes[1].y + ( Math.sin( 60 / 180 * Math.PI ) * (( 70 / 85 ) * thickness) ) + 48 + (0)
+					x: contours[0].nodes[2].expandedTo[1].x + 120 - (0) - Math.max(0, (thickness - 120) * 40 / 60)
+					y: contours[0].nodes[1].y + ( Math.sin( 60 / 180 * Math.PI ) * (( 70 / 85 ) * thickness) ) + 48 + (0) - Math.max(0, (thickness - 120) * 47 / 60)
 					dirOut: - 100 + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: 6 + thickness * ( 10 / 85 )
+						width: 6 + thickness * ( 10 / 85 ) * contrast
 						angle: 180 - 26 + 'deg'
 						distr: 0.25
 				1:
@@ -41,11 +40,11 @@ exports.glyphs['a'] =
 					typeIn: 'smooth'
 					expand:
 						# width: Math.min( Math.min( contours[0].nodes[2].expandedTo[0].y - 10 ,thickness * ( 69 / 85 ) ), thickness * ( 69 / 85 ) * ( xHeight / 500 ) )
-						width: ( 70 / 85 ) * thickness
-						angle: 60 + 'deg'
+						width: ( 70 / 85 ) * thickness - Math.max(0, (thickness - 120) * 35 / 60)
+						angle: (60) / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.17 / 60)
 						distr: 0
 				2:
-					x: contours[1].nodes[2].expandedTo[0].x + 200 * width + 155 - (21)
+					x: contours[1].nodes[2].expandedTo[0].x + 200 * width + 155 - (21) + Math.max(0, (thickness - 120) * 47 / 60)
 					y: Math.min(
 						( 52 + ( 50 / 85 ) * thickness ),
 						( ( 52 + ( 50 / 85 ) * thickness ) / 500 ) * xHeight
@@ -72,7 +71,7 @@ exports.glyphs['a'] =
 					dirIn: 0 + 'deg'
 					typeOut: 'smooth'
 					expand:
-						width: thickness * ( 40 / 85 ) * contrast
+						width: thickness * ( 40 / 85 ) * contrast + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 35 / 60)
 						# angle: 180 - 138 + 'deg'
 						angle: Math.min(
 							60,
@@ -80,7 +79,7 @@ exports.glyphs['a'] =
 								40,
 								( 90 / 85 ) * thickness - 50
 							)
-						) + 'deg'
+						) / 180 * Math.PI - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.65 / 60)
 						distr: 1
 				5:
 					x: contours[1].nodes[2].expandedTo[0].x + 20
@@ -117,7 +116,7 @@ exports.glyphs['a'] =
 					tensionIn: 1.2
 					expand:
 						width: thickness * ( 15 / 85 ) * contrast
-						angle: 116 + 'deg'
+						angle: 116 / 180 * Math.PI
 						distr: 0
 				1:
 					# x: 135 * width
@@ -126,8 +125,8 @@ exports.glyphs['a'] =
 					dirIn: 0 + 'deg'
 					typeOut: 'smooth'
 					expand:
-						width: thickness * ( 64 / 85 )
-						angle: 45 + 'deg'
+						width: thickness * ( 64 / 85 ) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 23 / 60)
+						angle: 45 / 180 * Math.PI - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.16 / 60)
 						distr: 0
 				2:
 					x: spacingLeft + (21)
@@ -142,7 +141,7 @@ exports.glyphs['a'] =
 						distr: 0.25
 				3:
 					x: contours[0].nodes[2].expandedTo[0].x + thickness * (8/86)
-					y: ( 275 / 500 ) * xHeight * crossbar - (8)
+					y: ( 275 / 500 ) * xHeight * crossbar - (8) + Math.max(0, (thickness - 120) * 26 / 60)
 					dirIn: Math.max( Math.min( - 150, - 163 * width), - 170 ) + 'deg'
 					tensionIn: Math.min( 1.35 * width, 1.35 )
 					# typeOut: 'line'
