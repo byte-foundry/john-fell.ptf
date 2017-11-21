@@ -8,7 +8,7 @@ exports.glyphs['c'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 45 + (19)
+		spacingLeft: 50 * spacing + 45
 		spacingRight: 50 * spacing + 30
 	tags: [
 		'all',
@@ -38,17 +38,17 @@ exports.glyphs['c'] =
 					dirOut: 0 + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: (0.8 * contrast + 0.2) * thickness * ( 60 / 85 ) + Math.max(0, (thickness - 120) * 18 / 60) + Math.max(0, (thickness - 120) * (1 - contrast) * 1.17 * 83 / 60)
-						angle: 60 / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.23 / 60) - Math.max(0, (thickness - 120) * (1 - contrast) * 1.17 * 0.24 / 60)
+						width: (0.8 * contrast + 0.2) * thickness * ( 60 / 85 ) + Math.max(0, (thickness - 120) * 18 / 60) + Math.max(0, (thickness - 120) * (1 - contrast) * 1.17 * 24 / 60)
+						angle: 60 / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.23 / 60) - Math.max(0, (thickness - 120) * (1 - contrast) * 1.17 * 0.31 / 60)
 						distr: 0
 				2:
-					x: spacingLeft
+					x: spacingLeft + 0.25 * contours[0].nodes[2].expand.width * Math.cos(contours[0].nodes[2].expand.angle)
 					y: xHeight * ( 235 / 500 ) + (10)
 					dirOut: 90 + 'deg'
 					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 96 / 85 )
-						angle: 23 + 10 - 10 * ( thickness / 85 ) + 'deg'
+						angle: (23 + 10 - 10 * ( thickness / 85 )) / 180 * Math.PI
 						distr: 0.25
 				3:
 					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[1].x - contours[0].nodes[2].expandedTo[1].x ) * 0.5 - Math.max(0, (thickness - 120) * 15 / 60)

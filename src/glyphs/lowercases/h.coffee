@@ -8,8 +8,8 @@ exports.glyphs['h'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 40 - (8) + serifWidth + 40
-		spacingRight: 50 * spacing + 30 + serifWidth + 25
+		spacingLeft: 50 * spacing + serifWidth + 40
+		spacingRight: 50 * spacing + serifWidth + 30
 	anchors:
 		0:
 			x: 120 + ( 21 )
@@ -55,11 +55,11 @@ exports.glyphs['h'] =
 					# angle: - 90 + axis + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 25 / 85 ) * contrast * width
+						width: thickness * ( 25 / 85 ) * contrast * width + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 14 / 60)
 						angle: - 90 + 'deg'
 						distr: 0
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * 0.6
+					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * 0.6 - Math.max(0, (thickness - 120) * 11 / 60)
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					# angle: Math.max( - thickness - 77 * contrast, Math.max( - 129 * width, - 129 ) ) + 'deg'
@@ -67,17 +67,18 @@ exports.glyphs['h'] =
 					tensionOut: 1.1
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 77 / 85 )
-						angle: - 129 + 'deg'
+						width: thickness * ( 77 / 85 ) - Math.max(0, (thickness - 120) * 31 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 28 / 60)
+						angle: - 129 / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.1 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.31 / 60)
 						distr: 0
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + 100 + 225 * width - (64)
-					y: xHeight - 170 - thickness + 85
-					dirOut: - 90 + 'deg'
+					x: contours[0].nodes[0].expandedTo[1].x + 100 + 225 * width - (64) - Math.max(0, (thickness - 100) * 54 / 80)
+					y: xHeight - 170 - thickness + 85 + Math.max(0, (thickness - 120) * 63 / 60)
+					dirIn: - 90 + 'deg'
 					typeOut: 'line'
+					tensionIn: 1 + Math.max(0, (thickness - 120) * 0.2 / 60)
 					expand:
-						width: thickness
-						angle: 180 + 'deg'
+						width: thickness + Math.max(0, (thickness - 120) * 3 / 60)
+						angle: Math.PI + Math.max(0, (thickness - 120) * 0.19 / 60)
 						distr: 0.75
 				3:
 					x: contours[1].nodes[2].x

@@ -9,8 +9,8 @@ exports.glyphs['q'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 45 + (21)
-		spacingRight: 50 * spacing + 35 + (16) + serifWidth + 15
+		spacingLeft: 50 * spacing + 45
+		spacingRight: 50 * spacing + serifWidth + 5
 	tags: [
 		'all',
 		'latin',
@@ -23,9 +23,9 @@ exports.glyphs['q'] =
 			nodes:
 				0:
 					x: Math.max(
-						contours[1].nodes[2].expandedTo[0].x + 200 * width + 250 - (20),
+						contours[1].nodes[2].expandedTo[0].x + 200 * width + 250 - 0.25 * thickness,
 						contours[1].nodes[2].expandedTo[1].x + 0.75 * thickness + 10
-					)
+					) + Math.max(0, (thickness - 120) * 93 / 60)
 					y: descender * ( 220 / 250 ) + Math.max( 0, serifHeight * serifArc )
 					dirOut: 90 + 'deg'
 					typeOut: 'line'
@@ -84,7 +84,7 @@ exports.glyphs['q'] =
 						angle: 45 + 'deg'
 						distr: 0
 				2:
-					x: spacingLeft
+					x: spacingLeft + 0.25 * contours[0].nodes[2].expand.width * Math.cos(contours[0].nodes[2].expand.angle)
 					y: xHeight * ( 257 / 500 )
 					dirOut: 90 + 'deg'
 					typeIn: 'smooth'
@@ -93,7 +93,7 @@ exports.glyphs['q'] =
 						angle: 15 + 'deg'
 						distr: 0.25
 				3:
-					x: contours[1].nodes[2].expandedTo[0].x + ( contours[1].nodes[4].expandedTo[0].x - contours[1].nodes[2].expandedTo[0].x ) * 0.6
+					x: (contours[1].nodes[2].expandedTo[1].x * 125 + contours[1].nodes[0].expandedTo[0].x * 157) / 282
 					y: xHeight + overshoot
 					dirIn: 0 + 'deg'
 					tensionIn: 1.1
@@ -103,26 +103,13 @@ exports.glyphs['q'] =
 						angle: - 104 + 'deg'
 						distr: 0
 				4:
-					expandedTo: [
-						{
-							x: contours[0].nodes[2].expandedTo[0].x
-							y: contours[0].nodes[2].expandedTo[0].y
-							dirIn: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
-							dirOut:
-								if thickness < 30
-								then Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
-								else 118 + 'deg'
-						},
-						{
-							x: contours[0].nodes[1].expandedTo[0].x
-							y: contours[0].nodes[1].expandedTo[0].y
-							dirIn: Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
-							dirOut:
-								if thickness < 30
-								then Utils.lineAngle({x: contours[0].nodes[1].expandedTo[0].x, y: contours[0].nodes[1].expandedTo[0].y},{x:  contours[0].nodes[2].expandedTo[0].x, y:  contours[0].nodes[2].expandedTo[0].y} ) - Math.PI / 2
-								else 118 + 'deg'
-						}
-					]
+					x: contours[0].nodes[1].expandedTo[0].x + 5
+					y: contours[0].nodes[3].y - 125
+					dirIn: 107 / 180 * Math.PI
+					expand:
+						width: thickness - 5
+						angle: Math.PI
+						distr: 1
 	components:
 		0:
 			base: ['serif-vertical', 'none']

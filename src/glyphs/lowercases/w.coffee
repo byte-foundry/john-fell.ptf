@@ -8,12 +8,14 @@ exports.glyphs['w'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 5 + (95) + serifWidth
-		spacingRight: 50 * spacing + 5 + serifWidth + 20
+		spacingLeft: 50 * spacing + 5 + serifWidth
+		spacingRight: 50 * spacing + 5 + serifWidth
 	anchors:
 		0:
 			x: 395
 			y: xHeight
+			angleOne: Utils.lineAngle({x: contours[1].nodes[1].x, y: contours[1].nodes[1].y}, {x: contours[1].nodes[0].expandedTo[0].x, y: contours[1].nodes[0].expandedTo[0].y})
+			angleTwo: Utils.lineAngle({x: contours[3].nodes[1].x, y: contours[3].nodes[1].y}, {x: contours[3].nodes[0].expandedTo[0].x, y: contours[3].nodes[0].expandedTo[0].y})
 	tags: [
 		'all',
 		'latin',
@@ -26,17 +28,17 @@ exports.glyphs['w'] =
 			nodes:
 				0:
 					x: Utils.onLine({
-						y: xHeight * ( 350 / 500 )
+						y: contours[0].nodes[0].y
 						on: [ contours[3].nodes[0].expandedTo[0], contours[3].nodes[1].expandedTo[0] ]
 					}) + thickness * ( 33 / 85 ) * 0.25
-					y: xHeight * ( 350 / 500 )
+					y: xHeight * ( 350 / 500 ) + Math.max(0, (thickness - 120) * 60 / 60)
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 33 / 85 )
 						angle: 0 + 'deg'
 						distr: 0.25
 				1:
-					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.45
+					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.45 - Math.max(0, (thickness - 120) * 16 / 60)
 					y: - overshoot
 					typeIn: 'line'
 					expand:
@@ -48,7 +50,7 @@ exports.glyphs['w'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + 0.75 * contours[1].nodes[0].expand.width
 					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand:
@@ -60,10 +62,7 @@ exports.glyphs['w'] =
 					y: - overshoot
 					typeIn: 'line'
 					expand:
-						width:
-							if width < 1
-							then ( thickness * ( 120 / 85 ) / 500 ) * xHeight
-							else ( thickness * ( ( 120 - 35 * width + 35 ) / 85 ) / 500 ) * xHeight
+						width: contours[1].nodes[0].expand.width * Math.sin(Math.PI - anchors[0].angleOne) / Math.cos(contours[1].nodes[1].expand.angle + Math.PI / 2 - anchors[0].angleOne)
 						angle: Utils.lineAngle({x: contours[0].nodes[0].expandedTo[0].x, y: contours[0].nodes[0].expandedTo[0].y},{x:  contours[0].nodes[1].expandedTo[0].x, y:  contours[0].nodes[1].expandedTo[0].y}) + Math.PI
 						distr: 0
 		2:
@@ -71,7 +70,7 @@ exports.glyphs['w'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[3].nodes[0].expandedTo[1].x + 90 + 180 * width - (10) + ( thickness * ( 40 / 85 ) / 2 )
+					x: contours[3].nodes[0].expandedTo[1].x + 90 + 180 * width - (10) + ( thickness * ( 40 / 85 ) / 2 ) - Math.max(0, (thickness - 120) * 45 / 60)
 					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand:
@@ -79,7 +78,7 @@ exports.glyphs['w'] =
 						angle: 0 + 'deg'
 						distr: 0.25
 				1:
-					x: contours[3].nodes[0].expandedTo[1].x + ( contours[2].nodes[0].expandedTo[0].x - contours[3].nodes[0].expandedTo[1].x ) * 0.35
+					x: contours[3].nodes[0].expandedTo[1].x + ( contours[2].nodes[0].expandedTo[0].x - contours[3].nodes[0].expandedTo[1].x ) * 0.35 - Math.max(0, (thickness - 120) * 16 / 60)
 					y: - overshoot
 					typeIn: 'line'
 					expand:
@@ -103,10 +102,7 @@ exports.glyphs['w'] =
 					y: - overshoot
 					typeIn: 'line'
 					expand:
-						width:
-							if width < 1
-							then ( thickness * ( 120 / 85 ) / 500 ) * xHeight
-							else ( thickness * ( ( 120 - 35 * width + 35 ) / 85 ) / 500 ) * xHeight
+						width: contours[3].nodes[0].expand.width * Math.sin(Math.PI - anchors[0].angleTwo) / Math.cos(contours[3].nodes[1].expand.angle + Math.PI / 2 - anchors[0].angleTwo)
 						angle: Utils.lineAngle({x: contours[2].nodes[0].expandedTo[0].x, y: contours[2].nodes[0].expandedTo[0].y},{x:  contours[2].nodes[1].expandedTo[0].x, y:  contours[2].nodes[1].expandedTo[0].y}) + Math.PI
 						distr: 0
 	components:
@@ -125,6 +121,8 @@ exports.glyphs['w'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		1:
 			base: ['serif-oblique-acute', 'none']
 			id: 'firstright'
@@ -139,6 +137,8 @@ exports.glyphs['w'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		2:
 			base: ['serif-oblique-acute', 'none']
 			id: 'secondleft'
@@ -154,6 +154,8 @@ exports.glyphs['w'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		3:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'secondright'
@@ -168,6 +170,8 @@ exports.glyphs['w'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		4:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdleft'
@@ -183,6 +187,8 @@ exports.glyphs['w'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		5:
 			base: ['serif-oblique-acute', 'none']
 			id: 'thirdright'
@@ -197,3 +203,5 @@ exports.glyphs['w'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40

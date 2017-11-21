@@ -8,8 +8,8 @@ exports.glyphs['m'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 50 + (0) + serifWidth + 15
-		spacingRight: 50 * spacing + 30 + serifWidth + 15
+		spacingLeft: 50 * spacing + serifWidth + 40
+		spacingRight: 50 * spacing + serifWidth + 30
 	tags: [
 		'all',
 		'latin',
@@ -48,7 +48,7 @@ exports.glyphs['m'] =
 						else 60 - 5 * width + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 25 / 85 ) * contrast * width
+						width: thickness * ( 25 / 85 ) * contrast * width + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 14 / 60)
 						angle: - 90 + 'deg'
 						distr: 0
 				1:
@@ -60,12 +60,12 @@ exports.glyphs['m'] =
 					tensionOut: 1.2
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 72 / 85 )
-						angle: - 119 + 'deg'
+						width: thickness * ( 72 / 85 ) - Math.max(0, (thickness - 120) * 17 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 28 / 60)
+						angle: - 119 / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.26 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.31 / 60)
 						distr: 0
 				2:
 					x: contours[0].nodes[1].expandedTo[1].x + 220 * width + (64)
-					y: xHeight - 170 - thickness + 85
+					y: xHeight - 170 - thickness + 85 + Math.max(0, (thickness - 120) * 63 / 60)
 					dirOut: - 90 + 'deg'
 					typeOut: 'line'
 					expand:
@@ -86,13 +86,13 @@ exports.glyphs['m'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[2].expandedTo[0].x - ( 5 / 85 ) * thickness
+					x: contours[1].nodes[2].expandedTo[0].x - ( 5 / 85 ) * thickness - Math.max(0, (thickness - 120) * 7 / 60)
 					# y: xHeight * ( 370 / 500 )
 					y: contours[1].nodes[0].y
 					dirOut: if width <= 1.2 then 60 - 60 * width + 60 + 'deg' else 60 - 5 * width + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 25 / 85 ) * contrast * width
+						width: thickness * ( 25 / 85 ) * contrast * width + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 14 / 60)
 						angle: - 90 + 'deg'
 						distr: 0
 				1:
@@ -104,13 +104,13 @@ exports.glyphs['m'] =
 					tensionOut: 1.2
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 72 / 85 )
-						angle: - 119 + 'deg'
+						width: thickness * ( 72 / 85 ) - Math.max(0, (thickness - 120) * 17 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 28 / 60)
+						angle: - 119 / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.26 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.31 / 60)
 						distr: 0
 				2:
 					x: contours[1].nodes[2].x + 300 * width
 					x: contours[1].nodes[2].expandedTo[0].x + 220 * width + (64)
-					y: xHeight - 170 - thickness + 85
+					y: xHeight - 170 - thickness + 85 + Math.max(0, (thickness - 120) * 63 / 60)
 					dirIn: - 90 + 'deg'
 					typeOut: 'line'
 					expand:

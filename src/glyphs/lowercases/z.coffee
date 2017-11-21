@@ -53,7 +53,7 @@ exports.glyphs['z'] =
 						angle: 90 + 'deg'
 						distr: 0
 				1:
-					x: contours[1].nodes[0].x + 200 * width + 190
+					x: contours[1].nodes[0].x + 200 * width + 190 + Math.max(0, (thickness - 120) * 70 / 60)
 					y: 0
 					typeIn: 'line'
 					expand:
@@ -133,7 +133,7 @@ exports.glyphs['z'] =
 			transforms: Array(
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
-				[ 'skewX', 15 * spurHeight + 'deg' ],
+				[ 'skewX', 6 * spurHeight + 'deg' ],
 				[ 'translateX',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
 			parameters:

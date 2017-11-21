@@ -54,7 +54,6 @@ exports.glyphs['Q_cap'] =
 					y: - overshoot
 					dirOut: 180 + 'deg'
 					typeIn: 'smooth'
-					tensionOut: 0.5
 					expand:
 						width: thickness * contrast * ( 26 / 86 )
 						angle: - 101 + 180 + 'deg'
@@ -74,7 +73,7 @@ exports.glyphs['Q_cap'] =
 						distr: 0
 				1:
 					x: contours[1].nodes[2].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[1].x - contours[1].nodes[2].expandedTo[1].x ) * 0.6
-					y: - 95 - ( 30 / 90 ) * thickness
+					y: - 95 - ( 30 / 90 ) * thickness - Math.max(0, (thickness - 120) * 29 / 60)
 					dirIn: 0 + 'deg'
 					typeOut: 'smooth'
 					expand:

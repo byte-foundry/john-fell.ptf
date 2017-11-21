@@ -8,8 +8,8 @@ exports.glyphs['u'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 13 + serifWidth + 15
-		spacingRight: 50 * spacing + 15 + serifWidth + 25
+		spacingLeft: 50 * spacing + serifWidth + 15
+		spacingRight: 50 * spacing + serifWidth + 10 + 15
 	tags: [
 		'all',
 		'latin',
@@ -151,7 +151,7 @@ exports.glyphs['u'] =
 				[ 'translateY',-( Math.tan( (15 * spurHeight) / 180 * Math.PI ) ) ]
 			)
 			parameters:
-				serifWidth: serifWidth + 20
+				serifWidth: serifWidth + 10
 				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-vertical', 'none']

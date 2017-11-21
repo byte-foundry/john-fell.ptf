@@ -8,8 +8,8 @@ exports.glyphs['n'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 50 + (0) + serifWidth + 15
-		spacingRight: 50 * spacing + 30 + serifWidth + 15
+		spacingLeft: 50 * spacing + serifWidth + 40
+		spacingRight: 50 * spacing + serifWidth + 30
 	tags: [
 		'all',
 		'latin',
@@ -67,13 +67,13 @@ exports.glyphs['n'] =
 					typeIn: 'smooth'
 					expand:
 						# width: thickness * ( 80 / 85 ) / 2 + thickness * ( 80 / 85 ) / 2 * contrast
-						width: thickness * ( 40 / 85 ) + thickness * ( 40 / 85 ) * contrast
-						angle: Math.max( - 129 , - 129 - 10 * contrast * width + 10 ) + 'deg'
+						width: thickness * ( 40 / 85 ) + thickness * ( 40 / 85 ) * contrast - Math.max(0, (thickness - 120) * 22 / 60) + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 40 / 60)
+						angle: Math.max( - 129 , - 129 - 10 * contrast * width + 10 ) / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.1 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.39 / 60)
 						distr: 0
 				2:
 					x: ( 445 + (64) ) * width
 					x: contours[0].nodes[1].expandedTo[1].x + 220 * width + (64)
-					y: xHeight - 170 - thickness + 85 + 60 / width - 60
+					y: xHeight - 170 - Math.max(0, (thickness - 85) / 95 * 28) + 60 / width - 60
 					dirOut: - 90 + 'deg'
 					typeOut: 'line'
 					expand:

@@ -8,7 +8,7 @@ exports.glyphs['r'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 40 + (16) + serifWidth + 15
+		spacingLeft: 50 * spacing + serifWidth + 41
 		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
@@ -61,12 +61,12 @@ exports.glyphs['r'] =
 					dirOut: 0 + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 56 / 85 )
-						angle: - 135 + 'deg'
+						width: thickness * ( 56 / 85 ) + Math.max(0, (thickness - 120) * 25 / 60)
+						angle: - 135 / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.02 / 60)
 						distr: 0
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + 240 * width - (75)
-					y: contours[1].nodes[1].expandedTo[1].y - 35 + Math.min( - 20 * aperture + 20, - 125 * aperture + 125 )
+					x: contours[0].nodes[0].expandedTo[1].x + 240 * width - (75) - Math.max(0, (thickness - 120) * 50 / 60)
+					y: contours[1].nodes[1].expandedTo[1].y - 35 + Math.min( - 20 * aperture + 20, - 125 * aperture + 125 ) - Math.max(0, (thickness - 120) * 13 / 60)
 					dirIn: 110 - 20 * aperture + 'deg'
 					typeOut: 'smooth'
 					expand:

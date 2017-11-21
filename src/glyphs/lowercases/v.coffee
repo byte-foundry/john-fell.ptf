@@ -8,20 +8,23 @@ exports.glyphs['v'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 5 + (0) + serifWidth + 20
-		spacingRight: 50 * spacing + 5 + serifWidth + 20
+		spacingLeft: 50 * spacing + 5 + serifWidth
+		spacingRight: 50 * spacing + 5 + serifWidth
 	tags: [
 		'all',
 		'latin',
 		'lowercase'
 	]
+	anchors:
+		0:
+			angle: Utils.lineAngle({x: contours[1].nodes[1].x, y: contours[1].nodes[1].y}, {x: contours[1].nodes[0].expandedTo[0].x, y: contours[1].nodes[0].expandedTo[0].y})
 	contours:
 		0:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[0].expandedTo[1].x + 10 + 250 * width + (16)
+					x: contours[1].nodes[0].expandedTo[1].x + 10 + 250 * width + (16) - Math.max(0, (thickness - 120) * 30 / 60)
 					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand:
@@ -29,7 +32,7 @@ exports.glyphs['v'] =
 						angle: 0 + 'deg'
 						distr: 0.25
 				1:
-					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.4
+					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.4 - Math.max(0, (thickness - 120) * 13 / 60)
 					y: - overshoot
 					typeIn: 'line'
 					expand:
@@ -41,7 +44,7 @@ exports.glyphs['v'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + 0.25 * contours[1].nodes[0].expand.width
 					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand:
@@ -54,10 +57,7 @@ exports.glyphs['v'] =
 					y: - overshoot
 					typeIn: 'line'
 					expand:
-						width:
-							if width < 1
-							then ( thickness * ( 120 / 85 ) / 500 ) * xHeight
-							else ( thickness * ( ( 120 - 35 * width + 35 ) / 85 ) / 500 ) * xHeight
+						width: contours[1].nodes[0].expand.width * Math.sin(Math.PI - anchors[0].angle) / Math.cos(contours[1].nodes[1].expand.angle + Math.PI / 2 - anchors[0].angle)
 						angle: Utils.lineAngle({x: contours[0].nodes[0].expandedTo[0].x, y: contours[0].nodes[0].expandedTo[0].y},{x:  contours[0].nodes[1].expandedTo[0].x, y:  contours[0].nodes[1].expandedTo[0].y}) + Math.PI
 						distr: 0
 	components:
@@ -76,6 +76,8 @@ exports.glyphs['v'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		1:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'topright'
@@ -90,6 +92,8 @@ exports.glyphs['v'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		2:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'topleft2'
@@ -105,6 +109,8 @@ exports.glyphs['v'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40
 		3:
 			base: ['serif-oblique-acute', 'none']
 			id: 'topright2'
@@ -119,3 +125,5 @@ exports.glyphs['v'] =
 				[ 'scaleX', -1 ],
 				[ 'scaleY', -1 ]
 			)
+			parameters:
+				serifCurve: serifCurve + 40

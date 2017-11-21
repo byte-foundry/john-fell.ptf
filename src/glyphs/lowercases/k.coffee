@@ -8,8 +8,8 @@ exports.glyphs['k'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 50 + (16) + serifWidth + 15
-		spacingRight: 50 * spacing + 1 + serifWidth
+		spacingLeft: 50 * spacing + serifWidth + 40
+		spacingRight: 50 * spacing + serifWidth - 15
 	tags: [
 		'all',
 		'latin',
@@ -48,16 +48,16 @@ exports.glyphs['k'] =
 					typeOut: 'line'
 					typeIn: 'line'
 					expand:
-						width: thickness * ( 36 / 85 ) * width
+						width: thickness * ( 10 / 85 ) * width + thickness * ( 26 / 85 ) * width * contrast
 						distr: 0
 						angle: 0
 				1:
-					x: contours[2].nodes[0].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[1].x - contours[2].nodes[0].expandedTo[0].x ) * 0.6
+					x: contours[2].nodes[0].expandedTo[0].x + ( contours[2].nodes[0].expandedTo[1].x - contours[2].nodes[0].expandedTo[0].x ) * 0.6 - Math.max(0, (thickness - 120) * 28 / 60)
 					y: xHeight
 					typeOut: 'line'
 					typeIn: 'line'
 					expand:
-						width: thickness * ( 36 / 85 ) * width
+						width: thickness * ( 10 / 85 ) * width + thickness * ( 26 / 85 ) * width * contrast
 						distr: 0.5
 						angle: 0
 		2:
@@ -65,7 +65,7 @@ exports.glyphs['k'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + 235 * width + (55) + thickness - 85
+					x: contours[0].nodes[0].expandedTo[1].x + 235 * width + (55) + thickness - 85 - Math.max(0, (thickness - 120) * 110 / 60)
 					y: 0
 					typeIn: 'line'
 					typeOut: 'line'

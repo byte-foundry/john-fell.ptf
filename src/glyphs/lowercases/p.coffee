@@ -8,7 +8,7 @@ exports.glyphs['p'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 35 + (16) + serifWidth + 15
+		spacingLeft: 50 * spacing + serifWidth + 25
 		spacingRight: 50 * spacing + 45
 	tags: [
 		'all',
@@ -43,9 +43,10 @@ exports.glyphs['p'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[1].expandedTo[1].x - ( 10 / 85 ) * thickness
+					x: contours[1].nodes[4].x - ( 10 / 85 ) * thickness
 					y: xHeight - ( 75 / 500 ) * xHeight * aperture
-					dirOut: Math.min( ( 60 / 500 ) * xHeight * aperture, 75 ) + 'deg'
+					dirOut: Math.min( ( 60 / 500 ) * xHeight * aperture, 75 ) / 180 * Math.PI + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.47 / 60)
+					tensionOut: 1 + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.1 / 60)
 					expand:
 						width: Math.min( thickness * ( 35 / 85 ), ( thickness * ( 35 / 85 ) / 500 ) * xHeight )
 						angle: 90 + 'deg'
@@ -56,8 +57,8 @@ exports.glyphs['p'] =
 					dirOut: 0 + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 53 / 85 )
-						angle: 180 + 222 + 'deg'
+						width: thickness * ( 53 / 85 ) - Math.max(0, (thickness - 120) * 10 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 20 / 60)
+						angle: (180 + 222) / 180 * Math.PI + Math.max(0, (thickness - 120) * 0.08 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.40 / 60)
 						distr: 1
 				2:
 					x: contours[0].nodes[1].expandedTo[1].x + 100 + 270 * width - (21)
@@ -70,30 +71,22 @@ exports.glyphs['p'] =
 						angle: 180 - 164 + 'deg'
 						distr: 0.75
 				3:
-					x: contours[1].nodes[1].x
+					x: contours[1].nodes[1].x - (15 + 10 * width)
 					y: - overshoot / 2
 					dirOut: 0 + 'deg'
 					typeIn: 'smooth'
 					expand:
-						width: thickness * contrast * ( 22 / 85 )
-						angle: 180 + 112 + 'deg'
+						width: thickness * ( 22 / 85 ) + Math.max(0, (thickness - 120) * 4 / 60) - Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 5 / 60)
+						angle: 257 / 180 * Math.PI + Math.max(0, (thickness - 120) * 0.68 / 60) + Math.max(0, ((1 - contrast) * 1.17) * (thickness - 120) * 0.66 / 60)
 						distr: 1
 				4:
-					#######################################################
-					#######################################################
-					#######################################################
-					# TODO: fix aperture / thickness / angle
-					#######################################################
-					#######################################################
-					#######################################################
-					x: contours[1].nodes[0].x
-					# y: xHeight * ( 120 / 500 )
-					y: 40 + ( 80 / 500 ) * xHeight * aperture
-					dirIn: Math.max( - 90, - 65 * aperture ) + 'deg'
+					x: contours[0].nodes[1].expandedTo[1].x
+					y: 50 + ( 80 / 500 ) * xHeight * aperture
+					dirIn: Math.max( - 90, - 73 * aperture ) + 'deg'
 					typeOut: 'smooth'
 					expand:
-						width: Math.min( thickness * ( 54 / 85 ) * contrast, ( thickness * ( 35 / 85 ) * contrast / 500 ) * xHeight )
-						angle: 180 + 43 + 'deg'
+						width: Math.min( thickness * ( 79 / 85 ), ( thickness * ( 79 / 85 ) / 500 ) * xHeight )
+						angle: Math.PI
 						distr: 0
 		2:
 			skeleton: false

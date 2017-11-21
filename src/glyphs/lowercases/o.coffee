@@ -27,7 +27,7 @@ exports.glyphs['o'] =
 			closed: true
 			nodes:
 				0:
-					x: spacingLeft + (19)
+					x: spacingLeft + 0.25 * contours[0].nodes[0].expand.width
 					y: xHeight * ( 250 / 500 )
 					dirOut: 90 + 'deg'
 					expand:

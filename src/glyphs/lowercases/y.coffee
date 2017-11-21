@@ -8,8 +8,8 @@ exports.glyphs['y'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 5 + (0) + serifWidth + 20
-		spacingRight: 50 * spacing + 5 + serifWidth + 20
+		spacingLeft: 50 * spacing + serifWidth + 5
+		spacingRight: 50 * spacing + serifWidth + 5
 	tags: [
 		'all',
 		'latin',
@@ -19,6 +19,7 @@ exports.glyphs['y'] =
 		0:
 			x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) / 2
 			y: xHeight + diacriticHeight
+			angleOne: Utils.lineAngle({x: contours[1].nodes[1].x, y: contours[1].nodes[1].y}, {x: contours[1].nodes[0].expandedTo[0].x, y: contours[1].nodes[0].expandedTo[0].y})
 	contours:
 		0:
 			skeleton: true
@@ -33,19 +34,72 @@ exports.glyphs['y'] =
 						angle: 0 + 'deg'
 						distr: 0.25
 				1:
-					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.42
-					y: - overshoot
+					x: contours[0].nodes[0].expandedTo[0].x - 136 + 0.25 * contours[0].nodes[1].expand.width - Math.max(0, (thickness - 120) * 26 / 60)
+					y: contours[0].nodes[0].y - 414
+					typeOut: 'line'
 					typeIn: 'line'
 					expand:
-						width: thickness * ( 25 / 85 )
-						angle: 0 + 'deg'
-						distr: 0.5
+						width: thickness * ( 23 / 85 )
+						angle: 0
+						distr: 0.25
+				2:
+					x: Utils.onLine({
+						y: contours[0].nodes[2].y,
+						on:[contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1]]
+					}) - 0.75 * contours[0].nodes[2].expand.width
+					y: contours[1].nodes[1].y
+					typeOut: 'line'
+					typeIn: 'line'
+					expand:
+						width: thickness * ( 25.8 / 85 )
+						angle: 0
+						distr: 0.25
+				3:
+					x: Utils.onLine({
+						y: contours[0].nodes[3].y,
+						on:[contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1]]
+					}) - contours[0].nodes[3].expand.width * Math.cos(contours[0].nodes[3].expand.angle)
+					y: contours[0].nodes[4].y + 90 - contours[0].nodes[3].expand.width * Math.sin(contours[0].nodes[3].expand.angle)
+					typeIn: 'line'
+					typeOut: 'smooth'
+					expand:
+						width: thickness * ( 23.7 / 85 )
+						angle: - 28 / 180 * Math.PI
+						distr: 0.25
+				4:
+					x: contours[0].nodes[3].expandedTo[0].x - 72
+					y: descender - overshoot
+					dirIn: 0 + 'deg'
+					typeOut: 'smooth'
+					tensionOut: 1.5
+					expand:
+						width: 80 - Math.max(0, (thickness - 120) * 7 / 60)
+						angle: -124 / 180 * Math.PI + Math.max(0, (thickness - 120) * 0.21 / 60)
+						distr: 1
+				5:
+					x: contours[0].nodes[3].expandedTo[0].x - 72
+					y: descender - overshoot
+					dirIn: 0 + 'deg'
+					typeOut: 'smooth'
+					tensionIn: 1.5
+					expand:
+						width: thickness * ( 25 / 85 ) + 70 - Math.max(0, (thickness - 120) * 2 / 60)
+						angle: -87 / 180 * Math.PI + Math.max(0, (thickness - 120) * 0.15 / 60)
+						distr: 1
+				6:
+					x: contours[0].nodes[5].expandedTo[0].x - 10 / 85 * thickness - 35
+					y: contours[0].nodes[5].expandedTo[0].y - 10 / 85 * thickness - 35
+					dirIn: 90 + 'deg'
+					expand:
+						width: 0
+						angle: 0
+						distr: 0
 		1:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft
+					x: spacingLeft + 0.25 * contours[1].nodes[0].expand.width
 					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand:
@@ -53,71 +107,16 @@ exports.glyphs['y'] =
 						angle: 0 + 'deg'
 						distr: 0.25
 				1:
-					x: contours[0].nodes[1].expandedTo[0].x + contours[0].nodes[1].expand.width
-					x: contours[0].nodes[1].expandedTo[0].x
+					x: Utils.onLine({
+						y: -overshoot / 10,
+						on: [contours[0].nodes[0].expandedTo[0], contours[0].nodes[1].expandedTo[0]]
+					})
 					y: - overshoot
 					typeIn: 'line'
 					expand:
-						width:
-							if width < 1
-							then ( thickness * ( 120 / 85 ) / 500 ) * xHeight
-							else ( thickness * ( ( 120 - 35 * width + 35 ) / 85 ) / 500 ) * xHeight
+						width: contours[1].nodes[0].expand.width * Math.sin(Math.PI - anchors[0].angleOne) / Math.cos(contours[1].nodes[1].expand.angle + Math.PI / 2 - anchors[0].angleOne)
 						angle: Utils.lineAngle({x: contours[0].nodes[0].expandedTo[0].x, y: contours[0].nodes[0].expandedTo[0].y},{x:  contours[0].nodes[1].expandedTo[0].x, y:  contours[0].nodes[1].expandedTo[0].y}) + Math.PI
 						distr: 0
-		2:
-			skeleton: true
-			closed: false
-			nodes:
-				0:
-					x: contours[0].nodes[1].expandedTo[1].x
-					y: - overshoot
-					typeOut: 'line'
-					expand:
-						width: thickness * ( 25 / 85 )
-						angle: 180 + 'deg'
-						distr: 0
-				1:
-					x: Utils.onLine({
-						y: ( 140 / 250 ) * descender
-						on: [ contours[0].nodes[0].expandedTo[0], contours[2].nodes[0].expandedTo[1] ]
-					})
-					y: ( 140 / 250 ) * descender
-					dirOut: Utils.lineAngle({x: contours[2].nodes[0].x, y: contours[2].nodes[0].y},{x:  contours[2].nodes[1].x, y:  contours[2].nodes[1].y} )
-					typeIn: 'smooth'
-					expand:
-						width: thickness * ( 28 / 85 )
-						angle: 180 - 56 + 'deg'
-						distr: 1
-				2:
-					x: 151 + (0)
-					x: contours[2].nodes[1].expandedTo[1].x - 30
-					y: contours[2].nodes[1].y - 25
-					dirIn: 0 + 'deg'
-					typeOut: 'smooth'
-					expand:
-						width: thickness * ( 80 / 85 )
-						angle: 180 - 126 + 'deg'
-						distr: 1
-		3:
-			skeleton: false
-			closed: true
-			nodes:
-				0:
-					x: contours[2].nodes[2].expandedTo[1].x
-					y: contours[2].nodes[2].expandedTo[1].y
-					typeIn: 'line'
-				1:
-					x: contours[2].nodes[2].expandedTo[1].x - ( contours[2].nodes[2].expandedTo[1].x - contours[3].nodes[2].x ) / 2
-					y: contours[2].nodes[2].expandedTo[0].y + ( 95 / 85 ) * thickness
-				2:
-					x: contours[2].nodes[2].expandedTo[0].x - ( 50 / 85 ) * thickness
-					y: contours[2].nodes[2].expandedTo[0].y + ( contours[3].nodes[1].y - contours[2].nodes[2].expandedTo[0].y ) / 2 + ( 5 / 85 ) * thickness
-					dirOut: - 90 + 'deg'
-					typeIn: 'smooth'
-				3:
-					x: contours[2].nodes[2].expandedTo[0].x
-					y: contours[2].nodes[2].expandedTo[0].y
-					typeOut: 'line'
 		# TODO:
 		# This contour is used to set the spacing
 		# We need to call the advanceWidth of the component instead
