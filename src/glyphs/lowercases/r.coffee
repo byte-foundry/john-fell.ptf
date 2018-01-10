@@ -132,6 +132,7 @@ exports.glyphs['r'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -140,6 +141,7 @@ exports.glyphs['r'] =
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
+			class: 'lowerRightStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -151,6 +153,8 @@ exports.glyphs['r'] =
 			)
 		2:
 			base: ['serif-vertical', 'none']
+			id: 'attaque'
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]
@@ -162,3 +166,7 @@ exports.glyphs['r'] =
 				[ 'skewY', 15 * spurHeight + 'deg' ]
 				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
+			parameters:
+				serifCurve: serifCurve + 30
+				serifMedian: serifMedian / 2 - 0.12
+				serifHeight: serifHeight + 12

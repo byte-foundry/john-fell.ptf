@@ -139,6 +139,7 @@ exports.glyphs['u'] =
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'spur'
+			class: 'bottomRightSpur'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[1].expandedTo[1]

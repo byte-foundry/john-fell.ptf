@@ -136,7 +136,8 @@ exports.glyphs['y'] =
 	components:
 		0:
 			base: ['serif-oblique-acute', 'none']
-			id: 'thirdleft'
+			id: 'innerTopLeft'
+			class: 'acuteTopInsideRight'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -153,7 +154,8 @@ exports.glyphs['y'] =
 				serifCurve: serifCurve + 40
 		1:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'thirdright'
+			id: 'topLeft'
+			class: 'obtuseTopOutsideRight'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -169,7 +171,8 @@ exports.glyphs['y'] =
 				serifCurve: serifCurve + 40
 		2:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'thirdleft'
+			id: 'topRight'
+			class: 'obtuseTopOutsideLeft'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[0]
@@ -186,7 +189,8 @@ exports.glyphs['y'] =
 				serifCurve: serifCurve + 40
 		3:
 			base: ['serif-oblique-acute', 'none']
-			id: 'thirdright'
+			id: 'innerTopRight'
+			class: 'acuteTopInsideLeft'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[1]

@@ -118,6 +118,7 @@ exports.glyphs['F_cap'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -125,7 +126,8 @@ exports.glyphs['F_cap'] =
 					opposite: contours[0].nodes[0].expandedTo[1]
 		1:
 			base: ['serif-vertical', 'none']
-			id: 'bottomleft'
+			id: 'bottomRight'
+			class: 'lowerLeftStumpInside'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -138,6 +140,7 @@ exports.glyphs['F_cap'] =
 		2:
 			base: ['serif-vertical', 'none']
 			id: 'topleft'
+			class: 'upperLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]
@@ -151,6 +154,7 @@ exports.glyphs['F_cap'] =
 		3:
 			base: ['serif-horizontal', 'none']
 			id: 'topright'
+			class: 'upperStroke'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[1]
@@ -170,6 +174,7 @@ exports.glyphs['F_cap'] =
 		4:
 			base: ['serif-horizontal', 'none']
 			id: 'middletop'
+			class: 'upperMiddleStroke'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[1].expandedTo[0]
@@ -184,6 +189,7 @@ exports.glyphs['F_cap'] =
 		5:
 			base: ['serif-horizontal', 'none']
 			id: 'middlebottom'
+			class: 'lowerMiddleStroke'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[1].expandedTo[1]

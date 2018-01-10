@@ -118,6 +118,7 @@ exports.glyphs['p'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerDescender'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -126,6 +127,7 @@ exports.glyphs['p'] =
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
+			class: 'rightDescender'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -137,6 +139,8 @@ exports.glyphs['p'] =
 			)
 		2:
 			base: ['serif-vertical', 'none']
+			id: 'attaque'
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]

@@ -78,7 +78,7 @@ exports.glyphs['C_cap'] =
 	components:
 		0:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'bottomInside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[4].dirIn
@@ -96,14 +96,14 @@ exports.glyphs['C_cap'] =
 				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'bottomOutside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[4].dirIn
 					baseWidth: contours[0].nodes[4].expandedTo[0]
 					baseHeight: contours[0].nodes[4].expandedTo[0]
-					noneAnchor: contours[0].nodes[4].expandedTo[1]
-					opposite: contours[0].nodes[4].expandedTo[0]
+					noneAnchor: contours[0].nodes[4].expandedTo[0]
+					opposite: contours[0].nodes[4].expandedTo[1]
 					curveEnd: contours[0].nodes[3].expandedTo[0]
 					rotationAngle: -15
 					rotationCenter: contours[0].nodes[4].expandedTo[0]
@@ -115,7 +115,8 @@ exports.glyphs['C_cap'] =
 				serifWidth: serifWidth + 24
 		2:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'topInside'
+			class: 'curveTopInside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut
@@ -132,7 +133,8 @@ exports.glyphs['C_cap'] =
 				serifWidth: serifWidth + 21
 		3:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'topOutside'
+			class: 'curveTopOutside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut

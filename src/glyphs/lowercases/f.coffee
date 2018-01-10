@@ -103,6 +103,7 @@ exports.glyphs['f'] =
 	components:
 		0:
 			base: ['serif-vertical', 'none']
+			class: 'lowerLeftStump'
 			id: 'bottomleft'
 			parentAnchors:
 				0:
@@ -111,6 +112,7 @@ exports.glyphs['f'] =
 					opposite: contours[0].nodes[0].expandedTo[1]
 		1:
 			base: ['serif-vertical', 'none']
+			class: 'lowerRightStump'
 			id: 'bottomright'
 			parentAnchors:
 				0:

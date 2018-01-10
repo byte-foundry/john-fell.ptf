@@ -112,6 +112,7 @@ exports.glyphs['k'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -120,6 +121,7 @@ exports.glyphs['k'] =
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
+			class: 'innerlowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -131,6 +133,8 @@ exports.glyphs['k'] =
 			)
 		2:
 			base: ['serif-vertical', 'none']
+			id: 'attaque'
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]

@@ -94,6 +94,7 @@ exports.glyphs['Y_cap'] =
 		0:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdleft'
+			class: 'vLeft'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[1].expandedTo[0]
@@ -112,6 +113,7 @@ exports.glyphs['Y_cap'] =
 		1:
 			base: ['serif-oblique-acute', 'none']
 			id: 'thirdright'
+			class: 'vLeftInside'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[1].expandedTo[1]
@@ -128,7 +130,8 @@ exports.glyphs['Y_cap'] =
 				serifWidth: serifWidth + 40
 		2:
 			base: ['serif-oblique-acute', 'none']
-			id: 'thirdleft'
+			id: 'thirdleft2'
+			class: 'vRightInside'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[1].expandedTo[0]
@@ -146,7 +149,8 @@ exports.glyphs['Y_cap'] =
 				serifWidth: serifWidth + 60
 		3:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'thirdright'
+			id: 'thirdright2'
+			class: 'vRight'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[1].expandedTo[1]
@@ -164,6 +168,7 @@ exports.glyphs['Y_cap'] =
 		4:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -175,6 +180,7 @@ exports.glyphs['Y_cap'] =
 		5:
 			base: ['serif-vertical', 'none']
 			id: 'topright'
+			class: 'lowerRightStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]

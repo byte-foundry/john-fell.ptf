@@ -127,6 +127,7 @@ exports.glyphs['U_cap'] =
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'topright'
+			class: 'upperRightStumpInside'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[1].expandedTo[0]
@@ -141,7 +142,8 @@ exports.glyphs['U_cap'] =
 				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
-			id: 'topright'
+			id: 'topright2'
+			class: 'upperleftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]

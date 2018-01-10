@@ -154,6 +154,7 @@ exports.glyphs['W_cap'] =
 		0:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'firstleft'
+			class: 'vLeft'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[0]
@@ -171,6 +172,7 @@ exports.glyphs['W_cap'] =
 		1:
 			base: ['serif-oblique-acute', 'none']
 			id: 'firstright'
+			class: 'vLeftInside'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[1]
@@ -187,6 +189,7 @@ exports.glyphs['W_cap'] =
 		2:
 			base: ['serif-oblique-acute', 'none']
 			id: 'secondleft'
+			class: 'vRightInside'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[0].expandedTo[0]
@@ -204,6 +207,7 @@ exports.glyphs['W_cap'] =
 		3:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'secondright'
+			class: 'vRight'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[0].expandedTo[1]

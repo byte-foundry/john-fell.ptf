@@ -156,7 +156,8 @@ exports.glyphs['S_cap'] =
 				serifWidth: serifWidth + 52
 		2:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'topinside'
+			class: 'curveTopInside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut
@@ -175,6 +176,7 @@ exports.glyphs['S_cap'] =
 		3:
 			base: ['serif-curve-inside-auto', 'none']
 			id: 'top'
+			class: 'curveTopOutside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut

@@ -89,6 +89,7 @@ exports.glyphs['X_cap'] =
 		0:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'thirdleft'
+			class: 'vLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -107,6 +108,7 @@ exports.glyphs['X_cap'] =
 		1:
 			base: ['serif-oblique-acute', 'none']
 			id: 'thirdright'
+			class: 'vLeftInside'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -123,7 +125,8 @@ exports.glyphs['X_cap'] =
 				serifWidth: serifWidth + 40
 		2:
 			base: ['serif-oblique-acute', 'none']
-			id: 'thirdleft'
+			id: 'thirdleft2'
+			class: 'vRightInside'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[0]
@@ -141,7 +144,8 @@ exports.glyphs['X_cap'] =
 				serifWidth: serifWidth + 60
 		3:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'thirdright'
+			id: 'thirdright2'
+			class: 'vRight'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[1]
@@ -158,7 +162,7 @@ exports.glyphs['X_cap'] =
 				serifWidth: serifWidth + 30
 		4:
 			base: ['serif-oblique-acute', 'none']
-			id: 'thirdleft'
+			id: 'thirdleft3'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[0].expandedTo[1]
@@ -171,7 +175,7 @@ exports.glyphs['X_cap'] =
 				serifWidth: serifWidth + 60
 		5:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'thirdright'
+			id: 'thirdright3'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[0].expandedTo[0]
@@ -183,7 +187,7 @@ exports.glyphs['X_cap'] =
 				serifWidth: serifWidth + 30
 		6:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'thirdleft'
+			id: 'thirdleft4'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[1]
@@ -196,7 +200,7 @@ exports.glyphs['X_cap'] =
 				serifWidth: serifWidth + 5
 		7:
 			base: ['serif-oblique-acute', 'none']
-			id: 'thirdright'
+			id: 'thirdright4'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]

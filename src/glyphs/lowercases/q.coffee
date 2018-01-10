@@ -114,6 +114,7 @@ exports.glyphs['q'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerDescender'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -122,6 +123,7 @@ exports.glyphs['q'] =
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
+			class: 'rightDescender'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]

@@ -173,6 +173,8 @@ exports.glyphs['b'] =
 	components:
 		0:
 			base: ['serif-vertical', 'none']
+			id: 'attaque'
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[4].expandedTo[0]

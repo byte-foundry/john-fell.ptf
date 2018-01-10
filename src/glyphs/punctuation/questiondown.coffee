@@ -7,8 +7,10 @@ exports.glyphs['questiondown'] =
 		advanceWidth: contours[0].nodes[3].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg'],
-		['scaleY', -1], ['translateY', - xHeight],
-		['scaleX', -1], ['translateX', - (contours[0].nodes[3].expandedTo[1].x + spacingRight) ]
+		['translateY', - xHeight],
+		['scaleY', -1],
+		['translateX', - (contours[0].nodes[3].expandedTo[1].x + spacingRight) ]
+		['scaleX', -1],
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 35

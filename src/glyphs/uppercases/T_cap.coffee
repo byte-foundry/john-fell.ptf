@@ -74,6 +74,7 @@ exports.glyphs['T_cap'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -85,6 +86,7 @@ exports.glyphs['T_cap'] =
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'topright'
+			class: 'lowerRightStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -99,7 +101,7 @@ exports.glyphs['T_cap'] =
 				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-horizontal', 'none']
-			id: 'topright'
+			id: 'topright2'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[1].expandedTo[1]
@@ -138,7 +140,7 @@ exports.glyphs['T_cap'] =
 				serifHeight: serifHeight + 25
 		4:
 			base: ['serif-horizontal', 'none']
-			id: 'topright'
+			id: 'topright3'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[1]
@@ -156,7 +158,7 @@ exports.glyphs['T_cap'] =
 				serifHeight: serifHeight + 40
 		5:
 			base: ['serif-horizontal', 'none']
-			id: 'middletop'
+			id: 'middletop2'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[0]

@@ -156,6 +156,7 @@ exports.glyphs['m'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -195,6 +196,8 @@ exports.glyphs['m'] =
 			)
 		4:
 			base: ['serif-vertical', 'none']
+			id: 'attaque'
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]
@@ -221,6 +224,7 @@ exports.glyphs['m'] =
 		6:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright2'
+			class: 'lowerRightStump'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[3].expandedTo[0]

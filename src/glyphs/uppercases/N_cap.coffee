@@ -171,6 +171,7 @@ exports.glyphs['N_cap'] =
 		4:
 			base: ['none', 'serif-oblique-acute']
 			id: 'topleftright'
+			class: 'upperLeftStumpM'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[1].expandedTo[1]
@@ -188,6 +189,7 @@ exports.glyphs['N_cap'] =
 		5:
 			base: ['serif-oblique-obtuse', 'none']
 			id: 'topleftleft'
+			class: 'upperLeftStumpInsideM'
 			parentAnchors:
 				0:
 					base: contours[2].nodes[1].expandedTo[0]

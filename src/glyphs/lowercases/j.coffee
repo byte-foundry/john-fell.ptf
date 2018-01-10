@@ -119,6 +119,7 @@ exports.glyphs['j'] =
 	components:
 		0:
 			base: ['serif-vertical', 'none']
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]

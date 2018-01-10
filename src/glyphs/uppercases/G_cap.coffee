@@ -124,7 +124,8 @@ exports.glyphs['G_cap'] =
 	components:
 		0:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'topInside'
+			class: 'curveTopInside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut
@@ -141,7 +142,8 @@ exports.glyphs['G_cap'] =
 				serifWidth: serifWidth + 21
 		1:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'topOuside'
+			class: 'curveTopOutside'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut

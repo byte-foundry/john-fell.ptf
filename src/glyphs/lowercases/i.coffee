@@ -64,6 +64,7 @@ exports.glyphs['i'] =
 	components:
 		0:
 			base: ['serif-vertical', 'none']
+			class: 'lowerLeftStump'
 			id: 'bottomleft'
 			parentAnchors:
 				0:
@@ -72,6 +73,7 @@ exports.glyphs['i'] =
 					opposite: contours[0].nodes[0].expandedTo[1]
 		1:
 			base: ['serif-vertical', 'none']
+			class: 'lowerRightStump'
 			id: 'bottomright'
 			parentAnchors:
 				0:
@@ -91,6 +93,8 @@ exports.glyphs['i'] =
 					y:  xHeight + diacriticHeight
 		3:
 			base: ['serif-vertical', 'none']
+			id: 'attaqueLeft'
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]

@@ -154,7 +154,7 @@ exports.glyphs['d'] =
 	components:
 		0:
 			base: ['serif-vertical', 'none']
-			id: 'bottomleft'
+			id: 'bottomRightSpur'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -171,6 +171,8 @@ exports.glyphs['d'] =
 				serifCurve: serifCurve + 35
 		1:
 			base: ['serif-vertical', 'none']
+			id: 'attaque'
+			class: 'attaqueTopLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]

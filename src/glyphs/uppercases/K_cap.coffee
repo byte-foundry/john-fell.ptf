@@ -84,6 +84,7 @@ exports.glyphs['K_cap'] =
 		0:
 			base: ['serif-vertical', 'none']
 			id: 'bottomleft'
+			class: 'lowerLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0]
@@ -95,6 +96,7 @@ exports.glyphs['K_cap'] =
 		1:
 			base: ['serif-vertical', 'none']
 			id: 'bottomright'
+			class: 'lowerLeftStumpInside'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[1]
@@ -109,7 +111,8 @@ exports.glyphs['K_cap'] =
 				serifCurve: serifCurve + 35
 		2:
 			base: ['serif-vertical', 'none']
-			id: 'bottomleft'
+			id: 'topleft'
+			class: 'upperLeftStump'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]
@@ -124,7 +127,8 @@ exports.glyphs['K_cap'] =
 				serifCurve: serifCurve + 35
 		3:
 			base: ['serif-vertical', 'none']
-			id: 'bottomright'
+			id: 'topright'
+			class: 'upperLeftStumpInside'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[1]
@@ -162,7 +166,7 @@ exports.glyphs['K_cap'] =
 					obliqueEndPoint: contours[2].nodes[0].expandedTo[0]
 		6:
 			base: ['serif-oblique-obtuse', 'none']
-			id: 'bottomleft2'
+			id: 'bottomleft3'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[1]
@@ -179,7 +183,7 @@ exports.glyphs['K_cap'] =
 				serifCurve: serifCurve + 50
 		7:
 			base: ['serif-oblique-acute', 'none']
-			id: 'bottomleft2'
+			id: 'bottomleft4'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[0]
