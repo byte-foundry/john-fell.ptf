@@ -6,7 +6,7 @@ exports.glyphs['five'] =
 	ot:
 		advanceWidth: contours[0].nodes[1].expandedTo[0].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 50
@@ -24,28 +24,28 @@ exports.glyphs['five'] =
 				0:
 					x: spacingLeft + 10
 					y: - 230
-					dirOut: 7 + 'deg'
+					dirOut:( 7 ) / 180 * Math.PI
 					expand:
 						width: thickness * ( 16 / 85 )
-						angle: 97 + 'deg'
+						angle:( 97 ) / 180 * Math.PI
 						distr: 0.25
 				1:
 					x: spacingLeft + 200 * width + 85 + (52)
 					y: 20 + (23)
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 80 / 85 )
-						angle: 180 + 21 + 'deg'
+						angle:( 180 + 21 ) / 180 * Math.PI
 						distr: 0.25
 				2:
 					x: spacingLeft + 35 + (7)
 					y: ( 195 / 520 ) * xHeight + (67)
-					dirIn: 0 + 'deg'
+					dirIn: 0
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 90 / 85 )
-						angle: 180 + 84 + 'deg'
+						angle:( 180 + 84 ) / 180 * Math.PI
 						distr: 0.25
 				3:
 					x: Math.max( contours[0].nodes[2].expandedTo[0].x - ( 40 / 85 ) * thickness, 50 )
@@ -54,7 +54,7 @@ exports.glyphs['five'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 90 / 85 )
-						angle: 180 + 84 + 'deg'
+						angle:( 180 + 84 ) / 180 * Math.PI
 						distr: 0.25
 				4:
 					x: contours[0].nodes[3].expandedTo[0].x
@@ -63,7 +63,7 @@ exports.glyphs['five'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 80 / 85 )
-						angle: - 108 + 'deg'
+						angle:( - 108 ) / 180 * Math.PI
 						distr: 0
 		1:
 			skeleton: true
@@ -75,7 +75,7 @@ exports.glyphs['five'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 75 / 85 )
-						angle: - 100 + 'deg'
+						angle: - 100 / 180 * Math.PI
 						distr: 0
 				1:
 					x: contours[1].nodes[2].expandedTo[0].x + 55 * width
@@ -84,7 +84,7 @@ exports.glyphs['five'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 78 / 85 )
-						angle: - 78 + 'deg'
+						angle:( - 78 ) / 180 * Math.PI
 						distr: 0
 				2:
 					x: contours[0].nodes[4].expandedTo[1].x
@@ -93,7 +93,7 @@ exports.glyphs['five'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 30 / 85 )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0
 	components:
 		0:
@@ -111,5 +111,5 @@ exports.glyphs['five'] =
 			transformOrigin: contours[1].nodes[0].expandedTo[0]
 			transforms: Array(
 				['scaleY', -1],
-				['skewX', serifRotate * (11) + 'deg']
+				['skewX',( serifRotate * (11) ) / 180 * Math.PI]
 			)

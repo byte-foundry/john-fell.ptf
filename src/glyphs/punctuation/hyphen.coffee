@@ -5,7 +5,7 @@ exports.glyphs['hyphen'] =
 	ot:
 		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 80
@@ -23,18 +23,18 @@ exports.glyphs['hyphen'] =
 				0:
 					x: spacingLeft
 					y: xHeight * ( 285 / 500 ) * crossbar
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 70 / 85 ) * opticThickness
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x + 200 * width + 70
 					y: xHeight * ( 285 / 500 ) * crossbar
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 70 / 85 ) * opticThickness
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						distr: 0.5

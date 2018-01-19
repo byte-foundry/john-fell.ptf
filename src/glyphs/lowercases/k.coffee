@@ -5,7 +5,7 @@ exports.glyphs['k'] =
 	ot:
 		advanceWidth: contours[2].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + serifWidth + 40
@@ -23,7 +23,7 @@ exports.glyphs['k'] =
 				0:
 					x: spacingLeft
 					y: 0
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness
@@ -32,7 +32,7 @@ exports.glyphs['k'] =
 				1:
 					x: contours[0].nodes[0].x
 					y: ascenderHeight - Math.max( 0, serifHeight * serifArc ) - ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness
@@ -71,7 +71,7 @@ exports.glyphs['k'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 90 / 85 ) + thickness * ( 20 / 85 ) * width
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: contours[1].nodes[0].expandedTo[0].x
@@ -143,7 +143,7 @@ exports.glyphs['k'] =
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'scaleY', -1 ]
-				[ 'skewY', 15 * spurHeight + 'deg' ]
+				[ 'skewY',( 15 * spurHeight ) / 180 * Math.PI ]
 				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
 			parameters:

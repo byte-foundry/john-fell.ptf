@@ -5,7 +5,7 @@ exports.glyphs['quoteleft'] =
 	ot:
 		advanceWidth: width * 580 + thickness * 2 - ( 86 * 2 )
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 10 + (10)

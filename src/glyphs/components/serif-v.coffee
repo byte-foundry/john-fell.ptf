@@ -18,9 +18,9 @@ exports.glyphs['serif-v'] =
 			serifMedianLeft: parentAnchors[2].serifMedianLeft || 0
 			leftCurve: parentAnchors[2].leftCurve || 1
 			rightWidth: parentAnchors[2].rightWidth * Math.min( serifWidth / 65, 1 ) || 0
-			# angle: parentAnchors[2].angle || 0 + 'deg'
-			angleTop: parentAnchors[2].angle || ( parentAnchors[2].angleTop || 0 + 'deg' )
-			angleBottom: parentAnchors[2].angle || ( parentAnchors[2].angleBottom || 0 + 'deg')
+			# angle: parentAnchors[2].angle || 0
+			angleTop: parentAnchors[2].angle || ( parentAnchors[2].angleTop || 0 )
+			angleBottom: parentAnchors[2].angle || ( parentAnchors[2].angleBottom || 0)
 			directionY: parentAnchors[2].directionY || 1
 			directionX: parentAnchors[2].directionX || 1
 			anchor_0: parentAnchors[2].anchor_0 || parentAnchors[0].y
@@ -163,8 +163,8 @@ exports.glyphs['serif-v'] =
 					# 	else anchors[2].anchorLine
 					x: anchors[2].anchorLine
 					tensionIn: serifTerminalCurve
-					dirIn: 90 + 'deg'
-					dirOut: 270 + 'deg'
+					dirIn: Math.PI / 2
+					dirOut: 270
 				5:
 					y:
 						if anchors[2].attaque == true
@@ -174,8 +174,8 @@ exports.glyphs['serif-v'] =
 					dirIn:
 						if anchors[2].attaque == true
 						then Utils.lineAngle({x: contours[0].nodes[4].x , y: contours[0].nodes[4].y},{x: contours[0].nodes[5].x, y: contours[0].nodes[5].y} )
-						else 90 + 'deg'
-					dirOut: 270 + 'deg'
+						else Math.PI / 2
+					dirOut: 270
 				6:
 					y:
 						if anchors[2].left == false
@@ -222,8 +222,8 @@ exports.glyphs['serif-v'] =
 					# 	else anchors[2].anchorLine
 					x: anchors[2].anchorLine
 					tensionOut: serifTerminalCurve
-					dirIn: 90 + 'deg'
-					dirOut: - 90 + 'deg'
+					dirIn: Math.PI / 2
+					dirOut: - Math.PI / 2
 				7:
 					y:
 						if anchors[2].left == false
@@ -265,7 +265,7 @@ exports.glyphs['serif-v'] =
 						else anchors[2].anchorLine - ( serifHeight * serifMedian + anchors[2].serifMedianLeft ) * anchors[2].directionX
 					tensionIn: serifTerminalCurve
 					typeOut: 'line'
-					dirIn: - 90 + 'deg'
+					dirIn: - Math.PI / 2
 				9:
 					y:
 						if anchors[2].left == false

@@ -6,7 +6,7 @@ exports.glyphs['S_cap'] =
 	ot:
 		advanceWidth: contours[0].nodes[4].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 50
@@ -35,7 +35,7 @@ exports.glyphs['S_cap'] =
 					# dirOut: Math.max(
 					# 	1.8,
 					# 	Math.PI - ( 1.06 / 750 ) * capHeight
-					# ) # 120 + 'deg'
+					# ) # 120
 					dirOut: 115 / 180 * Math.PI
 					typeIn: 'smooth'
 					expand:
@@ -46,20 +46,20 @@ exports.glyphs['S_cap'] =
 					# x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * 0.5
 					x: (contours[0].nodes[2].x + ( Math.cos( 26 / 180 * Math.PI) * 0.75 * ( 67 / 85 ) * thickness ) ) + ( contours[0].nodes[0].expandedTo[1].x - (contours[0].nodes[2].x + ( Math.cos( 26 / 180 * Math.PI) * 0.75 * ( 67 / 85 ) * thickness ) ) ) * ( 85 / 210 )
 					y: capHeight + overshoot
-					dirOut: 180 + 'deg'
+					dirOut: Math.PI
 					typeIn: 'smooth'
 					expand:
 						width: ( 25 / 85 ) * thickness * opticThickness * contrast
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 						distr: 0
 				2:
 					x: spacingLeft + 15 + (19)
 					y: contours[0].nodes[3].expandedTo[0].y + ( contours[0].nodes[1].expandedTo[0].y - contours[0].nodes[3].expandedTo[0].y ) * ( 160 / 290 ) + (8)
-					dirOut: - 90 + 'deg'
+					dirOut: - Math.PI / 2
 					typeIn: 'smooth'
 					expand:
 						width: ( 87 / 85 ) * thickness * opticThickness
-						angle: 26 + 'deg'
+						angle:( 26 ) / 180 * Math.PI
 						distr: 0.25
 				3:
 					x: contours[0].nodes[5].x
@@ -70,22 +70,22 @@ exports.glyphs['S_cap'] =
 							- 25,
 							- 20 - (15 - ( 15 / 85 ) * thickness * opticThickness) * width
 						)
-					) + 'deg'
+					) / 180 * Math.PI
 					typeIn: 'smooth'
 					tensionIn: 1.1
 					tensionOut: 1.1
 					expand:
 						width: ( 120 / 85 ) * thickness * opticThickness
-						angle: 180 - 120 + 'deg'
+						angle: 60 / 180 * Math.PI
 						distr: 0.5
 				4:
 					x: contours[0].nodes[6].expandedTo[1].x + 200 * width + 260 - (19)
 					y: contours[0].nodes[5].expandedTo[1].y + (  contours[0].nodes[3].expandedTo[1].y - contours[0].nodes[5].expandedTo[1].y ) * ( 195 / 405 ) - (12)
-					dirOut: - 90 + 'deg'
+					dirOut: - Math.PI / 2
 					typeIn: 'smooth'
 					expand:
 						width: ( 85 / 85 ) * thickness * opticThickness
-						angle: 180 - 160 + 'deg'
+						angle: 20 / 180 * Math.PI
 						distr: 0.75
 				5:
 					# x: contours[0].nodes[6].expandedTo[1].x + ( contours[0].nodes[4].expandedTo[1].x - contours[0].nodes[6].expandedTo[1].x ) * 0.5
@@ -95,11 +95,11 @@ exports.glyphs['S_cap'] =
 					# )
 					x: contours[0].nodes[6].expandedTo[0].x + ( (contours[0].nodes[4].x - Math.cos( 20 / 180 * Math.PI ) * 0.75 * ( 70 / 85 ) * thickness) - contours[0].nodes[6].expandedTo[0].x ) * ( 135 / 230 )
 					y: - overshoot
-					dirOut: 180 + 'deg'
+					dirOut: Math.PI
 					typeIn: 'smooth'
 					expand:
 						width: ( 32 / 85 ) * thickness * opticThickness * contrast
-						angle: 180 + 90 + 'deg'
+						angle: 3 * Math.PI / 2
 						distr: 1
 				6:
 					x: spacingLeft + (7)
@@ -107,8 +107,8 @@ exports.glyphs['S_cap'] =
 					# dirIn: Math.min(
 					# 	1.8,
 					# 	Math.PI + ( 2 / 750 ) * capHeight
-					# ) # 120 + 'deg'
-					dirIn: -1.13446 # - 65 + 'deg'
+					# ) # 120
+					dirIn: -1.13446 # - 65 ) / 180 * Math.PI
 					typeOut: 'smooth'
 					expand:
 						width: ( 32 / 85 ) * thickness * opticThickness

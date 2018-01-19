@@ -6,7 +6,7 @@ exports.glyphs['numbersign'] =
 	ot:
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	tags: [
 		'all',
@@ -28,7 +28,7 @@ exports.glyphs['numbersign'] =
 					typeOut: 'line'
 					expand:
 						width: ( 70 / 90 ) * thickness
-						angle: 82 + 'deg'
+						angle:( 82 ) / 180 * Math.PI
 						distr: 0.5
 				1:
 					x: contours[2].nodes[1].expandedTo[1].x + 200 * width + 100 + (20)
@@ -36,7 +36,7 @@ exports.glyphs['numbersign'] =
 					typeIn: 'line'
 					expand:
 						width: ( 70 / 90 ) * thickness
-						angle: 82 + 'deg'
+						angle:( 82 ) / 180 * Math.PI
 						distr: 0.5
 		1:
 			skeleton: true
@@ -48,7 +48,7 @@ exports.glyphs['numbersign'] =
 					typeOut: 'line'
 					expand:
 						width: ( 70 / 90 ) * thickness
-						angle: 82 + 'deg'
+						angle:( 82 ) / 180 * Math.PI
 						distr: 0.5
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x +
@@ -58,7 +58,7 @@ exports.glyphs['numbersign'] =
 					typeIn: 'line'
 					expand:
 						width: ( 70 / 90 ) * thickness
-						angle: 82 + 'deg'
+						angle:( 82 ) / 180 * Math.PI
 						distr: 0.5
 		2:
 			skeleton: true
@@ -70,7 +70,7 @@ exports.glyphs['numbersign'] =
 					typeOut: 'line'
 					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x + Math.max(
@@ -81,7 +81,7 @@ exports.glyphs['numbersign'] =
 					typeIn: 'line'
 					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 		3:
 			skeleton: true
@@ -93,7 +93,7 @@ exports.glyphs['numbersign'] =
 					typeOut: 'line'
 					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: contours[0].nodes[1].expandedTo[0].x - Math.max( thickness / 2, 80 * width ) - (81)
@@ -101,5 +101,5 @@ exports.glyphs['numbersign'] =
 					typeIn: 'line'
 					expand:
 						width: Math.min( ( 35 / 90 ) * thickness * contrast, minThickness )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5

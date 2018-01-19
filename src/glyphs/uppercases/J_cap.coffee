@@ -5,7 +5,7 @@ exports.glyphs['J_cap'] =
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 40 + (45) + serifWidth + 40
@@ -28,7 +28,7 @@ exports.glyphs['J_cap'] =
 					x: spacingLeft
 					y: capHeight - Math.max(0, serifHeight * serifArc)
 					typeOut: 'line'
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
 						distr: 0.5
@@ -36,23 +36,23 @@ exports.glyphs['J_cap'] =
 				1:
 					x: contours[0].nodes[0].x
 					y: 0 + (22)
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeIn: 'smooth'
 					tensionOut: 1.4
 					expand:
 						width: thickness * ( (134 + (80)) / 85 ) * opticThickness
-						angle: 180 - 138 + 20 + 'deg'
+						angle: 62 / 180 * Math.PI
 						distr: 0.5
 				2:
 					x: contours[0].nodes[0].expandedTo[0].x - 80 - 45 * width
 					y: - 220
-					dirIn: 0 + 'deg'
-					# dirOut: 0 + 'deg'
+					dirIn: 0
+					# dirOut: 0
 					tensionIn: 0.7
 					typeOut: 'smooth'
 					expand:
 						width: thickness * ( 43 / 85 ) * opticThickness * contrast
-						angle: - 125 + 'deg'
+						angle:( - 125 ) / 180 * Math.PI
 						distr: 1
 		1:
 			skeleton: false
@@ -67,13 +67,13 @@ exports.glyphs['J_cap'] =
 				1:
 					x: contours[1].nodes[0].x - ( 75 / 85 ) * thickness
 					y: contours[1].nodes[0].y + ( 80 / 85 ) * thickness
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 					tensionIn: 2.2
 				2:
 					x: contours[1].nodes[1].x - ( 45 / 85 ) * thickness
 					y: contours[1].nodes[1].y - ( 45 / 85 ) * thickness
-					dirOut: - 90 + 'deg'
+					dirOut: - Math.PI / 2
 					typeIn: 'smooth'
 				3:
 					x: contours[0].nodes[2].expandedTo[1].x

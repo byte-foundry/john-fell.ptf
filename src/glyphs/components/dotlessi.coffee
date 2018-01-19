@@ -5,7 +5,7 @@ exports.glyphs['dotlessi'] =
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 50 + (16) + serifWidth + 15
@@ -94,6 +94,6 @@ exports.glyphs['dotlessi'] =
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
 				[ 'scaleY', -1 ]
-				[ 'skewY', 15 * spurHeight + 'deg' ]
+				[ 'skewY',( 15 * spurHeight ) / 180 * Math.PI ]
 				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)

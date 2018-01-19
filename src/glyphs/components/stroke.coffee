@@ -13,7 +13,7 @@ exports.glyphs['stroke'] =
 				0:
 					x: anchors[0].left
 					y: 0 - overshoot
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 30 / 85 ) * contrast
@@ -22,7 +22,7 @@ exports.glyphs['stroke'] =
 				1:
 					x: anchors[0].right
 					y: xHeight + overshoot
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 30 / 85 ) * contrast

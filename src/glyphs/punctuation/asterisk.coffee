@@ -24,7 +24,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x
@@ -32,7 +32,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 5 / 90 ) * thickness * contrast
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				2:
 					x: contours[0].nodes[0].x
@@ -40,7 +40,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 		1:
 			skeleton: false
@@ -53,7 +53,7 @@ exports.glyphs['asterisk'] =
 				1:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[0].y + Math.min( 35, ( 35 / 90 ) * thickness )
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -71,7 +71,7 @@ exports.glyphs['asterisk'] =
 				1:
 					x: contours[0].nodes[2].x
 					y: contours[0].nodes[2].y - Math.min( 35, ( 35 / 90 ) * thickness )
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[2].expandedTo[1].x
@@ -88,7 +88,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x
@@ -96,7 +96,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 5 / 90 ) * thickness * contrast
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				2:
 					x: contours[0].nodes[0].x
@@ -104,11 +104,11 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'rotate', 60 + 'deg' ]
+				[ 'rotate', 60 / 180 * Math.PI]
 			)
 		4:
 			skeleton: false
@@ -121,7 +121,7 @@ exports.glyphs['asterisk'] =
 				1:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[0].y + Math.min( 35, ( 35 / 90 ) * thickness )
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -130,7 +130,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'rotate', 60 + 'deg' ]
+				[ 'rotate', 60 / 180 * Math.PI]
 			)
 		5:
 			skeleton: false
@@ -143,7 +143,7 @@ exports.glyphs['asterisk'] =
 				1:
 					x: contours[0].nodes[2].x
 					y: contours[0].nodes[2].y - Math.min( 35, ( 35 / 90 ) * thickness )
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[2].expandedTo[1].x
@@ -152,7 +152,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'rotate', 60 + 'deg' ]
+				[ 'rotate', 60 / 180 * Math.PI]
 			)
 		6:
 			skeleton: true
@@ -164,7 +164,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x
@@ -172,7 +172,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 5 / 90 ) * thickness * contrast
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				2:
 					x: contours[0].nodes[0].x
@@ -180,11 +180,11 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'rotate', 120 + 'deg' ]
+				[ 'rotate', 120 / 180 * Math.PI]
 			)
 		7:
 			skeleton: false
@@ -197,7 +197,7 @@ exports.glyphs['asterisk'] =
 				1:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[0].y + Math.min( 35, ( 35 / 90 ) * thickness )
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x
@@ -206,7 +206,7 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'rotate', 120 + 'deg' ]
+				[ 'rotate', 120 / 180 * Math.PI]
 			)
 		8:
 			skeleton: false
@@ -219,7 +219,7 @@ exports.glyphs['asterisk'] =
 				1:
 					x: contours[0].nodes[2].x
 					y: contours[0].nodes[2].y - Math.min( 35, ( 35 / 90 ) * thickness )
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 				2:
 					x: contours[0].nodes[2].expandedTo[1].x
@@ -228,5 +228,5 @@ exports.glyphs['asterisk'] =
 					typeOut: 'line'
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'rotate', 120 + 'deg' ]
+				[ 'rotate', 120 / 180 * Math.PI]
 			)

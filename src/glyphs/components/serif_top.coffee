@@ -12,7 +12,7 @@ exports.glyphs['serif_top'] =
 			bottomCurve: parentAnchors[2].bottomCurve || 1
 			topCurve: parentAnchors[2].topCurve || 1
 			bottomWidth: parentAnchors[2].bottomWidth * Math.min( serifWidth / 65, 1 ) || 1
-			angle: parentAnchors[2].angle || 0 + 'deg'
+			angle: parentAnchors[2].angle || 0
 			directionY: parentAnchors[2].directionY || 1
 			directionX: parentAnchors[2].directionX || 1
 			bottomMedian: parentAnchors[2].bottomMedian || 1
@@ -51,7 +51,7 @@ exports.glyphs['serif_top'] =
 				4:
 					x: anchors[2].anchorLine + anchors[2].shift
 					y: contours[0].nodes[0].y - ( contours[0].nodes[0].y - contours[0].nodes[2].y ) * midWidth
-					dirIn: - 90 + 'deg'
+					dirIn: - Math.PI / 2
 					tensionIn: serifTerminalCurve
 					typeOut: 'line'
 				5:

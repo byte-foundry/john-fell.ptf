@@ -5,7 +5,7 @@ exports.glyphs['E_cap'] =
 	ot:
 		advanceWidth: contours[3].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 40 + (25) + serifWidth + 40
@@ -29,19 +29,19 @@ exports.glyphs['E_cap'] =
 				0:
 					x: spacingLeft
 					y: 0 + Math.max( 0, serifHeight * serifArc )
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
-						angle: 0 + 'deg'
+						angle: 0
 						width: thickness * opticThickness * ( 100 / 85 )
 						distr: 0.25
 				1:
 					x: contours[0].nodes[0].x
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
-						angle: 0 + 'deg'
+						angle: 0
 						width: thickness * opticThickness * ( 100 / 85 )
 						distr: 0.25
 		1:
@@ -51,19 +51,19 @@ exports.glyphs['E_cap'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 0
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + 110 + 200 * width
 					y: contours[1].nodes[0].y
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 0
 		2:
@@ -73,19 +73,19 @@ exports.glyphs['E_cap'] =
 				0:
 					x: contours[1].nodes[0].x
 					y: contours[2].nodes[1].y
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						width: thickness * opticThickness * ( 28 / 100 ) * contrast
 						distr: 0
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + 200 * width + 50 - Math.max( 0, serifHeight * serifArc )
 					y: capHeight * ( 385 / 750 ) * crossbar
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						width: contours[2].nodes[0].expand.width
 						distr: 0
 		3:
@@ -95,19 +95,19 @@ exports.glyphs['E_cap'] =
 				0:
 					x: contours[1].nodes[0].x
 					y: 0
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 						# width: Math.max( serifHeight, thickness * opticThickness * ( 20 / 100 ) ) // Fit the thickness to the serifHeight
 						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 1
 				1:
 					x: contours[1].nodes[0].x + 135 + 200 * width - Math.max( 0, serifHeight * serifArc )
 					y: contours[3].nodes[0].y
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					expand:
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 						width: thickness * opticThickness * ( 25 / 100 ) * contrast
 						distr: 1
 		4:
@@ -127,7 +127,7 @@ exports.glyphs['E_cap'] =
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: ( serifHeight + serifCurve ) * ( 80 / 35 )
-					dirIn: - 90 + 'deg'
+					dirIn: - Math.PI / 2
 					typeOut: 'line'
 				2:
 					x: contours[4].nodes[1].x
@@ -220,7 +220,7 @@ exports.glyphs['E_cap'] =
 					opposite: contours[1].nodes[1].expandedTo[0]
 			transformOrigin: contours[1].nodes[1].expandedTo[1]
 			transforms: Array(
-				[ 'skewX', - 7 * serifRotate + 'deg' ],
+				[ 'skewX',( - 7 * serifRotate ) / 180 * Math.PI ],
 				[ 'translateX', ( Math.tan( (7 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 25 / 100 ) * contrast ) ) ]
 			)
 			parameters:
@@ -275,7 +275,7 @@ exports.glyphs['E_cap'] =
 			transformOrigin: contours[3].nodes[1].expandedTo[0]
 			transforms: Array(
 				[ 'scaleY', -1 ]
-				[ 'skewX', 10 * serifRotate + 'deg' ],
+				[ 'skewX',( 10 * serifRotate ) / 180 * Math.PI ],
 				[ 'translateX', ( Math.tan( (10 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 25 / 100 ) * contrast ) ) ]
 			)
 			parameters:

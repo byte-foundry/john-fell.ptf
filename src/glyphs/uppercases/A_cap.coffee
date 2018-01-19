@@ -5,7 +5,7 @@ exports.glyphs['A_cap'] =
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 10 + (20) + serifWidth * 1.8
@@ -32,7 +32,7 @@ exports.glyphs['A_cap'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 105 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 				1:
 					x: contours[1].nodes[0].expandedTo[1].x + ( contours[0].nodes[0].expandedTo[0].x - contours[1].nodes[0].expandedTo[1].x ) * 0.53
@@ -40,7 +40,7 @@ exports.glyphs['A_cap'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 		1:
 			skeleton: true
@@ -52,7 +52,7 @@ exports.glyphs['A_cap'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 30 / 85 ) * opticThickness * contrast
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 				1:
 					x: Utils.onLine({
@@ -63,7 +63,7 @@ exports.glyphs['A_cap'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 20 / 85 ) * opticThickness * contrast
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0
 		2:
 			skeleton: true
@@ -78,7 +78,7 @@ exports.glyphs['A_cap'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 26 / 85 ) * opticThickness * contrast
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						distr: 0.75
 				1:
 					x: Utils.onLine({
@@ -89,7 +89,7 @@ exports.glyphs['A_cap'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 26 / 85 ) * opticThickness * contrast
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						distr: 0.75
 		3:
 			skeleton: false
@@ -115,12 +115,12 @@ exports.glyphs['A_cap'] =
 						Math.max(
 							- 140,
 							- 140 + serifCurve )
-						) + 'deg'
+						) / 180 * Math.PI
 					tensionOut: serifRoundness
 				3:
 					x: contours[0].nodes[1].expandedTo[0].x
 					y: contours[0].nodes[1].expandedTo[0].y
-					dirIn: 8 + 'deg'
+					dirIn:( 8 ) / 180 * Math.PI
 					tensionIn: serifRoundness
 	components:
 		0:

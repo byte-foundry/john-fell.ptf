@@ -6,7 +6,7 @@ exports.glyphs['M_cap'] =
 	ot:
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 15 + (20) + serifWidth + 40
@@ -67,7 +67,7 @@ exports.glyphs['M_cap'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 35 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * 0.5
@@ -75,7 +75,7 @@ exports.glyphs['M_cap'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 25 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0
 		3:
 			skeleton: true
@@ -87,7 +87,7 @@ exports.glyphs['M_cap'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 120 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0
 				1:
 					typeOut: 'line'
@@ -115,7 +115,7 @@ exports.glyphs['M_cap'] =
 					typeIn: 'line'
 					expand:
 						width: contours[2].nodes[1].expand.width
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 1
 	components:
 		0:

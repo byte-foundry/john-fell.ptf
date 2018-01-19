@@ -5,7 +5,7 @@ exports.glyphs['Y_cap'] =
 	ot:
 		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 10 + (20) + serifWidth
@@ -63,7 +63,7 @@ exports.glyphs['Y_cap'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 50 / 85 ) * opticThickness * contrast
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 		2:
 			skeleton: true
@@ -88,7 +88,7 @@ exports.glyphs['Y_cap'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 118 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 	components:
 		0:

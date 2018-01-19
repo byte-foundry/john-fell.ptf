@@ -10,7 +10,7 @@ exports.glyphs['serif_right'] =
 			anchorLine: parentAnchors[2].anchorLine || 0
 			rightCurve: parentAnchors[2].rightCurve || 1
 			rightWidth: parentAnchors[2].rightWidth * Math.min( serifWidth / 65, 1 ) || 1
-			angle: parentAnchors[2].angle || - 90 + 'deg'
+			angle: parentAnchors[2].angle || - Math.PI / 2
 			directionY: parentAnchors[2].directionY || 1
 			directionX: parentAnchors[2].directionX || 1
 	tags: [
@@ -34,8 +34,8 @@ exports.glyphs['serif_right'] =
 				2:
 					x: contours[0].nodes[6].x + ( contours[0].nodes[4].x - contours[0].nodes[6].x ) * midWidth
 					y: anchors[2].anchorLine
-					dirOut: 0 + 'deg'
-					# dirIn: 0 + 'deg'
+					dirOut: 0
+					# dirIn: 0
 					tensionIn: serifTerminalCurve
 				3:
 					x: contours[0].nodes[4].x + ( contours[0].nodes[2].x - contours[0].nodes[4].x ) / 2 + serifTerminal * serifWidth

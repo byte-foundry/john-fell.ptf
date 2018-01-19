@@ -5,7 +5,7 @@ exports.glyphs['z'] =
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 40
@@ -30,7 +30,7 @@ exports.glyphs['z'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 20 / 85 )
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 						distr: 0
 				1:
 					x: spacingLeft + 20 + Math.max( 0, serifHeight * serifArc ) + ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
@@ -38,7 +38,7 @@ exports.glyphs['z'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 30 / 85 )
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 						distr: 0
 		1:
 			skeleton: true
@@ -50,7 +50,7 @@ exports.glyphs['z'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 20 / 85 )
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						distr: 0
 				1:
 					x: contours[1].nodes[0].x + 200 * width + 190 + Math.max(0, (thickness - 120) * 70 / 60)
@@ -58,7 +58,7 @@ exports.glyphs['z'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 30 / 85 )
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						distr: 0
 		2:
 			skeleton: true
@@ -93,7 +93,7 @@ exports.glyphs['z'] =
 			transforms: Array(
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
-				[ 'skewX', 15 * spurHeight + 'deg' ],
+				[ 'skewX',( 15 * spurHeight ) / 180 * Math.PI ],
 				[ 'translateX',- ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
 			parameters:
@@ -112,7 +112,7 @@ exports.glyphs['z'] =
 					obliqueEndPoint: contours[0].nodes[0].expandedTo[1]
 			transformOrigin: contours[0].nodes[1]
 			transforms: Array(
-				[ 'skewX', 15 * spurHeight + 'deg' ],
+				[ 'skewX',( 15 * spurHeight ) / 180 * Math.PI ],
 				[ 'translateX',-( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
 			parameters:
@@ -133,7 +133,7 @@ exports.glyphs['z'] =
 			transforms: Array(
 				[ 'scaleX', -1 ]
 				[ 'scaleY', -1 ]
-				[ 'skewX', 6 * spurHeight + 'deg' ],
+				[ 'skewX',( 6 * spurHeight ) / 180 * Math.PI ],
 				[ 'translateX',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
 			parameters:

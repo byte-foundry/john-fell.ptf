@@ -67,7 +67,7 @@ exports.glyphs['serif-hz-oblique-obtuse'] =
 					})) * anchors[3].scaleY
 					x: anchors[0].x + serifHeight * serifMedian
 					typeIn: 'line'
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					tensionOut: serifTerminalCurve
 				3:
 					x: contours[0].nodes[4].x + ( contours[0].nodes[2].x - contours[0].nodes[4].x ) * 0.5 * ( 1 - ( ( contours[0].nodes[4].x + ( contours[0].nodes[2].x - contours[0].nodes[4].x ) * 0.5 - anchors[0].x ) / (serifWidth || 0.01) * anchors[3].scaleY ) * ( serifMedian - 1 ) )
@@ -88,13 +88,13 @@ exports.glyphs['serif-hz-oblique-obtuse'] =
 						}) * anchors[3].scaleY
 					) * anchors[3].scaleY
 					x: anchors[0].x
-					dirIn: 90 + 'deg'
+					dirIn: Math.PI / 2
 					tensionIn: serifTerminalCurve
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 				5:
 					y: anchors[1].y
 					x: anchors[0].x + serifArc * serifHeight
-					typeIn: 90 + 'deg'
+					typeIn: Math.PI / 2
 					typeOut: 'line'
 				6:
 					y: Utils.onLine({

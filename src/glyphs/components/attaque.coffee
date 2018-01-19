@@ -12,7 +12,7 @@ exports.glyphs['attaque'] =
 			rightCurve: parentAnchors[2].rightCurve || 1
 			leftCurve: parentAnchors[2].leftCurve || 1
 			rightWidth: parentAnchors[2].rightWidth || 1
-			angle: parentAnchors[2].angle || - 90 + 'deg'
+			angle: parentAnchors[2].angle || - Math.PI / 2
 			directionX: parentAnchors[2].directionX || 1
 			directionY: parentAnchors[2].directionY || 1
 	tags: [
@@ -25,7 +25,7 @@ exports.glyphs['attaque'] =
 				0:
 					x: anchors[0].x
 					y: anchors[0].y
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeIn: 'line'
 					tensionOut: serifRoundness * 1.45
 				1:
@@ -33,7 +33,7 @@ exports.glyphs['attaque'] =
 					y: contours[0].nodes[2].y - ( serifHeight * serifMedian / 2 ) * anchors[2].directionY
 					# tensionIn: Math.min(serifRoundness * 0.78, 1.8 )
 					tensionIn: serifRoundness * 1.4
-					dirIn: 3 + ( 45 * serifMedian - 45 ) + 'deg'
+					dirIn:( 3 + ( 45 * serifMedian - 45 ) ) / 180 * Math.PI
 					typeOut: 'line'
 				2:
 					x: contours[0].nodes[0].x - ( serifWidth * anchors[2].leftWidth * anchors[2].rightWidth ) * anchors[2].directionX

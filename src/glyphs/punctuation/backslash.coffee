@@ -5,7 +5,7 @@ exports.glyphs['backslash'] =
 	ot:
 		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 10 + (10)
@@ -26,7 +26,7 @@ exports.glyphs['backslash'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 50 / 85 )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: 290 + (22)
@@ -34,5 +34,5 @@ exports.glyphs['backslash'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 50 / 85 )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5

@@ -5,7 +5,7 @@ exports.glyphs['colon'] =
 	base: 'period'
 	advanceWidth: base.advanceWidth
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 10 + (10)

@@ -20,14 +20,14 @@ exports.glyphs['circumflex'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 67 / 85 )
-						angle: 153 + 'deg'
+						angle:( 153 ) / 180 * Math.PI
 						distr: 0.5
 				1:
 					x: anchors[0].x - 145
 					y: anchors[0].y
 					expand:
 						width: thickness * ( 15 / 85 )
-						angle: 140 + 'deg'
+						angle: 140 / 180 * Math.PI
 						distr: 0.4
 		1:
 			skeleton: true
@@ -39,14 +39,14 @@ exports.glyphs['circumflex'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 15 / 85 )
-						angle: 40 + 'deg'
+						angle: 40 / 180 * Math.PI
 						distr: 0.4
 				1:
 					x: anchors[0].x
 					y: contours[0].nodes[0].y
 					expand:
 						width: thickness * ( 67 / 85 )
-						angle: 26 + 'deg'
+						angle:( 26 ) / 180 * Math.PI
 						distr: 0.5
 		2:
 			skeleton: false
@@ -69,7 +69,7 @@ exports.glyphs['circumflex'] =
 					y: contours[0].nodes[0].expandedTo[1].y + ( 30 / 85 ) * thickness
 					tensionIn: 1.5
 					tensionOut: 1.5
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 				3:
 					x: contours[1].nodes[1].expandedTo[1].x

@@ -6,7 +6,7 @@ exports.glyphs['U_cap'] =
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 5 + (25) + serifWidth + 40
@@ -31,7 +31,7 @@ exports.glyphs['U_cap'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 				1:
 					x: contours[0].nodes[0].x
@@ -39,25 +39,25 @@ exports.glyphs['U_cap'] =
 					y: 180 + ( 40 / 750 ) * capHeight * width
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 				2:
 					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * Math.min( 0.4, 0.25 * width )
 					y: - overshoot
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeIn: 'smooth'
 					expand:
 						width: thickness * ( 76 / 85 ) * opticThickness
-						angle: 58 + 'deg'
+						angle:( 58 ) / 180 * Math.PI
 						distr: 0
 				3:
 					x: contours[1].nodes[0].expandedTo[0].x
 					y: 120 - (4) + ( 40 / 750 ) * capHeight * width
 					typeOut: 'smooth'
-					dirIn: - 115 + 'deg'
+					dirIn:( - 115 ) / 180 * Math.PI
 					expand:
 						width: thickness * ( 45 / 85 ) * opticThickness
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 						distr: 0.25
 		1:
 			skeleton: true
@@ -66,7 +66,7 @@ exports.glyphs['U_cap'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width + (25)
 					y: Math.max( 0, serifHeight * serifArc ) + ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 100/85 * opticThickness / 2 ) )
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
@@ -75,7 +75,7 @@ exports.glyphs['U_cap'] =
 				1:
 					x: contours[1].nodes[0].x
 					y: capHeight
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
@@ -119,7 +119,7 @@ exports.glyphs['U_cap'] =
 			transformOrigin: contours[1].nodes[0].expandedTo[1]
 			transforms: Array(
 				[ 'scaleX', -1 ]
-				[ 'skewY', 15 * spurHeight + 'deg' ]
+				[ 'skewY',( 15 * spurHeight ) / 180 * Math.PI ]
 			)
 			parameters:
 				serifWidth: serifWidth + 20

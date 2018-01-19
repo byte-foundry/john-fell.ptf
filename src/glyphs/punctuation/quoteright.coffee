@@ -5,7 +5,7 @@ exports.glyphs['quoteright'] =
 	ot:
 		advanceWidth: width * 120 + thickness * 2 - ( 86 * 2 )
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 10 + (10)

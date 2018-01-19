@@ -10,7 +10,7 @@ exports.glyphs['serif_left'] =
 			anchorLine: parentAnchors[2].anchorLine || 0
 			leftWidth: parentAnchors[2].leftWidth * Math.min( serifWidth / 65, 1 ) || 1
 			leftCurve: parentAnchors[2].leftCurve || 1
-			angle: parentAnchors[2].angle || - 90 + 'deg'
+			angle: parentAnchors[2].angle || - Math.PI / 2
 			directionY: parentAnchors[2].directionY || 1
 			directionX: parentAnchors[2].directionX || 1
 	tags: [

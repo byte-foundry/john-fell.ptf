@@ -5,7 +5,7 @@ exports.glyphs['N_cap'] =
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 40 + (0) + serifWidth + 40
@@ -81,7 +81,7 @@ exports.glyphs['N_cap'] =
 					typeIn: 'line'
 					expand:
 						width: thickness * ( 124 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.1
 		3:
 			skeleton: false

@@ -6,7 +6,7 @@ exports.glyphs['four'] =
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 5
@@ -62,7 +62,7 @@ exports.glyphs['four'] =
 					expand:
 						width: ( 65 / 85 ) * thickness
 						distr: 0
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 				1:
 					typeOut: 'line'
 					typeIn: 'line'
@@ -86,7 +86,7 @@ exports.glyphs['four'] =
 					expand:
 						width: ( 15 / 85 ) * thickness
 						distr: 0
-						angle: 90 + 'deg'
+						angle: Math.PI / 2
 		2:
 			skeleton: true
 			closed: false
@@ -106,7 +106,7 @@ exports.glyphs['four'] =
 					expand:
 						width: ( 50 / 85 ) * thickness
 						distr: 0
-						angle: - 90 + 'deg'
+						angle: - Math.PI / 2
 	components:
 		0:
 			base: ['serif-horizontal', 'none']
@@ -122,7 +122,7 @@ exports.glyphs['four'] =
 				serifHeight: serifHeight + 10
 				midWidth: midWidth * 1.06
 			transformOrigin: contours[1].nodes[0].expandedTo[0]
-			transforms: Array( [ 'skewX', serifRotate * (8) + 'deg' ] )
+			transforms: Array( [ 'skewX',( serifRotate * (8) ) / 180 * Math.PI ] )
 		1:
 			base: ['serif-horizontal', 'none']
 			parentAnchors:
@@ -139,6 +139,6 @@ exports.glyphs['four'] =
 			transformOrigin: contours[1].nodes[0].expandedTo[1]
 			transforms: Array(
 				['scaleY', -1],
-				['skewX', serifRotate * (8) + 'deg'],
+				['skewX',( serifRotate * (8) ) / 180 * Math.PI],
 				['translateX', (contours[1].nodes[0].expandedTo[1].y - contours[1].nodes[0].expandedTo[0].y) * Math.sin(serifRotate * 8/180 * Math.PI)]
 			)

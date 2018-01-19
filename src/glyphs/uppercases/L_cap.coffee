@@ -5,7 +5,7 @@ exports.glyphs['L_cap'] =
 	ot:
 		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 40 + (45) + serifWidth + 40
@@ -30,20 +30,20 @@ exports.glyphs['L_cap'] =
 				0:
 					x: spacingLeft
 					y: capHeight - Math.max( 0, serifHeight * serifArc )
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 				1:
 					x: contours[0].nodes[0].x
 					y: 0 + Math.max( 0, serifHeight * serifArc )
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 100 / 85 ) * opticThickness
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.5
 		1:
 			skeleton: true
@@ -52,7 +52,7 @@ exports.glyphs['L_cap'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x + 85 + 250 * width
 					y: 0
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					expand:
 						width: thickness * opticThickness * ( 20 / 100 )
 						angle: -Math.PI / 2
@@ -60,7 +60,7 @@ exports.glyphs['L_cap'] =
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[0].y
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					typeOut: 'line'
 					expand:
 						width: contours[1].nodes[0].expand.width
@@ -77,7 +77,7 @@ exports.glyphs['L_cap'] =
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: ( serifHeight + serifCurve ) * ( 80 / 35 )
-					dirIn: - 90 + 'deg'
+					dirIn: - Math.PI / 2
 					typeOut: 'line'
 				2:
 					x: contours[1].nodes[1].x
@@ -146,7 +146,7 @@ exports.glyphs['L_cap'] =
 			transformOrigin: contours[1].nodes[0].expandedTo[0]
 			transforms: Array(
 				[ 'scaleY', -1 ]
-				[ 'skewX', 10 * serifRotate + 'deg' ],
+				[ 'skewX',( 10 * serifRotate ) / 180 * Math.PI ],
 				[ 'translateX', ( Math.tan( (10 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 25 / 100 ) * contrast ) ) ]
 			)
 			parameters:

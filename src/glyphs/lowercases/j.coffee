@@ -5,7 +5,7 @@ exports.glyphs['j'] =
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + serifWidth + 30
@@ -27,7 +27,7 @@ exports.glyphs['j'] =
 				0:
 					x: spacingLeft + 0.25 * contours[0].nodes[0].expand.width
 					y: xHeight - Math.max( 0, serifHeight * serifArc ) - ( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness / 2 ) )
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					typeOut: 'line'
 					expand:
 						width: thickness
@@ -37,7 +37,7 @@ exports.glyphs['j'] =
 					x: contours[0].nodes[0].x
 					y: ( 50 / 85 ) * thickness
 					# y: 50
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 					# typeOut: 'line'
 					expand:
 						width: thickness
@@ -47,12 +47,12 @@ exports.glyphs['j'] =
 					x: contours[0].nodes[1].expandedTo[0].x - 35
 					y: - 130
 					# type: 'smooth'
-					dirIn: Math.PI / 6 # 33 + 'deg'
+					dirIn: Math.PI / 6
 					# tensionIn: 1.4
 					expand:
 						width: thickness * ( 10 / 85 ) + thickness * (10 / 85) * contrast
 						distr: 1
-						angle: - 34 + 'deg'
+						angle:( - 34 ) / 180 * Math.PI
 		#######################################################
 		#######################################################
 		#######################################################
@@ -78,12 +78,12 @@ exports.glyphs['j'] =
 					x: contours[1].nodes[1].x - 60
 					y: contours[1].nodes[1].y + 45
 					typeIn: 'smooth'
-					dirOut: 90 + 'deg'
+					dirOut: Math.PI / 2
 				3:
 					x: contours[1].nodes[2].x + 45
 					y: contours[1].nodes[2].y + 40
 					typeOut: 'smooth'
-					dirOut: 0 + 'deg'
+					dirOut: 0
 					# tensionOut: 0.3
 				4:
 					x: contours[0].nodes[2].expandedTo[0].x
@@ -128,7 +128,7 @@ exports.glyphs['j'] =
 			transformOrigin: contours[0].nodes[0]
 			transforms: Array(
 				[ 'scaleY', -1 ]
-				[ 'skewY', 15 * spurHeight + 'deg' ]
+				[ 'skewY',( 15 * spurHeight ) / 180 * Math.PI ]
 				[ 'translateY',( Math.tan( (15 * spurHeight) / 180 * Math.PI ) * ( thickness * 0.25 ) ) ]
 			)
 			parameters:

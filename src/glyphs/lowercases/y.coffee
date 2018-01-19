@@ -5,7 +5,7 @@ exports.glyphs['y'] =
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
 		spacingLeft: 50 * spacing + serifWidth + 5
@@ -31,7 +31,7 @@ exports.glyphs['y'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 39 / 85 )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 				1:
 					x: contours[0].nodes[0].expandedTo[0].x - 136 + 0.25 * contours[0].nodes[1].expand.width - Math.max(0, (thickness - 120) * 26 / 60)
@@ -69,7 +69,7 @@ exports.glyphs['y'] =
 				4:
 					x: contours[0].nodes[3].expandedTo[0].x - 72
 					y: descender - overshoot
-					dirIn: 0 + 'deg'
+					dirIn: 0
 					typeOut: 'smooth'
 					tensionOut: 1.5
 					expand:
@@ -79,7 +79,7 @@ exports.glyphs['y'] =
 				5:
 					x: contours[0].nodes[3].expandedTo[0].x - 72
 					y: descender - overshoot
-					dirIn: 0 + 'deg'
+					dirIn: 0
 					typeOut: 'smooth'
 					tensionIn: 1.5
 					expand:
@@ -89,7 +89,7 @@ exports.glyphs['y'] =
 				6:
 					x: contours[0].nodes[5].expandedTo[0].x - 10 / 85 * thickness - 35
 					y: contours[0].nodes[5].expandedTo[0].y - 10 / 85 * thickness - 35
-					dirIn: 90 + 'deg'
+					dirIn: Math.PI / 2
 					expand:
 						width: 0
 						angle: 0
@@ -104,7 +104,7 @@ exports.glyphs['y'] =
 					typeOut: 'line'
 					expand:
 						width: thickness * ( 93 / 85 )
-						angle: 0 + 'deg'
+						angle: 0
 						distr: 0.25
 				1:
 					x: Utils.onLine({
@@ -131,7 +131,7 @@ exports.glyphs['y'] =
 		# 			typeOut: 'line'
 		# 			expand:
 		# 				width: thickness * ( 39 / 85 )
-		# 				angle: 0 + 'deg'
+		# 				angle: 0
 		# 				distr: 0.25
 	components:
 		0:
