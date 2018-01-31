@@ -115,26 +115,20 @@ exports.glyphs['E_cap'] =
 			closed: true
 			nodes:
 				0:
-					x: Math.min(
-						contours[0].nodes[0].expandedTo[1].x + ( serifHeight + serifCurve ) * ( 80 / 35 ),
-						Math.max(
-							contours[3].nodes[0].expandedTo[1].x,
-							contours[3].nodes[1].expandedTo[1].x - serifHeight - serifCurve * ( 100 / 15 )
-						)
-					)
-					y: contours[3].nodes[0].expand.width
+					x: contours[0].nodes[0].expandedTo[1].x + ( serifHeight + serifCurve - 55) * ( 80 / 35 )
+					y: contours[3].nodes[1].expand.width
 					tensionOut: 1.5
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: ( serifHeight + serifCurve ) * ( 80 / 35 )
+					y: ( serifHeight + serifCurve  - 55) * ( 80 / 35 )
 					dirIn: - Math.PI / 2
 					typeOut: 'line'
 				2:
-					x: contours[4].nodes[1].x
-					y: contours[4].nodes[0].y
+					x: contours[3].nodes[0].x
+					y: contours[3].nodes[1].y
 					typeOut: 'line'
 				3:
-					x: contours[4].nodes[0].x
+					x: contours[4].nodes[1].x
 					y: contours[4].nodes[0].y
 					typeOut: 'line'
 		5:
@@ -279,7 +273,7 @@ exports.glyphs['E_cap'] =
 				[ 'translateX', ( Math.tan( (10 * serifRotate) / 180 * Math.PI ) * ( thickness * opticThickness * ( 25 / 100 ) * contrast ) ) ]
 			)
 			parameters:
-				serifCurve: serifCurve + 10
+				serifCurve: serifCurve + 35
 				serifMedian: serifMedian * 0.375
 				serifHeight: serifHeight + 25
-				serifWidth: serifWidth + 30
+				serifWidth: serifWidth + 20

@@ -30,6 +30,7 @@ exports.glyphs['asterisk'] =
 					x: contours[0].nodes[0].x
 					y: capHeight - 120
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 5 / 90 ) * thickness * contrast
 						angle: 0
@@ -37,7 +38,7 @@ exports.glyphs['asterisk'] =
 				2:
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[1].y - ( contours[0].nodes[0].y - contours[0].nodes[1].y )
-					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0
@@ -94,6 +95,7 @@ exports.glyphs['asterisk'] =
 					x: contours[0].nodes[0].x
 					y: capHeight - 120
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 5 / 90 ) * thickness * contrast
 						angle: 0
@@ -102,6 +104,7 @@ exports.glyphs['asterisk'] =
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[1].y - ( contours[0].nodes[0].y - contours[0].nodes[1].y )
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0
@@ -162,6 +165,7 @@ exports.glyphs['asterisk'] =
 					x: spacingLeft + 140
 					y: capHeight
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0
@@ -170,6 +174,7 @@ exports.glyphs['asterisk'] =
 					x: contours[0].nodes[0].x
 					y: capHeight - 120
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 5 / 90 ) * thickness * contrast
 						angle: 0
@@ -178,6 +183,7 @@ exports.glyphs['asterisk'] =
 					x: contours[0].nodes[0].x
 					y: contours[0].nodes[1].y - ( contours[0].nodes[0].y - contours[0].nodes[1].y )
 					typeOut: 'line'
+					typeIn: 'line'
 					expand:
 						width: ( 55 / 90 ) * thickness
 						angle: 0

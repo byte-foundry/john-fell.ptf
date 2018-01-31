@@ -48,7 +48,7 @@ exports.glyphs['comma'] =
 					dirOut: 0
 					expand:
 						width: thickness * ( 20 / 85 ) * contrast
-						angle: 180 - Math.PI / 2
+						angle: Math.PI / 2
 						distr: 0.25
 		1:
 			skeleton: false

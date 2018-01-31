@@ -87,6 +87,30 @@ exports.glyphs['L_cap'] =
 					x: contours[1].nodes[1].x
 					y: contours[2].nodes[0].y
 					typeOut: 'line'
+		3:
+			skeleton: false
+			closed: true
+			nodes:
+				0:
+					x: contours[1].nodes[0].x + ( Math.tan( (10 * serifRotate) / 180 * Math.PI ) * ( thickness  * opticThickness * ( 25 / 100 ) * contrast * 0.5 ) )
+					y: contours[1].nodes[0].expandedTo[0].y * 0.5 + contours[1].nodes[0].expandedTo[1].y * 0.5
+					typeIn: 'line'
+					typeOut: 'line'
+				1:
+					x: contours[1].nodes[0].x
+					y: contours[1].nodes[0].expandedTo[1].y
+					typeIn: 'line'
+					typeOut: 'line'
+				2:
+					x: contours[1].nodes[0].x - 10
+					y: contours[1].nodes[0].expandedTo[1].y
+					typeIn: 'line'
+					typeOut: 'line'
+				3:
+					x: contours[1].nodes[0].x - 10
+					y: contours[1].nodes[0].expandedTo[0].y * 0.5 + contours[1].nodes[0].expandedTo[1].y * 0.5
+					typeIn: 'line'
+					typeOut: 'line'
 	components:
 		0:
 			base: ['serif-vertical', 'none']

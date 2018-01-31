@@ -96,7 +96,7 @@ exports.glyphs['d'] =
 					typeOut: 'smooth'
 					expand:
 						width: Math.min( thickness * ( 54 / 86 ), ( thickness * ( 54 / 86 ) / 500 ) * xHeight )
-						width: thickness * ( 81 / 86 ) * contrast
+						width: thickness * ( 81 / 86 ) * Math.min(contrast, 1)
 						angle:( 180 + 13 ) / 180 * Math.PI
 						distr: 1
 		2:
