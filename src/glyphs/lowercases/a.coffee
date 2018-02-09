@@ -108,8 +108,7 @@ exports.glyphs['a'] =
 				0:
 					x: contours[0].nodes[2].expandedTo[0].x + thickness * (13/86)
 					y: 95
-					dirOut:( 46 * width ) / 180 * Math.PI
-					dirOut:( 55 - 25 * width + 25 ) / 180 * Math.PI
+					dirOut: Utils.lineAngle( {x: contours[1].nodes[0].x, y: contours[1].nodes[0].y}, {x: contours[1].nodes[1].x, y: contours[1].nodes[1].y}) + ( 15 / 180 * Math.PI )
 					# dirOut: Math.min( Math.max( 60,( 46 * width), 35 ) ) / 180 * Math.PI
 					typeIn: 'smooth'
 					tensionOut: 1.2
@@ -142,7 +141,7 @@ exports.glyphs['a'] =
 				3:
 					x: contours[0].nodes[2].expandedTo[0].x + thickness * (8/86)
 					y: ( 275 / 500 ) * xHeight * crossbar - (8) + Math.max(0, (thickness - 120) * 26 / 60)
-					dirIn: Math.max( Math.min( - 150,( - 163 * width), - 170 ) ) / 180 * Math.PI
+					dirIn: Math.max( Math.min( - 150, - 163 * width), - 170 ) / 180 * Math.PI
 					tensionIn: Math.min( 1.35 * width, 1.35 )
 					# typeOut: 'line'
 					expand:

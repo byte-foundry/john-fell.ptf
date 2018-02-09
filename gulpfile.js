@@ -15,7 +15,7 @@ gulp.task('clean-dist', function() {
 		.pipe($.rimraf());
 });
 
-gulp.task('build:free', ['copy'], function() {
+gulp.task('build:free', function() {
 	return gulp.src('src/**/*.coffee')
 		.pipe($.coffee({bare: true}).on('error', $.util.log))
 		.pipe(operation())
@@ -34,7 +34,7 @@ gulp.task('build', function() {
 		.pipe(gulp.dest('dist/'));
 });
 
-gulp.task('copy', ['clean-dist'], function() {
+gulp.task('copy', function() {
 	return gulp.src('src/**/*.js')
 		.pipe(gulp.dest('dist'));
 });
