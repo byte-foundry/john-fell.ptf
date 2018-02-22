@@ -265,6 +265,7 @@ function jsufonify(/*prefixText*/free) {
 
 			glyph.name = _glyph.name;
 			glyph.unicode = _glyph.unicode;
+			glyph.base = _glyph.base;
 			glyph.tags = _glyph.tags;
 			glyph.glyphName = _glyph.glyphName;
 			glyph.characterName = _glyph.characterName;
