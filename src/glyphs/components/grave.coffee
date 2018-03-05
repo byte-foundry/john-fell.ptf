@@ -25,6 +25,7 @@ exports.glyphs['grave'] =
 				1:
 					x: contours[0].nodes[0].x - 140 + (5)
 					y: contours[0].nodes[0].y + 115 + (12)
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 55 / 85 )
 						angle:( 45 ) / 180 * Math.PI
@@ -59,6 +60,7 @@ exports.glyphs['grave'] =
 				0:
 					x: contours[0].nodes[1].expandedTo[0].x
 					y: contours[0].nodes[1].expandedTo[0].y
+					typeIn: 'line'
 					dirOut: Utils.lineAngle(
 						contours[0].nodes[0].expandedTo[0],
 						contours[0].nodes[1].expandedTo[0]

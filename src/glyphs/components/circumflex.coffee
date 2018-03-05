@@ -25,6 +25,7 @@ exports.glyphs['circumflex'] =
 				1:
 					x: anchors[0].x - 145
 					y: anchors[0].y
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 15 / 85 )
 						angle: 140 / 180 * Math.PI
@@ -44,6 +45,7 @@ exports.glyphs['circumflex'] =
 				1:
 					x: anchors[0].x
 					y: contours[0].nodes[0].y
+					typeIn: 'line'
 					expand:
 						width: thickness * ( 67 / 85 )
 						angle:( 26 ) / 180 * Math.PI

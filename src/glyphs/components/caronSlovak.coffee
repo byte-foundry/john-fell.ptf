@@ -61,6 +61,7 @@ exports.glyphs['caronSlovak'] =
 					x: contours[0].nodes[1].expandedTo[0].x
 					y: contours[0].nodes[1].expandedTo[0].y
 					tensionOut: 0.7
+					typeIn: 'line'
 					dirOut: Utils.lineAngle(
 						contours[0].nodes[0].expandedTo[0],
 						contours[0].nodes[1].expandedTo[0]
