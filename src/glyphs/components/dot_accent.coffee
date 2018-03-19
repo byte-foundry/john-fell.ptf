@@ -1,4 +1,5 @@
 exports.glyphs['dot_accent'] =
+	global: true
 	glyphName: 'dotaccent'
 	componentLabel: 'Dot'
 	characterName: 'DOT ACCENT'

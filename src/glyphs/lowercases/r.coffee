@@ -61,16 +61,16 @@ exports.glyphs['r'] =
 					dirOut: 0
 					typeIn: 'smooth'
 					expand:
-						width: thickness * ( 56 / 85 ) + Math.max(0, (thickness - 120) * 25 / 60)
-						angle: - 135 / 180 * Math.PI - Math.max(0, (thickness - 120) * 0.02 / 60)
+						width: thickness * ( 56 / 85 ) - Math.max(0, (thickness - 120) * 14 / 60)
+						angle: - 135 / 180 * Math.PI + Math.max(0, (thickness - 120) * 0.03 / 60)
 						distr: 0
 				2:
-					x: contours[0].nodes[0].expandedTo[1].x + 240 * width - (75) - Math.max(0, (thickness - 120) * 50 / 60)
-					y: contours[1].nodes[1].expandedTo[1].y - 35 + Math.min( - 20 * aperture + 20, - 125 * aperture + 125 ) - Math.max(0, (thickness - 120) * 13 / 60)
+					x: contours[0].nodes[0].expandedTo[1].x + 240 * width - (75) - Math.max(0, (thickness - 120) * 10 / 60)
+					y: contours[1].nodes[1].expandedTo[1].y - 35 + Math.min( - 20 * aperture + 20, - 125 * aperture + 125 ) - Math.max(0, (thickness - 120) * 9 / 60)
 					dirIn:( 110 - 20 * aperture ) / 180 * Math.PI
 					typeOut: 'smooth'
 					expand:
-						width: thickness * ( 100 / 85 )
+						width: thickness * ( 100 / 85 ) - Math.max(0, (thickness - 120) * 50 / 60)
 						angle: Math.PI
 						distr: 0.75
 		2:
@@ -93,7 +93,7 @@ exports.glyphs['r'] =
 				1:
 					x: contours[1].nodes[2].expandedTo[1].x + ( contours[1].nodes[2].expandedTo[0].x - contours[1].nodes[2].expandedTo[1].x ) / 2
 					# x: 365
-					y: contours[1].nodes[2].expandedTo[0].y - thickness * ( 50 / 85 )
+					y: contours[1].nodes[2].expandedTo[0].y - thickness * ( 50 / 85 ) + Math.max(0, (thickness - 120) * 30 / 60)
 					dirOut: 0
 					dirIn: 0
 					# type: 'smooth'
