@@ -1,9 +1,9 @@
 # TODO: spacing
-exports.glyphs['zero'] =
+exports.glyphs['zero_alt'] =
 	unicode: '0'
 	glyphName: 'zero'
 	characterName: 'DIGIT ZERO'
-	altImg: 'alt-fell-0-0.svg'
+	altImg: 'alt-fell-0-1.svg'
 	ot:
 		advanceWidth: contours[0].nodes[2].expandedTo[0].x + spacingRight
 	transforms: Array(
@@ -23,38 +23,37 @@ exports.glyphs['zero'] =
 			closed: true
 			nodes:
 				0:
-					x: spacingLeft + (10)
+					x: spacingLeft + 0.25 * contours[0].nodes[0].expand.width
 					y: xHeight * ( 250 / 500 )
 					dirOut: Math.PI / 2
-					tensionOut: 0.9
 					expand:
-						width: thickness * ( 40 / 85 )
+						width: thickness * ( 95 / 86 )
 						distr: 0.25
 						angle: 0
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[0].expandedTo[1].x ) / 2
+					x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * 0.5
 					y: xHeight + overshoot
 					dirOut: 0
-					tensionOut: 0.9
 					expand:
-						width: thickness * ( 35 / 85 )
+						width: thickness * ( 26 / 86 ) * contrast
 						angle: - Math.PI / 2
 						distr: 0
 				2:
-					x: spacingLeft + xHeight + overshoot * 2 - (10)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 300 - (0),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * thickness * ( 95 / 86 ) + 10
+					)
 					y: contours[0].nodes[0].y
 					dirOut: - Math.PI / 2
-					tensionOut: 0.9
 					expand:
-						width: thickness * ( 40 / 85 )
-						distr: 0.25
+						width: thickness * ( 95 / 86 )
 						angle: Math.PI
+						distr: 0.25
 				3:
 					x: contours[0].nodes[1].x
 					y: - overshoot
 					dirOut: Math.PI
-					tensionOut: 0.9
 					expand:
-						width: thickness * ( 35 / 85 )
+						width: thickness * ( 26 / 86 ) * contrast
 						angle: Math.PI / 2
 						distr: 0
