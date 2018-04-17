@@ -3,12 +3,12 @@ exports.glyphs['parenright'] =
 	glyphName: 'parenright'
 	characterName: 'RIGHT PARENTHESIS'
 	ot:
-		advanceWidth: width * 470 + thickness - 85
+		advanceWidth: contours[0].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX',( slant ) / 180 * Math.PI]
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 10 + (10)
+		spacingLeft: 50 * spacing + 10
 		spacingRight: 50 * spacing + 10
 	tags: [
 		'all',
@@ -21,7 +21,7 @@ exports.glyphs['parenright'] =
 			closed: false
 			nodes:
 				0:
-					x: 30
+					x: spacingLeft
 					y: capHeight + overshoot
 					dirOut:( - 33 ) / 180 * Math.PI
 					typeIn: 'smooth'
@@ -30,7 +30,7 @@ exports.glyphs['parenright'] =
 						angle:( 63 ) / 180 * Math.PI
 						distr: 1
 				1:
-					x: 250
+					x: contours[0].nodes[0].expandedTo[0].x + 50 + 50 * width
 					y: ( contours[0].nodes[0].y + contours[0].nodes[2].y ) / 2
 					dirOut: - Math.PI / 2
 					typeIn: 'smooth'
@@ -39,7 +39,7 @@ exports.glyphs['parenright'] =
 						angle: 0
 						distr: 0
 				2:
-					x: 30 + (7)
+					x: contours[0].nodes[0].x
 					y: ( 180 / 210 ) * descender
 					dirIn:( 33 ) / 180 * Math.PI
 					expand:

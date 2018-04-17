@@ -106,6 +106,7 @@ exports.glyphs['A_cap'] =
 						on: [ contours[0].nodes[0].expandedTo[1], contours[0].nodes[1].expandedTo[1] ]
 					})
 					y: capHeight + overshoot * 2
+					typeIn: 'line'
 					typeOut: 'line'
 				2:
 					x: contours[3].nodes[1].x - Math.min( 15, thickness * ( 10 / 85 ) )
