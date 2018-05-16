@@ -83,7 +83,7 @@ exports.glyphs['z'] =
 	components:
 		0:
 			base: ['serif-horizontal', 'none']
-			id: 'middletop'
+			id: 'toptop'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]
@@ -103,7 +103,7 @@ exports.glyphs['z'] =
 				serifHeight: serifHeight + 7
 		1:
 			base: ['serif-hz-oblique-obtuse', 'none']
-			id: 'middletop'
+			id: 'topbottom'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[1]
@@ -122,7 +122,7 @@ exports.glyphs['z'] =
 				serifHeight: serifHeight + 30
 		2:
 			base: ['serif-hz-oblique-obtuse', 'none']
-			id: 'middletop'
+			id: 'bottombottom'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[1].expandedTo[1]
