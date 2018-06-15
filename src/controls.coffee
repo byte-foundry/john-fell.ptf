@@ -1,82 +1,5 @@
 exports.controls = [
 	tab: true
-	label: 'Settings'
-	icon: '...'
-	parameters: [
-		name: 'spacing'
-		label: 'Spacing'
-		min: -1
-		max: 3
-		step: 0.01
-		init: 0
-		minAdvised: -0.30
-		maxAdvised: 3
-		disabled: false
-		advanced: false
-		group: ''
-	,
-		name: 'diacriticHeight'
-		label: 'Diacritic Position'
-		min: -5
-		max: 150
-		step: 1
-		init: 60
-		minAdvised: -5
-		maxAdvised: 150
-		disabled: false
-		advanced: false
-		group: ''
-	,
-		name: 'opticThickness'
-		label: 'Optic thickness'
-		min: 0.8
-		max: 1.5
-		step: 0.01
-		init: 1
-		minAdvised: 0.8
-		maxAdvised: 1.5
-		disabled: false
-		advanced: true
-		group: ''
-	,
-		name: 'smallCapDelta'
-		label: 'Small Cap Height'
-		min: 0
-		max: 2.5
-		step: 0.01
-		init: 1
-		minAdvised: 0
-		maxAdvised: 2.5
-		disabled: false
-		advanced: true
-		group: ''
-	,
-		name: '_scThickness'
-		label: 'Small Cap Thickness'
-		min: 0.5
-		max: 1.5
-		step: 0.05
-		init: 0.9
-		minAdvised: 0.5
-		maxAdvised: 1.5
-		disabled: false
-		advanced: true
-		group: ''
-	,
-		name: '_scWidth'
-		label: 'Small Cap Width'
-		min: 0.5
-		max: 1.5
-		step: 0.05
-		init: 0.7
-		minAdvised: 0.5
-		maxAdvised: 1.5
-		disabled: false
-		advanced: true
-		group: ''
-	]
-,
-	tab: true
 	label: 'Func'
 	icon: '...'
 	parameters: [
@@ -90,7 +13,19 @@ exports.controls = [
 		maxAdvised: 900
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Vertical Settings'
+	,
+		name: 'smallCapDelta'
+		label: 'Small Cap Height'
+		min: 0
+		max: 2.5
+		step: 0.01
+		init: 1
+		minAdvised: 0
+		maxAdvised: 2.5
+		disabled: false
+		advanced: true
+		group: 'Vertical Settings'
 	,
 		name: 'capDelta'
 		label: 'Capital Height'
@@ -102,7 +37,7 @@ exports.controls = [
 		maxAdvised: 500
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Vertical Settings'
 	,
 		name: 'ascender'
 		label: 'Ascender'
@@ -114,7 +49,7 @@ exports.controls = [
 		maxAdvised: 500
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Vertical Settings'
 	,
 		name: 'descender'
 		label: 'Descender'
@@ -126,7 +61,7 @@ exports.controls = [
 		maxAdvised: -200
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Vertical Settings'
 	,
 		name: 'crossbar'
 		label: 'Crossbar'
@@ -138,7 +73,19 @@ exports.controls = [
 		maxAdvised: 1.1
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Vertical Settings'
+	,
+		name: 'diacriticHeight'
+		label: 'Diacritic Position'
+		min: -5
+		max: 150
+		step: 1
+		init: 60
+		minAdvised: -5
+		maxAdvised: 150
+		disabled: false
+		advanced: false
+		group: 'Vertical Settings'
 	,
 		name: 'width'
 		label: 'Width'
@@ -150,7 +97,19 @@ exports.controls = [
 		maxAdvised: 2
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Horizontal Settings'
+	,
+		name: '_scWidth'
+		label: 'Small Cap Width'
+		min: 0.5
+		max: 1.5
+		step: 0.05
+		init: 0.7
+		minAdvised: 0.5
+		maxAdvised: 1.5
+		disabled: false
+		advanced: true
+		group: 'Horizontal Settings'
 	,
 		name: 'slant'
 		label: 'Slant'
@@ -162,7 +121,7 @@ exports.controls = [
 		maxAdvised: 15
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Horizontal Settings'
 	,
 		name: 'overshoot'
 		label: 'Overshoot'
@@ -174,7 +133,19 @@ exports.controls = [
 		maxAdvised: 20
 		disabled: false
 		advanced: true
-		group: ''
+		group: 'Overshoot'
+	,
+		name: 'spacing'
+		label: 'Spacing'
+		min: -1
+		max: 3
+		step: 0.01
+		init: 0
+		minAdvised: -0.30
+		maxAdvised: 3
+		disabled: false
+		advanced: false
+		group: 'Spacing'
 	]
 ,
 	tab: true
@@ -191,7 +162,31 @@ exports.controls = [
 		maxAdvised: 180
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Style'
+	,
+		name: 'opticThickness'
+		label: 'Optic thickness'
+		min: 0.8
+		max: 1.5
+		step: 0.01
+		init: 1
+		minAdvised: 0.8
+		maxAdvised: 1.5
+		disabled: false
+		advanced: true
+		group: 'Style'
+	,
+		name: '_scThickness'
+		label: 'Small Cap Thickness'
+		min: 0.5
+		max: 1.5
+		step: 0.05
+		init: 0.9
+		minAdvised: 0.5
+		maxAdvised: 1.5
+		disabled: false
+		advanced: true
+		group: 'Style'
 	,
 		name: '_contrast'
 		label: 'Contrast'
@@ -203,7 +198,7 @@ exports.controls = [
 		maxAdvised: -0.15
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Style'
 	,
 		name: 'aperture'
 		label: 'Aperture'
@@ -215,7 +210,7 @@ exports.controls = [
 		maxAdvised: 1.70
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Style'
 	,
 		name: 'curviness'
 		label: 'Curviness'
@@ -227,7 +222,7 @@ exports.controls = [
 		maxAdvised: 1.2
 		disabled: false
 		advanced: true
-		group: ''
+		group: 'Style'
 	]
 ,
 	tab: true
@@ -244,19 +239,7 @@ exports.controls = [
 		maxAdvised: 130
 		disabled: false
 		advanced: false
-		group: ''
-	,
-		name: 'midWidth'
-		label: 'Middle Width'
-		min: 0.5
-		max: 1.5
-		step: 0.01
-		init: 1
-		minAdvised: 0.8
-		maxAdvised: 1.3
-		disabled: false
-		advanced: false
-		group: ''
+		group: 'Proportions'
 	,
 		name: 'serifHeight'
 		label: 'Serif Height'
@@ -268,7 +251,19 @@ exports.controls = [
 		maxAdvised: 100
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Proportions'
+	,
+		name: 'midWidth'
+		label: 'Middle Width'
+		min: 0.5
+		max: 1.5
+		step: 0.01
+		init: 1
+		minAdvised: 0.8
+		maxAdvised: 1.3
+		disabled: false
+		advanced: false
+		group: 'Endings'
 	,
 		name: 'serifMedian'
 		label: 'Serif Median'
@@ -280,7 +275,7 @@ exports.controls = [
 		maxAdvised: 1.3
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Endings'
 	,
 		name: 'serifCurve'
 		label: 'Bracket Curve'
@@ -292,7 +287,7 @@ exports.controls = [
 		maxAdvised: 100
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Brackets'
 	,
 		name: 'serifRoundness'
 		label: 'Bracket Roundness'
@@ -304,43 +299,7 @@ exports.controls = [
 		maxAdvised: 1.8
 		disabled: false
 		advanced: false
-		group: ''
-	,
-		name: 'serifArc'
-		label: 'Serif Arc'
-		min: -1.5
-		max: 0.6
-		step: 0.01
-		init: 0
-		minAdvised: -1.5
-		maxAdvised: 0.6
-		disabled: false
-		advanced: true
-		group: ''
-	,
-		name: 'serifTerminal'
-		label: 'Serif Terminal'
-		min: -0.5
-		max: 2
-		step: 0.01
-		init: 0
-		minAdvised: -0.5
-		maxAdvised: 2
-		disabled: false
-		advanced: true
-		group: ''
-	,
-		name: 'serifTerminalCurve'
-		label: 'Serif Terminal Curve'
-		min: 0
-		max: 2
-		step: 0.01
-		init: 1
-		minAdvised: 0
-		maxAdvised: 2
-		disabled: false
-		advanced: true
-		group: ''
+		group: 'Brackets'
 	,
 		name: 'spurHeight'
 		label: 'Spur Height'
@@ -352,7 +311,7 @@ exports.controls = [
 		maxAdvised: 3
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Adjustments'
 	,
 		name: 'serifRotate'
 		label: 'Serif Rotation'
@@ -364,7 +323,7 @@ exports.controls = [
 		maxAdvised: 2.5
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Adjustments'
 	,
 		name: 'serifBall'
 		label: 'Terminal Ball'
@@ -376,6 +335,42 @@ exports.controls = [
 		maxAdvised: 1.5
 		disabled: false
 		advanced: false
-		group: ''
+		group: 'Adjustments'
+	,
+		name: 'serifArc'
+		label: 'Serif Arc'
+		min: -1.5
+		max: 0.6
+		step: 0.01
+		init: 0
+		minAdvised: -1.5
+		maxAdvised: 0.6
+		disabled: false
+		advanced: true
+		group: 'Advanced'
+	,
+		name: 'serifTerminal'
+		label: 'Serif Terminal'
+		min: -0.5
+		max: 2
+		step: 0.01
+		init: 0
+		minAdvised: -0.5
+		maxAdvised: 2
+		disabled: false
+		advanced: true
+		group: 'Advanced'
+	,
+		name: 'serifTerminalCurve'
+		label: 'Serif Terminal Curve'
+		min: 0
+		max: 2
+		step: 0.01
+		init: 1
+		minAdvised: 0
+		maxAdvised: 2
+		disabled: false
+		advanced: true
+		group: 'Advanced'
 	]
 ]
