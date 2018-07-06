@@ -159,7 +159,7 @@ exports.glyphs['s'] =
 				serifWidth: serifWidth - 11
 		3:
 			base: ['serif-curve-inside-auto', 'none']
-			id: 'top'
+			id: 'topbottom'
 			parentAnchors:
 				0:
 					baseDir: contours[0].nodes[0].dirOut
