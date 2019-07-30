@@ -86,6 +86,7 @@ exports.glyphs['dotlessi'] =
 			)
 		2:
 			base: ['serif-vertical', 'none']
+			id: 'attaqueLeft'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[1].expandedTo[0]

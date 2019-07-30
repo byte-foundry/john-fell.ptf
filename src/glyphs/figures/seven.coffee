@@ -67,6 +67,7 @@ exports.glyphs['seven'] =
 	components:
 		0:
 			base: ['serif-horizontal', 'none']
+			id: 'serif1'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[4].expandedTo[0]
@@ -85,6 +86,7 @@ exports.glyphs['seven'] =
 			)
 		1:
 			base: ['serif-horizontal', 'none']
+			id: 'serif2'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[4].expandedTo[1]
